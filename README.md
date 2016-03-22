@@ -32,6 +32,6 @@ A IMDB-esque catalog of Marvel information (created for CS373-Software Engineeri
 * id *sortable*
 * first name *sortable*
 * last name *sortable*
-* number of stories
+* number of stories *sortable*
 * number of stories *sortable*
 * list of comics
