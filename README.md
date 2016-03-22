@@ -5,33 +5,33 @@ A IMDB-esque catalog of Marvel information (created for CS373-Software Engineeri
 ### Characters
 
 * thumbnail 
-* id *sortable*
-* name *sortable*
+* id (*sortable*)
+* name (*sortable*)
 * description
-* number of comics *sortable*
-* number of stories *sortable*
-* number of series *sortable*
+* number of comics (*sortable*)
+* number of stories (*sortable*)
+* number of series (*sortable*)
 * list of comics
 
 
 ### Comics
 
 * thumbnail 
-* id *sortable*
-* title *sortable*
-* issue number *sortable*
+* id (*sortable*)
+* title (*sortable*)
+* issue number (*sortable*)
 * description
-* page count *sortable*
-* number of stories *sortable*
+* page count (*sortable*)
+* number of stories (*sortable*)
 * list of characters
 * list of creators
 
 ### Creators
 
 * thumbnail 
-* id *sortable*
-* first name *sortable*
-* last name *sortable*
-* number of stories *sortable*
-* number of stories *sortable*
+* id (*sortable*)
+* first name (*sortable*)
+* last name (*sortable*)
+* number of stories (*sortable*)
+* number of stories (*sortable*)
 * list of comics
