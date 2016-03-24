@@ -1,6 +1,6 @@
 // Paste into draw tool at yuml.me to render
-[Character|thumbnail;id;name;description;number of comics;number of stories;number of series;list of comics]
-[Comic|thumbnail;id;title;issue number;description;page count;number of stories;list of characters;list of creators]
-[Creator|thumbnail;id;first name;last name;number of stories;list of comics]
+[Character|id;thumbnail;name;description;number of comics;comics]
+[Comic|id;thumbnail;title;issue number;description;page count;characters;creators]
+[Creator|id;thumbnail;first name;last name;number of comics;comics]
 [Comic]<1..*-1..*>[Character]
 [Comic]<1..*-1..*>[Creator]
