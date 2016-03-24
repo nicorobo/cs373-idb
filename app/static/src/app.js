@@ -8,7 +8,7 @@ var router = require('react-router');
 
 var Router = router.Router;
 var Route = router.Route;
-var hashHistory = router.hashHistory;
+var browserHistory = router.browserHistory;
 
 
 const characters = {
@@ -25,9 +25,14 @@ class App extends React.Component {
 		return (
 			<div>
 				<Navbar />
-				<Router history={hashHistory}>
-					<Route path="/" component={wrap(<TablePage data={characters} title="Characters"/>)} />
-				</Router>
+				<div className="container">
+					<Router history={browserHistory} >
+						<Route path="/" />
+						<Route path="/characters" component={wrap(<TablePage data={characters} title="Characters"/>)} />
+						<Route path="/comics" component={wrap(<TablePage data={characters} title="Comics"/>)} />
+						<Route path="/creators" component={wrap(<TablePage data={characters} title="Creators"/>)} />
+					</Router>
+				</div>
 			</div>
 		)
 	}

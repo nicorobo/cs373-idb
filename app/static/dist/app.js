@@ -23910,7 +23910,7 @@ var router = require('react-router');
 
 var Router = router.Router;
 var Route = router.Route;
-var hashHistory = router.hashHistory;
+var browserHistory = router.browserHistory;
 
 
 const characters = {
@@ -23927,8 +23927,13 @@ class App extends React.Component {
 		return (
 			React.createElement("div", null, 
 				React.createElement(Navbar, null), 
-				React.createElement(Router, {history: hashHistory}, 
-					React.createElement(Route, {path: "/", component: wrap(React.createElement(TablePage, {data: characters, title: "Characters"}))})
+				React.createElement("div", {className: "container"}, 
+					React.createElement(Router, {history: browserHistory}, 
+						React.createElement(Route, {path: "/"}), 
+						React.createElement(Route, {path: "/characters", component: wrap(React.createElement(TablePage, {data: characters, title: "Characters"}))}), 
+						React.createElement(Route, {path: "/comics", component: wrap(React.createElement(TablePage, {data: characters, title: "Comics"}))}), 
+						React.createElement(Route, {path: "/creators", component: wrap(React.createElement(TablePage, {data: characters, title: "Creators"}))})
+					)
 				)
 			)
 		)
