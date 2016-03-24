@@ -55,7 +55,7 @@ class ComicCreator(db.Model):
     creator_id = db.Column(db.Integer, ForeignKey('creator.id'), primary_key=True)
 
 
-class CharacterCreator(db.Model)
+class CharacterCreator(db.Model):
     __tablename__ = 'character_creator'
 
     character_id = db.Column(db.Integer, ForeignKey('character.id'), primary_key=True)
