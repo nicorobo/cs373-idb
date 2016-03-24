@@ -23904,8 +23904,10 @@ module.exports = warning;
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-var TablePage = require('./tablepage.js');
 var router = require('react-router');
+
+var SplashPage = require('./splashpage.js');
+var TablePage = require('./tablepage.js');
 
 var Router = router.Router;
 var Route = router.Route;
@@ -23926,7 +23928,7 @@ class App extends React.Component {
 		return (
 			React.createElement("div", null, 
 				React.createElement(Router, {history: browserHistory}, 
-					React.createElement(Route, {path: "/"}), 
+					React.createElement(Route, {path: "/", component: SplashPage}), 
 					React.createElement(Route, {path: "/characters", component: wrap(React.createElement(TablePage, {data: characters, title: "Characters"}))}), 
 					React.createElement(Route, {path: "/comics", component: wrap(React.createElement(TablePage, {data: characters, title: "Comics"}))}), 
 					React.createElement(Route, {path: "/creators", component: wrap(React.createElement(TablePage, {data: characters, title: "Creators"}))})
@@ -23946,7 +23948,7 @@ function wrap(component) {
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('app'))
 
-},{"./tablepage.js":219,"react":213,"react-dom":50,"react-router":78}],217:[function(require,module,exports){
+},{"./splashpage.js":218,"./tablepage.js":220,"react":213,"react-dom":50,"react-router":78}],217:[function(require,module,exports){
 // navbar.js
 
 var React = require('react');
@@ -23966,15 +23968,15 @@ class NavBar extends React.Component {
 						), 
 						React.createElement("a", {className: "navbar-brand", href: "#"}, "Justic SWEague")
 					), 
-					React.createElement("ul", {className: "nav navbar-nav"}, 
-						React.createElement("li", {className: "active"}, React.createElement("a", {href: "#"}, "Home ", React.createElement("span", {className: "sr-only"}, "(current)"))), 
-						React.createElement("li", null, React.createElement("a", {href: "#"}, "About"))
-					), 
 					React.createElement("div", {className: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1"}, 
+						React.createElement("ul", {className: "nav navbar-nav"}, 
+							React.createElement("li", null, React.createElement(Link, {to: "/", activeClassName: "active"}, "Home")), 
+							React.createElement("li", null, React.createElement("a", {href: "#"}, "About"))
+						), 
 						React.createElement("ul", {className: "nav navbar-nav navbar-right"}, 
-							React.createElement("li", null, React.createElement(Link, {to: "/characters"}, "Characters")), 
-							React.createElement("li", null, React.createElement(Link, {to: "/comics"}, "Comics")), 
-							React.createElement("li", null, React.createElement(Link, {to: "/creators"}, "Creators"))
+							React.createElement("li", null, React.createElement(Link, {to: "/characters", activeClassName: "active"}, "Characters")), 
+							React.createElement("li", null, React.createElement(Link, {to: "/comics", activeClassName: "active"}, "Comics")), 
+							React.createElement("li", null, React.createElement(Link, {to: "/creators", activeClassName: "active"}, "Creators"))
 						)
 					)
 				)
@@ -23986,6 +23988,27 @@ class NavBar extends React.Component {
 module.exports = NavBar;
 
 },{"react":213,"react-router":78}],218:[function(require,module,exports){
+// splash.js
+
+var React = require('react');
+var NavBar = require('./navbar.js');
+
+class Splash extends React.Component {
+	render() {
+		return (
+			React.createElement("div", {className: "splash-page"}, 
+				React.createElement(NavBar, null), 
+				React.createElement("div", {className: "container"}, 
+					React.createElement("h1", null, "Splash")
+				)
+			)
+		)
+	}
+}
+
+module.exports = Splash;
+
+},{"./navbar.js":217,"react":213}],219:[function(require,module,exports){
 // table.js
 
 var React = require('react');
@@ -24010,7 +24033,7 @@ class Table extends React.Component {
 
 module.exports = Table;
 
-},{"./tablerow.js":220,"react":213}],219:[function(require,module,exports){
+},{"./tablerow.js":221,"react":213}],220:[function(require,module,exports){
 // tablepage.js
 
 var React = require('react');
@@ -24033,7 +24056,7 @@ class TablePage extends React.Component {
 
 module.exports = TablePage;
 
-},{"./navbar.js":217,"./table.js":218,"react":213}],220:[function(require,module,exports){
+},{"./navbar.js":217,"./table.js":219,"react":213}],221:[function(require,module,exports){
 // tablerow.js
 
 var React = require('react');

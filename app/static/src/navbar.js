@@ -17,15 +17,15 @@ class NavBar extends React.Component {
 						</button>
 						<a className="navbar-brand" href="#">Justic SWEague</a>
 					</div>
-					<ul className="nav navbar-nav">
-						<li className="active"><a href="#">Home <span className="sr-only">(current)</span></a></li>
-						<li><a href="#">About</a></li>
-					</ul>
 					<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul className="nav navbar-nav">
+							<li><Link to="/" activeClassName="active">Home</Link></li>
+							<li><a href="#">About</a></li>
+						</ul>
 						<ul className="nav navbar-nav navbar-right">
-							<li><Link to="/characters">Characters</Link></li>
-							<li><Link to="/comics">Comics</Link></li>
-							<li><Link to="/creators">Creators</Link></li>
+							<li><Link to="/characters" activeClassName="active">Characters</Link></li>
+							<li><Link to="/comics" activeClassName="active">Comics</Link></li>
+							<li><Link to="/creators" activeClassName="active">Creators</Link></li>
 						</ul>
 					</div>
 				</div>

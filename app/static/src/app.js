@@ -2,8 +2,10 @@
 
 var React = require('react');
 var ReactDOM = require('react-dom');
-var TablePage = require('./tablepage.js');
 var router = require('react-router');
+
+var SplashPage = require('./splashpage.js');
+var TablePage = require('./tablepage.js');
 
 var Router = router.Router;
 var Route = router.Route;
@@ -24,7 +26,7 @@ class App extends React.Component {
 		return (
 			<div>
 				<Router history={browserHistory} >
-					<Route path="/" />
+					<Route path="/" component={SplashPage}/>
 					<Route path="/characters" component={wrap(<TablePage data={characters} title="Characters"/>)} />
 					<Route path="/comics" component={wrap(<TablePage data={characters} title="Comics"/>)} />
 					<Route path="/creators" component={wrap(<TablePage data={characters} title="Creators"/>)} />
