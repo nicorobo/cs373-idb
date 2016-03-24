@@ -30,6 +30,7 @@ a.active {
 
 .splash-image {
 	padding-top: 25px;
+	max-width: 100%;
 }
 
 .footer {
