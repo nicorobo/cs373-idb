@@ -1,6 +1,7 @@
 // navbar.js
 
 var React = require('react');
+var Link = require('react-router').Link;
 
 class NavBar extends React.Component {
 	render() {
@@ -22,9 +23,9 @@ class NavBar extends React.Component {
 					</ul>
 					<div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul className="nav navbar-nav navbar-right">
-							<li><a href="#">Characters</a></li>
-							<li><a href="#">Comics</a></li>
-							<li><a href="#">Creators</a></li>
+							<li><Link to="/characters">Characters</Link></li>
+							<li><Link to="/comics">Comics</Link></li>
+							<li><Link to="/creators">Creators</Link></li>
 						</ul>
 					</div>
 				</div>
