@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from unittest import main, TestCase
-from app.models import Character, Comic, Creator
+from models import Character, Comic, Creator
 
 class TestModels (TestCase) :
 
