@@ -3,10 +3,13 @@
 var React = require('react');
 
 class TableRow extends React.Component {
+	handleClick() {
+		this.props.onClick(this.props.content.id);
+	}
 	render() {
 		var data = objValues(this.props.content);
 		return (
-			<tr>
+			<tr onClick={this.handleClick.bind(this)}>
 				{data.map(info => <td>{info}</td>)}
 			</tr>
 		)

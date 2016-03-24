@@ -2,27 +2,27 @@
 module.exports={
 	"characters": {
 		"content": [
-			{"name": "Iron Man", "numberOfComics": 14},
-			{"name": "Storm", "numberOfComics": 7},
-			{"name": "Hulk", "numberOfComics": 19}
+			{"name": "Iron Man", "id": 3443,  "numberOfComics": 14},
+			{"name": "Storm", "id": 3445,  "numberOfComics": 7},
+			{"name": "Hulk", "id": 3443,  "numberOfComics": 19}
 		],
-		"headers": ["Name", "Number of Comics"]
+		"headers": ["Name", "ID", "Number of Comics"]
 	},
 	"creators": {
 		"content": [
-			{"name": "Stan Lee", "numberOfComics": 14},
-			{"name": "Storm", "numberOfComics": 7},
-			{"name": "Hulk", "numberOfComics": 19}
+			{"name": "Stan Lee", "id": 3443,  "numberOfComics": 14},
+			{"name": "Storm", "id": 3442,  "numberOfComics": 7},
+			{"name": "Hulk", "id": 3443,  "numberOfComics": 19}
 		],
-		"headers": ["Full Name", "Number of Comics"]
+		"headers": ["Full Name", "ID", "Number of Comics"]
 	},
 	"comics": {
 		"content": [
-			{"name": "Iron Man", "numberOfComics": 14},
-			{"name": "Storm", "numberOfComics": 7},
-			{"name": "Hulk", "numberOfComics": 19}
+			{"name": "Iron Man", "id": 3443,  "numberOfComics": 14},
+			{"name": "Storm", "id": 3444,  "numberOfComics": 7},
+			{"name": "Hulk", "id": 3443,  "numberOfComics": 19}
 		],
-		"headers": ["Title", "Number of Comics"]
+		"headers": ["Title", "ID", "Number of Comics"]
 	}
 }
 },{}],2:[function(require,module,exports){
@@ -24116,7 +24116,7 @@ class Table extends React.Component {
 					)
 				), 
 				React.createElement("tbody", null, 
-					this.props.content.map(item => React.createElement(TableRow, {content: item}))
+					this.props.content.map(item => React.createElement(TableRow, {onClick: this.props.navigate, content: item}))
 				)
 			)
 		)
@@ -24135,17 +24135,31 @@ var library = require('../mockdata.json');
 var data;
 
 class TablePage extends React.Component {
+
+	constructor() {
+		super();
+		this.navigateToDetail = this.navigateToDetail.bind(this);
+	}
+
+	navigateToDetail(id) {
+		console.log("Navigating to "+this.props.route.path+'/'+id);
+		this.props.history.push(this.props.route.path+'/'+id);
+	}
+
 	render() {
+
 		if (this.props.route.path === '/characters') data = library.characters;
 		else if (this.props.route.path === '/comics') data = library.comics;
 		else data = library.creators;
+
 		console.log(this.props);
+
 		return (
 			React.createElement("div", {className: "table-page"}, 
 				React.createElement(NavBar, null), 
 				React.createElement("div", {className: "container"}, 
 					React.createElement("h1", null, this.props.route.title), 
-					React.createElement(Table, {content: data.content, headers: data.headers})
+					React.createElement(Table, {content: data.content, headers: data.headers, navigate: this.navigateToDetail})
 				)
 			)
 		)
@@ -24160,10 +24174,13 @@ module.exports = TablePage;
 var React = require('react');
 
 class TableRow extends React.Component {
+	handleClick() {
+		this.props.onClick(this.props.content.id);
+	}
 	render() {
 		var data = objValues(this.props.content);
 		return (
-			React.createElement("tr", null, 
+			React.createElement("tr", {onClick: this.handleClick.bind(this)}, 
 				data.map(info => React.createElement("td", null, info))
 			)
 		)

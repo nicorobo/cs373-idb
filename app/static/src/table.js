@@ -13,7 +13,7 @@ class Table extends React.Component {
 					</tr>
 				</thead>
 				<tbody>
-					{this.props.content.map(item => <TableRow content={item} />)}
+					{this.props.content.map(item => <TableRow onClick={this.props.navigate} content={item} />)}
 				</tbody>
 			</table>
 		)
