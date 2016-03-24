@@ -24078,7 +24078,7 @@ class NavBar extends React.Component {
 							React.createElement("span", {className: "icon-bar"}),
 							React.createElement("span", {className: "icon-bar"})
 						),
-						React.createElement("a", {className: "navbar-brand", href: "#"}, "Justic SWEague")
+						React.createElement("a", {className: "navbar-brand title", href: "#"}, "Justice SWEague")
 					),
 					React.createElement("div", {className: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1"},
 						React.createElement("ul", {className: "nav navbar-nav"},

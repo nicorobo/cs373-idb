@@ -1,6 +1,28 @@
+/******** GLOBAL **********/
+
+h1, h3, h4 {
+	font-family: "Marvel";
+}
+
 a.active {
 	font-weight: bolder;
 }
+
+/******** NAV **********/
+
+.title {
+	font-size: 2.2rem;
+	font-family: "Marvel";
+	font-weight: bold;
+}
+
+.navbar {
+	font-family: 'Gotham SSm 2r', 'Gotham SSm A', 'Gotham SSm B', Helvetica, Arial, sans-serif;
+	font-weight: 200;
+}
+
+
+/******** SPLASH **********/
 
 .splash-page {
 	text-align: center;
@@ -15,4 +37,21 @@ a.active {
 	font-family: 'Gotham SSm 2r', 'Gotham SSm A', 'Gotham SSm B', Helvetica, Arial, sans-serif;
 	font-weight: 200;
 	color: #7d8080;
+}
+
+/******** ABOUT **********/
+
+#about h1 {
+	font-size: 4.2rem;
+	font-weight: bold;
+}
+
+th {
+	font-family: "Marvel";
+	font-size: 1.5rem;
+	background-color: #e7e7e7
+}
+
+td {
+	font-family: 'Gotham SSm 2r', 'Gotham SSm A', 'Gotham SSm B', Helvetica, Arial, sans-serif;
 }
