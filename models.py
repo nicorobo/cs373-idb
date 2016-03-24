@@ -1,62 +1,60 @@
-from app import db
-from sqlalchemy import orm, ForeignKey
+from sqlalchemy import Column, ForeignKey, Integer, String, Table
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
 
 
-class Character(db.Model):
+Base = declarative_base()
+
+
+comic_character = Table('association', Base.metadata,
+                        Column('comic_id',     Integer, ForeignKey('comic.id')),
+                        Column('character_id', Integer, ForeignKey('character.id'))
+)
+
+
+comic_creator = Table('assocation', Base.metadata,
+                      Column('comic_id',   Integer, ForeignKey('comic.id')),
+                      Column('creator_id', Integer, ForeignKey('creator.id'))
+)
+
+
+class Character(Base):
     __tablename__ = 'character'
 
-    id = db.Column(db.Integer, primary_key=True)
-    thumbnail = db.Column(db.String)
-    name = db.Column(db.String)
-    description = db.Column(db.String)
-    num_comics = db.Column(db.Integer)
-    num_stories = db.Column(db.Integer)
-    num_series = db.Column(db.Integer)
-    comics = orm.relationship('Comic', secondary='character_comic')
-    creators = orm.relationship('Creator', secondary='character_creator')
+    id = Column(Integer, primary_key=True)
+    thumbnail = Column(String)
+    name = Column(String)
+    description = Column(String)
+    number_of_comics = Column(Integer)
+    comics = relationship('Comic',
+                          secondary=comic_character,
+                          back_populates='characters')
 
-class Comic(db.Model):
+
+class Comic(Base):
     __tablename__ = 'comic'
 
-    id = db.Column(db.Integer, primary_key=True)
-    thumbnail = db.Column(db.String)
-    title = db.Column(db.String)
-    issue_num = db.Column(db.Integer)
-    description = db.Column(db.String)
-    page_count = db.Column(db.Integer)
-    num_stories = db.Column(db.Integer)
-    characters = orm.relationship('Character', secondary='character_comic')
-    creators = orm.relationship('Creator', secondary='comic_creator')
+    id = Column(Integer, primary_key=True)
+    thumbnail = Column(String)
+    title = Column(String)
+    issue_num = Column(Integer)
+    description = Column(String)
+    page_count = Column(Integer)
+    characters = relationship('Character',
+                              secondary=comic_character,
+                              back_populates='comics')
+    creators = relationship('Creator',
+                            secondary=comic_creator,
+                            back_populates='comics')
 
 
-class Creator(db.Model):
+class Creator(Base):
     __tablename__ = 'creator'
 
-    id = db.Column(db.Integer, primary_key=True)
-    thumbnail = db.Column(db.String)
-    first_name = db.Column(db.String)
-    last_name = db.Column(db.String)
-    num_stories = db.Column(db.Integer)
-    characters = orm.relationship('Character', secondary='character_creator')
-    comics = orm.relationship('Comic', secondary='comic_creator')
-
-
-class CharacterComic(db.Model):
-    __tablename__ = 'character_comic'
-
-    character_id = db.Column(db.Integer, ForeignKey('character.id'), primary_key=True)
-    comic_id = db.Column(db.Integer, ForeignKey('comic.id'), primary_key=True)
-
-
-class ComicCreator(db.Model):
-    __tablename__ = 'comic_creator'
-
-    comic_id = db.Column(db.Integer, ForeignKey('comic.id'), primary_key=True)
-    creator_id = db.Column(db.Integer, ForeignKey('creator.id'), primary_key=True)
-
-
-class CharacterCreator(db.Model):
-    __tablename__ = 'character_creator'
-
-    character_id = db.Column(db.Integer, ForeignKey('character.id'), primary_key=True)
-    comic_id = db.Column(db.Integer, ForeignKey('comic.id'), primary_key=True)
+    id = Column(Integer, primary_key=True)
+    thumbnail = Column(String)
+    first_name = Column(String)
+    last_name = Column(String)
+    comics = relationship('Comic',
+                          secondary=comic_creator,
+                          back_populates='creators')
