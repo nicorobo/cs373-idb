@@ -1,3 +1,18 @@
 a.active {
 	font-weight: bolder;
 }
+
+.splash-page {
+	text-align: center;
+}
+
+.splash-image {
+	padding-top: 25px;
+}
+
+.footer {
+	padding-top: 50px;
+	font-family: 'Gotham SSm 2r', 'Gotham SSm A', 'Gotham SSm B', Helvetica, Arial, sans-serif;
+	font-weight: 200;
+	color: #7d8080;
+}
