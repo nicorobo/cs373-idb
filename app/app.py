@@ -5,6 +5,10 @@ app = Flask(__name__)
 
 manager = Manager(app)
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 # Serves JSON for characters
 @app.route('/api/characters')
 def characters():

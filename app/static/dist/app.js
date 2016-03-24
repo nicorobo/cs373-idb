@@ -23972,7 +23972,7 @@ class NavBar extends React.Component {
 					React.createElement("div", {className: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1"}, 
 						React.createElement("ul", {className: "nav navbar-nav"}, 
 							React.createElement("li", null, React.createElement(Link, {to: "/", activeClassName: "active"}, "Home")), 
-							React.createElement("li", null, React.createElement("a", {href: "#"}, "About"))
+							React.createElement("li", null, React.createElement("a", {href: "/about"}, "About"))
 						), 
 						React.createElement("ul", {className: "nav navbar-nav navbar-right"}, 
 							React.createElement("li", null, React.createElement(Link, {to: "/characters", activeClassName: "active"}, "Characters")), 
