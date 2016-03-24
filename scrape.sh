@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if [ $# -lt "2" ] ; then
-    echo "usage: $0 <endpoint> <params>"
+if [ $# -lt "1" ] ; then
+    echo "usage: $0 <endpoint> <params - optional>"
     exit -1
 fi
 
