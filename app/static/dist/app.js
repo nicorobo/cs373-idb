@@ -1,30 +1,306 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-module.exports={
+module.exports=
+{
 	"characters": {
 		"content": [
-			{"name": "Iron Man", "id": 3443,  "numberOfComics": 14},
-			{"name": "Storm", "id": 3445,  "numberOfComics": 7},
-			{"name": "Hulk", "id": 3443,  "numberOfComics": 19}
+			{"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/40/526963dad214d", "name": "Storm", "id": 1009629, "numberOfComics": 602, "numberOfStories":698, "numberOfSeries": 155},
+			{"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0", "name": "Hulk", "id": 1009351, "numberOfComics": 1314, "numberOfStories":1986, "numberOfSeries": 317},
+			{"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55", "name": "Iron Man", "id": 1009368, "numberOfComics": 1984, "numberOfStories":2908, "numberOfSeries": 449}
 		],
-		"headers": {"name": "Name", "id": "ID", "numberOfComics": "Number of Comics"}
-	},
-	"creators": {
-		"content": [
-			{"name": "Stan Lee", "id": 3443,  "numberOfComics": 14},
-			{"name": "Storm", "id": 3442,  "numberOfComics": 7},
-			{"name": "Hulk", "id": 3443,  "numberOfComics": 19}
-		],
-		"headers": {"name": "Name", "id": "ID", "numberOfComics": "Number of Comics"}
-	},
-	"comics": {
-		"content": [
-			{"name": "Iron Man", "id": 3443,  "numberOfComics": 14},
-			{"name": "Storm", "id": 3444,  "numberOfComics": 7},
-			{"name": "Hulk", "id": 3443,  "numberOfComics": 19}
-		],
-		"headers": {"name": "Name", "id": "ID", "numberOfComics": "Number of Comics"}
+		"headers": {"thumbnail": "Thumbnail", "name": "Name", "title": "ID", "numberOfComics": "# of Comics", "numberOfStories": "# of Stories", "numberOfSeries": "# of Series" }
 	}
 }
+
+// {
+// 	"characters": {
+// 		"content": [
+// 			{"name": "Iron Man", "id": 3443,  "numberOfComics": 14},
+// 			{"name": "Storm", "id": 3445,  "numberOfComics": 7},
+// 			{"name": "Hulk", "id": 3443,  "numberOfComics": 19}
+// 		],
+// 		"headers": {"name": "Name", "id": "ID", "numberOfComics": "Number of Comics"}
+// 	},
+// 	"creators": {
+// 		"content": [
+// 			{"name": "Stan Lee", "id": 3443,  "numberOfComics": 14},
+// 			{"name": "Storm", "id": 3442,  "numberOfComics": 7},
+// 			{"name": "Hulk", "id": 3443,  "numberOfComics": 19}
+// 		],
+// 		"headers": {"name": "Name", "id": "ID", "numberOfComics": "Number of Comics"}
+// 	},
+// 	"comics": {
+// 		"content": [
+// 			{"name": "Iron Man", "id": 3443,  "numberOfComics": 14},
+// 			{"name": "Storm", "id": 3444,  "numberOfComics": 7},
+// 			{"name": "Hulk", "id": 3443,  "numberOfComics": 19}
+// 		],
+// 		"headers": {"name": "Name", "id": "ID", "numberOfComics": "Number of Comics"}
+// 	}
+// }
+// {
+// 	"characters": {
+// 		"contents": [
+// 			{
+// 			    "id": 1009629,
+// 			    "name": "Storm",
+// 			    "description": "Ororo Monroe is the descendant of an ancient line of African priestesses, all of whom have white hair, blue eyes, and the potential to wield magic.",
+// 			    "thumbnail": {
+// 			        "path": "http://i.annihil.us/u/prod/marvel/i/mg/6/40/526963dad214d",
+// 			        "extension": "jpg"
+// 			    },
+// 			    "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009629",
+// 			    "comics": {
+// 			        "available": 602,
+// 			        "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009629/comics",
+// 			        "items": [{
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/43498",
+// 			            "name": "A+X (2012) #3"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/17701",
+// 			            "name": "Age of Apocalypse: The Chosen (1995) #1"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/12676",
+// 			            "name": "Alpha Flight (1983) #17"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/12694",
+// 			            "name": "Alpha Flight (1983) #33"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/12725",
+// 			            "name": "Alpha Flight (1983) #61"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/12668",
+// 			            "name": "Alpha Flight (1983) #127"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/21511",
+// 			            "name": "Astonishing X-Men (2004) #25"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/21941",
+// 			            "name": "Astonishing X-Men (2004) #27"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/23087",
+// 			            "name": "Astonishing X-Men (2004) #28"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/23937",
+// 			            "name": "Astonishing X-Men (2004) #29"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/24501",
+// 			            "name": "Astonishing X-Men (2004) #30"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/24505",
+// 			            "name": "Astonishing X-Men (2004) #34"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/38318",
+// 			            "name": "Astonishing X-Men (2004) #38"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/39318",
+// 			            "name": "Astonishing X-Men (2004) #44"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/40803",
+// 			            "name": "Astonishing X-Men (2004) #51"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/42732",
+// 			            "name": "Astonishing X-Men (2004) #51 (Djurdjevic Variant)"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/17491",
+// 			            "name": "Avengers (1998) #10"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/7138",
+// 			            "name": "Avengers (1963) #267"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/1311",
+// 			            "name": "Avengers Assemble (Hardcover)"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/41191",
+// 			            "name": "Avengers Vs. X-Men (2012) #2"
+// 			        }],
+// 			        "returned": 20
+// 			    },
+// 			    "series": {
+// 			        "available": 155,
+// 			        "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009629/series",
+// 			    },
+// 			    "stories": {
+// 			        "available": 698,
+// 			        "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009629/stories",
+// 			    },
+// 			    "events": {
+// 			        "available": 21,
+// 			        "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009629/events",
+// 			        "returned": 20
+// 			    }
+// 			},
+// 			{
+// 			    "id": 1009351,
+// 			    "name": "Hulk",
+// 			    "description": "Caught in a gamma bomb explosion while trying to save the life of a teenager, Dr. Bruce Banner was transformed into the incredibly powerful creature called the Hulk. An all too often misunderstood hero, the angrier the Hulk gets, the stronger the Hulk gets.",
+// 			    "thumbnail": {
+// 			        "path": "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0",
+// 			        "extension": "jpg"
+// 			    },
+// 			    "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009351",
+// 			    "comics": {
+// 			        "available": 1314,
+// 			        "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009351/comics",
+// 			        "items": [{
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/41112",
+// 			            "name": "5 Ronin (Hardcover)"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/36365",
+// 			            "name": "5 Ronin (2010) #2"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/38753",
+// 			            "name": "5 Ronin (2010) #2 (BROOKS COVER)"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/320",
+// 			            "name": "Actor Presents Spider-Man and the Incredible Hulk (2003) #1"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/38524",
+// 			            "name": "Age of X: Universe (2011) #1"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/24053",
+// 			            "name": "All-New Savage She-Hulk (2009) #1"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/24252",
+// 			            "name": "All-New Savage She-Hulk (2009) #2"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/12650",
+// 			            "name": "Alpha Flight (1983) #110"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/12651",
+// 			            "name": "Alpha Flight (1983) #111"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/12668",
+// 			            "name": "Alpha Flight (1983) #127"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/6504",
+// 			            "name": "Amazing Spider-Man (1963) #119"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/35528",
+// 			            "name": "Amazing Spider-Man (1999) #667"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/16904",
+// 			            "name": "Amazing Spider-Man Annual (1964) #3"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/16886",
+// 			            "name": "Amazing Spider-Man Annual (1964) #12"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/6951",
+// 			            "name": "Avengers (1963) #1"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/17490",
+// 			            "name": "Avengers (1998) #1"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/6952",
+// 			            "name": "Avengers (1996) #1"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/7174",
+// 			            "name": "Avengers (1963) #3"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/17523",
+// 			            "name": "Avengers (1998) #4"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/17758",
+// 			            "name": "Avengers (1996) #4"
+// 			        }],
+// 			        "returned": 20
+// 			    },
+// 			    "series": {
+// 			        "available": 317,
+// 			    },
+// 			    "stories": {
+// 			        "available": 1986,
+// 			    },
+// 			    "events": {
+// 			        "available": 24
+// 			    }
+// 			}, 
+// 			{
+// 			    "id": 1009368,
+// 			    "name": "Iron Man",
+// 			    "description": "Wounded, captured and forced to build a weapon by his enemies, billionaire industrialist Tony Stark instead created an advanced suit of armor to save his life and escape captivity. Now with a new outlook on life, Tony uses his money and intelligence to make the world a safer, better place as Iron Man.",
+// 			    "thumbnail": {
+// 			        "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55",
+// 			        "extension": "jpg"
+// 			    },
+// 			    "resourceURI": "http://gateway.marvel.com/v1/public/characters/1009368",
+// 			    "comics": {
+// 			        "available": 1984,
+// 			        "collectionURI": "http://gateway.marvel.com/v1/public/characters/1009368/comics",
+// 			        "items": [{
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/24348",
+// 			            "name": "Adam: Legend of the Blue Marvel (Trade Paperback)"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/22461",
+// 			            "name": "Adam: Legend of the Blue Marvel (2008) #1"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/22856",
+// 			            "name": "Adam: Legend of the Blue Marvel (2008) #2"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/23733",
+// 			            "name": "Adam: Legend of the Blue Marvel (2008) #5"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/30090",
+// 			            "name": "Age of Heroes (2010) #1"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/38524",
+// 			            "name": "Age of X: Universe (2011) #1"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/21280",
+// 			            "name": "All-New Iron Manual (2008) #1"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/12653",
+// 			            "name": "Alpha Flight (1983) #113"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/12668",
+// 			            "name": "Alpha Flight (1983) #127"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/3942",
+// 			            "name": "Amazing Spider-Man (1999) #530"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/4065",
+// 			            "name": "Amazing Spider-Man (1999) #531"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/4177",
+// 			            "name": "Amazing Spider-Man (1999) #532"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/4277",
+// 			            "name": "Amazing Spider-Man (1999) #533"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/4806",
+// 			            "name": "Amazing Spider-Man (1999) #535"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/35532",
+// 			            "name": "Amazing Spider-Man (1999) #668"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/40114",
+// 			            "name": "Amazing Spider-Man (1999) #683"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/41661",
+// 			            "name": "Amazing Spider-Man Annual (2012) #1"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/22433",
+// 			            "name": "Annihilation Classic (Hardcover)"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/39980",
+// 			            "name": "Annihilators: Earthfall (2011) #3"
+// 			        }, {
+// 			            "resourceURI": "http://gateway.marvel.com/v1/public/comics/39979",
+// 			            "name": "Annihilators: Earthfall (2011) #4"
+// 			        }],
+// 			        "returned": 20
+// 			    },
+// 			    "series": {
+// 			        "available": 449
+// 			    },
+// 			    "stories": {
+// 			        "available": 2908
+// 			    },
+// 			    "events": {
+// 			        "available": 24
+// 			    }
+// 			}
+// 		],
+// 		"headers": {"thumbnail": "Thumbnail", "name": "Name", "title": "ID", "numberOfComics": }
 },{}],2:[function(require,module,exports){
 var pSlice = Array.prototype.slice;
 var objectKeys = require('./lib/keys.js');
