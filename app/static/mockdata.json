@@ -5,7 +5,7 @@
 			{"name": "Storm", "id": 3445,  "numberOfComics": 7},
 			{"name": "Hulk", "id": 3443,  "numberOfComics": 19}
 		],
-		"headers": ["Name", "ID", "Number of Comics"]
+		"headers": {"name": "Name", "id": "ID", "numberOfComics": "Number of Comics"}
 	},
 	"creators": {
 		"content": [
@@ -13,7 +13,7 @@
 			{"name": "Storm", "id": 3442,  "numberOfComics": 7},
 			{"name": "Hulk", "id": 3443,  "numberOfComics": 19}
 		],
-		"headers": ["Full Name", "ID", "Number of Comics"]
+		"headers": {"name": "Name", "id": "ID", "numberOfComics": "Number of Comics"}
 	},
 	"comics": {
 		"content": [
@@ -21,6 +21,6 @@
 			{"name": "Storm", "id": 3444,  "numberOfComics": 7},
 			{"name": "Hulk", "id": 3443,  "numberOfComics": 19}
 		],
-		"headers": ["Title", "ID", "Number of Comics"]
+		"headers": {"name": "Name", "id": "ID", "numberOfComics": "Number of Comics"}
 	}
 }

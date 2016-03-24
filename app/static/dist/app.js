@@ -6,7 +6,7 @@ module.exports={
 			{"name": "Storm", "id": 3445,  "numberOfComics": 7},
 			{"name": "Hulk", "id": 3443,  "numberOfComics": 19}
 		],
-		"headers": ["Name", "ID", "Number of Comics"]
+		"headers": {"name": "Name", "id": "ID", "numberOfComics": "Number of Comics"}
 	},
 	"creators": {
 		"content": [
@@ -14,7 +14,7 @@ module.exports={
 			{"name": "Storm", "id": 3442,  "numberOfComics": 7},
 			{"name": "Hulk", "id": 3443,  "numberOfComics": 19}
 		],
-		"headers": ["Full Name", "ID", "Number of Comics"]
+		"headers": {"name": "Name", "id": "ID", "numberOfComics": "Number of Comics"}
 	},
 	"comics": {
 		"content": [
@@ -22,7 +22,7 @@ module.exports={
 			{"name": "Storm", "id": 3444,  "numberOfComics": 7},
 			{"name": "Hulk", "id": 3443,  "numberOfComics": 19}
 		],
-		"headers": ["Title", "ID", "Number of Comics"]
+		"headers": {"name": "Name", "id": "ID", "numberOfComics": "Number of Comics"}
 	}
 }
 },{}],2:[function(require,module,exports){
@@ -23971,7 +23971,7 @@ function wrap(component) {
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('app'))
 
-},{"./characterpage.js":218,"./comicpage.js":219,"./creatorpage.js":220,"./splashpage.js":222,"./tablepage.js":224,"react":214,"react-dom":51,"react-router":79}],218:[function(require,module,exports){
+},{"./characterpage.js":218,"./comicpage.js":219,"./creatorpage.js":220,"./splashpage.js":223,"./tablepage.js":226,"react":214,"react-dom":51,"react-router":79}],218:[function(require,module,exports){
 // characterpage.js
 
 var React = require('react');
@@ -23994,7 +23994,7 @@ class CharacterPage extends React.Component {
 
 module.exports = CharacterPage;
 
-},{"./navbar.js":221,"react":214}],219:[function(require,module,exports){
+},{"./navbar.js":222,"react":214}],219:[function(require,module,exports){
 // chomicpage.js
 
 var React = require('react');
@@ -24017,7 +24017,7 @@ class ComicPage extends React.Component {
 
 module.exports = ComicPage;
 
-},{"./navbar.js":221,"react":214}],220:[function(require,module,exports){
+},{"./navbar.js":222,"react":214}],220:[function(require,module,exports){
 // creatorpage.js
 
 var React = require('react');
@@ -24040,7 +24040,27 @@ class CreatorPage extends React.Component {
 
 module.exports = CreatorPage;
 
-},{"./navbar.js":221,"react":214}],221:[function(require,module,exports){
+},{"./navbar.js":222,"react":214}],221:[function(require,module,exports){
+// headeritem.js
+
+var React = require('react');
+
+class HeaderItem extends React.Component {
+	handleClick() {
+		this.props.sortContents(this.props.headKey);
+	}
+	render() {
+		return (
+			React.createElement("th", {onClick: this.handleClick.bind(this)}, 
+				this.props.headValue
+			)
+		)
+	}
+}
+
+module.exports = HeaderItem;
+
+},{"react":214}],222:[function(require,module,exports){
 // navbar.js
 
 var React = require('react');
@@ -24079,7 +24099,7 @@ class NavBar extends React.Component {
 
 module.exports = NavBar;
 
-},{"react":214,"react-router":79}],222:[function(require,module,exports){
+},{"react":214,"react-router":79}],223:[function(require,module,exports){
 // splash.js
 
 var React = require('react');
@@ -24100,32 +24120,89 @@ class Splash extends React.Component {
 
 module.exports = Splash;
 
-},{"./navbar.js":221,"react":214}],223:[function(require,module,exports){
+},{"./navbar.js":222,"react":214}],224:[function(require,module,exports){
 // table.js
 
 var React = require('react');
 var TableRow = require('./tablerow.js')
+var TableHeader = require('./tableheader.js')
 
 class Table extends React.Component {
+	constructor() {
+		super();
+		this.state = {
+			sortBy: "id",
+			ascending: true
+		}
+	}
+	sortContent(key) {
+		if (this.state.sortBy === key) {
+			console.log('[table.js] toggling order for '+key);
+			this.setState({ascending: !this.state.ascending});
+		} else {
+			console.log('[table.js] sorting by '+key);
+			this.setState({sortBy: key});
+		}
+	}
+
 	render() {
+		var sortedData = sortData(this.props.content, this.state.sortBy, this.state.ascending);
 		return (
 			React.createElement("table", {className: "table"}, 
 				React.createElement("thead", null, 
-					React.createElement("tr", null, 
-						this.props.headers.map(str => React.createElement("th", null, str))
-					)
+					React.createElement(TableHeader, {sortContent: this.sortContent.bind(this), content: this.props.headers})
 				), 
 				React.createElement("tbody", null, 
-					this.props.content.map(item => React.createElement(TableRow, {onClick: this.props.navigate, content: item}))
+					sortedData.map(item => React.createElement(TableRow, {onClick: this.props.navigate, content: item}))
 				)
 			)
 		)
 	}
 }
 
+function sortData (data, sortBy, ascending) {
+	return data.sort(function(a, b) {
+		var result;
+		if (a[sortBy] >= b[sortBy]){
+			result = 1;
+		} else {
+			result = 1;
+		}
+		return ascending ? result : result * -1;
+	})
+}
+
 module.exports = Table;
 
-},{"./tablerow.js":225,"react":214}],224:[function(require,module,exports){
+},{"./tableheader.js":225,"./tablerow.js":227,"react":214}],225:[function(require,module,exports){
+// tableheader.js
+
+var React = require('react');
+var HeaderItem = require('./headeritem.js');
+
+class TableHeader extends React.Component {
+
+	render() {
+		var data = objToArr(this.props.content);
+		return (
+			React.createElement("tr", null, 
+				data.map(info => React.createElement(HeaderItem, {sortContents: this.props.sortContent, headKey: info.key, headValue: info.value}))
+			)
+		)
+	}
+}
+
+function objToArr(obj) {
+	var arr = [];
+	for (val in obj) {
+		arr.push({key: val, value: obj[val]})
+	}
+	console.log(arr);
+	return arr;
+}
+module.exports = TableHeader;
+
+},{"./headeritem.js":221,"react":214}],226:[function(require,module,exports){
 // tablepage.js
 
 var React = require('react');
@@ -24168,7 +24245,7 @@ class TablePage extends React.Component {
 
 module.exports = TablePage;
 
-},{"../mockdata.json":1,"./navbar.js":221,"./table.js":223,"react":214}],225:[function(require,module,exports){
+},{"../mockdata.json":1,"./navbar.js":222,"./table.js":224,"react":214}],227:[function(require,module,exports){
 // tablerow.js
 
 var React = require('react');
