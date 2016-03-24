@@ -27,9 +27,10 @@ class App extends React.Component {
 			<div>
 				<Router history={browserHistory} >
 					<Route path="/" component={SplashPage}/>
-					<Route path="/characters" component={wrap(<TablePage data={characters} title="Characters"/>)} />
+					<Route path="/characters" data={characters} title="Characters" component={TablePage} />
 					<Route path="/comics" component={wrap(<TablePage data={characters} title="Comics"/>)} />
 					<Route path="/creators" component={wrap(<TablePage data={characters} title="Creators"/>)} />
+					<Route path="/characters/:charId" data={characters} title="Characters" component={TablePage} />
 				</Router>
 			</div>
 		)

@@ -23929,9 +23929,10 @@ class App extends React.Component {
 			React.createElement("div", null, 
 				React.createElement(Router, {history: browserHistory}, 
 					React.createElement(Route, {path: "/", component: SplashPage}), 
-					React.createElement(Route, {path: "/characters", component: wrap(React.createElement(TablePage, {data: characters, title: "Characters"}))}), 
+					React.createElement(Route, {path: "/characters", data: characters, title: "Characters", component: TablePage}), 
 					React.createElement(Route, {path: "/comics", component: wrap(React.createElement(TablePage, {data: characters, title: "Comics"}))}), 
-					React.createElement(Route, {path: "/creators", component: wrap(React.createElement(TablePage, {data: characters, title: "Creators"}))})
+					React.createElement(Route, {path: "/creators", component: wrap(React.createElement(TablePage, {data: characters, title: "Creators"}))}), 
+					React.createElement(Route, {path: "/characters/:charId", data: characters, title: "Characters", component: TablePage})
 				)
 			)
 		)
@@ -24042,6 +24043,7 @@ var NavBar = require('./navbar.js');
 
 class TablePage extends React.Component {
 	render() {
+		console.log(this.props);
 		return (
 			React.createElement("div", {className: "table-page"}, 
 				React.createElement(NavBar, null), 

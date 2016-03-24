@@ -5,25 +5,27 @@ app = Flask(__name__)
 
 manager = Manager(app)
 
-# Serves the initial website
-@app.route('/')
-def index():
-    return render_template('index.html')
-
 # Serves JSON for characters
-@app.route('/characters')
+@app.route('/api/characters')
 def characters():
     return 0
 
 # Serves JSON for comics
-@app.route('/comics')
+@app.route('/api/comics')
 def comics():
     return 0
 
 # Serves JSON for creators
-@app.route('/creators')
+@app.route('/api/creators')
 def creators():
     return 0
+
+# Serves the initial website (the catch-all is to facilitate react-router routes)
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def index(path):
+    return render_template('index.html')
+
 
 if __name__ == '__main__':
     manager.run()
