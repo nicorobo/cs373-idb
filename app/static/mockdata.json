@@ -1,0 +1,26 @@
+{
+	"characters": {
+		"content": [
+			{"name": "Iron Man", "numberOfComics": 14},
+			{"name": "Storm", "numberOfComics": 7},
+			{"name": "Hulk", "numberOfComics": 19}
+		],
+		"headers": ["Name", "Number of Comics"]
+	},
+	"creators": {
+		"content": [
+			{"name": "Stan Lee", "numberOfComics": 14},
+			{"name": "Storm", "numberOfComics": 7},
+			{"name": "Hulk", "numberOfComics": 19}
+		],
+		"headers": ["Full Name", "Number of Comics"]
+	},
+	"comics": {
+		"content": [
+			{"name": "Iron Man", "numberOfComics": 14},
+			{"name": "Storm", "numberOfComics": 7},
+			{"name": "Hulk", "numberOfComics": 19}
+		],
+		"headers": ["Title", "Number of Comics"]
+	}
+}

@@ -3,27 +3,21 @@
 var React = require('react');
 var Table = require('./table.js');
 var NavBar = require('./navbar.js');
-
-
-
-const characters = {
-	content: [
-		{name: "Iron Man", numberOfComics: 14},
-		{name: "Storm", numberOfComics: 7},
-		{name: "Hulk", numberOfComics: 19}
-	], 
-	headers: ["Name", "Number of Comics"]
-}
+var library = require('../mockdata.json');
+var data;
 
 class TablePage extends React.Component {
 	render() {
+		if (this.props.route.path === '/characters') data = library.characters;
+		else if (this.props.route.path === '/comics') data = library.comics;
+		else data = library.creators;
 		console.log(this.props);
 		return (
 			<div className="table-page">
 				<NavBar />
 				<div className="container">
-					<h1>{this.props.title}</h1>
-					<Table content={characters.content} headers={characters.headers}/>
+					<h1>{this.props.route.title}</h1>
+					<Table content={data.content} headers={data.headers}/>
 				</div>
 			</div>
 		)
