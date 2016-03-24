@@ -23908,20 +23908,13 @@ var router = require('react-router');
 
 var SplashPage = require('./splashpage.js');
 var TablePage = require('./tablepage.js');
+var CharacterPage = require('./characterpage.js');
+var ComicPage = require('./comicpage.js');
+var CreatorPage = require('./creatorpage.js');
 
 var Router = router.Router;
 var Route = router.Route;
 var browserHistory = router.browserHistory;
-
-
-const characters = {
-	content: [
-		{name: "Iron Man", numberOfComics: 14},
-		{name: "Storm", numberOfComics: 7},
-		{name: "Hulk", numberOfComics: 19}
-	], 
-	headers: ["Name", "Number of Comics"]
-}
 
 class App extends React.Component {
 	render() {
@@ -23929,10 +23922,12 @@ class App extends React.Component {
 			React.createElement("div", null, 
 				React.createElement(Router, {history: browserHistory}, 
 					React.createElement(Route, {path: "/", component: SplashPage}), 
-					React.createElement(Route, {path: "/characters", data: characters, title: "Characters", component: TablePage}), 
-					React.createElement(Route, {path: "/comics", component: wrap(React.createElement(TablePage, {data: characters, title: "Comics"}))}), 
-					React.createElement(Route, {path: "/creators", component: wrap(React.createElement(TablePage, {data: characters, title: "Creators"}))}), 
-					React.createElement(Route, {path: "/characters/:charId", data: characters, title: "Characters", component: TablePage})
+					React.createElement(Route, {path: "/characters", component: TablePage}), 
+					React.createElement(Route, {path: "/comics", component: wrap(React.createElement(TablePage, {title: "Comics"}))}), 
+					React.createElement(Route, {path: "/creators", component: wrap(React.createElement(TablePage, {title: "Creators"}))}), 
+					React.createElement(Route, {path: "/characters/:charId", component: CharacterPage}), 
+					React.createElement(Route, {path: "/comics/:comicId", component: ComicPage}), 
+					React.createElement(Route, {path: "/creators/:creatorId", component: CreatorPage})
 				)
 			)
 		)
@@ -23949,7 +23944,76 @@ function wrap(component) {
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('app'))
 
-},{"./splashpage.js":218,"./tablepage.js":220,"react":213,"react-dom":50,"react-router":78}],217:[function(require,module,exports){
+},{"./characterpage.js":217,"./comicpage.js":218,"./creatorpage.js":219,"./splashpage.js":221,"./tablepage.js":223,"react":213,"react-dom":50,"react-router":78}],217:[function(require,module,exports){
+// characterpage.js
+
+var React = require('react');
+var NavBar = require('./navbar.js');
+
+class CharacterPage extends React.Component {
+	render() {
+		console.log(this.props);
+		return (
+			React.createElement("div", {className: "character-page"}, 
+				React.createElement(NavBar, null), 
+				React.createElement("div", {className: "container"}, 
+					React.createElement("h1", null, "Character"), 
+					React.createElement("h2", null, this.props.params.charId)
+				)
+			)
+		)
+	}
+}
+
+module.exports = CharacterPage;
+
+},{"./navbar.js":220,"react":213}],218:[function(require,module,exports){
+// chomicpage.js
+
+var React = require('react');
+var NavBar = require('./navbar.js');
+
+class ComicPage extends React.Component {
+	render() {
+		console.log(this.props);
+		return (
+			React.createElement("div", {className: "comic-page"}, 
+				React.createElement(NavBar, null), 
+				React.createElement("div", {className: "container"}, 
+					React.createElement("h1", null, "Comic"), 
+					React.createElement("h2", null, this.props.params.comicId)
+				)
+			)
+		)
+	}
+}
+
+module.exports = ComicPage;
+
+},{"./navbar.js":220,"react":213}],219:[function(require,module,exports){
+// creatorpage.js
+
+var React = require('react');
+var NavBar = require('./navbar.js');
+
+class CreatorPage extends React.Component {
+	render() {
+		console.log(this.props);
+		return (
+			React.createElement("div", {className: "creator-page"}, 
+				React.createElement(NavBar, null), 
+				React.createElement("div", {className: "container"}, 
+					React.createElement("h1", null, "Creator"), 
+					React.createElement("h2", null, this.props.params.creatorId)
+				)
+			)
+		)
+	}
+}
+
+module.exports = CreatorPage;
+
+},{"./navbar.js":220,"react":213}],220:[function(require,module,exports){
 // navbar.js
 
 var React = require('react');
@@ -23988,7 +24052,7 @@ class NavBar extends React.Component {
 
 module.exports = NavBar;
 
-},{"react":213,"react-router":78}],218:[function(require,module,exports){
+},{"react":213,"react-router":78}],221:[function(require,module,exports){
 // splash.js
 
 var React = require('react');
@@ -24009,7 +24073,7 @@ class Splash extends React.Component {
 
 module.exports = Splash;
 
-},{"./navbar.js":217,"react":213}],219:[function(require,module,exports){
+},{"./navbar.js":220,"react":213}],222:[function(require,module,exports){
 // table.js
 
 var React = require('react');
@@ -24034,12 +24098,23 @@ class Table extends React.Component {
 
 module.exports = Table;
 
-},{"./tablerow.js":221,"react":213}],220:[function(require,module,exports){
+},{"./tablerow.js":224,"react":213}],223:[function(require,module,exports){
 // tablepage.js
 
 var React = require('react');
 var Table = require('./table.js');
 var NavBar = require('./navbar.js');
+
+
+
+const characters = {
+	content: [
+		{name: "Iron Man", numberOfComics: 14},
+		{name: "Storm", numberOfComics: 7},
+		{name: "Hulk", numberOfComics: 19}
+	], 
+	headers: ["Name", "Number of Comics"]
+}
 
 class TablePage extends React.Component {
 	render() {
@@ -24049,7 +24124,7 @@ class TablePage extends React.Component {
 				React.createElement(NavBar, null), 
 				React.createElement("div", {className: "container"}, 
 					React.createElement("h1", null, this.props.title), 
-					React.createElement(Table, {content: this.props.data.content, headers: this.props.data.headers})
+					React.createElement(Table, {content: characters.content, headers: characters.headers})
 				)
 			)
 		)
@@ -24058,7 +24133,7 @@ class TablePage extends React.Component {
 
 module.exports = TablePage;
 
-},{"./navbar.js":217,"./table.js":219,"react":213}],221:[function(require,module,exports){
+},{"./navbar.js":220,"./table.js":222,"react":213}],224:[function(require,module,exports){
 // tablerow.js
 
 var React = require('react');
