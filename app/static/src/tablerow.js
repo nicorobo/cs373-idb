@@ -4,7 +4,6 @@ var React = require('react');
 
 class TableRow extends React.Component {
 	render() {
-		console.log("from row", this.props);
 		var data = objValues(this.props.content);
 		return (
 			<tr>

@@ -4,6 +4,11 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Navbar = require('./navbar.js');
 var TablePage = require('./tablepage.js');
+var router = require('react-router');
+
+var Router = router.Router;
+var Route = router.Route;
+var hashHistory = router.hashHistory;
 
 
 const characters = {
@@ -15,18 +20,25 @@ const characters = {
 	headers: ["Name", "Number of Comics"]
 }
 
-
 class App extends React.Component {
 	render() {
 		return (
-			<div className="wrapper">
+			<div>
 				<Navbar />
-				<div className="container">
-					<TablePage data={characters} title="Characters"/>
-				</div>
+				<Router history={hashHistory}>
+					<Route path="/" component={wrap(<TablePage data={characters} title="Characters"/>)} />
+				</Router>
 			</div>
 		)
 	}
+}
+
+function wrap(component) {
+	return React.createClass({
+		render: function() {
+			return component
+		}
+	})
 }
 
 ReactDOM.render(<App />, document.getElementById('app'))

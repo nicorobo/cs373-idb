@@ -5,7 +5,6 @@ var TableRow = require('./tablerow.js')
 
 class Table extends React.Component {
 	render() {
-		console.log(this.props);
 		return (
 			<table className="table"> 
 				<thead>
