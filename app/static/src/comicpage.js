@@ -2,6 +2,7 @@
 
 var React = require('react');
 var NavBar = require('./navbar.js');
+var data = require('../mockdata.json');
 
 class ComicPage extends React.Component {
 	render() {

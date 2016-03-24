@@ -8,6 +8,101 @@ module.exports=
 			{"thumbnail": "http://vignette1.wikia.nocookie.net/marvelvscapcom/images/8/81/Iron-man.png/revision/latest/scale-to-width-down/230?cb=20110720191600", "name": "Iron Man", "id": 1009368, "numberOfComics": 1984, "numberOfStories":2908, "numberOfSeries": 449}
 		],
 		"headers": {"thumbnail": "Thumbnail", "name": "Name", "title": "ID", "numberOfComics": "# of Comics", "numberOfStories": "# of Stories", "numberOfSeries": "# of Series" }
+	},
+	"details": {
+		"1009629": {
+			"thumbnail": "http://vignette4.wikia.nocookie.net/marvelvscapcom/images/0/07/Storm.png/revision/latest?cb=20110720194056", 
+			"name": "Storm", 
+			"id": 1009629, 
+			"description":"Ororo Monroe is the descendant of an ancient line of African priestesses, all of whom have white hair, blue eyes, and the potential to wield magic." ,
+			"numberOfComics": 602, 
+			"numberOfStories":698, 
+			"numberOfSeries": 155,
+			"comics": [
+				{"name": "A+X (2012) #3", 												"id":43498 },
+				{"name": "Age of Apocalypse: The Chosen (1995) #1", 					"id":17701 },
+				{"name": "Alpha Flight (1983) #17", 									"id":12676 },
+				{"name": "Alpha Flight (1983) #33",								 		"id":12694 },
+				{"name": "Alpha Flight (1983) #61",								 		"id":12725 },
+				{"name": "Alpha Flight (1983) #127",								 	"id":12668 },
+				{"name": "Astonishing X-Men (2004) #25",								"id":21511 },
+				{"name": "Astonishing X-Men (2004) #27",								"id":21941 },
+				{"name": "Astonishing X-Men (2004) #28",								"id":23087 },
+				{"name": "Astonishing X-Men (2004) #29",								"id":23937 },
+				{"name": "Astonishing X-Men (2004) #30",								"id":24501 },
+				{"name": "Astonishing X-Men (2004) #34",								"id":24505 },
+				{"name": "Astonishing X-Men (2004) #38",								"id":38318 },
+				{"name": "Astonishing X-Men (2004) #44",								"id":39318 },
+				{"name": "Astonishing X-Men (2004) #51",								"id":40803 },
+				{"name": "Astonishing X-Men (2004) #51",								"id":42732 },
+				{"name": "Avengers (1998) #10",								 			"id":17491 },
+				{"name": "Avengers (1963) #267",								 		"id":7138 },
+				{"name": "Avengers Assemble (Hardcover)",								"id":1311 },
+				{"name": "Avengers Vs. X-Men (2012) #2",								"id":41191 }
+			]
+		},
+		"1009351": {
+			"thumbnail": "http://vignette2.wikia.nocookie.net/marvelvscapcom/images/6/6f/Hulk.jpg/revision/latest/scale-to-width-down/230?cb=20110819170038", 
+			"name": "Hulk", 
+			"id": 1009351, 
+			"description":"Caught in a gamma bomb explosion while trying to save the life of a teenager, Dr. Bruce Banner was transformed into the incredibly powerful creature called the Hulk. An all too often misunderstood hero, the angrier the Hulk gets, the stronger the Hulk gets." ,
+			"numberOfComics": 1314, 
+			"numberOfStories":1986, 
+			"numberOfSeries": 317,
+			"comics": [
+				{"name": "A+X (2012) #3", 												"id":43498 },
+				{"name": "Age of Apocalypse: The Chosen (1995) #1", 					"id":17701 },
+				{"name": "Alpha Flight (1983) #17", 									"id":12676 },
+				{"name": "Alpha Flight (1983) #33",								 		"id":12694 },
+				{"name": "Alpha Flight (1983) #61",								 		"id":12725 },
+				{"name": "Alpha Flight (1983) #127",								 	"id":12668 },
+				{"name": "Astonishing X-Men (2004) #25",								"id":21511 },
+				{"name": "Astonishing X-Men (2004) #27",								"id":21941 },
+				{"name": "Astonishing X-Men (2004) #28",								"id":23087 },
+				{"name": "Astonishing X-Men (2004) #29",								"id":23937 },
+				{"name": "Astonishing X-Men (2004) #30",								"id":24501 },
+				{"name": "Astonishing X-Men (2004) #34",								"id":24505 },
+				{"name": "Astonishing X-Men (2004) #38",								"id":38318 },
+				{"name": "Astonishing X-Men (2004) #44",								"id":39318 },
+				{"name": "Astonishing X-Men (2004) #51",								"id":40803 },
+				{"name": "Astonishing X-Men (2004) #51",								"id":42732 },
+				{"name": "Avengers (1998) #10",								 			"id":17491 },
+				{"name": "Avengers (1963) #267",								 		"id":7138 },
+				{"name": "Avengers Assemble (Hardcover)",								"id":1311 },
+				{"name": "Avengers Vs. X-Men (2012) #2",								"id":41191 }
+			]
+		},
+		"1009368": {
+			"thumbnail": "http://vignette1.wikia.nocookie.net/marvelvscapcom/images/8/81/Iron-man.png/revision/latest/scale-to-width-down/230?cb=20110720191600", 
+			"name": "Iron Man", 
+			"id": 1009368, 			
+			"description":"Wounded, captured and forced to build a weapon by his enemies, billionaire industrialist Tony Stark instead created an advanced suit of armor to save his life and escape captivity. Now with a new outlook on life, Tony uses his money and intelligence to make the world a safer, better place as Iron Man." ,
+			"numberOfComics": 1984, 
+			"numberOfStories":2908, 
+			"numberOfSeries": 449,
+			"comics": [
+				{"name": "A+X (2012) #3", 												"id":43498 },
+				{"name": "Age of Apocalypse: The Chosen (1995) #1", 					"id":17701 },
+				{"name": "Alpha Flight (1983) #17", 									"id":12676 },
+				{"name": "Alpha Flight (1983) #33",								 		"id":12694 },
+				{"name": "Alpha Flight (1983) #61",								 		"id":12725 },
+				{"name": "Alpha Flight (1983) #127",								 	"id":12668 },
+				{"name": "Astonishing X-Men (2004) #25",								"id":21511 },
+				{"name": "Astonishing X-Men (2004) #27",								"id":21941 },
+				{"name": "Astonishing X-Men (2004) #28",								"id":23087 },
+				{"name": "Astonishing X-Men (2004) #29",								"id":23937 },
+				{"name": "Astonishing X-Men (2004) #30",								"id":24501 },
+				{"name": "Astonishing X-Men (2004) #34",								"id":24505 },
+				{"name": "Astonishing X-Men (2004) #38",								"id":38318 },
+				{"name": "Astonishing X-Men (2004) #44",								"id":39318 },
+				{"name": "Astonishing X-Men (2004) #51",								"id":40803 },
+				{"name": "Astonishing X-Men (2004) #51",								"id":42732 },
+				{"name": "Avengers (1998) #10",								 			"id":17491 },
+				{"name": "Avengers (1963) #267",								 		"id":7138 },
+				{"name": "Avengers Assemble (Hardcover)",								"id":1311 },
+				{"name": "Avengers Vs. X-Men (2012) #2",								"id":41191 }
+			]
+		}
 	}
 }
 
@@ -24252,16 +24347,26 @@ ReactDOM.render(React.createElement(App, null), document.getElementById('app'))
 
 var React = require('react');
 var NavBar = require('./navbar.js');
+var data = require('../mockdata.json');
 
 class CharacterPage extends React.Component {
 	render() {
+		var charData = data.details[this.props.params.charId];
+		console.log(charData);
 		console.log(this.props);
 		return (
 			React.createElement("div", {className: "character-page"}, 
 				React.createElement(NavBar, null), 
 				React.createElement("div", {className: "container"}, 
-					React.createElement("h1", null, "Character"), 
-					React.createElement("h2", null, this.props.params.charId)
+					React.createElement("div", {className: "row"}, 
+						React.createElement("div", {className: "col-sm-4"}, 
+							React.createElement("img", {src: charData.thumbnail})
+						), 
+						React.createElement("div", {className: "col-sm-6"}, 
+							React.createElement("h2", null, charData.name), 
+							React.createElement("p", null, charData.description)
+						)
+					)
 				)
 			)
 		)
@@ -24270,11 +24375,12 @@ class CharacterPage extends React.Component {
 
 module.exports = CharacterPage;
 
-},{"./navbar.js":222,"react":214}],219:[function(require,module,exports){
+},{"../mockdata.json":1,"./navbar.js":222,"react":214}],219:[function(require,module,exports){
 // chomicpage.js
 
 var React = require('react');
 var NavBar = require('./navbar.js');
+var data = require('../mockdata.json');
 
 class ComicPage extends React.Component {
 	render() {
@@ -24293,7 +24399,7 @@ class ComicPage extends React.Component {
 
 module.exports = ComicPage;
 
-},{"./navbar.js":222,"react":214}],220:[function(require,module,exports){
+},{"../mockdata.json":1,"./navbar.js":222,"react":214}],220:[function(require,module,exports){
 // creatorpage.js
 
 var React = require('react');
