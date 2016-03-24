@@ -1,0 +1,249 @@
+FORMAT: 1A
+HOST: http://api.swegue.me/
+
+# Swegue API
+
+Swegue is a simple API allowing consumers to view information on Marvel Comics.
+Our source can be found here: https://github.com/nickroberts404/cs373-idb
+
+## Comics Collection [/comics]
+
+### List All Comics [GET]
+
++ Response 200 (application/json)
+
+    + Schema
+        
+            {
+                "type": "object",
+                "required": true,
+                "additionalProperties": false,
+                "properties": {
+                    "comics": {
+                        "type": "array",
+                        "required": true,                            "description": "List of all Comics"
+                    }
+                }
+            }
+    
+## Characters Collection [/characters]
+
+### List All Characters [GET]
+
++ Response 200 (application/json)
+
+    + Schema
+        
+            {
+                "type": "object",
+                "required": true,
+                "additionalProperties": false,
+                "properties": {
+                    "characters": {
+                        "type": "array",
+                        "required": true,                            "description": "List of all Comics"
+                    }
+                }
+            }
+
+## Creators Collection [/creators]
+
+### List All Creators [GET]
+
++ Response 200 (application/json)
+
+    + Schema
+        
+            {
+                "type": "object",
+                "required": true,
+                "additionalProperties": false,
+                "properties": {
+                    "creators": {
+                        "type": "array",
+                        "required": true,                            "description": "List of all Comics"
+                    }
+                }
+            }
+
+## Query Comics [/comics/{comic_id}]
+
++ Parameters
+    + comic_id (number) - Integer identifier of the comic
+
+
+### Comic Details [GET]
+
++ Response 200 (application/json)
+
+    + Schema
+        
+            {
+                "type": "object",
+                "required": true,
+                "additionalProperties": false,
+                "properties": {
+                    "thumbnail": {
+                        "type": "string",
+                        "required": true,
+                        "description": "URL of a thumbnail image for this comic"
+                    },
+                    "id": {
+                        "type": "number",
+                        "required": true,
+                        "description": "Comic id"
+                    },
+                    "title": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Comic Title"
+                    },
+                    "issue_number": {
+                        "type": "number",
+                        "required": true,
+                        "description": "Issue Number"
+                    },
+                    "description": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Description of the Comic"
+                    },
+                    "page_count": {
+                        "type": "number",
+                        "required": true,
+                        "description": "Comic Page Count"
+                    },
+                    "number_of_stories": {
+                        "type": "number",
+                        "required": true,
+                        "description": "Number of Stories in the comic"
+                    },
+                    "characters": {
+                        "type": "array",
+                        "required": true,
+                        "description": "List of characters in the comic"
+                    },
+                    "creators": {
+                        "type": "array",
+                        "required": true,
+                        "description": "List of creators of the comic"
+                    }
+                }
+            }
+        
+## Query Characters [/characters/{character_id}]
+
++ Parameters
+    + character_id (number) - Integer identifier of the character
+
+### Character Details [GET]
+
++ Response 200 (application/json)
+
+    + Schema
+    
+            {
+                "type": "object",
+                "required": true,
+                "additionalProperties": false,
+                "properties": {
+                    "thumbnail": {
+                        "type": "string",
+                        "required": true,
+                        "description": "URL of a thumbnail image for this character"
+                    },
+                    "id": {
+                        "type": "number",
+                        "required": true,
+                        "description": "Character id"
+                    },
+                    "name": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Character name"
+                    },
+                    "description": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Description of the Character"
+                    },
+                    "number_of_comics": {
+                        "type": "number",
+                        "required": true,
+                        "description": "Number of comics this character has appeared in"
+                    },
+
+                    "number_of_stories": {
+                        "type": "number",
+                        "required": true,
+                        "description": "Number of stories this character has appeared in"
+                    },
+    
+                    "number_of_series": {
+                        "type": "number",
+                        "required": true,
+                        "description": "Number of series this character has appeared in"
+                    },
+                    "comics": {
+                        "type": "array",
+                        "required": true,
+                        "description": "List of comics this character has appeared in"
+                    }
+                }
+            }
+    
+            
+        
+## Query Creators [/creators/{creator_id}]
+
++ Parameters
+    + creator_id (number) - Integer identifier of the creator
+
+### Creator Details [GET]
+
++ Response 200 (application/json)
+
+    + Schema
+    
+            {
+                "type": "object",
+                "required": true,
+                "additionalProperties": false,
+                "properties": {
+                    "thumbnail": {
+                        "type": "string",
+                        "required": true,
+                        "description": "URL of a thumbnail image for this creator"
+                    },
+                    "id": {
+                        "type": "number",
+                        "required": true,
+                        "description": "Character id"
+                    },
+                    "first_name": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Creator's first name"
+                    },
+                    "last_name": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Creator's last name"
+                    },
+                    "number_of_comics": {
+                        "type": "number",
+                        "required": true,
+                        "description": "Number of comics this character has appeared in"
+                    },
+                    "number_of_stories": {
+                        "type": "number",
+                        "required": true,
+                        "description": "Number of stories this character has appeared in"
+                    },
+                    "comics": {
+                        "type": "array",
+                        "required": true,
+                        "description": "List of comics this creator has appeared created"
+                    }
+                }
+            }
