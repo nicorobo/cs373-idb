@@ -3,9 +3,9 @@ module.exports=
 {
 	"characters": {
 		"content": [
-			{"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/40/526963dad214d", "name": "Storm", "id": 1009629, "numberOfComics": 602, "numberOfStories":698, "numberOfSeries": 155},
-			{"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0", "name": "Hulk", "id": 1009351, "numberOfComics": 1314, "numberOfStories":1986, "numberOfSeries": 317},
-			{"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55", "name": "Iron Man", "id": 1009368, "numberOfComics": 1984, "numberOfStories":2908, "numberOfSeries": 449}
+			{"thumbnail": "http://vignette4.wikia.nocookie.net/marvelvscapcom/images/0/07/Storm.png/revision/latest?cb=20110720194056", "name": "Storm", "id": 1009629, "numberOfComics": 602, "numberOfStories":698, "numberOfSeries": 155},
+			{"thumbnail": "http://vignette2.wikia.nocookie.net/marvelvscapcom/images/6/6f/Hulk.jpg/revision/latest/scale-to-width-down/230?cb=20110819170038", "name": "Hulk", "id": 1009351, "numberOfComics": 1314, "numberOfStories":1986, "numberOfSeries": 317},
+			{"thumbnail": "http://vignette1.wikia.nocookie.net/marvelvscapcom/images/8/81/Iron-man.png/revision/latest/scale-to-width-down/230?cb=20110720191600", "name": "Iron Man", "id": 1009368, "numberOfComics": 1984, "numberOfStories":2908, "numberOfSeries": 449}
 		],
 		"headers": {"thumbnail": "Thumbnail", "name": "Name", "title": "ID", "numberOfComics": "# of Comics", "numberOfStories": "# of Stories", "numberOfSeries": "# of Series" }
 	}
@@ -24535,7 +24535,13 @@ class TableRow extends React.Component {
 		var data = objValues(this.props.content);
 		return (
 			React.createElement("tr", {onClick: this.handleClick.bind(this)}, 
-				data.map(info => React.createElement("td", null, info))
+				data.map(function(info) {
+					console.log(info)
+					if(isNaN(info) && info.indexOf("http") >= 0){
+						return React.createElement("td", null, React.createElement("img", {src: info}))
+					}
+					return React.createElement("td", null, info)
+				})
 			)
 		)
 	}

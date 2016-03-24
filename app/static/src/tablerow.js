@@ -10,7 +10,13 @@ class TableRow extends React.Component {
 		var data = objValues(this.props.content);
 		return (
 			<tr onClick={this.handleClick.bind(this)}>
-				{data.map(info => <td>{info}</td>)}
+				{data.map(function(info) {
+					console.log(info)
+					if(isNaN(info) && info.indexOf("http") >= 0){
+						return <td><img src={info} /></td>
+					}
+					return <td>{info}</td>
+				})}
 			</tr>
 		)
 	}
