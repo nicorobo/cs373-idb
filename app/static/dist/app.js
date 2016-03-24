@@ -24078,7 +24078,7 @@ class NavBar extends React.Component {
 							React.createElement("span", {className: "icon-bar"}),
 							React.createElement("span", {className: "icon-bar"})
 						),
-						React.createElement("a", {className: "navbar-brand title", href: "#"}, "Justice SWEague")
+						React.createElement("a", {className: "navbar-brand title", href: "/"}, "Justice SWEague")
 					),
 					React.createElement("div", {className: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1"},
 						React.createElement("ul", {className: "nav navbar-nav"},
@@ -24112,7 +24112,7 @@ class Splash extends React.Component {
 				React.createElement(NavBar, null),
 				React.createElement("div", {className: "container"},
 					React.createElement("img", {className: "splash-image", src: "http://orig01.deviantart.net/b22a/f/2008/291/6/0/marvel_comics_logo_by_stacalkas.jpg"}),
-					React.createElement("p", {className: "footer"}, "@2016 Marvel")
+					React.createElement("p", {className: "footer"}, "Data provided by Marvel. @2016 Marvel")
 				)
 			)
 		)
