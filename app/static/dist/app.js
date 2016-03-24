@@ -1261,7 +1261,7 @@ module.exports = performanceNow;
  *
  * @providesModule shallowEqual
  * @typechecks
- * 
+ *
  */
 
 'use strict';
@@ -4372,7 +4372,7 @@ function createRouteFromReactElement(element) {
  * nested.
  *
  *   import { Route, createRoutesFromReactChildren } from 'react-router'
- *   
+ *
  *   const routes = createRoutesFromReactChildren(
  *     <Route component={App}>
  *       <Route path="home" component={Dashboard}/>
@@ -23946,14 +23946,14 @@ var browserHistory = router.browserHistory;
 class App extends React.Component {
 	render() {
 		return (
-			React.createElement("div", null, 
-				React.createElement(Router, {history: browserHistory}, 
-					React.createElement(Route, {path: "/", component: SplashPage}), 
-					React.createElement(Route, {path: "/characters", title: "Characters", component: TablePage}), 
-					React.createElement(Route, {path: "/comics", title: "Comics", component: TablePage}), 
-					React.createElement(Route, {path: "/creators", title: "Creators", component: TablePage}), 
-					React.createElement(Route, {path: "/characters/:charId", component: CharacterPage}), 
-					React.createElement(Route, {path: "/comics/:comicId", component: ComicPage}), 
+			React.createElement("div", null,
+				React.createElement(Router, {history: browserHistory},
+					React.createElement(Route, {path: "/", component: SplashPage}),
+					React.createElement(Route, {path: "/characters", title: "Characters", component: TablePage}),
+					React.createElement(Route, {path: "/comics", title: "Comics", component: TablePage}),
+					React.createElement(Route, {path: "/creators", title: "Creators", component: TablePage}),
+					React.createElement(Route, {path: "/characters/:charId", component: CharacterPage}),
+					React.createElement(Route, {path: "/comics/:comicId", component: ComicPage}),
 					React.createElement(Route, {path: "/creators/:creatorId", component: CreatorPage})
 				)
 			)
@@ -23981,10 +23981,10 @@ class CharacterPage extends React.Component {
 	render() {
 		console.log(this.props);
 		return (
-			React.createElement("div", {className: "character-page"}, 
-				React.createElement(NavBar, null), 
-				React.createElement("div", {className: "container"}, 
-					React.createElement("h1", null, "Character"), 
+			React.createElement("div", {className: "character-page"},
+				React.createElement(NavBar, null),
+				React.createElement("div", {className: "container"},
+					React.createElement("h1", null, "Character"),
 					React.createElement("h2", null, this.props.params.charId)
 				)
 			)
@@ -24004,10 +24004,10 @@ class ComicPage extends React.Component {
 	render() {
 		console.log(this.props);
 		return (
-			React.createElement("div", {className: "comic-page"}, 
-				React.createElement(NavBar, null), 
-				React.createElement("div", {className: "container"}, 
-					React.createElement("h1", null, "Comic"), 
+			React.createElement("div", {className: "comic-page"},
+				React.createElement(NavBar, null),
+				React.createElement("div", {className: "container"},
+					React.createElement("h1", null, "Comic"),
 					React.createElement("h2", null, this.props.params.comicId)
 				)
 			)
@@ -24027,10 +24027,10 @@ class CreatorPage extends React.Component {
 	render() {
 		console.log(this.props);
 		return (
-			React.createElement("div", {className: "creator-page"}, 
-				React.createElement(NavBar, null), 
-				React.createElement("div", {className: "container"}, 
-					React.createElement("h1", null, "Creator"), 
+			React.createElement("div", {className: "creator-page"},
+				React.createElement(NavBar, null),
+				React.createElement("div", {className: "container"},
+					React.createElement("h1", null, "Creator"),
 					React.createElement("h2", null, this.props.params.creatorId)
 				)
 			)
@@ -24051,7 +24051,7 @@ class HeaderItem extends React.Component {
 	}
 	render() {
 		return (
-			React.createElement("th", {onClick: this.handleClick.bind(this)}, 
+			React.createElement("th", {onClick: this.handleClick.bind(this)},
 				this.props.headValue
 			)
 		)
@@ -24069,25 +24069,25 @@ var Link = require('react-router').Link;
 class NavBar extends React.Component {
 	render() {
 		return (
-			React.createElement("nav", {className: "navbar navbar-default"}, 
-				React.createElement("div", {className: "container-fluid"}, 
-					React.createElement("div", {className: "navbar-header"}, 
-						React.createElement("button", {type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#bs-example-navbar-collapse-1", "aria-expanded": "false"}, 
-							React.createElement("span", {className: "sr-only"}, "Toggle navigation"), 
-							React.createElement("span", {className: "icon-bar"}), 
-							React.createElement("span", {className: "icon-bar"}), 
+			React.createElement("nav", {className: "navbar navbar-default"},
+				React.createElement("div", {className: "container-fluid"},
+					React.createElement("div", {className: "navbar-header"},
+						React.createElement("button", {type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#bs-example-navbar-collapse-1", "aria-expanded": "false"},
+							React.createElement("span", {className: "sr-only"}, "Toggle navigation"),
+							React.createElement("span", {className: "icon-bar"}),
+							React.createElement("span", {className: "icon-bar"}),
 							React.createElement("span", {className: "icon-bar"})
-						), 
-						React.createElement("a", {className: "navbar-brand", href: "#"}, "Justic SWEague")
-					), 
-					React.createElement("div", {className: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1"}, 
-						React.createElement("ul", {className: "nav navbar-nav"}, 
-							React.createElement("li", null, React.createElement(Link, {to: "/", activeClassName: "active"}, "Home")), 
+						),
+						React.createElement("a", {className: "navbar-brand title", href: "/"}, "Justice SWEague")
+					),
+					React.createElement("div", {className: "collapse navbar-collapse", id: "bs-example-navbar-collapse-1"},
+						React.createElement("ul", {className: "nav navbar-nav"},
+							React.createElement("li", null, React.createElement(Link, {to: "/", activeClassName: "active"}, "Home")),
 							React.createElement("li", null, React.createElement("a", {href: "/about"}, "About"))
-						), 
-						React.createElement("ul", {className: "nav navbar-nav navbar-right"}, 
-							React.createElement("li", null, React.createElement(Link, {to: "/characters", activeClassName: "active"}, "Characters")), 
-							React.createElement("li", null, React.createElement(Link, {to: "/comics", activeClassName: "active"}, "Comics")), 
+						),
+						React.createElement("ul", {className: "nav navbar-nav navbar-right"},
+							React.createElement("li", null, React.createElement(Link, {to: "/characters", activeClassName: "active"}, "Characters")),
+							React.createElement("li", null, React.createElement(Link, {to: "/comics", activeClassName: "active"}, "Comics")),
 							React.createElement("li", null, React.createElement(Link, {to: "/creators", activeClassName: "active"}, "Creators"))
 						)
 					)
@@ -24108,10 +24108,11 @@ var NavBar = require('./navbar.js');
 class Splash extends React.Component {
 	render() {
 		return (
-			React.createElement("div", {className: "splash-page"}, 
-				React.createElement(NavBar, null), 
-				React.createElement("div", {className: "container"}, 
-					React.createElement("h1", null, "Splash")
+			React.createElement("div", {className: "splash-page"},
+				React.createElement(NavBar, null),
+				React.createElement("div", {className: "container"},
+					React.createElement("img", {className: "splash-image", src: "http://orig01.deviantart.net/b22a/f/2008/291/6/0/marvel_comics_logo_by_stacalkas.jpg"}),
+					React.createElement("p", {className: "footer"}, "Data provided by Marvel. @2016 Marvel")
 				)
 			)
 		)
@@ -24148,11 +24149,11 @@ class Table extends React.Component {
 	render() {
 		var sortedData = sortData(this.props.content, this.state.sortBy, this.state.ascending);
 		return (
-			React.createElement("table", {className: "table"}, 
-				React.createElement("thead", null, 
+			React.createElement("table", {className: "table"},
+				React.createElement("thead", null,
 					React.createElement(TableHeader, {sortContent: this.sortContent.bind(this), content: this.props.headers})
-				), 
-				React.createElement("tbody", null, 
+				),
+				React.createElement("tbody", null,
 					sortedData.map(item => React.createElement(TableRow, {onClick: this.props.navigate, content: item}))
 				)
 			)
@@ -24185,7 +24186,7 @@ class TableHeader extends React.Component {
 	render() {
 		var data = objToArr(this.props.content);
 		return (
-			React.createElement("tr", null, 
+			React.createElement("tr", null,
 				data.map(info => React.createElement(HeaderItem, {sortContents: this.props.sortContent, headKey: info.key, headValue: info.value}))
 			)
 		)
@@ -24232,10 +24233,10 @@ class TablePage extends React.Component {
 		console.log(this.props);
 
 		return (
-			React.createElement("div", {className: "table-page"}, 
-				React.createElement(NavBar, null), 
-				React.createElement("div", {className: "container"}, 
-					React.createElement("h1", null, this.props.route.title), 
+			React.createElement("div", {className: "table-page"},
+				React.createElement(NavBar, null),
+				React.createElement("div", {className: "container"},
+					React.createElement("h1", null, this.props.route.title),
 					React.createElement(Table, {content: data.content, headers: data.headers, navigate: this.navigateToDetail})
 				)
 			)
@@ -24257,7 +24258,7 @@ class TableRow extends React.Component {
 	render() {
 		var data = objValues(this.props.content);
 		return (
-			React.createElement("tr", {onClick: this.handleClick.bind(this)}, 
+			React.createElement("tr", {onClick: this.handleClick.bind(this)},
 				data.map(info => React.createElement("td", null, info))
 			)
 		)
