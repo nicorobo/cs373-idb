@@ -14,7 +14,7 @@ class ComicPage extends React.Component {
 				<div className="container">
 					<div className="row">
 						<div className="col-sm-4 thumbnail-wrapper">
-							<img height="250px" src={comicData.thumbnail} />
+							<img src={comicData.thumbnail} />
 						</div>
 						<div className="col-sm-6">
 							<h2>{comicData.title} <small>{comicData.id}</small></h2>

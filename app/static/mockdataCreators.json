@@ -6,7 +6,7 @@
 			{"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg", "firstName": "Alrio", "lastName": "", "id": 4110, "numberOfComics": 2, "numberOfStories": 1, "numberOfSeries": 2},
 			{"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg", "firstName": "Amash", "lastName": "", "id": 6326, "numberOfComics": 1, "numberOfStories": 2, "numberOfSeries": 1}
 		],
-		"headers": {"thumbnail": "Thumbnail", "firstName": "First Name", "lastName": "Last Name", "title": "ID", "numberOfComics": "# of Comics", "numberOfStories": "# of Stories", "numberOfSeries": "# of Series" }
+		"headers": {"thumbnail": "Thumbnail", "firstName": "First Name", "lastName": "Last Name", "id": "ID", "numberOfComics": "# of Comics", "numberOfStories": "# of Stories", "numberOfSeries": "# of Series" }
 	},
 	"details": {
 		"2289": {

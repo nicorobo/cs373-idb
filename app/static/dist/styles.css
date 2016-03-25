@@ -60,6 +60,9 @@ td, th, li {
 .thumbnail-wrapper {
 	text-align: center;
 }
+.thumbnail-wrapper img {
+	height: 250px;
+}
 
 .fact-list {
 	list-style: none;

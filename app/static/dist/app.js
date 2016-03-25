@@ -17,6 +17,14 @@ module.exports=
 	    ],
 	    "headers": {"thumbnail": "Thumbnail", "title": "Title", "id": "ID", "issue": "Issue", "pageCount": "Pages", "numberOfStories": "# of Stories" }
 	},
+	"creators": {
+		"content": [
+			{"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg", "firstName": "Alexandrov", "lastName": "", "id": 2289, "numberOfComics": 3, "numberOfStories": 3, "numberOfSeries": 2},
+			{"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg", "firstName": "Alrio", "lastName": "", "id": 4110, "numberOfComics": 2, "numberOfStories": 1, "numberOfSeries": 2},
+			{"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg", "firstName": "Amash", "lastName": "", "id": 6326, "numberOfComics": 1, "numberOfStories": 2, "numberOfSeries": 1}
+		],
+		"headers": {"thumbnail": "Thumbnail", "firstName": "First Name", "lastName": "Last Name", "id": "ID", "numberOfComics": "# of Comics", "numberOfStories": "# of Stories", "numberOfSeries": "# of Series" }
+	},
 	"details": {
 		"1009629": {
 			"thumbnail": "http://vignette4.wikia.nocookie.net/marvelvscapcom/images/0/07/Storm.png/revision/latest?cb=20110720194056", 
@@ -206,7 +214,46 @@ module.exports=
 	            {"name": "Jack Kirby", "id":196, "role": "Penciller (cover)"},
 	            {"name": "Stan Lee", "id":30, "role": "Editor"},
 	        ]
-	    }
+	    },
+	    "2289": {
+			"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg",
+			"firstName": "Alexandrov",
+			"lastName": "",
+			"id": 2289,
+			"numberOfComics": 3,
+			"numberOfStories": 3,
+			"numberOfSeries": 2,
+			"comics": [
+				{"name": "Avengers (1963) #354", 												"id": 7235},
+				{"name": "Avengers (1963) #362",												"id": 7244},
+				{"name": "Thor (1966) #452",													"id": 11780}
+			]
+		},
+		"4110": {
+			"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg",
+			"firstName": "Alrio",
+			"lastName": "",
+			"id": 4110,
+			"numberOfComics": 2,
+			"numberOfStories": 2,
+			"numberOfSeries": 1,
+			"comics": [
+				{"name": "Captain America (1996) #8", 											"id": 7847},
+				{"name": "Heroes Reborn: Captain America (Trade Paperback)",					"id": 5453}
+			]
+		},
+		"6326": {
+			"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg",
+			"firstName": "Amash",
+			"lastName": "",
+			"id": 6326,
+			"numberOfComics": 1,
+			"numberOfStories": 2,
+			"numberOfSeries": 1,
+			"comics": [
+				{"name": "Quasar (1989) #51",													"id": 18941}
+			]
+		}
 	}
 }
 
@@ -24511,7 +24558,7 @@ class ComicPage extends React.Component {
 				React.createElement("div", {className: "container"}, 
 					React.createElement("div", {className: "row"}, 
 						React.createElement("div", {className: "col-sm-4 thumbnail-wrapper"}, 
-							React.createElement("img", {height: "250px", src: comicData.thumbnail})
+							React.createElement("img", {src: comicData.thumbnail})
 						), 
 						React.createElement("div", {className: "col-sm-6"}, 
 							React.createElement("h2", null, comicData.title, " ", React.createElement("small", null, comicData.id)), 
@@ -24558,16 +24605,39 @@ module.exports = ComicPage;
 
 var React = require('react');
 var NavBar = require('./navbar.js');
+var data = require('../mockdata.json');
 
 class CreatorPage extends React.Component {
 	render() {
-		console.log(this.props);
+		var creatorData = data.details[this.props.params.creatorId];
 		return (
-			React.createElement("div", {className: "creator-page"}, 
+			React.createElement("div", {className: "character-page"}, 
 				React.createElement(NavBar, null), 
 				React.createElement("div", {className: "container"}, 
-					React.createElement("h1", null, "Creator"), 
-					React.createElement("h2", null, this.props.params.creatorId)
+					React.createElement("div", {className: "row"}, 
+						React.createElement("div", {className: "col-sm-4 thumbnail-wrapper"}, 
+							React.createElement("img", {src: creatorData.thumbnail})
+						), 
+						React.createElement("div", {className: "col-sm-6"}, 
+							React.createElement("h2", null, creatorData.firstName, creatorData.lastName, " ", React.createElement("small", null, creatorData.id)), 
+							React.createElement("p", null, "This creator doesn't have a description, sorry!"), 
+							React.createElement("ul", {className: "fact-list"}, 
+								React.createElement("li", null, "Comics: ", creatorData.numberOfComics), 
+								React.createElement("li", null, "Series: ", creatorData.numberOfSeries), 
+								React.createElement("li", null, "Stories: ", creatorData.numberOfStories)
+							)
+						)
+					), 
+					React.createElement("div", {className: "col-sm-8 col-sm-offset-2"}, 
+						React.createElement("div", {className: "panel panel-default"}, 
+							React.createElement("div", {className: "panel-heading"}, "Creator for "), 
+							React.createElement("div", {className: "panel-body list-group"}, 
+								creatorData.comics.map( comic => {
+									return React.createElement("a", {onClick: ()=>this.props.history.push('comics/'+comic.id), className: "list-group-item comic-link"}, comic.name)
+								})
+							)
+						)
+					)
 				)
 			)
 		)
@@ -24576,7 +24646,7 @@ class CreatorPage extends React.Component {
 
 module.exports = CreatorPage;
 
-},{"./navbar.js":222,"react":214}],221:[function(require,module,exports){
+},{"../mockdata.json":1,"./navbar.js":222,"react":214}],221:[function(require,module,exports){
 // headeritem.js
 
 var React = require('react');
