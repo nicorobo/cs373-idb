@@ -64,21 +64,24 @@ td, th, li {
 .fact-list {
 	list-style: none;
 	padding-left: 0;
+}
+
+.fact-list li {
 	font-family: monospace;
 }
 
 .panel-heading {
 	font-family: "Marvel";
-	font-size: 1.5rem;
+	font-size: 2.0rem;
 }
 
 .character-page {
 	font-family: "Marvel";
 	font-size: 1.5rem;
 }
+
 .panel {
 	margin-top: 20px;
-	font-family: "Marvel";
 }
 
 .comic-link {
@@ -96,5 +99,9 @@ td, th, li {
 }
 .table-row:hover{
 	border-left: 5px solid lightblue;
+	cursor: pointer;
+}
+
+.table-page th {
 	cursor: pointer;
 }
