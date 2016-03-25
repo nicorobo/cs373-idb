@@ -24,7 +24,7 @@ class TablePage extends React.Component {
 		else if (this.props.route.path === '/comics') data = library.comics;
 		else data = library.creators;
 
-		console.log(this.props);
+		console.log(library);
 
 		return (
 			<div className="table-page">

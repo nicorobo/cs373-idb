@@ -7,7 +7,15 @@ module.exports=
 			{"thumbnail": "http://vignette2.wikia.nocookie.net/marvelvscapcom/images/6/6f/Hulk.jpg/revision/latest/scale-to-width-down/230?cb=20110819170038", "name": "Hulk", "id": 1009351, "numberOfComics": 1314, "numberOfStories":1986, "numberOfSeries": 317},
 			{"thumbnail": "http://vignette1.wikia.nocookie.net/marvelvscapcom/images/8/81/Iron-man.png/revision/latest/scale-to-width-down/230?cb=20110720191600", "name": "Iron Man", "id": 1009368, "numberOfComics": 1984, "numberOfStories":2908, "numberOfSeries": 449}
 		],
-		"headers": {"thumbnail": "Thumbnail", "name": "Name", "title": "ID", "numberOfComics": "# of Comics", "numberOfStories": "# of Stories", "numberOfSeries": "# of Series" }
+		"headers": {"thumbnail": "Thumbnail", "name": "Name", "id": "ID", "numberOfComics": "# of Comics", "numberOfStories": "# of Stories", "numberOfSeries": "# of Series" }
+	},
+	"comics": {
+	    "content": [
+	        {"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/20/4bb4f0966a26a.jpg","title":"Adam: Legend of the Blue Marvel (Trade Paperback)" , "id": 24348, "issue": 1 , "pageCount": 136, "numberOfStories": 14},
+	        {"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/10/515f1a2cbc874.jpg","title":"Avengers Vs. X-Men (2012) #2" , "id": 41191, "issue": 2 , "pageCount": 32, "numberOfStories": 2},
+	        {"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/d0/519b819d54e34.jpg","title":"Avengers (1963) #1" , "id": 6951, "issue": 1 , "pageCount": 36, "numberOfStories": 2},
+	    ],
+	    "headers": {"thumbnail": "Thumbnail", "title": "Title", "id": "ID", "issue": "Issue", "pageCount": "Pages", "numberOfStories": "# of Stories" }
 	},
 	"details": {
 		"1009629": {
@@ -102,7 +110,102 @@ module.exports=
 				{"name": "Avengers Assemble (Hardcover)",								"id":1311 },
 				{"name": "Avengers Vs. X-Men (2012) #2",								"id":41191 }
 			]
-		}
+		},
+		"24348": {
+	        "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/20/4bb4f0966a26a.jpg",
+	        "title":"Adam: Legend of the Blue Marvel (Trade Paperback)",
+	        "description": "An unstoppable super-villain attacks New York City - and the Mighty Avengers fall before him! Where did Anti-Man come from? And who can stop his overwhelming rampage?! Now Iron Man races to find the only man who's ever defeated Anti-Man - THE BLUE MARVEL! A hero the world hasn't seen since 1961! Will Tony Stark uncover the truth behind Blue Marvel's disappearance and will Blue Marvel ever recover from it? Kevin Grevioux (NEW WARRIORS) and Mat Broome (The End League) join forces to create Marvel's newest powerhouse super hero! Collecting ADAM: LEGEND OF THE BLUE MARVEL #1-5.\r\nRated T  ...$19.99 \r\nISBN: 978-0-7851-2409-2",
+	        "id": 24348, 
+	        "issue": 1, 
+	        "pageCount": 136, 
+	        "numberOfStories": 14,
+	        "characters": [
+	            {"name": "Ares", "id": 1010784},
+	            {"name": "Black Widow", "id": 1009189},
+	            {"name": "Blue Marvel", "id": 1011339},
+	            {"name": "Captain Marvel (Carol Danvers)", "id": 1010338},
+	            {"name": "Fantastic Four", "id": 1009299},
+	            {"name": "Hank Pym", "id": 1011490},
+	            {"name": "Human Torch", "id": 1009356},
+	            {"name": "Invisible Woman", "id": 1009366},
+	            {"name": "Iron Man", "id": 1009368},
+	            {"name": "Mr. Fantastic", "id": 1009459},
+	            {"name": "Namor", "id": 1009466},
+	            {"name": "S.H.I.E.L.D.", "id": 1009552},
+	            {"name": "Sentry (Robert Reynolds)", "id": 1009571},
+	            {"name": "She-Hulk (Jennifer Walters)", "id": 1009583},
+	            {"name": "Wasp", "id": 1009707},
+	            {"name": "Wonder Man", "id": 1009719}
+	        ],
+	        "creators": [
+	            {"name": "Kaare Andrews", "id":191 , "role": "penciller" }, 
+	            {"name": "Mat Broome", "id":4541 , "role": "penciller"},
+	            {"name": "Roberto Castro", "id":9360 , "role": "penciller"},
+	            {"name": "Carrie Spiegle", "id":8194 , "role": "penciller"},
+	            {"name": "Juan Doe", "id":1054 , "role": "colorist"},
+	            {"name": "John Rauch", "id":1143 , "role": "colorist"},
+	            {"name": "Kevin Grevioux", "id":4990 , "role": "writer"},
+	            {"name": "Dave Lanphear", "id":878 , "role": "letterer"},
+	            {"name": "Nate Piekos", "id":1065 , "role": "letterer"},
+	            {"name": "Alvaro Lopez", "id":10433 , "role": "inker"},
+	            {"name": "Sean Parsons", "id":2986 , "role": "inker"},
+	            {"name": "Lorenzo Ruggiero", "id":1142 , "role": "inker"}
+	        ]
+	    },
+	    "41191": {
+	        "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/10/515f1a2cbc874.jpg",
+	        "title":"Avengers Vs. X-Men (2012) #2",
+	        "id": 41191,
+	        "issue": 2,
+	        "pageCount": 32,
+	        "numberOfStories": 2,
+	        "characters": [
+	            {"name": "Avengers", "id": 1009165},
+	            {"name": "Captain America", "id": 1009220},
+	            {"name": "Colossus", "id": 1009243},
+	            {"name": "Cyclops", "id": 1009257},
+	            {"name": "Emma Frost", "id": 1009310},
+	            {"name": "Gambit", "id": 1009313},
+	            {"name": "Iron Man", "id": 1009368},
+	            {"name": "Juggernaut", "id": 1009382},
+	            {"name": "Luke Cage", "id": 1009215},
+	            {"name": "Magneto", "id": 1009417},
+	            {"name": "Spider-Man", "id": 1009610},
+	            {"name": "Storm", "id": 1009629},
+	            {"name": "X-Men", "id": 1009726}
+	        ],
+	        "creators": [
+	            {"name": "Jason Aaron", "id":11463, "role": "Writer" }, 
+	            {"name": "Jim Cheung", "id":357, "role": "Inker"},
+	            {"name": "Scott Hanna", "id":362, "role": "Inker"},
+	            {"name": "Chris Eliopoulos", "id":452, "role": "Letterer"},
+	            {"name": "Laura Martin", "id":4306, "role": "Colorist"},
+	            {"name": "John Romita JR.", "id":214, "role": "Artist"},
+	        ]
+	    },
+	    "6951": {
+	        "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/d0/519b819d54e34.jpg",
+	        "title":"Avengers (1963) #1", 
+	        "description": "Sometimes there are threats too big for any one hero to combat. Stan Lee and Jack Kirby knew this. And so they created the Avengers, bringing Thor, Hulk, Iron Man and others together to form Earth's Mightiest Heroes. Avengers Assemble!",
+	        "id": 6951, 
+	        "issue": 1, 
+	        "pageCount": 36, 
+	        "numberOfStories": 2,
+	        "characters": [
+	            {"name": "Avengers", "id": 1009165},
+	            {"name": "Fantastic Four", "id": 1009220},
+	            {"name": "Hank Pym", "id": 1009243},
+	            {"name": "Hulk", "id": 1009257},
+	            {"name": "Iron Man", "id": 1009310},
+	            {"name": "Loki", "id": 1009313},
+	            {"name": "Thor", "id": 1009368}
+	        ],
+	        "creators": [
+	            {"name": "Dick Ayers", "id":263, "role": "inker" }, 
+	            {"name": "Jack Kirby", "id":196, "role": "Penciller (cover)"},
+	            {"name": "Stan Lee", "id":30, "role": "Editor"},
+	        ]
+	    }
 	}
 }
 
@@ -24391,7 +24494,7 @@ class CharacterPage extends React.Component {
 module.exports = CharacterPage;
 
 },{"../mockdata.json":1,"./navbar.js":222,"react":214}],219:[function(require,module,exports){
-// chomicpage.js
+// comicpage.js
 
 var React = require('react');
 var NavBar = require('./navbar.js');
@@ -24399,13 +24502,37 @@ var data = require('../mockdata.json');
 
 class ComicPage extends React.Component {
 	render() {
+		var comicData = data.details[this.props.params.comicId];
+		console.log(comicData);
 		console.log(this.props);
 		return (
-			React.createElement("div", {className: "comic-page"}, 
+			React.createElement("div", {className: "character-page"}, 
 				React.createElement(NavBar, null), 
 				React.createElement("div", {className: "container"}, 
-					React.createElement("h1", null, "Comic"), 
-					React.createElement("h2", null, this.props.params.comicId)
+					React.createElement("div", {className: "row"}, 
+						React.createElement("div", {className: "col-sm-4 thumbnail-wrapper"}, 
+							React.createElement("img", {src: charData.thumbnail})
+						), 
+						React.createElement("div", {className: "col-sm-6"}, 
+							React.createElement("h2", null, charData.name, " ", React.createElement("small", null, charData.id)), 
+							React.createElement("p", null, charData.description), 
+							React.createElement("ul", {className: "fact-list"}, 
+								React.createElement("li", null, "Comics: ", charData.numberOfComics), 
+								React.createElement("li", null, "Series: ", charData.numberOfSeries), 
+								React.createElement("li", null, "Stories: ", charData.numberOfStories)
+							)
+						)
+					), 
+					React.createElement("div", {className: "col-sm-8 col-sm-offset-2"}, 
+						React.createElement("div", {className: "panel panel-default"}, 
+							React.createElement("div", {className: "panel-heading"}, "Appears in "), 
+							React.createElement("div", {className: "panel-body list-group"}, 
+								charData.comics.map( comic => {
+									return React.createElement("a", {onClick: ()=>this.props.history.push('comics/'+comic.id), className: "list-group-item comic-link"}, comic.name)
+								})
+							)
+						)
+					)
 				)
 			)
 		)
@@ -24627,7 +24754,7 @@ class TablePage extends React.Component {
 		else if (this.props.route.path === '/comics') data = library.comics;
 		else data = library.creators;
 
-		console.log(this.props);
+		console.log(library);
 
 		return (
 			React.createElement("div", {className: "table-page"}, 
