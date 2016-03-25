@@ -3,9 +3,9 @@ module.exports=
 {
 	"characters": {
 		"content": [
-			{"thumbnail": "http://vignette4.wikia.nocookie.net/marvelvscapcom/images/0/07/Storm.png/revision/latest?cb=20110720194056", "name": "Storm", "id": 1009629, "numberOfComics": 602, "numberOfStories":698, "numberOfSeries": 155},
-			{"thumbnail": "http://vignette2.wikia.nocookie.net/marvelvscapcom/images/6/6f/Hulk.jpg/revision/latest/scale-to-width-down/230?cb=20110819170038", "name": "Hulk", "id": 1009351, "numberOfComics": 1314, "numberOfStories":1986, "numberOfSeries": 317},
-			{"thumbnail": "http://vignette1.wikia.nocookie.net/marvelvscapcom/images/8/81/Iron-man.png/revision/latest/scale-to-width-down/230?cb=20110720191600", "name": "Iron Man", "id": 1009368, "numberOfComics": 1984, "numberOfStories":2908, "numberOfSeries": 449}
+			{"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/40/526963dad214d.jpg", "name": "Storm", "id": 1009629, "numberOfComics": 602, "numberOfStories":698, "numberOfSeries": 155},
+			{"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0.jpg", "name": "Hulk", "id": 1009351, "numberOfComics": 1314, "numberOfStories":1986, "numberOfSeries": 317},
+			{"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55.jpg", "name": "Iron Man", "id": 1009368, "numberOfComics": 1984, "numberOfStories":2908, "numberOfSeries": 449}
 		],
 		"headers": {"thumbnail": "Thumbnail", "name": "Name", "id": "ID", "numberOfComics": "# of Comics", "numberOfStories": "# of Stories", "numberOfSeries": "# of Series" }
 	},
@@ -27,7 +27,7 @@ module.exports=
 	},
 	"details": {
 		"1009629": {
-			"thumbnail": "http://vignette4.wikia.nocookie.net/marvelvscapcom/images/0/07/Storm.png/revision/latest?cb=20110720194056", 
+			"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/40/526963dad214d.jpg", 
 			"name": "Storm", 
 			"id": 1009629, 
 			"description":"Ororo Monroe is the descendant of an ancient line of African priestesses, all of whom have white hair, blue eyes, and the potential to wield magic." ,
@@ -58,7 +58,7 @@ module.exports=
 			]
 		},
 		"1009351": {
-			"thumbnail": "http://vignette2.wikia.nocookie.net/marvelvscapcom/images/6/6f/Hulk.jpg/revision/latest/scale-to-width-down/230?cb=20110819170038", 
+			"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0.jpg", 
 			"name": "Hulk", 
 			"id": 1009351, 
 			"description":"Caught in a gamma bomb explosion while trying to save the life of a teenager, Dr. Bruce Banner was transformed into the incredibly powerful creature called the Hulk. An all too often misunderstood hero, the angrier the Hulk gets, the stronger the Hulk gets." ,
@@ -89,7 +89,7 @@ module.exports=
 			]
 		},
 		"1009368": {
-			"thumbnail": "http://vignette1.wikia.nocookie.net/marvelvscapcom/images/8/81/Iron-man.png/revision/latest/scale-to-width-down/230?cb=20110720191600", 
+			"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55.jpg", 
 			"name": "Iron Man", 
 			"id": 1009368, 			
 			"description":"Wounded, captured and forced to build a weapon by his enemies, billionaire industrialist Tony Stark instead created an advanced suit of armor to save his life and escape captivity. Now with a new outlook on life, Tony uses his money and intelligence to make the world a safer, better place as Iron Man." ,
@@ -24503,39 +24503,48 @@ var data = require('../mockdata.json');
 class CharacterPage extends React.Component {
 	render() {
 		var charData = data.details[this.props.params.charId];
-		console.log(charData);
-		console.log(this.props);
-		return (
-			React.createElement("div", {className: "character-page"}, 
-				React.createElement(NavBar, null), 
-				React.createElement("div", {className: "container"}, 
-					React.createElement("div", {className: "row"}, 
-						React.createElement("div", {className: "col-sm-4 thumbnail-wrapper"}, 
-							React.createElement("img", {src: charData.thumbnail})
-						), 
-						React.createElement("div", {className: "col-sm-6"}, 
-							React.createElement("h2", null, charData.name, " ", React.createElement("small", null, charData.id)), 
-							React.createElement("p", null, charData.description), 
-							React.createElement("ul", {className: "fact-list"}, 
-								React.createElement("li", null, "Comics: ", charData.numberOfComics), 
-								React.createElement("li", null, "Series: ", charData.numberOfSeries), 
-								React.createElement("li", null, "Stories: ", charData.numberOfStories)
+		if(charData){
+			return (
+				React.createElement("div", {className: "character-page"}, 
+					React.createElement(NavBar, null), 
+					React.createElement("div", {className: "container"}, 
+						React.createElement("div", {className: "row"}, 
+							React.createElement("div", {className: "col-sm-4 thumbnail-wrapper"}, 
+								React.createElement("img", {src: charData.thumbnail})
+							), 
+							React.createElement("div", {className: "col-sm-6"}, 
+								React.createElement("h2", null, charData.name, " ", React.createElement("small", null, charData.id)), 
+								React.createElement("p", null, charData.description), 
+								React.createElement("ul", {className: "fact-list"}, 
+									React.createElement("li", null, "Comics: ", charData.numberOfComics), 
+									React.createElement("li", null, "Series: ", charData.numberOfSeries), 
+									React.createElement("li", null, "Stories: ", charData.numberOfStories)
+								)
 							)
-						)
-					), 
-					React.createElement("div", {className: "col-sm-8 col-sm-offset-2"}, 
-						React.createElement("div", {className: "panel panel-default"}, 
-							React.createElement("div", {className: "panel-heading"}, "Appears in "), 
-							React.createElement("div", {className: "panel-body list-group"}, 
-								charData.comics.map( comic => {
-									return React.createElement("a", {onClick: ()=>this.props.history.push('comics/'+comic.id), className: "list-group-item comic-link"}, comic.name)
-								})
+						), 
+						React.createElement("div", {className: "col-sm-8 col-sm-offset-2"}, 
+							React.createElement("div", {className: "panel panel-default"}, 
+								React.createElement("div", {className: "panel-heading"}, "Appears in "), 
+								React.createElement("div", {className: "panel-body list-group"}, 
+									charData.comics.map( comic => {
+										return React.createElement("a", {onClick: ()=>this.props.history.push('comics/'+comic.id), className: "list-group-item comic-link"}, comic.name)
+									})
+								)
 							)
 						)
 					)
 				)
 			)
-		)
+		} else {
+			return (
+				React.createElement("div", {className: "character-page"}, 
+					React.createElement(NavBar, null), 
+					React.createElement("div", {className: "container"}, 
+						React.createElement("h2", null, "No data yet, try again later!")
+					)
+				)
+			)
+		}
 	}
 }
 
@@ -24551,50 +24560,60 @@ var data = require('../mockdata.json');
 class ComicPage extends React.Component {
 	render() {
 		var comicData = data.details[this.props.params.comicId];
-		console.log(comicData);
-		return (
-			React.createElement("div", {className: "comic-page"}, 
-				React.createElement(NavBar, null), 
-				React.createElement("div", {className: "container"}, 
-					React.createElement("div", {className: "row"}, 
-						React.createElement("div", {className: "col-sm-4 thumbnail-wrapper"}, 
-							React.createElement("img", {src: comicData.thumbnail})
-						), 
-						React.createElement("div", {className: "col-sm-6"}, 
-							React.createElement("h2", null, comicData.title, " ", React.createElement("small", null, comicData.id)), 
-							React.createElement("p", null, comicData.description), 
-							React.createElement("ul", {className: "fact-list"}, 
-								React.createElement("li", null, "Issue: ", comicData.issue), 
-								React.createElement("li", null, "Pages: ", comicData.pageCount), 
-								React.createElement("li", null, "Stories: ", comicData.numberOfStories)
-							)
-						)
-					), 
-					React.createElement("div", {className: "row"}, 
-						React.createElement("div", {className: "col-sm-6"}, 
-							React.createElement("div", {className: "panel panel-default"}, 
-								React.createElement("div", {className: "panel-heading"}, "Characters"), 
-								React.createElement("div", {className: "panel-body list-group"}, 
-									comicData.characters.map( character => {
-										return React.createElement("a", {onClick: ()=>this.props.history.push('characters/'+character.id), className: "list-group-item comic-link"}, character.name)
-									})
+		if (comicData){
+			return (
+				React.createElement("div", {className: "comic-page"}, 
+					React.createElement(NavBar, null), 
+					React.createElement("div", {className: "container"}, 
+						React.createElement("div", {className: "row"}, 
+							React.createElement("div", {className: "col-sm-4 thumbnail-wrapper"}, 
+								React.createElement("img", {src: comicData.thumbnail})
+							), 
+							React.createElement("div", {className: "col-sm-6"}, 
+								React.createElement("h2", null, comicData.title, " ", React.createElement("small", null, comicData.id)), 
+								React.createElement("p", null, comicData.description), 
+								React.createElement("ul", {className: "fact-list"}, 
+									React.createElement("li", null, "Issue: ", comicData.issue), 
+									React.createElement("li", null, "Pages: ", comicData.pageCount), 
+									React.createElement("li", null, "Stories: ", comicData.numberOfStories)
 								)
 							)
 						), 
-						React.createElement("div", {className: "col-sm-6"}, 
-							React.createElement("div", {className: "panel panel-default"}, 
-								React.createElement("div", {className: "panel-heading"}, "Creators"), 
-								React.createElement("div", {className: "panel-body list-group"}, 
-									comicData.creators.map( creator => {
-										return React.createElement("a", {onClick: ()=>this.props.history.push('creators/'+creator.id), className: "list-group-item comic-link"}, creator.name, React.createElement("span", {className: "role"}, "(", creator.role, ")"))
-									})
+						React.createElement("div", {className: "row"}, 
+							React.createElement("div", {className: "col-sm-6"}, 
+								React.createElement("div", {className: "panel panel-default"}, 
+									React.createElement("div", {className: "panel-heading"}, "Characters"), 
+									React.createElement("div", {className: "panel-body list-group"}, 
+										comicData.characters.map( character => {
+											return React.createElement("a", {onClick: ()=>this.props.history.push('characters/'+character.id), className: "list-group-item comic-link"}, character.name)
+										})
+									)
+								)
+							), 
+							React.createElement("div", {className: "col-sm-6"}, 
+								React.createElement("div", {className: "panel panel-default"}, 
+									React.createElement("div", {className: "panel-heading"}, "Creators"), 
+									React.createElement("div", {className: "panel-body list-group"}, 
+										comicData.creators.map( creator => {
+											return React.createElement("a", {onClick: ()=>this.props.history.push('creators/'+creator.id), className: "list-group-item comic-link"}, creator.name, React.createElement("span", {className: "role"}, "(", creator.role, ")"))
+										})
+									)
 								)
 							)
 						)
 					)
 				)
 			)
-		)
+		} else {
+			return (
+				React.createElement("div", {className: "comic-page"}, 
+					React.createElement(NavBar, null), 
+					React.createElement("div", {className: "container"}, 
+						React.createElement("h2", null, "No data yet, try again later!")
+					)
+				)
+			)
+		}
 	}
 }
 
@@ -24610,37 +24629,48 @@ var data = require('../mockdata.json');
 class CreatorPage extends React.Component {
 	render() {
 		var creatorData = data.details[this.props.params.creatorId];
-		return (
-			React.createElement("div", {className: "character-page"}, 
-				React.createElement(NavBar, null), 
-				React.createElement("div", {className: "container"}, 
-					React.createElement("div", {className: "row"}, 
-						React.createElement("div", {className: "col-sm-4 thumbnail-wrapper"}, 
-							React.createElement("img", {src: creatorData.thumbnail})
-						), 
-						React.createElement("div", {className: "col-sm-6"}, 
-							React.createElement("h2", null, creatorData.firstName, creatorData.lastName, " ", React.createElement("small", null, creatorData.id)), 
-							React.createElement("p", null, "This creator doesn't have a description, sorry!"), 
-							React.createElement("ul", {className: "fact-list"}, 
-								React.createElement("li", null, "Comics: ", creatorData.numberOfComics), 
-								React.createElement("li", null, "Series: ", creatorData.numberOfSeries), 
-								React.createElement("li", null, "Stories: ", creatorData.numberOfStories)
+		if (creatorData) {
+			return (
+				React.createElement("div", {className: "character-page"}, 
+					React.createElement(NavBar, null), 
+					React.createElement("div", {className: "container"}, 
+						React.createElement("div", {className: "row"}, 
+							React.createElement("div", {className: "col-sm-4 thumbnail-wrapper"}, 
+								React.createElement("img", {src: creatorData.thumbnail})
+							), 
+							React.createElement("div", {className: "col-sm-6"}, 
+								React.createElement("h2", null, creatorData.firstName, creatorData.lastName, " ", React.createElement("small", null, creatorData.id)), 
+								React.createElement("p", null, "This creator doesn't have a description, sorry!"), 
+								React.createElement("ul", {className: "fact-list"}, 
+									React.createElement("li", null, "Comics: ", creatorData.numberOfComics), 
+									React.createElement("li", null, "Series: ", creatorData.numberOfSeries), 
+									React.createElement("li", null, "Stories: ", creatorData.numberOfStories)
+								)
 							)
-						)
-					), 
-					React.createElement("div", {className: "col-sm-8 col-sm-offset-2"}, 
-						React.createElement("div", {className: "panel panel-default"}, 
-							React.createElement("div", {className: "panel-heading"}, "Creator for "), 
-							React.createElement("div", {className: "panel-body list-group"}, 
-								creatorData.comics.map( comic => {
-									return React.createElement("a", {onClick: ()=>this.props.history.push('comics/'+comic.id), className: "list-group-item comic-link"}, comic.name)
-								})
+						), 
+						React.createElement("div", {className: "col-sm-8 col-sm-offset-2"}, 
+							React.createElement("div", {className: "panel panel-default"}, 
+								React.createElement("div", {className: "panel-heading"}, "Creator for "), 
+								React.createElement("div", {className: "panel-body list-group"}, 
+									creatorData.comics.map( comic => {
+										return React.createElement("a", {onClick: ()=>this.props.history.push('comics/'+comic.id), className: "list-group-item comic-link"}, comic.name)
+									})
+								)
 							)
 						)
 					)
 				)
 			)
-		)
+		} else {
+			return (
+				React.createElement("div", {className: "comic-page"}, 
+					React.createElement(NavBar, null), 
+					React.createElement("div", {className: "container"}, 
+						React.createElement("h2", null, "No data yet, try again later!")
+					)
+				)
+			)
+		}
 	}
 }
 
