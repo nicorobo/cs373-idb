@@ -8,6 +8,11 @@
 		],
 		"headers": {"thumbnail": "Thumbnail", "name": "Name", "title": "ID", "numberOfComics": "# of Comics", "numberOfStories": "# of Stories", "numberOfSeries": "# of Series" }
 	},
+	"comics": {
+		"content": [
+			{"thumbnail": ,"title": , "id": , "issue": , "pageCount"}
+		]
+	}
 	"details": {
 		"1009629": {
 			"thumbnail": "http://vignette4.wikia.nocookie.net/marvelvscapcom/images/0/07/Storm.png/revision/latest?cb=20110720194056", 
