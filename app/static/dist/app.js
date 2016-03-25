@@ -24359,12 +24359,27 @@ class CharacterPage extends React.Component {
 				React.createElement(NavBar, null), 
 				React.createElement("div", {className: "container"}, 
 					React.createElement("div", {className: "row"}, 
-						React.createElement("div", {className: "col-sm-4"}, 
+						React.createElement("div", {className: "col-sm-4 thumbnail-wrapper"}, 
 							React.createElement("img", {src: charData.thumbnail})
 						), 
 						React.createElement("div", {className: "col-sm-6"}, 
-							React.createElement("h2", null, charData.name), 
-							React.createElement("p", null, charData.description)
+							React.createElement("h2", null, charData.name, " ", React.createElement("small", null, charData.id)), 
+							React.createElement("p", null, charData.description), 
+							React.createElement("ul", {className: "fact-list"}, 
+								React.createElement("li", null, "Comics: ", charData.numberOfComics), 
+								React.createElement("li", null, "Series: ", charData.numberOfSeries), 
+								React.createElement("li", null, "Stories: ", charData.numberOfStories)
+							)
+						)
+					), 
+					React.createElement("div", {className: "col-sm-8 col-sm-offset-2"}, 
+						React.createElement("div", {className: "panel panel-default"}, 
+							React.createElement("div", {className: "panel-heading"}, "Appears in "), 
+							React.createElement("div", {className: "panel-body list-group"}, 
+								charData.comics.map( comic => {
+									return React.createElement("a", {onClick: ()=>this.props.history.push('comics/'+comic.id), className: "list-group-item comic-link"}, comic.name)
+								})
+							)
 						)
 					)
 				)

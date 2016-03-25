@@ -54,3 +54,23 @@ th {
 td {
 	font-family: 'Gotham SSm 2r', 'Gotham SSm A', 'Gotham SSm B', Helvetica, Arial, sans-serif;
 }
+
+/******** DETAIL PAGE **********/
+
+.thumbnail-wrapper {
+	text-align: center;
+}
+
+.fact-list {
+	list-style: none;
+	padding-left: 0;
+	font-family: monospace;
+}
+
+.panel {
+	margin-top: 20px;
+}
+
+.comic-link {
+	cursor: pointer;
+}
