@@ -96,6 +96,11 @@ td, th, li {
 	color: #85A0E6;
 }
 
+.comic-page {
+	font-family: "Marvel";
+	font-size: 1.5rem;
+}
+
 /******** TABLE PAGE **********/
 
 .table-page img {
