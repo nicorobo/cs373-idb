@@ -24655,9 +24655,8 @@ class TableRow extends React.Component {
 	render() {
 		var data = objValues(this.props.content);
 		return (
-			React.createElement("tr", {onClick: this.handleClick.bind(this)}, 
+			React.createElement("tr", {className: "table-row", onClick: this.handleClick.bind(this)}, 
 				data.map(function(info) {
-					console.log(info)
 					if(isNaN(info) && info.indexOf("http") >= 0){
 						return React.createElement("td", null, React.createElement("img", {src: info}))
 					}

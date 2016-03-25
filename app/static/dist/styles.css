@@ -74,3 +74,13 @@ td {
 .comic-link {
 	cursor: pointer;
 }
+
+/******** TABLE PAGE **********/
+
+.table-page img {
+	height: 100px;
+}
+.table-row:hover{
+	border-left: 5px solid lightblue;
+	cursor: pointer;
+}

@@ -9,9 +9,8 @@ class TableRow extends React.Component {
 	render() {
 		var data = objValues(this.props.content);
 		return (
-			<tr onClick={this.handleClick.bind(this)}>
+			<tr className="table-row" onClick={this.handleClick.bind(this)}>
 				{data.map(function(info) {
-					console.log(info)
 					if(isNaN(info) && info.indexOf("http") >= 0){
 						return <td><img src={info} /></td>
 					}
