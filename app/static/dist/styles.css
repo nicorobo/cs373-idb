@@ -62,6 +62,7 @@ td, th, li {
 }
 .thumbnail-wrapper img {
 	height: 250px;
+	max-width: 100%;
 }
 
 .fact-list {
