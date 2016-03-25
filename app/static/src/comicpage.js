@@ -8,32 +8,43 @@ class ComicPage extends React.Component {
 	render() {
 		var comicData = data.details[this.props.params.comicId];
 		console.log(comicData);
-		console.log(this.props);
 		return (
-			<div className="character-page">
+			<div className="comic-page">
 				<NavBar />
 				<div className="container">
 					<div className="row">
 						<div className="col-sm-4 thumbnail-wrapper">
-							<img src={charData.thumbnail} />
+							<img height="250px" src={comicData.thumbnail} />
 						</div>
 						<div className="col-sm-6">
-							<h2>{charData.name} <small>{charData.id}</small></h2>
-							<p>{charData.description}</p>
+							<h2>{comicData.title} <small>{comicData.id}</small></h2>
+							<p>{comicData.description}</p>
 							<ul className="fact-list">
-								<li>Comics: {charData.numberOfComics}</li>
-								<li>Series: {charData.numberOfSeries}</li>
-								<li>Stories: {charData.numberOfStories}</li>
+								<li>Issue: {comicData.issue}</li>
+								<li>Pages: {comicData.pageCount}</li>
+								<li>Stories: {comicData.numberOfStories}</li>
 							</ul>
 						</div>
 					</div>
-					<div className="col-sm-8 col-sm-offset-2">
-						<div className="panel panel-default">
-							<div className="panel-heading">Appears in </div>
-							<div className="panel-body list-group">
-								{charData.comics.map( comic => {
-									return <a onClick={()=>this.props.history.push('comics/'+comic.id)} className="list-group-item comic-link">{comic.name}</a>
-								})}
+					<div className="row">
+						<div className="col-sm-6">
+							<div className="panel panel-default">
+								<div className="panel-heading">Characters</div>
+								<div className="panel-body list-group">
+									{comicData.characters.map( character => {
+										return <a onClick={()=>this.props.history.push('characters/'+character.id)} className="list-group-item comic-link">{character.name}</a>
+									})}
+								</div>
+							</div>
+						</div>
+						<div className="col-sm-6">
+							<div className="panel panel-default">
+								<div className="panel-heading">Creators</div>
+								<div className="panel-body list-group">
+									{comicData.creators.map( creator => {
+										return <a onClick={()=>this.props.history.push('creators/'+creator.id)} className="list-group-item comic-link">{creator.name}<span className="role">({creator.role})</span></a>
+									})}
+								</div>
 							</div>
 						</div>
 					</div>

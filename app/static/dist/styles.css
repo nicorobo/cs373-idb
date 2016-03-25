@@ -84,6 +84,10 @@ td, th, li {
 .comic-link {
 	cursor: pointer;
 }
+.comic-link .role {
+	margin-left: 5px;
+	color: #85A0E6;
+}
 
 /******** TABLE PAGE **********/
 

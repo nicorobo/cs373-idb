@@ -155,6 +155,7 @@ module.exports=
 	    "41191": {
 	        "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/10/515f1a2cbc874.jpg",
 	        "title":"Avengers Vs. X-Men (2012) #2",
+	        "description": "- As The Opening Shot Is Fired, The Avengers Storm The Beach Of Utopia, And The Phoenix Draws\nEver Nearer To Earth!\n- But Which Side Will Wolverine Fight On?\n- And What Choice Will Hope Make That Will Change The Direction And Scope Of The Conflict Dramatically?\n",
 	        "id": 41191,
 	        "issue": 2,
 	        "pageCount": 32,
@@ -24504,32 +24505,43 @@ class ComicPage extends React.Component {
 	render() {
 		var comicData = data.details[this.props.params.comicId];
 		console.log(comicData);
-		console.log(this.props);
 		return (
-			React.createElement("div", {className: "character-page"}, 
+			React.createElement("div", {className: "comic-page"}, 
 				React.createElement(NavBar, null), 
 				React.createElement("div", {className: "container"}, 
 					React.createElement("div", {className: "row"}, 
 						React.createElement("div", {className: "col-sm-4 thumbnail-wrapper"}, 
-							React.createElement("img", {src: charData.thumbnail})
+							React.createElement("img", {height: "250px", src: comicData.thumbnail})
 						), 
 						React.createElement("div", {className: "col-sm-6"}, 
-							React.createElement("h2", null, charData.name, " ", React.createElement("small", null, charData.id)), 
-							React.createElement("p", null, charData.description), 
+							React.createElement("h2", null, comicData.title, " ", React.createElement("small", null, comicData.id)), 
+							React.createElement("p", null, comicData.description), 
 							React.createElement("ul", {className: "fact-list"}, 
-								React.createElement("li", null, "Comics: ", charData.numberOfComics), 
-								React.createElement("li", null, "Series: ", charData.numberOfSeries), 
-								React.createElement("li", null, "Stories: ", charData.numberOfStories)
+								React.createElement("li", null, "Issue: ", comicData.issue), 
+								React.createElement("li", null, "Pages: ", comicData.pageCount), 
+								React.createElement("li", null, "Stories: ", comicData.numberOfStories)
 							)
 						)
 					), 
-					React.createElement("div", {className: "col-sm-8 col-sm-offset-2"}, 
-						React.createElement("div", {className: "panel panel-default"}, 
-							React.createElement("div", {className: "panel-heading"}, "Appears in "), 
-							React.createElement("div", {className: "panel-body list-group"}, 
-								charData.comics.map( comic => {
-									return React.createElement("a", {onClick: ()=>this.props.history.push('comics/'+comic.id), className: "list-group-item comic-link"}, comic.name)
-								})
+					React.createElement("div", {className: "row"}, 
+						React.createElement("div", {className: "col-sm-6"}, 
+							React.createElement("div", {className: "panel panel-default"}, 
+								React.createElement("div", {className: "panel-heading"}, "Characters"), 
+								React.createElement("div", {className: "panel-body list-group"}, 
+									comicData.characters.map( character => {
+										return React.createElement("a", {onClick: ()=>this.props.history.push('characters/'+character.id), className: "list-group-item comic-link"}, character.name)
+									})
+								)
+							)
+						), 
+						React.createElement("div", {className: "col-sm-6"}, 
+							React.createElement("div", {className: "panel panel-default"}, 
+								React.createElement("div", {className: "panel-heading"}, "Creators"), 
+								React.createElement("div", {className: "panel-body list-group"}, 
+									comicData.creators.map( creator => {
+										return React.createElement("a", {onClick: ()=>this.props.history.push('creators/'+creator.id), className: "list-group-item comic-link"}, creator.name, React.createElement("span", {className: "role"}, "(", creator.role, ")"))
+									})
+								)
 							)
 						)
 					)
