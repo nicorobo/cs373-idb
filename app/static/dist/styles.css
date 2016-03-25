@@ -1,10 +1,21 @@
-h1, h3, h4 {
+/******** GLOBAL **********/
+
+h1, h3, h4, p, td, th, li {
 	font-family: "Marvel";
 }
 
 a.active {
 	font-weight: bolder;
 }
+
+th {
+	background-color: #e7e7e7
+}
+
+td, th, li {
+	font-size: 1.6rem;
+}
+
 
 /******** NAV **********/
 
@@ -14,9 +25,8 @@ a.active {
 	font-weight: bold;
 }
 
-.navbar {
-	font-family: 'Gotham SSm 2r', 'Gotham SSm A', 'Gotham SSm B', Helvetica, Arial, sans-serif;
-	font-weight: 200;
+.nav a {
+	font-size: 1.8rem;
 }
 
 
@@ -33,7 +43,7 @@ a.active {
 
 .footer {
 	padding-top: 50px;
-	font-family: 'Gotham SSm 2r', 'Gotham SSm A', 'Gotham SSm B', Helvetica, Arial, sans-serif;
+	font-family: "Marvel";
 	font-weight: 200;
 	color: #7d8080;
 }
@@ -43,16 +53,6 @@ a.active {
 #about h1 {
 	font-size: 4.2rem;
 	font-weight: bold;
-}
-
-th {
-	font-family: "Marvel";
-	font-size: 1.5rem;
-	background-color: #e7e7e7
-}
-
-td {
-	font-family: 'Gotham SSm 2r', 'Gotham SSm A', 'Gotham SSm B', Helvetica, Arial, sans-serif;
 }
 
 /******** DETAIL PAGE **********/
@@ -67,8 +67,18 @@ td {
 	font-family: monospace;
 }
 
+.panel-heading {
+	font-family: "Marvel";
+	font-size: 1.5rem;
+}
+
+.character-page {
+	font-family: "Marvel";
+	font-size: 1.5rem;
+}
 .panel {
 	margin-top: 20px;
+	font-family: "Marvel";
 }
 
 .comic-link {

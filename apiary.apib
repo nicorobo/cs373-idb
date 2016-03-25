@@ -113,10 +113,25 @@ Our source can be found here: https://github.com/nickroberts404/cs373-idb
                         "required": true,
                         "description": "Comic Page Count"
                     },
+                    "series": {
+                        "type": "string",
+                        "required": true,
+                        "description": "Series name"
+                    },
+                    "number_of_creators": {
+                        "type": "number",
+                        "required": true,
+                        "description": "Number of creators"
+                    },
+                    "number_of_characters": {
+                        "type": "number",
+                        "required": true,
+                        "description": "Number of characters"
+                    },
                     "number_of_stories": {
                         "type": "number",
                         "required": true,
-                        "description": "Number of Stories in the comic"
+                        "description": "Number of stories"
                     },
                     "characters": {
                         "type": "array",
@@ -172,13 +187,11 @@ Our source can be found here: https://github.com/nickroberts404/cs373-idb
                         "required": true,
                         "description": "Number of comics this character has appeared in"
                     },
-
                     "number_of_stories": {
                         "type": "number",
                         "required": true,
                         "description": "Number of stories this character has appeared in"
                     },
-    
                     "number_of_series": {
                         "type": "number",
                         "required": true,
@@ -233,12 +246,17 @@ Our source can be found here: https://github.com/nickroberts404/cs373-idb
                     "number_of_comics": {
                         "type": "number",
                         "required": true,
-                        "description": "Number of comics this character has appeared in"
+                        "description": "Number of comics this creator has created"
                     },
                     "number_of_stories": {
                         "type": "number",
                         "required": true,
-                        "description": "Number of stories this character has appeared in"
+                        "description": "Number of stories this creator has created"
+                    },
+                    "number_of_series": {
+                        "type": "number",
+                        "required": true,
+                        "description": "Number of series this creator has created"
                     },
                     "comics": {
                         "type": "array",
