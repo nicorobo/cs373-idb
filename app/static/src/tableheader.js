@@ -17,7 +17,7 @@ class TableHeader extends React.Component {
 
 function objToArr(obj) {
 	var arr = [];
-	for (val in obj) {
+	for (var val in obj) {
 		arr.push({key: val, value: obj[val]})
 	}
 	console.log(arr);

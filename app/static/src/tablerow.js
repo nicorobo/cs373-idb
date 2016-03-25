@@ -24,7 +24,7 @@ class TableRow extends React.Component {
 // Returns an array of all values in an object literal.
 function objValues(obj) {
 	var arr = [];
-	for (val in obj) {
+	for (var val in obj) {
 		arr.push(obj[val]);
 	}
 	return arr;
