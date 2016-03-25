@@ -97,3 +97,7 @@ td, th, li {
 	border-left: 5px solid lightblue;
 	cursor: pointer;
 }
+
+.table-page th {
+	cursor: pointer;
+}
