@@ -5,6 +5,7 @@ python:
 
 install:
  - pip install coverage
+ - pip install SQLAlchemy
 
-#script:
-# - make test
+script:
+ - make test
