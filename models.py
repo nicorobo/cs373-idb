@@ -26,6 +26,8 @@ class Character(Base):
     name = Column(String)
     description = Column(String)
     number_of_comics = Column(Integer)
+    number_of_stories = Column(Integer)
+    number_of_series = Column(Integer)
     comics = relationship('Comic',
                           secondary=comic_character,
                           back_populates='characters')
@@ -40,6 +42,10 @@ class Comic(Base):
     issue_num = Column(Integer)
     description = Column(String)
     page_count = Column(Integer)
+    series = Column(String)
+    number_of_creators = Column(Integer)
+    number_of_characters = Column(Integer)
+    number_of_stories = Column(Integer)
     characters = relationship('Character',
                               secondary=comic_character,
                               back_populates='comics')
@@ -55,6 +61,9 @@ class Creator(Base):
     thumbnail = Column(String)
     first_name = Column(String)
     last_name = Column(String)
+    number_of_comics = Column(Integer)
+    number_of_stories = Column(Integer)
+    number_of_series = Column(Integer)
     comics = relationship('Comic',
                           secondary=comic_creator,
                           back_populates='creators')
