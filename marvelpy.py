@@ -1,5 +1,5 @@
 """
-marvelpy is a wrapper around the requests library to facilitate queries to the Marvel Comics API. The calls return Requests Response objects.
+marvelpy is a wrapper around the requests library to facilitate requests to the Marvel Comics API. The calls return requests.Response objects.
 """
 
 import hashlib, random, requests
@@ -18,13 +18,14 @@ def _build_headers(etag=None, **kwargs):
 
 
 
-def _build_params(params=None, key=None, **kwargs):
+def _build_params(params=None, key=None, ts=None, **kwargs):
     if not params:
         params = {}
     if not key:
         key = _default_key
+    if not ts:
+        ts = str(random.randrange(10000))
 
-    ts = str(random.randrange(10000))
     m = hashlib.md5()
     m.update(ts.encode())
     m.update(key['private'].encode())
