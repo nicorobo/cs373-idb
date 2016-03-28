@@ -4,6 +4,11 @@ h1, h3, h4, p, td, th, li {
 	font-family: "Marvel";
 }
 
+h1 {
+	font-size: 22px;
+	text-transform: uppercase;
+}
+
 a.active {
 	font-weight: bolder;
 }
@@ -20,15 +25,49 @@ td, th, li {
 /******** NAV **********/
 
 .title {
-	font-size: 2.2rem;
+	font-size: 18px;
 	font-family: "Marvel";
-	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.navbar-default .navbar-brand:hover {
+	color: red;
+	font-size: 22px;
+	-webkit-transition: .75s;
+    -moz-transition: .75s;
+    -o-transition: .75s;
+    transition: .75s;
+}
+
+.navbar-default .navbar-brand {
+	-webkit-transition: .75s;
+	-moz-transition: .75s;
+	-o-transition: .75s;
+	transition: .75s;
 }
 
 .nav a {
-	font-size: 1.8rem;
+	font-size: 18px;
+	letter-spacing: 1px;
 }
 
+.navbar-default .navbar-nav li a:hover {
+	color: red;
+	font-size: 22px;
+	transition: .75s;
+}
+
+.navbar-default .navbar-nav li a {
+	-webkit-transition: .75s;
+	-moz-transition: .75s;
+	-o-transition: .75s;
+	transition: .75s;
+}
+
+.navbar-default {
+	border: none;
+	background-color: white;
+}
 
 /******** SPLASH **********/
 
@@ -37,8 +76,22 @@ td, th, li {
 }
 
 .splash-image {
-	padding-top: 25px;
-	max-width: 100%;
+	padding-top: 100px;
+	width: 600px;
+	max-width: 75%;
+	-webkit-transition: .75s;
+    -moz-transition: .75s;
+    -o-transition: .75s;
+    transition: .75s;
+}
+
+.splash-image:hover {
+	width: 700px;
+	max-width: 75%;
+	-webkit-transition: .75s;
+    -moz-transition: .75s;
+    -o-transition: .75s;
+    transition: .75s;
 }
 
 .footer {

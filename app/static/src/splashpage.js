@@ -9,7 +9,7 @@ class Splash extends React.Component {
 			<div className="splash-page">
 				<NavBar />
 				<div className="container">
-					<img className="splash-image" src="http://orig01.deviantart.net/b22a/f/2008/291/6/0/marvel_comics_logo_by_stacalkas.jpg" />
+					<img className="splash-image" src="/static/img/Marvel_Comics.png" />
 					<p className="footer">Data provided by Marvel. @2016 Marvel</p>
 				</div>
 			</div>
