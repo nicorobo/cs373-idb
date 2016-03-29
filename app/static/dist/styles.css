@@ -11,7 +11,7 @@ h1 {
 
 a.active {
 	font-weight: bolder;
-	color: red;
+	color: red !important;
 }
 
 th {
