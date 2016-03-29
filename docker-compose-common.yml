@@ -24,7 +24,7 @@ services:
           - apps
     environment:
       # Environment variables to configure the app on startup.
-      - MYSQL_DATABASE=
+      - MYSQL_DATABASE=marvel
       - MYSQL_HOST=cs373idb_db
 
   db:
@@ -36,7 +36,7 @@ services:
       - backend
     environment:
       # Environment variables to configure MySQL on startup.
-      - MYSQL_DATABASE=
+      - MYSQL_DATABASE=marvel
 
   data:
     container_name: cs373idb_db_data
