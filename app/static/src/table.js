@@ -16,9 +16,10 @@ class Table extends React.Component {
 		if (this.state.sortBy === key) {
 			console.log('[table.js] toggling order for '+key);
 			this.setState({ascending: !this.state.ascending});
+			console.log(this.state.ascending);
 		} else {
 			console.log('[table.js] sorting by '+key);
-			this.setState({sortBy: key});
+			this.setState({sortBy: key, ascending: true});
 		}
 	}
 
@@ -27,7 +28,10 @@ class Table extends React.Component {
 		return (
 			<table className="table"> 
 				<thead>
-					<TableHeader sortContent={this.sortContent.bind(this)} content={this.props.headers} />
+					<TableHeader 
+						sortContent={this.sortContent.bind(this)} 
+						content={this.props.headers} 
+						sortData={{key: this.state.sortBy, ascending: this.state.ascending}} />
 				</thead>
 				<tbody>
 					{sortedData.map(item => <TableRow onClick={this.props.navigate} content={item} />)}
@@ -43,7 +47,7 @@ function sortData (data, sortBy, ascending) {
 		if (a[sortBy] >= b[sortBy]){
 			result = 1;
 		} else {
-			result = 1;
+			result = -1;
 		}
 		return ascending ? result : result * -1;
 	})

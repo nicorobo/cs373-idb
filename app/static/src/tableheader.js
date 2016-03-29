@@ -9,7 +9,11 @@ class TableHeader extends React.Component {
 		var data = objToArr(this.props.content);
 		return (
 			<tr>
-				{data.map(info => <HeaderItem sortContents={this.props.sortContent} headKey={info.key} headValue={info.value} />)}
+				{data.map(info => <HeaderItem 
+					sortContents={this.props.sortContent} 
+					headKey={info.key} 
+					headValue={info.value} 
+					sortData={this.props.sortData} />)}
 			</tr>
 		)
 	}

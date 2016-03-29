@@ -27,12 +27,12 @@ module.exports=
 	},
 	"details": {
 		"1009629": {
-			"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/40/526963dad214d.jpg",
-			"name": "Storm",
-			"id": 1009629,
+			"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/6/40/526963dad214d.jpg", 
+			"name": "Storm", 
+			"id": 1009629, 
 			"description":"Ororo Monroe is the descendant of an ancient line of African priestesses, all of whom have white hair, blue eyes, and the potential to wield magic." ,
-			"numberOfComics": 602,
-			"numberOfStories":698,
+			"numberOfComics": 602, 
+			"numberOfStories":698, 
 			"numberOfSeries": 155,
 			"comics": [
 				{"name": "A+X (2012) #3", 												"id":43498 },
@@ -58,12 +58,12 @@ module.exports=
 			]
 		},
 		"1009351": {
-			"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0.jpg",
-			"name": "Hulk",
-			"id": 1009351,
+			"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/5/a0/538615ca33ab0.jpg", 
+			"name": "Hulk", 
+			"id": 1009351, 
 			"description":"Caught in a gamma bomb explosion while trying to save the life of a teenager, Dr. Bruce Banner was transformed into the incredibly powerful creature called the Hulk. An all too often misunderstood hero, the angrier the Hulk gets, the stronger the Hulk gets." ,
-			"numberOfComics": 1314,
-			"numberOfStories":1986,
+			"numberOfComics": 1314, 
+			"numberOfStories":1986, 
 			"numberOfSeries": 317,
 			"comics": [
 				{"name": "A+X (2012) #3", 												"id":43498 },
@@ -89,12 +89,12 @@ module.exports=
 			]
 		},
 		"1009368": {
-			"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55.jpg",
-			"name": "Iron Man",
-			"id": 1009368,
+			"thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55.jpg", 
+			"name": "Iron Man", 
+			"id": 1009368, 			
 			"description":"Wounded, captured and forced to build a weapon by his enemies, billionaire industrialist Tony Stark instead created an advanced suit of armor to save his life and escape captivity. Now with a new outlook on life, Tony uses his money and intelligence to make the world a safer, better place as Iron Man." ,
-			"numberOfComics": 1984,
-			"numberOfStories":2908,
+			"numberOfComics": 1984, 
+			"numberOfStories":2908, 
 			"numberOfSeries": 449,
 			"comics": [
 				{"name": "A+X (2012) #3", 												"id":43498 },
@@ -123,9 +123,9 @@ module.exports=
 	        "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/9/20/4bb4f0966a26a.jpg",
 	        "title":"Adam: Legend of the Blue Marvel (Trade Paperback)",
 	        "description": "An unstoppable super-villain attacks New York City - and the Mighty Avengers fall before him! Where did Anti-Man come from? And who can stop his overwhelming rampage?! Now Iron Man races to find the only man who's ever defeated Anti-Man - THE BLUE MARVEL! A hero the world hasn't seen since 1961! Will Tony Stark uncover the truth behind Blue Marvel's disappearance and will Blue Marvel ever recover from it? Kevin Grevioux (NEW WARRIORS) and Mat Broome (The End League) join forces to create Marvel's newest powerhouse super hero! Collecting ADAM: LEGEND OF THE BLUE MARVEL #1-5.\r\nRated T  ...$19.99 \r\nISBN: 978-0-7851-2409-2",
-	        "id": 24348,
-	        "issue": 1,
-	        "pageCount": 136,
+	        "id": 24348, 
+	        "issue": 1, 
+	        "pageCount": 136, 
 	        "numberOfStories": 14,
 	        "characters": [
 	            {"name": "Ares", "id": 1010784},
@@ -146,7 +146,7 @@ module.exports=
 	            {"name": "Wonder Man", "id": 1009719}
 	        ],
 	        "creators": [
-	            {"name": "Kaare Andrews", "id":191 , "role": "penciller" },
+	            {"name": "Kaare Andrews", "id":191 , "role": "penciller" }, 
 	            {"name": "Mat Broome", "id":4541 , "role": "penciller"},
 	            {"name": "Roberto Castro", "id":9360 , "role": "penciller"},
 	            {"name": "Carrie Spiegle", "id":8194 , "role": "penciller"},
@@ -184,7 +184,7 @@ module.exports=
 	            {"name": "X-Men", "id": 1009726}
 	        ],
 	        "creators": [
-	            {"name": "Jason Aaron", "id":11463, "role": "Writer" },
+	            {"name": "Jason Aaron", "id":11463, "role": "Writer" }, 
 	            {"name": "Jim Cheung", "id":357, "role": "Inker"},
 	            {"name": "Scott Hanna", "id":362, "role": "Inker"},
 	            {"name": "Chris Eliopoulos", "id":452, "role": "Letterer"},
@@ -194,11 +194,11 @@ module.exports=
 	    },
 	    "6951": {
 	        "thumbnail": "http://i.annihil.us/u/prod/marvel/i/mg/3/d0/519b819d54e34.jpg",
-	        "title":"Avengers (1963) #1",
+	        "title":"Avengers (1963) #1", 
 	        "description": "Sometimes there are threats too big for any one hero to combat. Stan Lee and Jack Kirby knew this. And so they created the Avengers, bringing Thor, Hulk, Iron Man and others together to form Earth's Mightiest Heroes. Avengers Assemble!",
-	        "id": 6951,
-	        "issue": 1,
-	        "pageCount": 36,
+	        "id": 6951, 
+	        "issue": 1, 
+	        "pageCount": 36, 
 	        "numberOfStories": 2,
 	        "characters": [
 	            {"name": "Avengers", "id": 1009165},
@@ -210,7 +210,7 @@ module.exports=
 	            {"name": "Thor", "id": 1009368}
 	        ],
 	        "creators": [
-	            {"name": "Dick Ayers", "id":263, "role": "inker" },
+	            {"name": "Dick Ayers", "id":263, "role": "inker" }, 
 	            {"name": "Jack Kirby", "id":196, "role": "Penciller (cover)"},
 	            {"name": "Stan Lee", "id":30, "role": "Editor"},
 	        ]
@@ -459,7 +459,7 @@ module.exports=
 // 			    "events": {
 // 			        "available": 24
 // 			    }
-// 			},
+// 			}, 
 // 			{
 // 			    "id": 1009368,
 // 			    "name": "Iron Man",
@@ -1816,7 +1816,7 @@ module.exports = performanceNow;
  *
  * @providesModule shallowEqual
  * @typechecks
- *
+ * 
  */
 
 'use strict';
@@ -5112,7 +5112,7 @@ function createRouteFromReactElement(element) {
  * nested.
  *
  *   import { Route, createRoutesFromReactChildren } from 'react-router'
- *
+ *   
  *   const routes = createRoutesFromReactChildren(
  *     <Route component={App}>
  *       <Route path="home" component={Dashboard}/>
@@ -25487,7 +25487,7 @@ var CreatorPage = function (_React$Component) {
 module.exports = CreatorPage;
 
 },{"../mockdata.json":1,"./navbar.js":222,"react":214}],221:[function(require,module,exports){
-'use strict';
+"use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -25511,16 +25511,28 @@ var HeaderItem = function (_React$Component) {
 	}
 
 	_createClass(HeaderItem, [{
-		key: 'handleClick',
+		key: "handleClick",
 		value: function handleClick() {
-			this.props.sortContents(this.props.headKey);
+			if (this.props.headKey !== "thumbnail") {
+				console.log(this.props.headKey);
+				this.props.sortContents(this.props.headKey);
+			}
 		}
 	}, {
-		key: 'render',
+		key: "render",
 		value: function render() {
+			var sortClass = "";
+			if (this.props.sortData.key === this.props.headKey) {
+				if (this.props.sortData.ascending) {
+					sortClass = "sort sort-ascending";
+				} else {
+					sortClass = "sort sort-descending";
+				}
+			}
+
 			return React.createElement(
-				'th',
-				{ onClick: this.handleClick.bind(this) },
+				"th",
+				{ onClick: this.handleClick.bind(this), className: sortClass },
 				this.props.headValue
 			);
 		}
@@ -25742,9 +25754,10 @@ var Table = function (_React$Component) {
 			if (this.state.sortBy === key) {
 				console.log('[table.js] toggling order for ' + key);
 				this.setState({ ascending: !this.state.ascending });
+				console.log(this.state.ascending);
 			} else {
 				console.log('[table.js] sorting by ' + key);
-				this.setState({ sortBy: key });
+				this.setState({ sortBy: key, ascending: true });
 			}
 		}
 	}, {
@@ -25759,7 +25772,10 @@ var Table = function (_React$Component) {
 				React.createElement(
 					'thead',
 					null,
-					React.createElement(TableHeader, { sortContent: this.sortContent.bind(this), content: this.props.headers })
+					React.createElement(TableHeader, {
+						sortContent: this.sortContent.bind(this),
+						content: this.props.headers,
+						sortData: { key: this.state.sortBy, ascending: this.state.ascending } })
 				),
 				React.createElement(
 					'tbody',
@@ -25781,7 +25797,7 @@ function sortData(data, sortBy, ascending) {
 		if (a[sortBy] >= b[sortBy]) {
 			result = 1;
 		} else {
-			result = 1;
+			result = -1;
 		}
 		return ascending ? result : result * -1;
 	});
@@ -25824,7 +25840,11 @@ var TableHeader = function (_React$Component) {
 				'tr',
 				null,
 				data.map(function (info) {
-					return React.createElement(HeaderItem, { sortContents: _this2.props.sortContent, headKey: info.key, headValue: info.value });
+					return React.createElement(HeaderItem, {
+						sortContents: _this2.props.sortContent,
+						headKey: info.key,
+						headValue: info.value,
+						sortData: _this2.props.sortData });
 				})
 			);
 		}

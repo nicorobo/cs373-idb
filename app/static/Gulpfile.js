@@ -17,7 +17,7 @@ gulp.task('scripts', ()=> {
 });
 
 gulp.task('watch', ()=> {
-	gulp.watch('./src/**/*.js', ['dev-scripts']);
+	gulp.watch('./src/**/*.js', ['scripts']);
 })
 
 function handle_error(err){
