@@ -64,9 +64,15 @@ def set_key(k):
 
 
 def get(url, **kwargs):
-    params = _build_params(**kwargs)
-    headers = _build_headers(**kwargs)
-    return requests.get(url, params=params, headers=headers)
+    kwargs['params'] = _build_params(**kwargs)
+    kwargs['headers'] = _build_headers(**kwargs)
+
+    s = kwargs.pop('session', None)
+    if s:
+        return s.get(url, **kwargs)
+
+    return requests.get(url, **kwargs)
+
 
 
 def character(character_id, **kwargs):
