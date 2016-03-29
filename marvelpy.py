@@ -26,6 +26,15 @@ def _build_params(params=None, key=None, ts=None, **kwargs):
     if not ts:
         ts = str(random.randrange(10000))
 
+    assert key is not None
+    assert 'public' in key
+    assert 'private' in key
+    # Better
+    #if key is None:
+    #    raise APIKeyError()
+    #if not ('public' in key and 'private' in key):
+    #    raise APIKeyError()
+
     m = hashlib.md5()
     m.update(ts.encode())
     m.update(key['private'].encode())
@@ -41,7 +50,7 @@ def _build_params(params=None, key=None, ts=None, **kwargs):
 
 def read_key(file_name, default=False):
     """
-    Reads a Marvel API public/private key pair from the file file_name. The first line should be the public key, the second line, the private key.
+    Reads a Marvel Comics API public/private key pair from the file file_name. The first line should be the public key, the second line, the private key.
     """
     with open(file_name) as f:
         key = {}
