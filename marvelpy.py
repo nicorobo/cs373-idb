@@ -30,11 +30,12 @@ def _build_params(params=None, key=None, ts=None, **kwargs):
     generator, disable them overall. A timestamp generator is a decent idea
     though and could solve the problem.
     '''
-    ts = str(random.randrange(100000))
+    ts = str(random.randrange(10000))
 
     assert key is not None
     assert 'public' in key
     assert 'private' in key
+    #TODO
     '''
     Better:
     if key is None:
@@ -154,9 +155,10 @@ def series(**kwargs):
 ###
 
 
+#TODO: implement support for arbitrary start/stop positions
 def iterator(f, *args, **kwargs):
     '''
-    Probably works, but Marvel's API doesn't seem to work. So you probably shouldn't use it.
+    Works, but Marvel's API doesn't seem to work, at least for the characters endpoint. So exercise caution. Running this to download an entire data set could take a while.
     '''
     params = kwargs.get('params', {})
     params['offset'] = 0
