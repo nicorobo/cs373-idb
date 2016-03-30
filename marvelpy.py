@@ -23,17 +23,25 @@ def _build_params(params=None, key=None, ts=None, **kwargs):
         params = {}
     if not key:
         key = _default_key
-    if not ts:
-        ts = str(random.randrange(10000))
+
+    '''
+    Custom timestamps disabled for right now since they complicate the
+    iterator. Since they can't be used for an iterator without some timestamp
+    generator, disable them overall. A timestamp generator is a decent idea
+    though and could solve the problem.
+    '''
+    ts = str(random.randrange(100000))
 
     assert key is not None
     assert 'public' in key
     assert 'private' in key
-    # Better
-    #if key is None:
-    #    raise APIKeyError()
-    #if not ('public' in key and 'private' in key):
-    #    raise APIKeyError()
+    '''
+    Better:
+    if key is None:
+        raise APIKeyError()
+    if not ('public' in key and 'private' in key):
+        raise APIKeyError()
+    '''
 
     m = hashlib.md5()
     m.update(ts.encode())
@@ -141,3 +149,36 @@ def single_series(series_id, **kwargs):
 def series(**kwargs):
     url = _base_url.format('/v1/public/series')
     return get(url, **kwargs)
+
+
+###
+
+
+def iterator(f, *args, **kwargs):
+    '''
+    Probably works, but Marvel's API doesn't seem to work. So you probably shouldn't use it.
+    '''
+    params = kwargs.get('params', {})
+    params['offset'] = 0
+    params.setdefault('limit', 100)
+    kwargs['params'] = params
+
+    r = f(*args, **kwargs)
+    if r.status_code != 200:
+        r.raise_for_status()
+    yield r
+
+    j = r.json()
+    total = j['data']['total']
+    if total == 0:
+        raise StopIteration
+    kwargs['params']['offset'] += j['data']['count']
+
+    while kwargs['params']['offset'] < total:
+        r = f(*args, **kwargs)
+        if r.status_code != 200:
+            r.raise_for_status()
+        yield r
+
+        j = r.json()
+        kwargs['params']['offset'] += j['data']['count']
