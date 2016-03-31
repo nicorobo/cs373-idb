@@ -72,8 +72,12 @@ td, th, li {
 
 /******** SPLASH **********/
 
+
 .splash-page {
 	text-align: center;
+	height: 100vh;
+	background-image: url("http://buzzerg.com/wp-content/uploads/8589130560838-new-york-city-black-and-white-of-city-wallpaper-hd.jpg");
+	background-size: cover;
 }
 
 .splash-image {
@@ -84,10 +88,13 @@ td, th, li {
     -moz-transition: .75s;
     -o-transition: .75s;
     transition: .75s;
+	-webkit-keyframes: none;
+
 }
 
 .splash-image:hover {
 	width: 700px;
+	opacity: 1;
 	max-width: 75%;
 	-webkit-transition: .75s;
     -moz-transition: .75s;
@@ -99,7 +106,7 @@ td, th, li {
 	padding-top: 50px;
 	font-family: "Marvel";
 	font-weight: 200;
-	color: #7d8080;
+	color: white;
 }
 
 /******** ABOUT **********/
