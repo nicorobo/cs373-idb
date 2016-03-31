@@ -76,7 +76,7 @@ td, th, li {
 .splash-page {
 	text-align: center;
 	height: 100vh;
-	background-image: url("http://buzzerg.com/wp-content/uploads/8589130560838-new-york-city-black-and-white-of-city-wallpaper-hd.jpg");
+	background-image: url("/static/img/new-york-city-black-and-white.jpg");
 	background-size: cover;
 }
 
