@@ -14,20 +14,19 @@ def add_character(json_data):
     for comic in json_data[u'data'][u'results'][0][u'comics'][u'items']:
         comic_ids.append(int(comic[u'resourceURI'].split('/comics/')[1]))
 
-    character = Character(id=id, thumbnail=thumbnail, name=name, description=description,
-    number_of_comics=number_of_comics, number_of_stories=number_of_stories, number_of_series=number_of_series)
-    db.session.add(character)
-    logger.debug('Added %s', character)
+    character_test = Character.query.filter_by(id=id).first()
+    if not character_test:
+        character = Character(id=id, thumbnail=thumbnail, name=name, description=description,
+        number_of_comics=number_of_comics, number_of_stories=number_of_stories, number_of_series=number_of_series)
 
-    # for comic_id in comic_ids:
-        #TODO check if comic_character already in DB?
-        # comic_character = ComicCharacter()
-        # comic_character.comic=Comic(id=comic_id)
-        # character.comics.append(comic_character)
-        # db.session.add(comic_character)
-        #TODO check if comic is in DB?
+        for comic_id in comic_ids:
+            comic = Comic.query.filter_by(id=comic_id).first()
+            if comic:
+                character.comics.append(comic)
 
-    db.session.commit()
+        db.session.add(character)
+        logger.debug('Added %s', character)
+        db.session.commit()
 
 def add_comic(json_data):
     id = json_data[u'data'][u'results'][0][u'id']
@@ -41,40 +40,33 @@ def add_comic(json_data):
     number_of_creators = json_data[u'data'][u'results'][0][u'creators'][u'available']
     number_of_stories = json_data[u'data'][u'results'][0][u'stories'][u'available']
 
-    comic = Comic(id=id, thumbnail=thumbnail, title=title, description=description,
-    page_count=page_count, series=series, number_of_characters=number_of_characters,
-    number_of_stories=number_of_stories)
-    db.session.add(comic)
-    logger.debug('Added %s', comic)
+    comic_test = Comic.query.filter_by(id=id).first()
+    if not comic_test:
+        comic = Comic(id=id, thumbnail=thumbnail, title=title, description=description,
+        page_count=page_count, series=series, number_of_characters=number_of_characters,
+        number_of_stories=number_of_stories)
 
-    character_ids = []
-    for character in json_data[u'data'][u'results'][0][u'characters'][u'items']:
-        character_ids.append(int(character[u'resourceURI'].split('/characters/')[1]))
+        character_ids = []
+        for character in json_data[u'data'][u'results'][0][u'characters'][u'items']:
+            character_ids.append(int(character[u'resourceURI'].split('/characters/')[1]))
 
-    # for character_id in character_ids:
-        #TODO check if comic_character already in DB?
-        # comic_character = ComicCharacter()
-        # comic_character.character=Character(id=character_id)
-        # comic.characters.append(comic_creator)
-        # db.session.add(comic_character)
-        #TODO check if character is in DB?
+        creator_ids = []
+        for creator in json_data[u'data'][u'results'][0][u'creators'][u'items']:
+            creator_ids.append(int(creator[u'resourceURI'].split('/creators/')[1]))
 
-    creator_ids = []
-    for creator in json_data[u'data'][u'results'][0][u'creators'][u'items']:
-        try:
-            character_ids.append(int(character[u'resourceURI'].split('/creators/')[1]))
-        except:
-            pass
+        for character_id in character_ids:
+            character = Character.query.filter_by(id=character_id).first()
+            if character:
+                comic.characters.append(character)
 
-    # for creator_id in creator_ids:
-        #TODO check if comic_creator already in DB?
-        # comic_creator = ComicCreator()
-        # comic_creator.creator=Creator(id=creator_id)
-        # comic.creators.append(comic_creator)
-        # db.session.add(comic_creator)
-        #TODO check if creator is in DB?
+        for creator_id in creator_ids:
+            creator = Creator.query.filter_by(id=creator_id).first()
+            if creator:
+                comic.creators.append(creator)
 
-    db.session.commit()
+        db.session.add(comic)
+        logger.debug('Added %s', comic)
+        db.session.commit()
 
 def add_creator(json_data):
     id = json_data[u'data'][u'results'][0][u'id']
@@ -85,23 +77,21 @@ def add_creator(json_data):
     number_of_stories = json_data[u'data'][u'results'][0][u'stories'][u'available']
     number_of_series = json_data[u'data'][u'results'][0][u'series'][u'available']
 
-    creator = Creator(id=id, thumbnail=thumbnail, first_name=first_name, last_name=last_name,
-    number_of_comics=number_of_comics, number_of_series=number_of_series,
-    number_of_stories=number_of_stories)
+    creator_test = Creator.query.filter_by(id=id).first()
+    if not creator_test:
+        creator = Creator(id=id, thumbnail=thumbnail, first_name=first_name, last_name=last_name,
+        number_of_comics=number_of_comics, number_of_series=number_of_series,
+        number_of_stories=number_of_stories)
 
-    comic_ids = []
-    for comic in json_data[u'data'][u'results'][0][u'comics'][u'items']:
-        comic_ids.append(int(comic[u'resourceURI'].split('/comics/')[1]))
+        comic_ids = []
+        for comic in json_data[u'data'][u'results'][0][u'comics'][u'items']:
+            comic_ids.append(int(comic[u'resourceURI'].split('/comics/')[1]))
 
-    # for comic_id in comic_ids:
-        #TODO check if comic_creator already in DB?
-        # comic_creator = ComicCreator()
-        # comic_creator.comic=Comic(id=comic_id)
-        # creator.comics.append(comic_creator)
-        # creator.comics.append(comic_creator)
-        # db.session.add(comic_creator)
-        #TODO check if comic is in DB?
+        for comic_id in comic_ids:
+            comic = Comic.query.filter_by(id=comic_id).first()
+            if comic:
+                creator.comics.append(comic)
 
-    db.session.add(creator)
-    logger.debug('Added %s', creator)
-    db.session.commit()
+        db.session.add(creator)
+        logger.debug('Added %s', creator)
+        db.session.commit()

@@ -1,8 +1,21 @@
 from sqlalchemy import ForeignKey
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, backref
 
 from app import db
 
+comic_character = db.Table('comic_character',
+    db.Column('comic_id', db.Integer, db.ForeignKey("comic.id"),
+           primary_key=True),
+    db.Column('character_id', db.Integer, db.ForeignKey("character.id"),
+           primary_key=True)
+)
+
+comic_creator = db.Table('comic_creator',
+    db.Column('comic_id', db.Integer, db.ForeignKey("comic.id"),
+           primary_key=True),
+    db.Column('creator_id', db.Integer, db.ForeignKey("creator.id"),
+           primary_key=True)
+)
 
 class Character(db.Model):
     __tablename__ = 'character'
@@ -14,8 +27,9 @@ class Character(db.Model):
     number_of_comics = db.Column(db.Integer)
     number_of_stories = db.Column(db.Integer)
     number_of_series = db.Column(db.Integer)
-    comics = relationship('ComicCharacter',
-                          back_populates='character')
+
+    comics = db.relationship('Comic', secondary="comic_character",
+                             backref="characters")
 
     def __repr__(self):
         id = self.id if self.id else None
@@ -35,10 +49,10 @@ class Comic(db.Model):
     number_of_creators = db.Column(db.Integer)
     number_of_characters = db.Column(db.Integer)
     number_of_stories = db.Column(db.Integer)
-    characters = relationship('ComicCharacter',
-                          back_populates='comic')
-    creators = relationship('ComicCreator',
-                          back_populates='comic')
+
+    creators = db.relationship('Creator', secondary="comic_creator",
+                             backref="comics")
+
     def __repr__(self):
         id = self.id if self.id else None
         return '<%s %s>' % (self.__class__.__name__, id)
@@ -54,37 +68,7 @@ class Creator(db.Model):
     number_of_comics = db.Column(db.Integer)
     number_of_stories = db.Column(db.Integer)
     number_of_series = db.Column(db.Integer)
-    comics = relationship('ComicCreator',
-                          back_populates='creator')
 
     def __repr__(self):
         id = self.id if self.id else None
         return '<%s %s>' % (self.__class__.__name__, id)
-
-
-class ComicCharacter(db.Model):
-    __tablename__ = 'comic_character'
-
-    comic_id = db.Column(db.Integer, ForeignKey('comic.id'), primary_key=True)
-    character_id = db.Column(db.Integer, ForeignKey('character.id'), primary_key=True)
-    comic = relationship("Comic", back_populates="characters")
-    character = relationship("Character", back_populates="comics")
-
-    def __repr__(self):
-        comic_id = self.comic_id if self.comic_id else None
-        character_id = self.character_id if self.character_id else None
-        return '<%s %s %s>' % (self.__class__.__name__, comic_id, character_id)
-
-
-class ComicCreator(db.Model):
-    __tablename__ = 'comic_creator'
-
-    comic_id = db.Column(db.Integer, ForeignKey('comic.id'), primary_key=True)
-    creator_id = db.Column(db.Integer, ForeignKey('creator.id'), primary_key=True)
-    comic = relationship("Comic", back_populates="creators")
-    creator = relationship("Creator", back_populates="comics")
-
-    def __repr__(self):
-        comic_id = self.comic_id if self.comic_id else None
-        creator_id = self.creator_id if self.creator_id else None
-        return '<%s %s %s>' % (self.__class__.__name__, comic_id, creator_id)

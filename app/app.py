@@ -15,10 +15,10 @@ logger.debug("Welcome")
 SQLALCHEMY_DATABASE_URI = \
     '{engine}://{username}:{password}@{hostname}/{database}'.format(
         engine='mysql+pymysql',
-        username=os.getenv('MYSQL_USER'),
-        password=os.getenv('MYSQL_PASSWORD'),
-        hostname=os.getenv('MYSQL_HOST'),
-        database=os.getenv('MYSQL_DATABASE'))
+        username='admin',
+        password='password',
+        hostname='cs373idb_db',
+        database='marvel')
 
 
 app = Flask(__name__)
@@ -78,16 +78,16 @@ def create_dummy_data():
 def test_dummy_data():
     logger.debug("test dummy data")
     app.config['SQLALCHEMY_ECHO'] = True
-    # creator = Creator.query.first()
-    # logger.debug(creator.first_name)
-    # logger.debug(creator.comics)
+    creator = Creator.query.first()
+    logger.debug(creator.first_name)
+    logger.debug(creator.comics)
     comic = Comic.query.first()
     logger.debug(comic.id)
-    # logger.debug(comic.characters)
-    # logger.debug(comic.creators)
+    logger.debug(comic.characters)
+    logger.debug(comic.creators)
     character = Character.query.first()
     logger.debug(character.name)
-    # logger.debug(character.comics)
+    logger.debug(character.comics)
 
 @manager.command
 def drop_db():
