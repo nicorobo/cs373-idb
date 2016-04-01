@@ -2,16 +2,16 @@ from app import db, logger
 from models import *
 
 def add_character(json_data):
-    id = json_data[u'data'][u'results'][0][u'id']
-    thumbnail = json_data[u'data'][u'results'][0][u'thumbnail'][u'path']+'.' +json_data[u'data'][u'results'][0][u'thumbnail'][u'extension']
-    name = json_data[u'data'][u'results'][0][u'name']
-    description = json_data[u'data'][u'results'][0][u'description']
-    number_of_comics = json_data[u'data'][u'results'][0][u'comics'][u'available']
-    number_of_stories = json_data[u'data'][u'results'][0][u'stories'][u'available']
-    number_of_series = json_data[u'data'][u'results'][0][u'series'][u'available']
+    id = json_data[u'id']
+    thumbnail = json_data[u'thumbnail'][u'path']+'.' +json_data[u'thumbnail'][u'extension']
+    name = json_data[u'name']
+    description = json_data[u'description']
+    number_of_comics = json_data[u'comics'][u'available']
+    number_of_stories = json_data[u'stories'][u'available']
+    number_of_series = json_data[u'series'][u'available']
 
     comic_ids = []
-    for comic in json_data[u'data'][u'results'][0][u'comics'][u'items']:
+    for comic in json_data[u'comics'][u'items']:
         comic_ids.append(int(comic[u'resourceURI'].split('/comics/')[1]))
 
     character_test = Character.query.filter_by(id=id).first()
@@ -29,16 +29,16 @@ def add_character(json_data):
         db.session.commit()
 
 def add_comic(json_data):
-    id = json_data[u'data'][u'results'][0][u'id']
-    thumbnail = json_data[u'data'][u'results'][0][u'thumbnail'][u'path']+'.' +json_data[u'data'][u'results'][0][u'thumbnail'][u'extension']
-    title = json_data[u'data'][u'results'][0][u'title']
-    issue_num = json_data[u'data'][u'results'][0][u'issueNumber']
-    description = json_data[u'data'][u'results'][0][u'description']
-    page_count = json_data[u'data'][u'results'][0][u'pageCount']
-    series = json_data[u'data'][u'results'][0][u'series'][u'name']
-    number_of_characters = json_data[u'data'][u'results'][0][u'characters'][u'available']
-    number_of_creators = json_data[u'data'][u'results'][0][u'creators'][u'available']
-    number_of_stories = json_data[u'data'][u'results'][0][u'stories'][u'available']
+    id = json_data[u'id']
+    thumbnail = json_data[u'thumbnail'][u'path']+'.' +json_data[u'thumbnail'][u'extension']
+    title = json_data[u'title']
+    issue_num = json_data[u'issueNumber']
+    description = json_data[u'description']
+    page_count = json_data[u'pageCount']
+    series = json_data[u'series'][u'name']
+    number_of_characters = json_data[u'characters'][u'available']
+    number_of_creators = json_data[u'creators'][u'available']
+    number_of_stories = json_data[u'stories'][u'available']
 
     comic_test = Comic.query.filter_by(id=id).first()
     if not comic_test:
@@ -47,11 +47,11 @@ def add_comic(json_data):
         number_of_stories=number_of_stories)
 
         character_ids = []
-        for character in json_data[u'data'][u'results'][0][u'characters'][u'items']:
+        for character in json_data[u'characters'][u'items']:
             character_ids.append(int(character[u'resourceURI'].split('/characters/')[1]))
 
         creator_ids = []
-        for creator in json_data[u'data'][u'results'][0][u'creators'][u'items']:
+        for creator in json_data[u'creators'][u'items']:
             creator_ids.append(int(creator[u'resourceURI'].split('/creators/')[1]))
 
         for character_id in character_ids:
@@ -69,13 +69,13 @@ def add_comic(json_data):
         db.session.commit()
 
 def add_creator(json_data):
-    id = json_data[u'data'][u'results'][0][u'id']
-    thumbnail = json_data[u'data'][u'results'][0][u'thumbnail'][u'path']+'.' +json_data[u'data'][u'results'][0][u'thumbnail'][u'extension']
-    first_name = json_data[u'data'][u'results'][0][u'firstName']
-    last_name = json_data[u'data'][u'results'][0][u'lastName']
-    number_of_comics = json_data[u'data'][u'results'][0][u'comics'][u'available']
-    number_of_stories = json_data[u'data'][u'results'][0][u'stories'][u'available']
-    number_of_series = json_data[u'data'][u'results'][0][u'series'][u'available']
+    id = json_data[u'id']
+    thumbnail = json_data[u'thumbnail'][u'path']+'.' +json_data[u'thumbnail'][u'extension']
+    first_name = json_data[u'firstName']
+    last_name = json_data[u'lastName']
+    number_of_comics = json_data[u'comics'][u'available']
+    number_of_stories = json_data[u'stories'][u'available']
+    number_of_series = json_data[u'series'][u'available']
 
     creator_test = Creator.query.filter_by(id=id).first()
     if not creator_test:
@@ -84,7 +84,7 @@ def add_creator(json_data):
         number_of_stories=number_of_stories)
 
         comic_ids = []
-        for comic in json_data[u'data'][u'results'][0][u'comics'][u'items']:
+        for comic in json_data[u'comics'][u'items']:
             comic_ids.append(int(comic[u'resourceURI'].split('/comics/')[1]))
 
         for comic_id in comic_ids:

@@ -1,5 +1,6 @@
 import os
 import logging
+import json
 
 from flask import Flask, render_template
 from flask.ext.script import Manager
@@ -82,7 +83,7 @@ def test_dummy_data():
     logger.debug(creator.first_name)
     logger.debug(creator.comics)
     comic = Comic.query.first()
-    logger.debug(comic.id)
+    logger.debug(comic.title)
     logger.debug(comic.characters)
     logger.debug(comic.creators)
     character = Character.query.first()
@@ -94,6 +95,63 @@ def drop_db():
     logger.debug("drop_db")
     app.config['SQLALCHEMY_ECHO'] = True
     db.drop_all()
+
+@manager.command
+def add_characters():
+    logger.debug("add characters")
+    app.config['SQLALCHEMY_ECHO'] = True
+    with open("characters.json") as data_file:
+        data = json.load(data_file)
+        for i in range(0, len(data)):
+            for j in range(0, len(data[i])):
+                json_data = data[i][j]
+                add_character(json_data)
+
+@manager.command
+def add_comics():
+    logger.debug("add comics")
+    app.config['SQLALCHEMY_ECHO'] = True
+    with open("comics1.json") as data_file:
+        data = json.load(data_file)
+        for i in range(0, len(data)):
+            for j in range(0, len(data[i])):
+                json_data = data[i][j]
+                add_comic(json_data)
+    with open("comics2.json") as data_file:
+        data = json.load(data_file)
+        for i in range(0, len(data)):
+            for j in range(0, len(data[i])):
+                json_data = data[i][j]
+                add_comic(json_data)
+
+@manager.command
+def add_creators():
+    logger.debug("add creators")
+    app.config['SQLALCHEMY_ECHO'] = True
+    with open("creators.json") as data_file:
+        data = json.load(data_file)
+        for i in range(0, len(data)):
+            for j in range(0, len(data[i])):
+                json_data = data[i][j]
+                add_creator(json_data)
+
+@manager.command
+def test_all_data():
+    logger.debug("test all data")
+    app.config['SQLALCHEMY_ECHO'] = True
+    creators = Creator.query.all()
+    for creator in creators:
+        logger.debug(creator.first_name)
+        logger.debug(creator.comics)
+    comics = Comic.query.all()
+    for comic in comis:
+        logger.debug(comic.title)
+        logger.debug(comic.characters)
+        logger.debug(comic.creators)
+    characters = Character.query.all()
+    for character in characters:
+        logger.debug(character.name)
+        logger.debug(character.comics)
 
 if __name__ == '__main__':
     manager.run()
