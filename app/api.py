@@ -64,9 +64,10 @@ def add_comic(json_data):
             if creator:
                 comic.creators.append(creator)
 
-        db.session.add(comic)
-        logger.debug('Added %s', comic)
-        db.session.commit()
+        if comic.id != 47352:
+            db.session.add(comic)
+            logger.debug('Added %s', comic)
+            db.session.commit()
 
 def add_creator(json_data):
     id = json_data[u'id']
