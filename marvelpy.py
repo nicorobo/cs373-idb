@@ -5,7 +5,7 @@ marvelpy is a wrapper around the requests library to facilitate requests to the 
 import hashlib, random, requests
 
 
-_base_url = 'http://gateway.marvel.com{}'
+_base_url = 'http://gateway.marvel.com/v1/public/'
 _default_key = None
 
 
@@ -93,75 +93,44 @@ def get(url, **kwargs):
 
 
 
-def character(character_id, **kwargs):
-    url = _base_url.format('/v1/public/characters/{}').format(character_id)
+def characters(id=None, **kwargs):
+    url = _base_url + 'characters' + ('/' + str(id) if id else '')
     return get(url, **kwargs)
 
 
 
-def characters(**kwargs):
-    url = _base_url.format('/v1/public/characters')
+def comics(id=None, **kwargs):
+    url = _base_url + 'comics' + ('/' + str(id) if id else '')
     return get(url, **kwargs)
 
 
 
-def comic(comic_id, **kwargs):
-    url = _base_url.format('/v1/public/comics/{}').format(comic_id)
+def creators(id=None, **kwargs):
+    url = _base_url + 'creators' + ('/' + str(id) if id else '')
     return get(url, **kwargs)
 
 
 
-def comics(**kwargs):
-    url = _base_url.format('/v1/public/comics')
+def events(id=None, **kwargs):
+    url = _base_url + 'events' + ('/' + str(id) if id else '')
     return get(url, **kwargs)
 
 
 
-def creator(creator_id, **kwargs):
-    url = _base_url.format('/v1/public/creators/{}').format(creator_id)
-    return get(url, **kwargs)
-
-
-
-def creators(**kwargs):
-    url = _base_url.format('/v1/public/creators')
-    return get(url, **kwargs)
-
-
-
-def event(event_id, **kwargs):
-    url = _base_url.format('/v1/public/events/{}').format(event_id)
-    return get(url, **kwargs)
-
-
-
-def events(**kwargs):
-    url = _base_url.format('/v1/public/events')
-    return get(url, **kwargs)
-
-
-# Stupid name because series is both singular and plural
-def single_series(series_id, **kwargs):
-    url = _base_url.format('/v1/public/series/{}').format(series_id)
-    return get(url, **kwargs)
-
-
-
-def series(**kwargs):
-    url = _base_url.format('/v1/public/series')
+def series(id=None, **kwargs):
+    url = _base_url + 'series' + ('/' + str(id) if id else '')
     return get(url, **kwargs)
 
 
 ###
 
 
-#TODO: implement support for arbitrary start/stop positions
 def iterator(f, *args, **kwargs):
     '''
     Works, but Marvel's API doesn't seem to work, at least for the characters endpoint. So exercise caution. Running this to download an entire data set could take a while.
     '''
     params = kwargs.get('params', {})
-    params['offset'] = 0
+    params.setdefault('offset', 0)
     params.setdefault('limit', 100)
     kwargs['params'] = params
 
