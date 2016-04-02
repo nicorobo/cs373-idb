@@ -125,19 +125,20 @@ def series(id=None, **kwargs):
 ###
 
 
-def iterator(f, *args, **kwargs):
-    '''
-    Works, but Marvel's API doesn't seem to work, at least for the characters endpoint. So exercise caution. Running this to download an entire data set could take a while.
-    '''
-    params = kwargs.get('params', {})
+def iterator(f, *args, tries=1, **kwargs):
+    params = kwargs.setdefault('params', {})
     params.setdefault('offset', 0)
     params.setdefault('limit', 100)
-    kwargs['params'] = params
 
     r = f(*args, **kwargs)
-    if r.status_code != 200:
-        r.raise_for_status()
+    retries = tries - 1
+    while r.status_code == 500 and retries:
+        retries -= 1
+        r = f(*args, **kwargs)
     yield r
+
+    if r.status_code != 200:
+        raise StopIteration
 
     j = r.json()
     total = j['data']['total']
@@ -147,9 +148,45 @@ def iterator(f, *args, **kwargs):
 
     while kwargs['params']['offset'] < total:
         r = f(*args, **kwargs)
-        if r.status_code != 200:
-            r.raise_for_status()
+        retries = tries - 1
+        while r.status_code == 500 and retries:
+            retries -= 1
+            r = f(*args, **kwargs)
         yield r
 
-        j = r.json()
-        kwargs['params']['offset'] += j['data']['count']
+        if r.status_code != 200:
+            raise StopIteration
+
+        kwargs['params']['offset'] += r.json()['data']['count']
+
+
+### Test Objects
+
+
+class TestGet:
+    def __init__(self, n):
+        self.n = n
+
+    def __call__(self, url, **kwargs):
+        if self.n:
+            self.n -= 1
+            return TestResponse(500, 1000, url, **kwargs)
+        
+        return TestResponse(200, 1000, url, **kwargs)
+
+
+
+class TestResponse:
+    def __init__(self, status_code, total, *args, **kwargs):
+        self.status_code = status_code
+        self.j = {}
+        self.j['data'] = {}
+        self.j['data']['total'] = total
+        self.j['data']['offset'] = kwargs['params']['offset']
+        self.j['data']['count'] = kwargs['params']['limit']
+
+    def json(self):
+        return self.j
+
+
+        
