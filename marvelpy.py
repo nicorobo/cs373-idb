@@ -9,6 +9,12 @@ _base_url = 'http://gateway.marvel.com/v1/public/'
 _default_key = None
 
 
+
+class APIKeyError(Exception):
+    pass
+
+
+
 def _build_headers(etag=None, **kwargs):
     headers = {}
     if etag:
@@ -32,17 +38,10 @@ def _build_params(params=None, key=None, ts=None, **kwargs):
     '''
     ts = str(random.randrange(10000))
 
-    assert key is not None
-    assert 'public' in key
-    assert 'private' in key
-    #TODO
-    '''
-    Better:
     if key is None:
-        raise APIKeyError()
+        raise APIKeyError('No default key set and no key provided.')
     if not ('public' in key and 'private' in key):
-        raise APIKeyError()
-    '''
+        raise APIKeyError('API key has no public or private key.')
 
     m = hashlib.md5()
     m.update(ts.encode())
