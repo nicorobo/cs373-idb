@@ -56,22 +56,24 @@ def _build_params(params=None, key=None, ts=None, **kwargs):
 
 
 
-def read_key(file_name, default=False):
+def load_key(file_name, default=False):
     """
     Reads a Marvel Comics API public/private key pair from the file file_name. The first line should be the public key, the second line, the private key.
     """
     with open(file_name) as f:
         key = {}
-        key['public'] = f.readline()[:-1]
-        key['private'] = f.readline()
+        s = f.readline()
+        if s.endswith('\n'):
+            s = s[:-1]
+        key['public'], key['private'] = s.split(',')
 
     if default:
-        set_key(key)
+        set_default_key(key)
     
     return key
 
 
-def set_key(k):
+def set_default_key(k):
     global _default_key
     _default_key = k
 
