@@ -1,22 +1,58 @@
 """
-marvelpy is a wrapper around the requests library to facilitate requests to the Marvel Comics API. The calls return requests.Response objects.
+MarvelPy is a wrapper around the requests library to facilitate requests to the Marvel Comics API. The calls return requests.Response objects.
 """
 
-import hashlib, random, requests
+import functools, hashlib, random, requests
 
 
 _base_url = 'http://gateway.marvel.com/v1/public/'
-_default_key = None
 
+
+### Classes ###
+
+
+class Keychain:
+    def __init__(self):
+        self.index = None
+        self.keychain = []
+
+
+    def add_key(self, key):
+        self.keychain.append(key)
+
+        if self.index is None:
+            self.index = 0
+
+
+    def key(self):
+        return None if self.index is None else self.keychain[self.index]
+    
+
+    def next_key(self):
+        if self.index is None or self.index + 1 == len(self.keychain):
+            return None
+
+        self.index += 1
+        return self.keychain[self.index]
+
+
+keychain = Keychain()
+
+
+### Exceptions ###
 
 
 class APIKeyError(Exception):
     pass
 
 
+###
+
 
 def _build_headers(kwargs):
-    headers = kwargs.setdefault('headers', {})
+    headers = dict(kwargs.get('headers', {}))
+    kwargs['headers'] = headers
+
     etag = kwargs.pop('etag', None)
     if etag:
         headers['If-None-Match'] = etag
@@ -24,12 +60,14 @@ def _build_headers(kwargs):
 
 
 def _build_params(kwargs):
-    #key, ts
-    params = kwargs.setdefault('params', {})
-    key = kwargs.pop('key', _default_key)
+    #ts
+    params = dict(kwargs.get('params', {}))
+    kwargs['params'] = params
+
+    key = keychain.key()
 
     if key is None:
-        raise APIKeyError('No default key set and no key provided.')
+        raise APIKeyError('Keychain empty.')
     if not ('public' in key and 'private' in key):
         raise APIKeyError('API key has no public or private key.')
 
@@ -46,46 +84,43 @@ def _build_params(kwargs):
 
 
 
-def load_key(file_name, default=False):
-    """
-    Reads a Marvel Comics API public/private key pair from the file file_name. The first line should be the public key, the second line, the private key.
-    """
+def load_keys(file_name):
+    num_keys = 0
+
     with open(file_name) as f:
-        key = {}
-        s = f.readline()
-        if s.endswith('\n'):
-            s = s[:-1]
-        try:
-            key['public'], key['private'] = s.split(',')
-        except ValueError:
-            raise APIKeyError('Invalid API key file format.')
+        for line in f:
+            if line.endswith('\n'):
+                line = line[:-1]
 
-    if default:
-        set_default_key(key)
+            key = {}
+            try:
+                key['public'], key['private'] = line.split(',')
+            except ValueError:
+                raise APIKeyError('Invalid API key file format.')
+
+            num_keys += 1
+            keychain.add_key(key)
     
-    return key
+    return num_keys
 
 
+'''
 def set_default_key(k):
     global _default_key
     _default_key = k
+'''
 
 
-
-###
-
+### Level 1
 
 
-#Special keyword arguments: etag, key, ts
+#Special keyword arguments: etag, session, ts
 def get(url, **kwargs):
     _build_params(kwargs)
     _build_headers(kwargs)
 
-    s = kwargs.pop('session', None)
-    if s:
-        return s.get(url, **kwargs)
-
-    return requests.get(url, **kwargs)
+    s = kwargs.pop('session', requests)
+    return s.get(url, **kwargs)
 
 
 
@@ -118,7 +153,25 @@ def series(id=None, **kwargs):
     return get(url, **kwargs)
 
 
-###
+### Level 2
+
+
+def _get_response(g, tries):
+    tries -= 1
+    r = g()
+
+    # 401 is probably the response for too many API calls, but maybe not
+    while r.status_code == 401 or (r.status_code == 500 and tries > 0):
+        if r.status_code == 401:
+            if keychain.next_key() is None:
+                break
+        else: # 500
+            tries -= 1
+
+        r = g()
+
+    # At this point, we've done all we can
+    return r
 
 
 def iterator(f, *args, tries=1, **kwargs):
@@ -126,15 +179,14 @@ def iterator(f, *args, tries=1, **kwargs):
     kwargs.pop('etag', None)
     kwargs.pop('ts', None)
 
-    params = kwargs.setdefault('params', {})
+    params = dict(kwargs.get('params', {}))
+    kwargs['params'] = params
     params.setdefault('offset', 0)
     params.setdefault('limit', 100)
 
-    r = f(*args, **kwargs)
-    retries = tries - 1
-    while r.status_code == 500 and retries:
-        retries -= 1
-        r = f(*args, **kwargs)
+    g = functools.partial(f, *args, **kwargs)
+
+    r = _get_response(g, tries)
     yield r
 
     if r.status_code != 200:
@@ -147,17 +199,36 @@ def iterator(f, *args, tries=1, **kwargs):
     kwargs['params']['offset'] += j['data']['count']
 
     while kwargs['params']['offset'] < total:
-        r = f(*args, **kwargs)
-        retries = tries - 1
-        while r.status_code == 500 and retries:
-            retries -= 1
-            r = f(*args, **kwargs)
+        r = _get_response(g, tries)
         yield r
 
         if r.status_code != 200:
             raise StopIteration
 
         kwargs['params']['offset'] += r.json()['data']['count']
+
+
+### Level 3 ###
+
+
+def get_all(f, *args, tries=1, filter=None, **kwargs):
+    results = []
+    for r in iterator(f, *args, tries=tries, **kwargs):
+        if r.status_code != 200:
+            break
+
+        j = r.json()
+        if j['data']['count'] > 0:
+            for i in j['data']['results']:
+                if filter:
+                    entry = {}
+                    for attribute in filter:
+                        entry[attribute] = i[attribute]
+                    results.append(entry)
+                else:
+                    results.append(i)
+
+    return results, r
 
 
 ### Test Objects
@@ -169,8 +240,7 @@ class TestGet:
 
     def __call__(self, url, **kwargs):
         if self.n:
-            self.n -= 1
-            return TestResponse(500, 1000, url, **kwargs)
+            return TestResponse(self.n.pop(0), 1000, url, **kwargs)
         
         return TestResponse(200, 1000, url, **kwargs)
 
