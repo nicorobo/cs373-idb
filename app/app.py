@@ -136,6 +136,46 @@ def add_creators():
                 add_creator(json_data)
 
 @manager.command
+def update_characters():
+    logger.debug("update characters")
+    app.config['SQLALCHEMY_ECHO'] = True
+    with open("characters.json") as data_file:
+        data = json.load(data_file)
+        for i in range(0, len(data)):
+            for j in range(0, len(data[i])):
+                json_data = data[i][j]
+                update_character(json_data)
+
+
+@manager.command
+def update_comics():
+    logger.debug("update comics")
+    app.config['SQLALCHEMY_ECHO'] = True
+    with open("comics1.json") as data_file:
+        data = json.load(data_file)
+        for i in range(0, len(data)):
+            for j in range(0, len(data[i])):
+                json_data = data[i][j]
+                update_comic(json_data)
+    with open("comics2.json") as data_file:
+        data = json.load(data_file)
+        for i in range(0, len(data)):
+            for j in range(0, len(data[i])):
+                json_data = data[i][j]
+                update_comic(json_data)
+
+@manager.command
+def update_creators():
+    logger.debug("update creators")
+    app.config['SQLALCHEMY_ECHO'] = True
+    with open("creators.json") as data_file:
+        data = json.load(data_file)
+        for i in range(0, len(data)):
+            for j in range(0, len(data[i])):
+                json_data = data[i][j]
+                update_creator(json_data)
+
+@manager.command
 def test_all_data():
     logger.debug("test all data")
     app.config['SQLALCHEMY_ECHO'] = True
@@ -144,7 +184,7 @@ def test_all_data():
         logger.debug(creator.first_name)
         logger.debug(creator.comics)
     comics = Comic.query.all()
-    for comic in comis:
+    for comic in comics:
         logger.debug(comic.title)
         logger.debug(comic.characters)
         logger.debug(comic.creators)

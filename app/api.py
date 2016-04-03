@@ -96,3 +96,63 @@ def add_creator(json_data):
         db.session.add(creator)
         logger.debug('Added %s', creator)
         db.session.commit()
+
+def update_character(json_data):
+    id = json_data[u'id']
+    character = Character.query.filter_by(id=id).first()
+    logger.debug(character)
+    if character:
+        comic_ids = []
+        for comic in json_data[u'comics'][u'items']:
+            comic_ids.append(int(comic[u'resourceURI'].split('/comics/')[1]))
+
+        for comic_id in comic_ids:
+            comic = Comic.query.filter_by(id=comic_id).first()
+            if comic and comic not in character.comics:
+                character.comics.append(comic)
+
+        logger.debug('Updated %s', character)
+        db.session.commit()
+
+def update_comic(json_data):
+    id = json_data[u'id']
+    comic = Comic.query.filter_by(id=id).first()
+
+    if comic:
+        character_ids = []
+        for character in json_data[u'characters'][u'items']:
+            character_ids.append(int(character[u'resourceURI'].split('/characters/')[1]))
+
+        creator_ids = []
+        for creator in json_data[u'creators'][u'items']:
+            creator_ids.append(int(creator[u'resourceURI'].split('/creators/')[1]))
+
+        for character_id in character_ids:
+            character = Character.query.filter_by(id=character_id).first()
+            if character and character not in comic.characters:
+                comic.characters.append(character)
+
+        for creator_id in creator_ids:
+            creator = Creator.query.filter_by(id=creator_id).first()
+            if creator and creator not in comic.creators:
+                comic.creators.append(creator)
+
+        logger.debug('Updated %s', comic)
+        db.session.commit()
+
+def update_creator(json_data):
+    id = json_data[u'id']
+    creator = Creator.query.filter_by(id=id).first()
+
+    if creator:
+        comic_ids = []
+        for comic in json_data[u'comics'][u'items']:
+            comic_ids.append(int(comic[u'resourceURI'].split('/comics/')[1]))
+
+        for comic_id in comic_ids:
+            comic = Comic.query.filter_by(id=comic_id).first()
+            if comic and comic not in creator.comics:
+                creator.comics.append(comic)
+
+        logger.debug('Updated %s', creator)
+        db.session.commit()
