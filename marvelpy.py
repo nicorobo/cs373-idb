@@ -15,33 +15,25 @@ class APIKeyError(Exception):
 
 
 
-def _build_headers(etag=None, **kwargs):
-    headers = {}
+def _build_headers(kwargs):
+    headers = kwargs.setdefault('headers', {})
+    etag = kwargs.pop('etag', None)
     if etag:
         headers['If-None-Match'] = etag
 
-    return headers
 
 
-
-def _build_params(params=None, key=None, ts=None, **kwargs):
-    if not params:
-        params = {}
-    if not key:
-        key = _default_key
-
-    '''
-    Custom timestamps disabled for right now since they complicate the
-    iterator. Since they can't be used for an iterator without some timestamp
-    generator, disable them overall. A timestamp generator is a decent idea
-    though and could solve the problem.
-    '''
-    ts = str(random.randrange(10000))
+def _build_params(kwargs):
+    #key, ts
+    params = kwargs.setdefault('params', {})
+    key = kwargs.pop('key', _default_key)
 
     if key is None:
         raise APIKeyError('No default key set and no key provided.')
     if not ('public' in key and 'private' in key):
         raise APIKeyError('API key has no public or private key.')
+
+    ts = kwargs.pop('ts', str(random.randrange(10000)))
 
     m = hashlib.md5()
     m.update(ts.encode())
@@ -51,8 +43,6 @@ def _build_params(params=None, key=None, ts=None, **kwargs):
     params['ts'] = ts
     params['apikey'] = key['public']
     params['hash'] = m.hexdigest()
-
-    return params
 
 
 
@@ -65,7 +55,10 @@ def load_key(file_name, default=False):
         s = f.readline()
         if s.endswith('\n'):
             s = s[:-1]
-        key['public'], key['private'] = s.split(',')
+        try:
+            key['public'], key['private'] = s.split(',')
+        except ValueError:
+            raise APIKeyError('Invalid API key file format.')
 
     if default:
         set_default_key(key)
@@ -78,13 +71,15 @@ def set_default_key(k):
     _default_key = k
 
 
+
 ###
 
 
 
+#Special keyword arguments: etag, key, ts
 def get(url, **kwargs):
-    kwargs['params'] = _build_params(**kwargs)
-    kwargs['headers'] = _build_headers(**kwargs)
+    _build_params(kwargs)
+    _build_headers(kwargs)
 
     s = kwargs.pop('session', None)
     if s:
@@ -127,6 +122,10 @@ def series(id=None, **kwargs):
 
 
 def iterator(f, *args, tries=1, **kwargs):
+    #For now, ignore customs timestamps and etags for iterators
+    kwargs.pop('etag', None)
+    kwargs.pop('ts', None)
+
     params = kwargs.setdefault('params', {})
     params.setdefault('offset', 0)
     params.setdefault('limit', 100)
