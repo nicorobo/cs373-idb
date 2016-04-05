@@ -8,7 +8,7 @@ const babel 		= require('babelify');
 gulp.task('scripts', ()=> {
 	return browserify('./src/app.js')
 		.on('error', handle_error)
-		.transform(babel, {presets: ["react", "es2015"], global: true}) 
+		.transform(babel, {presets: ["react", "es2015"]}) 
 		.bundle()
 		.on('error', handle_error)
 		.pipe(source('app.js'))
