@@ -82131,6 +82131,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var React = require('react');
 var NavBar = require('../partials/navbar.js');
+var marvel = require('../marvel.js');
 var data = require('../../mockdata.json');
 
 var CharacterPage = function (_React$Component) {
@@ -82259,7 +82260,7 @@ var CharacterPage = function (_React$Component) {
 
 module.exports = CharacterPage;
 
-},{"../../mockdata.json":1,"../partials/navbar.js":504,"react":418}],502:[function(require,module,exports){
+},{"../../mockdata.json":1,"../marvel.js":500,"../partials/navbar.js":504,"react":418}],502:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();

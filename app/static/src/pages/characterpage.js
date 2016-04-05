@@ -2,6 +2,7 @@
 
 var React = require('react');
 var NavBar = require('../partials/navbar.js');
+var marvel = require('../marvel.js');
 var data = require('../../mockdata.json');
 
 class CharacterPage extends React.Component {
