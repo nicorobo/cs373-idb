@@ -46,5 +46,10 @@ function getCreators(limit, offset, cb){
 }
 
 module.exports = {
-
+	getCharacter: getCharacter,
+	getCharacters: getCharacters,
+	getComic: getComic,
+	getComics: getComics,
+	getCreator: getCreator,
+	getCreators: getCreators
 }

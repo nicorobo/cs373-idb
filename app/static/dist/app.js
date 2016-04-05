@@ -84281,7 +84281,14 @@ function getCreators(limit, offset, cb) {
 	});
 }
 
-module.exports = {};
+module.exports = {
+	getCharacter: getCharacter,
+	getCharacters: getCharacters,
+	getComic: getComic,
+	getComics: getComics,
+	getCreator: getCreator,
+	getCreators: getCreators
+};
 
 },{"request":430}],501:[function(require,module,exports){
 'use strict';
