@@ -3,7 +3,7 @@
 var React = require('react');
 var Table = require('./table.js');
 var NavBar = require('../partials/navbar.js');
-var library = require('../mockdata.json');
+var library = require('../../mockdata.json');
 var data;
 
 class TablePage extends React.Component {

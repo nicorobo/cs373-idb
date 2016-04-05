@@ -24967,10 +24967,10 @@ var ReactDOM = require('react-dom');
 var router = require('react-router');
 
 var SplashPage = require('./splashpage.js');
-var TablePage = require('./tablepage.js');
-var CharacterPage = require('./characterpage.js');
-var ComicPage = require('./comicpage.js');
-var CreatorPage = require('./creatorpage.js');
+var TablePage = require('./tableview/tablepage.js');
+var CharacterPage = require('./pages/characterpage.js');
+var ComicPage = require('./pages/comicpage.js');
+var CreatorPage = require('./pages/creatorpage.js');
 
 var Router = router.Router;
 var Route = router.Route;
@@ -25009,17 +25009,9 @@ var App = function (_React$Component) {
 	return App;
 }(React.Component);
 
-function wrap(component) {
-	return React.createClass({
-		render: function render() {
-			return component;
-		}
-	});
-}
-
 ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
 
-},{"./characterpage.js":218,"./comicpage.js":219,"./creatorpage.js":220,"./splashpage.js":223,"./tablepage.js":226,"react":214,"react-dom":51,"react-router":79}],218:[function(require,module,exports){
+},{"./pages/characterpage.js":218,"./pages/comicpage.js":219,"./pages/creatorpage.js":220,"./splashpage.js":222,"./tableview/tablepage.js":226,"react":214,"react-dom":51,"react-router":79}],218:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -25033,8 +25025,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // characterpage.js
 
 var React = require('react');
-var NavBar = require('./navbar.js');
-var data = require('../mockdata.json');
+var NavBar = require('../partials/navbar.js');
+var data = require('../../mockdata.json');
 
 var CharacterPage = function (_React$Component) {
 	_inherits(CharacterPage, _React$Component);
@@ -25162,7 +25154,7 @@ var CharacterPage = function (_React$Component) {
 
 module.exports = CharacterPage;
 
-},{"../mockdata.json":1,"./navbar.js":222,"react":214}],219:[function(require,module,exports){
+},{"../../mockdata.json":1,"../partials/navbar.js":221,"react":214}],219:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -25176,8 +25168,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // comicpage.js
 
 var React = require('react');
-var NavBar = require('./navbar.js');
-var data = require('../mockdata.json');
+var NavBar = require('../partials/navbar.js');
+var data = require('../../mockdata.json');
 
 var ComicPage = function (_React$Component) {
 	_inherits(ComicPage, _React$Component);
@@ -25342,7 +25334,7 @@ var ComicPage = function (_React$Component) {
 
 module.exports = ComicPage;
 
-},{"../mockdata.json":1,"./navbar.js":222,"react":214}],220:[function(require,module,exports){
+},{"../../mockdata.json":1,"../partials/navbar.js":221,"react":214}],220:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -25356,8 +25348,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // creatorpage.js
 
 var React = require('react');
-var NavBar = require('./navbar.js');
-var data = require('../mockdata.json');
+var NavBar = require('../partials/navbar.js');
+var data = require('../../mockdata.json');
 
 var CreatorPage = function (_React$Component) {
 	_inherits(CreatorPage, _React$Component);
@@ -25486,64 +25478,7 @@ var CreatorPage = function (_React$Component) {
 
 module.exports = CreatorPage;
 
-},{"../mockdata.json":1,"./navbar.js":222,"react":214}],221:[function(require,module,exports){
-"use strict";
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// headeritem.js
-
-var React = require('react');
-
-var HeaderItem = function (_React$Component) {
-	_inherits(HeaderItem, _React$Component);
-
-	function HeaderItem() {
-		_classCallCheck(this, HeaderItem);
-
-		return _possibleConstructorReturn(this, Object.getPrototypeOf(HeaderItem).apply(this, arguments));
-	}
-
-	_createClass(HeaderItem, [{
-		key: "handleClick",
-		value: function handleClick() {
-			if (this.props.headKey !== "thumbnail") {
-				console.log(this.props.headKey);
-				this.props.sortContents(this.props.headKey);
-			}
-		}
-	}, {
-		key: "render",
-		value: function render() {
-			var sortClass = "";
-			if (this.props.sortData.key === this.props.headKey) {
-				if (this.props.sortData.ascending) {
-					sortClass = "sort sort-ascending";
-				} else {
-					sortClass = "sort sort-descending";
-				}
-			}
-
-			return React.createElement(
-				"th",
-				{ onClick: this.handleClick.bind(this), className: sortClass },
-				this.props.headValue
-			);
-		}
-	}]);
-
-	return HeaderItem;
-}(React.Component);
-
-module.exports = HeaderItem;
-
-},{"react":214}],222:[function(require,module,exports){
+},{"../../mockdata.json":1,"../partials/navbar.js":221,"react":214}],221:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -25665,7 +25600,7 @@ var NavBar = function (_React$Component) {
 
 module.exports = NavBar;
 
-},{"react":214,"react-router":79}],223:[function(require,module,exports){
+},{"react":214,"react-router":79}],222:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -25679,7 +25614,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // splash.js
 
 var React = require('react');
-var NavBar = require('./navbar.js');
+var NavBar = require('./partials/navbar.js');
 
 var Splash = function (_React$Component) {
 	_inherits(Splash, _React$Component);
@@ -25716,7 +25651,64 @@ var Splash = function (_React$Component) {
 
 module.exports = Splash;
 
-},{"./navbar.js":222,"react":214}],224:[function(require,module,exports){
+},{"./partials/navbar.js":221,"react":214}],223:[function(require,module,exports){
+"use strict";
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// headeritem.js
+
+var React = require('react');
+
+var HeaderItem = function (_React$Component) {
+	_inherits(HeaderItem, _React$Component);
+
+	function HeaderItem() {
+		_classCallCheck(this, HeaderItem);
+
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(HeaderItem).apply(this, arguments));
+	}
+
+	_createClass(HeaderItem, [{
+		key: "handleClick",
+		value: function handleClick() {
+			if (this.props.headKey !== "thumbnail") {
+				console.log(this.props.headKey);
+				this.props.sortContents(this.props.headKey);
+			}
+		}
+	}, {
+		key: "render",
+		value: function render() {
+			var sortClass = "";
+			if (this.props.sortData.key === this.props.headKey) {
+				if (this.props.sortData.ascending) {
+					sortClass = "sort sort-ascending";
+				} else {
+					sortClass = "sort sort-descending";
+				}
+			}
+
+			return React.createElement(
+				"th",
+				{ onClick: this.handleClick.bind(this), className: sortClass },
+				this.props.headValue
+			);
+		}
+	}]);
+
+	return HeaderItem;
+}(React.Component);
+
+module.exports = HeaderItem;
+
+},{"react":214}],224:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -25863,7 +25855,7 @@ function objToArr(obj) {
 }
 module.exports = TableHeader;
 
-},{"./headeritem.js":221,"react":214}],226:[function(require,module,exports){
+},{"./headeritem.js":223,"react":214}],226:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -25878,8 +25870,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var React = require('react');
 var Table = require('./table.js');
-var NavBar = require('./navbar.js');
-var library = require('../mockdata.json');
+var NavBar = require('../partials/navbar.js');
+var library = require('../../mockdata.json');
 var data;
 
 var TablePage = function (_React$Component) {
@@ -25931,7 +25923,7 @@ var TablePage = function (_React$Component) {
 
 module.exports = TablePage;
 
-},{"../mockdata.json":1,"./navbar.js":222,"./table.js":224,"react":214}],227:[function(require,module,exports){
+},{"../../mockdata.json":1,"../partials/navbar.js":221,"./table.js":224,"react":214}],227:[function(require,module,exports){
 "use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
