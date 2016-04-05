@@ -2,9 +2,11 @@ import os
 import logging
 import json
 
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 from flask.ext.script import Manager
 from flask.ext.sqlalchemy import SQLAlchemy
+
+import mapper
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -37,26 +39,24 @@ from models import *
 def about():
     return render_template('about.html')
 
-# Serves JSON for characters
-@app.route('/api/characters')
+@app.route('/api/characters', methods=["GET"])
 def characters():
-    return 0
+    return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.all()))})
 
-# Serves JSON for comics
-@app.route('/api/comics')
+@app.route('/api/comics', methods=["GET"])
 def comics():
-    return 0
+    return jsonify({'comics': list(map(mapper.comic_to_dict, Comic.query.all()))})
 
-# Serves JSON for creators
-@app.route('/api/creators')
+@app.route('/api/creators', methods=["GET"])
 def creators():
-    return 0
+    return jsonify({'creators': list(map(mapper.creator_to_dict, Creator.query.all()))})
 
 # Serves the initial website (the catch-all is to facilitate react-router routes)
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def index(path):
     return render_template('index.html')
+
 
 @manager.command
 def create_db():
