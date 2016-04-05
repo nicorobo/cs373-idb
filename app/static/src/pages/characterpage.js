@@ -6,6 +6,19 @@ var marvel = require('../marvel.js');
 var data = require('../../mockdata.json');
 
 class CharacterPage extends React.Component {
+
+	constructor() {
+		super();
+		this.state = {data: {}};
+	}
+
+	componentDidMount() {
+		marvel.getCharacter(this.props.params.charId, (err, data) => {
+			if (err) console.err("[CharacterPage:componentDidMount] There's been an error retrieving data!");
+			else this.setState({data: data});
+		})
+	}
+
 	render() {
 		var charData = data.details[this.props.params.charId];
 		if(charData){

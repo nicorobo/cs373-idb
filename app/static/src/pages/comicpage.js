@@ -6,6 +6,19 @@ var marvel = require('../marvel.js');
 var data = require('../../mockdata.json');
 
 class ComicPage extends React.Component {
+
+	constructor() {
+		super();
+		this.state = {data: {}};
+	}
+
+	componentDidMount() {
+		marvel.getComic(this.props.params.comicId, (err, data) => {
+			if (err) console.err("[ComicPage:componentDidMount] There's been an error retrieving data!");
+			else this.setState({data: data});
+		})
+	}
+
 	render() {
 		var comicData = data.details[this.props.params.comicId];
 		if (comicData){
