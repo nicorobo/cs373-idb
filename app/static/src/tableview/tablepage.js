@@ -4,6 +4,7 @@ var React = require('react');
 var Table = require('./table.js');
 var NavBar = require('../partials/navbar.js');
 var library = require('../../mockdata.json');
+var marvel = require('../marvel.js');
 var data;
 
 class TablePage extends React.Component {
@@ -31,7 +32,9 @@ class TablePage extends React.Component {
 	}
 
 	render() {
-
+		if (this.props.route.path === '/characters') data = library.characters;
+		else if (this.props.route.path === '/comics') data = library.comics;
+		else data = library.creators;
 		return (
 			<div className="table-page">
 				<NavBar />
