@@ -43,20 +43,31 @@ def about():
 def characters():
     return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.all()))})
 
+@app.route('/api/character/<character_id>', methods=["GET"])
+def character(character_id):
+    return jsonify({'character': mapper.character_detail_to_dict(Character.query.filter_by(id=character_id).first())})
+
 @app.route('/api/comics', methods=["GET"])
 def comics():
     return jsonify({'comics': list(map(mapper.comic_to_dict, Comic.query.all()))})
 
+@app.route('/api/comic/<comic_id>', methods=["GET"])
+def comic(comic_id):
+    return jsonify({'comic': mapper.comic_detail_to_dict(Comic.query.filter_by(id=comic_id).first())})
+
 @app.route('/api/creators', methods=["GET"])
 def creators():
     return jsonify({'creators': list(map(mapper.creator_to_dict, Creator.query.all()))})
+
+@app.route('/api/creator/<creator_id>', methods=["GET"])
+def creator(creator_id):
+    return jsonify({'creator': mapper.creator_detail_to_dict(Creator.query.filter_by(id=creator_id).first())})
 
 # Serves the initial website (the catch-all is to facilitate react-router routes)
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def index(path):
     return render_template('index.html')
-
 
 @manager.command
 def create_db():
