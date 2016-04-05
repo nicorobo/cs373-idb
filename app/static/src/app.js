@@ -32,12 +32,4 @@ class App extends React.Component {
 	}
 }
 
-function wrap(component) {
-	return React.createClass({
-		render: function() {
-			return component
-		}
-	})
-}
-
 ReactDOM.render(<App />, document.getElementById('app'))
