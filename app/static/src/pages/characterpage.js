@@ -1,36 +1,36 @@
-// creatorpage.js
+// characterpage.js
 
 var React = require('react');
-var NavBar = require('./navbar.js');
-var data = require('../mockdata.json');
+var NavBar = require('../partials/navbar.js');
+var data = require('../../mockdata.json');
 
-class CreatorPage extends React.Component {
+class CharacterPage extends React.Component {
 	render() {
-		var creatorData = data.details[this.props.params.creatorId];
-		if (creatorData) {
+		var charData = data.details[this.props.params.charId];
+		if(charData){
 			return (
 				<div className="character-page">
 					<NavBar />
 					<div className="container">
 						<div className="row">
 							<div className="col-sm-4 thumbnail-wrapper">
-								<img src={creatorData.thumbnail} />
+								<img src={charData.thumbnail} />
 							</div>
 							<div className="col-sm-6">
-								<h2>{creatorData.firstName}{creatorData.lastName} <small>{creatorData.id}</small></h2>
-								<p>This creator doesn't have a description, sorry!</p>
+								<h2>{charData.name} <small>{charData.id}</small></h2>
+								<p>{charData.description}</p>
 								<ul className="fact-list">
-									<li>Comics: {creatorData.numberOfComics}</li>
-									<li>Series: {creatorData.numberOfSeries}</li>
-									<li>Stories: {creatorData.numberOfStories}</li>
+									<li>Comics: {charData.numberOfComics}</li>
+									<li>Series: {charData.numberOfSeries}</li>
+									<li>Stories: {charData.numberOfStories}</li>
 								</ul>
 							</div>
 						</div>
 						<div className="col-sm-8 col-sm-offset-2">
 							<div className="panel panel-default">
-								<div className="panel-heading">Creator for </div>
+								<div className="panel-heading">Appears in </div>
 								<div className="panel-body list-group">
-									{creatorData.comics.map( comic => {
+									{charData.comics.map( comic => {
 										return <a onClick={()=>this.props.history.push('comics/'+comic.id)} className="list-group-item comic-link">{comic.name}</a>
 									})}
 								</div>
@@ -41,7 +41,7 @@ class CreatorPage extends React.Component {
 			)
 		} else {
 			return (
-				<div className="comic-page">
+				<div className="character-page">
 					<NavBar />
 					<div className="container">
 						<h2>No data yet, try again later!</h2>
@@ -52,6 +52,6 @@ class CreatorPage extends React.Component {
 	}
 }
 
-module.exports = CreatorPage;
+module.exports = CharacterPage;
 
 

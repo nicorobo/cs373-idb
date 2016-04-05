@@ -5,10 +5,10 @@ var ReactDOM = require('react-dom');
 var router = require('react-router');
 
 var SplashPage = require('./splashpage.js');
-var TablePage = require('./tablepage.js');
-var CharacterPage = require('./characterpage.js');
-var ComicPage = require('./comicpage.js');
-var CreatorPage = require('./creatorpage.js');
+var TablePage = require('./tableview/tablepage.js');
+var CharacterPage = require('./pages/characterpage.js');
+var ComicPage = require('./pages/comicpage.js');
+var CreatorPage = require('./pages/creatorpage.js');
 
 var Router = router.Router;
 var Route = router.Route;

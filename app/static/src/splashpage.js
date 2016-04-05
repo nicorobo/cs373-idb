@@ -1,7 +1,7 @@
 // splash.js
 
 var React = require('react');
-var NavBar = require('./navbar.js');
+var NavBar = require('./partials/navbar.js');
 
 class Splash extends React.Component {
 	render() {
