@@ -42,8 +42,8 @@ def add_comic(json_data):
 
     comic_test = Comic.query.filter_by(id=id).first()
     if not comic_test:
-        comic = Comic(id=id, thumbnail=thumbnail, title=title, description=description,
-        page_count=page_count, series=series, number_of_characters=number_of_characters,
+        comic = Comic(id=id, thumbnail=thumbnail, title=title, issue_num=issue_num, description=description,
+        page_count=page_count, series=series, number_of_characters=number_of_characters, number_of_creators=number_of_creators,
         number_of_stories=number_of_stories)
 
         character_ids = []
