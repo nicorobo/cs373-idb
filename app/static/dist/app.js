@@ -25883,6 +25883,7 @@ var TablePage = function (_React$Component) {
 		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(TablePage).call(this));
 
 		_this.navigateToDetail = _this.navigateToDetail.bind(_this);
+		_this.state = { data: [] };
 		return _this;
 	}
 
@@ -25893,12 +25894,19 @@ var TablePage = function (_React$Component) {
 			this.props.history.push(this.props.route.path + '/' + id);
 		}
 	}, {
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			var _this2 = this;
+
+			var populate;
+			if (this.props.route.path === '/characters') populate = marvel.getCharacters;else if (this.props.route.path === '/comics') populate = marvel.getComics;else populate = marvel.getCreators;
+			populate(20, 0, function (err, data) {
+				if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");else _this2.setState({ data: data });
+			});
+		}
+	}, {
 		key: 'render',
 		value: function render() {
-
-			if (this.props.route.path === '/characters') data = library.characters;else if (this.props.route.path === '/comics') data = library.comics;else data = library.creators;
-
-			console.log(library);
 
 			return React.createElement(
 				'div',

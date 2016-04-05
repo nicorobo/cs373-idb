@@ -11,6 +11,7 @@ class TablePage extends React.Component {
 	constructor() {
 		super();
 		this.navigateToDetail = this.navigateToDetail.bind(this);
+		this.state = {data: []};
 	}
 
 	navigateToDetail(id) {
@@ -18,13 +19,18 @@ class TablePage extends React.Component {
 		this.props.history.push(this.props.route.path+'/'+id);
 	}
 
+	componentDidMount() {
+		var populate;
+		if (this.props.route.path === '/characters') populate = marvel.getCharacters;
+		else if (this.props.route.path === '/comics') populate = marvel.getComics;
+		else populate = marvel.getCreators;
+		populate(20, 0, (err, data) => {
+			if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");
+			else this.setState({data: data});
+		});
+	}
+
 	render() {
-
-		if (this.props.route.path === '/characters') data = library.characters;
-		else if (this.props.route.path === '/comics') data = library.comics;
-		else data = library.creators;
-
-		console.log(library);
 
 		return (
 			<div className="table-page">
