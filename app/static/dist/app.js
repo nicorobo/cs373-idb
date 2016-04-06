@@ -84476,7 +84476,7 @@ var ComicPage = function (_React$Component) {
 
 		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ComicPage).call(this));
 
-		_this.state = { data: [] };
+		_this.state = { data: null };
 		return _this;
 	}
 
@@ -84486,14 +84486,15 @@ var ComicPage = function (_React$Component) {
 			var _this2 = this;
 
 			marvel.getComic(this.props.params.comicId, function (err, data) {
-				if (err) console.err("[ComicPage:componentDidMount] There's been an error retrieving data!");else _this2.setState({ data: data });
+				if (err) console.err("[ComicPage:componentDidMount] There's been an error retrieving data!");else _this2.setState({ data: data.comic });
 			});
 		}
 	}, {
 		key: 'render',
 		value: function render() {
-			var comicData = data.details[this.props.params.comicId];
-			if (comicData) {
+			var data = this.state.data;
+			console.log(this.state.data);
+			if (data) {
 				return React.createElement(
 					'div',
 					{ className: 'comic-page' },
@@ -84507,7 +84508,7 @@ var ComicPage = function (_React$Component) {
 							React.createElement(
 								'div',
 								{ className: 'col-sm-4 thumbnail-wrapper' },
-								React.createElement('img', { src: comicData.thumbnail })
+								React.createElement('img', { src: data.thumbnail })
 							),
 							React.createElement(
 								'div',
@@ -84515,18 +84516,18 @@ var ComicPage = function (_React$Component) {
 								React.createElement(
 									'h2',
 									null,
-									comicData.title,
+									data.title,
 									' ',
 									React.createElement(
 										'small',
 										null,
-										comicData.id
+										data.id
 									)
 								),
 								React.createElement(
 									'p',
 									null,
-									comicData.description
+									data.description
 								),
 								React.createElement(
 									'ul',
@@ -84535,19 +84536,19 @@ var ComicPage = function (_React$Component) {
 										'li',
 										null,
 										'Issue: ',
-										comicData.issue
+										data.issue_num
 									),
 									React.createElement(
 										'li',
 										null,
 										'Pages: ',
-										comicData.pageCount
+										data.page_count
 									),
 									React.createElement(
 										'li',
 										null,
 										'Stories: ',
-										comicData.numberOfStories
+										data.number_of_stories
 									)
 								)
 							)
@@ -84569,7 +84570,7 @@ var ComicPage = function (_React$Component) {
 									React.createElement(
 										'div',
 										{ className: 'panel-body list-group' },
-										comicData.characters.map(function (character) {
+										data.characters.map(function (character) {
 											return React.createElement(
 												Link,
 												{ to: '/characters/' + character.id, className: 'list-group-item comic-link' },
@@ -84593,18 +84594,11 @@ var ComicPage = function (_React$Component) {
 									React.createElement(
 										'div',
 										{ className: 'panel-body list-group' },
-										comicData.creators.map(function (creator) {
+										data.creators.map(function (creator) {
 											return React.createElement(
 												Link,
 												{ to: '/creators/' + creator.id, className: 'list-group-item comic-link' },
-												creator.name,
-												React.createElement(
-													'span',
-													{ className: 'role' },
-													'(',
-													creator.role,
-													')'
-												)
+												creator.first_name + " " + creator.last_name
 											);
 										})
 									)

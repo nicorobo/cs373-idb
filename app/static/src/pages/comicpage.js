@@ -10,34 +10,35 @@ class ComicPage extends React.Component {
 
 	constructor() {
 		super();
-		this.state = {data: []};
+		this.state = {data: null};
 	}
 
 	componentDidMount() {
 		marvel.getComic(this.props.params.comicId, (err, data) => {
 			if (err) console.err("[ComicPage:componentDidMount] There's been an error retrieving data!");
-			else this.setState({data: data});
+			else this.setState({data: data.comic});
 		})
 	}
 
 	render() {
-		var comicData = data.details[this.props.params.comicId];
-		if (comicData){
+		var data = this.state.data
+		console.log(this.state.data);
+		if (data){
 			return (
 				<div className="comic-page">
 					<NavBar />
 					<div className="container">
 						<div className="row">
 							<div className="col-sm-4 thumbnail-wrapper">
-								<img src={comicData.thumbnail} />
+								<img src={data.thumbnail} />
 							</div>
 							<div className="col-sm-6">
-								<h2>{comicData.title} <small>{comicData.id}</small></h2>
-								<p>{comicData.description}</p>
+								<h2>{data.title} <small>{data.id}</small></h2>
+								<p>{data.description}</p>
 								<ul className="fact-list">
-									<li>Issue: {comicData.issue}</li>
-									<li>Pages: {comicData.pageCount}</li>
-									<li>Stories: {comicData.numberOfStories}</li>
+									<li>Issue: {data.issue_num}</li>
+									<li>Pages: {data.page_count}</li>
+									<li>Stories: {data.number_of_stories}</li>
 								</ul>
 							</div>
 						</div>
@@ -46,7 +47,7 @@ class ComicPage extends React.Component {
 								<div className="panel panel-default">
 									<div className="panel-heading">Characters</div>
 									<div className="panel-body list-group">
-										{comicData.characters.map( character => {
+										{data.characters.map( character => {
 											return (<Link to={'/characters/'+character.id} className="list-group-item comic-link">{character.name}</Link>)
 										})}
 									</div>
@@ -56,8 +57,8 @@ class ComicPage extends React.Component {
 								<div className="panel panel-default">
 									<div className="panel-heading">Creators</div>
 									<div className="panel-body list-group">
-										{comicData.creators.map( creator => {
-											return (<Link to={'/creators/'+creator.id} className="list-group-item comic-link">{creator.name}<span className="role">({creator.role})</span></Link>)
+										{data.creators.map( creator => {
+											return (<Link to={'/creators/'+creator.id} className="list-group-item comic-link">{creator.first_name+" "+creator.last_name}</Link>)
 										})}
 									</div>
 								</div>
