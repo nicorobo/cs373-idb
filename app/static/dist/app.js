@@ -84306,6 +84306,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = require('react');
 var NavBar = require('../partials/navbar.js');
 var marvel = require('../marvel.js');
+var Link = require('react-router').Link;
 var data = require('../../mockdata.json');
 
 var CharacterPage = function (_React$Component) {
@@ -84332,8 +84333,6 @@ var CharacterPage = function (_React$Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			var _this3 = this;
-
 			var charData = data.details[this.props.params.charId];
 			if (charData) {
 				return React.createElement(
@@ -84410,10 +84409,8 @@ var CharacterPage = function (_React$Component) {
 									{ className: 'panel-body list-group' },
 									charData.comics.map(function (comic) {
 										return React.createElement(
-											'a',
-											{ onClick: function onClick() {
-													return _this3.props.history.push('comics/' + comic.id);
-												}, className: 'list-group-item comic-link' },
+											Link,
+											{ to: '/comics/' + comic.id, className: 'list-group-item comic-link' },
 											comic.name
 										);
 									})
@@ -84446,7 +84443,7 @@ var CharacterPage = function (_React$Component) {
 
 module.exports = CharacterPage;
 
-},{"../../mockdata.json":1,"../marvel.js":500,"../partials/navbar.js":504,"react":418}],502:[function(require,module,exports){
+},{"../../mockdata.json":1,"../marvel.js":500,"../partials/navbar.js":504,"react":418,"react-router":283}],502:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -84462,6 +84459,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = require('react');
 var NavBar = require('../partials/navbar.js');
 var marvel = require('../marvel.js');
+var Link = require('react-router').Link;
 var data = require('../../mockdata.json');
 
 var ComicPage = function (_React$Component) {
@@ -84488,8 +84486,6 @@ var ComicPage = function (_React$Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			var _this3 = this;
-
 			var comicData = data.details[this.props.params.comicId];
 			if (comicData) {
 				return React.createElement(
@@ -84569,10 +84565,8 @@ var ComicPage = function (_React$Component) {
 										{ className: 'panel-body list-group' },
 										comicData.characters.map(function (character) {
 											return React.createElement(
-												'a',
-												{ onClick: function onClick() {
-														return _this3.props.history.push('characters/' + character.id);
-													}, className: 'list-group-item comic-link' },
+												Link,
+												{ to: '/characters/' + character.id, className: 'list-group-item comic-link' },
 												character.name
 											);
 										})
@@ -84595,10 +84589,8 @@ var ComicPage = function (_React$Component) {
 										{ className: 'panel-body list-group' },
 										comicData.creators.map(function (creator) {
 											return React.createElement(
-												'a',
-												{ onClick: function onClick() {
-														return _this3.props.history.push('creators/' + creator.id);
-													}, className: 'list-group-item comic-link' },
+												Link,
+												{ to: '/creators/' + creator.id, className: 'list-group-item comic-link' },
 												creator.name,
 												React.createElement(
 													'span',
@@ -84639,7 +84631,7 @@ var ComicPage = function (_React$Component) {
 
 module.exports = ComicPage;
 
-},{"../../mockdata.json":1,"../marvel.js":500,"../partials/navbar.js":504,"react":418}],503:[function(require,module,exports){
+},{"../../mockdata.json":1,"../marvel.js":500,"../partials/navbar.js":504,"react":418,"react-router":283}],503:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -84655,6 +84647,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var React = require('react');
 var NavBar = require('../partials/navbar.js');
 var marvel = require('../marvel.js');
+var Link = require('react-router').Link;
 var data = require('../../mockdata.json');
 
 var CreatorPage = function (_React$Component) {
@@ -84681,8 +84674,6 @@ var CreatorPage = function (_React$Component) {
 	}, {
 		key: 'render',
 		value: function render() {
-			var _this3 = this;
-
 			var creatorData = data.details[this.props.params.creatorId];
 			if (creatorData) {
 				return React.createElement(
@@ -84760,10 +84751,8 @@ var CreatorPage = function (_React$Component) {
 									{ className: 'panel-body list-group' },
 									creatorData.comics.map(function (comic) {
 										return React.createElement(
-											'a',
-											{ onClick: function onClick() {
-													return _this3.props.history.push('comics/' + comic.id);
-												}, className: 'list-group-item comic-link' },
+											Link,
+											{ to: '/comics/' + comic.id, className: 'list-group-item comic-link' },
 											comic.name
 										);
 									})
@@ -84796,7 +84785,7 @@ var CreatorPage = function (_React$Component) {
 
 module.exports = CreatorPage;
 
-},{"../../mockdata.json":1,"../marvel.js":500,"../partials/navbar.js":504,"react":418}],504:[function(require,module,exports){
+},{"../../mockdata.json":1,"../marvel.js":500,"../partials/navbar.js":504,"react":418,"react-router":283}],504:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();

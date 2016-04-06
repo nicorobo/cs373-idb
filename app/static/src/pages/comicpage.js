@@ -3,6 +3,7 @@
 var React = require('react');
 var NavBar = require('../partials/navbar.js');
 var marvel = require('../marvel.js');
+var Link = require('react-router').Link;
 var data = require('../../mockdata.json');
 
 class ComicPage extends React.Component {
@@ -46,7 +47,7 @@ class ComicPage extends React.Component {
 									<div className="panel-heading">Characters</div>
 									<div className="panel-body list-group">
 										{comicData.characters.map( character => {
-											return <a onClick={()=>this.props.history.push('characters/'+character.id)} className="list-group-item comic-link">{character.name}</a>
+											return (<Link to={'/characters/'+character.id} className="list-group-item comic-link">{character.name}</Link>)
 										})}
 									</div>
 								</div>
@@ -56,7 +57,7 @@ class ComicPage extends React.Component {
 									<div className="panel-heading">Creators</div>
 									<div className="panel-body list-group">
 										{comicData.creators.map( creator => {
-											return <a onClick={()=>this.props.history.push('creators/'+creator.id)} className="list-group-item comic-link">{creator.name}<span className="role">({creator.role})</span></a>
+											return (<Link to={'/creators/'+creator.id} className="list-group-item comic-link">{creator.name}<span className="role">({creator.role})</span></Link>)
 										})}
 									</div>
 								</div>
