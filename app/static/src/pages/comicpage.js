@@ -4,7 +4,6 @@ var React = require('react');
 var NavBar = require('../partials/navbar.js');
 var marvel = require('../marvel.js');
 var Link = require('react-router').Link;
-var data = require('../../mockdata.json');
 
 class ComicPage extends React.Component {
 
