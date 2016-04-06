@@ -7,12 +7,12 @@ var NavBar = require('../partials/navbar.js');
 var marvel = require('../marvel.js');
 var headers = [
 	{key: "thumbnail", value: "Thumbnail"},
-	{key: "firstName", value: "First Name"},
-	{key: "lastName", value: "Last Name"},
+	{key: "first_name", value: "First Name"},
+	{key: "last_name", value: "Last Name"},
 	{key: "id", value: "ID"},
-	{key: "numberOfComics", value: "# of Comics"},
-	{key: "numberOfStories", value: "# of Stories"},
-	{key: "numberOfSeries", value: "# of Series"}
+	{key: "number_of_comics", value: "# of Comics"},
+	{key: "number_of_stories", value: "# of Stories"},
+	{key: "number_of_series", value: "# of Series"}
 ];
 
 class CreatorTable extends React.Component {

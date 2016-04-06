@@ -84687,7 +84687,7 @@ var React = require('react');
 var Table = require('./table.js');
 var NavBar = require('../partials/navbar.js');
 var marvel = require('../marvel.js');
-var headers = [{ key: "thumbnail", value: "Thumbnail" }, { key: "title", value: "Title" }, { key: "id", value: "ID" }, { key: "issue", value: "Issue" }, { key: "pageCount", value: "Pages" }, { key: "numberOfStories", value: "# of Stories" }];
+var headers = [{ key: "thumbnail", value: "Thumbnail" }, { key: "title", value: "Title" }, { key: "id", value: "ID" }, { key: "issue_num", value: "Issue" }, { key: "page_count", value: "Pages" }, { key: "number_of_stories", value: "# of Stories" }];
 
 var ComicTable = function (_React$Component) {
 	_inherits(ComicTable, _React$Component);
@@ -84859,7 +84859,7 @@ var React = require('react');
 var Table = require('./table.js');
 var NavBar = require('../partials/navbar.js');
 var marvel = require('../marvel.js');
-var headers = [{ key: "thumbnail", value: "Thumbnail" }, { key: "firstName", value: "First Name" }, { key: "lastName", value: "Last Name" }, { key: "id", value: "ID" }, { key: "numberOfComics", value: "# of Comics" }, { key: "numberOfStories", value: "# of Stories" }, { key: "numberOfSeries", value: "# of Series" }];
+var headers = [{ key: "thumbnail", value: "Thumbnail" }, { key: "first_name", value: "First Name" }, { key: "last_name", value: "Last Name" }, { key: "id", value: "ID" }, { key: "number_of_comics", value: "# of Comics" }, { key: "number_of_stories", value: "# of Stories" }, { key: "number_of_series", value: "# of Series" }];
 
 var CreatorTable = function (_React$Component) {
 	_inherits(CreatorTable, _React$Component);

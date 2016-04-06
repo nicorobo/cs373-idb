@@ -9,9 +9,9 @@ var headers = [
 	{key: "thumbnail", value: "Thumbnail"},
 	{key: "title", value: "Title"},
 	{key: "id", value: "ID"},
-	{key: "issue", value: "Issue"},
-	{key: "pageCount", value: "Pages"},
-	{key: "numberOfStories", value: "# of Stories"}
+	{key: "issue_num", value: "Issue"},
+	{key: "page_count", value: "Pages"},
+	{key: "number_of_stories", value: "# of Stories"}
 ];
 
 class ComicTable extends React.Component {
