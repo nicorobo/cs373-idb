@@ -45,10 +45,6 @@ def about():
 def characters():
     return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.all()))})
 
-@app.route('/api/climbs', methods=["GET"])
-def climbs():
-    return jsonify({'name': 'Lurking Fear', 'grade': '5.8 A3'})
-
 @app.route('/api/character/<character_id>', methods=["GET"])
 def character(character_id):
     return jsonify({'character': mapper.character_detail_to_dict(Character.query.filter_by(id=character_id).first())})
