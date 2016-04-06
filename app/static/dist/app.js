@@ -84795,7 +84795,14 @@ var CreatorRow = function (_React$Component) {
 					"td",
 					null,
 					" ",
-					data.name,
+					data.first_name,
+					" "
+				),
+				React.createElement(
+					"td",
+					null,
+					" ",
+					data.last_name,
 					" "
 				),
 				React.createElement(

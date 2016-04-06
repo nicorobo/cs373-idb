@@ -11,7 +11,8 @@ class CreatorRow extends React.Component {
 		return (
 			<tr className="table-row" onClick={this.handleClick.bind(this)}>
 				<td> <img src={data.thumbnail} /> </td>
-				<td> {data.name} </td>
+				<td> {data.first_name} </td>
+				<td> {data.last_name} </td>
 				<td> {data.id} </td>
 				<td> {data.number_of_comics} </td>
 				<td> {data.number_of_stories} </td>
