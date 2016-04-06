@@ -102,8 +102,16 @@ td, th, li {
     transition: .75s;
 }
 
-.footer {
+div.splash-description {
 	padding-top: 50px;
+}
+.splash-description p {
+	color: white;
+	font-size: 20px;
+}
+
+.footer {
+	padding-top: 10px;
 	font-family: "Marvel";
 	font-weight: 200;
 	color: white;
