@@ -5,6 +5,7 @@ import json
 from flask import Flask, render_template, jsonify
 from flask.ext.script import Manager
 from flask.ext.sqlalchemy import SQLAlchemy
+from flask.ext.cors import CORS
 
 import mapper
 
@@ -28,6 +29,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+CORS(app)
 
 manager = Manager(app)
 db = SQLAlchemy(app)
@@ -42,6 +44,10 @@ def about():
 @app.route('/api/characters', methods=["GET"])
 def characters():
     return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.all()))})
+
+@app.route('/api/climbs', methods=["GET"])
+def climbs():
+    return jsonify({'name': 'Lurking Fear', 'grade': '5.8 A3'})
 
 @app.route('/api/character/<character_id>', methods=["GET"])
 def character(character_id):
