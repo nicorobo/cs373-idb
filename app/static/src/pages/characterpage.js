@@ -10,35 +10,35 @@ class CharacterPage extends React.Component {
 
 	constructor() {
 		super();
-		this.state = {data: []};
+		this.state = {data: null};
 	}
 
 	componentDidMount() {
 		marvel.getCharacter(this.props.params.charId, (err, data) => {
-			console.log(data);
 			if (err) console.err("[CharacterPage:componentDidMount] There's been an error retrieving data!");
-			else this.setState({data: data});
+			else this.setState({data: data.character});
 		})
 	}
 
 	render() {
-		var charData = data.details[this.props.params.charId];
-		if(charData){
+		var data = this.state.data;
+		console.log(data);
+		if(data){
 			return (
 				<div className="character-page">
 					<NavBar />
 					<div className="container">
 						<div className="row">
 							<div className="col-sm-4 thumbnail-wrapper">
-								<img src={charData.thumbnail} />
+								<img src={data.thumbnail} />
 							</div>
 							<div className="col-sm-6">
-								<h2>{charData.name} <small>{charData.id}</small></h2>
-								<p>{charData.description}</p>
+								<h2>{data.name} <small>{data.id}</small></h2>
+								<p>{data.description}</p>
 								<ul className="fact-list">
-									<li>Comics: {charData.numberOfComics}</li>
-									<li>Series: {charData.numberOfSeries}</li>
-									<li>Stories: {charData.numberOfStories}</li>
+									<li>Comics: {data.number_of_comics}</li>
+									<li>Series: {data.number_of_series}</li>
+									<li>Stories: {data.number_of_stories}</li>
 								</ul>
 							</div>
 						</div>
@@ -46,8 +46,8 @@ class CharacterPage extends React.Component {
 							<div className="panel panel-default">
 								<div className="oreo panel-heading">Appears in </div>
 								<div className="panel-body list-group">
-									{charData.comics.map( comic => {
-										return (<Link to={'/comics/'+comic.id} className="list-group-item comic-link">{comic.name}</Link>)
+									{data.comics.slice(0,20).map( comic => {
+										return (<Link to={'/comics/'+comic.id} className="list-group-item comic-link">{comic.title}</Link>)
 
 									})}
 								</div>
