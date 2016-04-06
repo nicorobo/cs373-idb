@@ -40,7 +40,9 @@ function getCreator(id, cb){
 
 //Retrieve creators
 function getCreators(limit, offset, cb){
-	request(API+'creators/', (error, response, body) => {
+	console.log("Getting creators...");
+	request(API+'creators', (error, response, body) => {
+		console.log(error, response, body);
 		cb(error, JSON.parse(body));
 	})
 }

@@ -10,7 +10,7 @@ class ComicPage extends React.Component {
 
 	constructor() {
 		super();
-		this.state = {data: {}};
+		this.state = {data: []};
 	}
 
 	componentDidMount() {

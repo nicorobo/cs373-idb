@@ -6,6 +6,9 @@ var router = require('react-router');
 
 var SplashPage = require('./splashpage.js');
 var TablePage = require('./tableview/tablepage.js');
+var CharacterTable = require('./tableview/character-table.js');
+var ComicTable = require('./tableview/comic-table.js');
+var CreatorTable = require('./tableview/creator-table.js');
 var CharacterPage = require('./pages/characterpage.js');
 var ComicPage = require('./pages/comicpage.js');
 var CreatorPage = require('./pages/creatorpage.js');
@@ -20,9 +23,9 @@ class App extends React.Component {
 			<div>
 				<Router history={browserHistory} >
 					<Route path="/" component={SplashPage}/>
-					<Route path="/characters" title="Characters" component={TablePage} />
-					<Route path="/comics" title="Comics" component={TablePage} />
-					<Route path="/creators" title="Creators" component={TablePage} />
+					<Route path="/characters" title="Characters" component={CharacterTable} />
+					<Route path="/comics" title="Comics" component={ComicTable} />
+					<Route path="/creators" title="Creators" component={CreatorTable} />
 					<Route path="/characters/:charId" component={CharacterPage} />
 					<Route path="/comics/:comicId" component={ComicPage} />
 					<Route path="/creators/:creatorId" component={CreatorPage} />

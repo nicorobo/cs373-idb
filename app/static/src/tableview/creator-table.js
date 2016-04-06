@@ -1,13 +1,21 @@
-// tablepage.js
+
+// creator-table.js
 
 var React = require('react');
 var Table = require('./table.js');
 var NavBar = require('../partials/navbar.js');
-// var subjectHeaders = require('./headers.js');
 var marvel = require('../marvel.js');
-var data;
+var headers = [
+	{key: "thumbnail", value: "Thumbnail"},
+	{key: "firstName", value: "First Name"},
+	{key: "lastName", value: "Last Name"},
+	{key: "id", value: "ID"},
+	{key: "numberOfComics", value: "# of Comics"},
+	{key: "numberOfStories", value: "# of Stories"},
+	{key: "numberOfSeries", value: "# of Series"}
+];
 
-class TablePage extends React.Component {
+class CreatorTable extends React.Component {
 
 	constructor() {
 		super();
@@ -20,22 +28,14 @@ class TablePage extends React.Component {
 		this.props.history.push(this.props.route.path+'/'+id);
 	}
 
-	componentWillReceiveProps() {
-		console.log("component mounting");
-		var populate;
-		var subject = getSubject(this.props.route.path);
-		if (subject === 'characters') populate = marvel.getCharacters
-		else if (subject === 'comics') populate = marvel.getComics
-		else populate = marvel.getCreators
-		populate(20, 0, (err, data) => {
+	componentDidMount() {
+		marvel.getCreators(20, 0, (err, data) => {
 			if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");
-			else this.setState({data: data[subject].slice(0, 20)});
+			else this.setState({data: data.creators.slice(0, 20)});
 		});
 	}
 
 	render() {
-		var subject = getSubject(this.props.route.path);
-		var headers = subjectHeaders[subject];
 		return (
 			<div className="table-page">
 				<NavBar />
@@ -45,7 +45,7 @@ class TablePage extends React.Component {
 						content={this.state.data} 
 						headers={headers} 
 						navigate={this.navigateToDetail}
-						subject={subject}
+						subject="creators"
 					/>
 				</div>
 			</div>
@@ -53,12 +53,6 @@ class TablePage extends React.Component {
 	}
 }
 
-function getSubject(path) {
-	if (path === '/characters') return "characters";
-	else if (path === '/comics') return "comics";
-	else return "creators";
-}
-
-module.exports = TablePage;
+module.exports = CreatorTable;
 
 

@@ -10,11 +10,12 @@ class CreatorPage extends React.Component {
 
 	constructor() {
 		super();
-		this.state = {data: {}};
+		this.state = {data: []};
 	}
 
 	componentDidMount() {
 		marvel.getCreator(this.props.params.creatorId, (err, data) => {
+			console.log(data);
 			if (err) console.err("[CreatorPage:componentDidMount] There's been an error retrieving data!");
 			else this.setState({data: data});
 		})
