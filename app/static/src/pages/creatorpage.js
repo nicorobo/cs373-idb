@@ -10,35 +10,35 @@ class CreatorPage extends React.Component {
 
 	constructor() {
 		super();
-		this.state = {data: []};
+		this.state = {data: null};
 	}
 
 	componentDidMount() {
 		marvel.getCreator(this.props.params.creatorId, (err, data) => {
 			console.log(data);
 			if (err) console.err("[CreatorPage:componentDidMount] There's been an error retrieving data!");
-			else this.setState({data: data});
+			else this.setState({data: data.creator});
 		})
 	}
 
 	render() {
-		var creatorData = data.details[this.props.params.creatorId];
-		if (creatorData) {
+		var data = this.state.data;
+		console.log(data);
+		if (data) {
 			return (
 				<div className="character-page">
 					<NavBar />
 					<div className="container">
 						<div className="row">
 							<div className="col-sm-4 thumbnail-wrapper">
-								<img src={creatorData.thumbnail} />
+								<img src={data.thumbnail} />
 							</div>
 							<div className="col-sm-6">
-								<h2>{creatorData.firstName}{creatorData.lastName} <small>{creatorData.id}</small></h2>
-								<p>This creator doesn't have a description, sorry!</p>
+								<h2>{data.first_name} {data.last_name} <small>{data.id}</small></h2>
 								<ul className="fact-list">
-									<li>Comics: {creatorData.numberOfComics}</li>
-									<li>Series: {creatorData.numberOfSeries}</li>
-									<li>Stories: {creatorData.numberOfStories}</li>
+									<li>Comics: {data.number_of_comics}</li>
+									<li>Series: {data.number_of_series}</li>
+									<li>Stories: {data.number_of_stories}</li>
 								</ul>
 							</div>
 						</div>
@@ -46,8 +46,8 @@ class CreatorPage extends React.Component {
 							<div className="panel panel-default">
 								<div className="panel-heading">Creator for </div>
 								<div className="panel-body list-group">
-									{creatorData.comics.map( comic => {
-										return (<Link to={'/comics/'+comic.id} className="list-group-item comic-link">{comic.name}</Link>)
+									{data.comics.slice(0, 20).map( comic => {
+										return (<Link to={'/comics/'+comic.id} className="list-group-item comic-link">{comic.title}</Link>)
 									})}
 								</div>
 							</div>

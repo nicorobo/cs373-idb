@@ -84658,7 +84658,7 @@ var CreatorPage = function (_React$Component) {
 
 		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CreatorPage).call(this));
 
-		_this.state = { data: [] };
+		_this.state = { data: null };
 		return _this;
 	}
 
@@ -84669,14 +84669,15 @@ var CreatorPage = function (_React$Component) {
 
 			marvel.getCreator(this.props.params.creatorId, function (err, data) {
 				console.log(data);
-				if (err) console.err("[CreatorPage:componentDidMount] There's been an error retrieving data!");else _this2.setState({ data: data });
+				if (err) console.err("[CreatorPage:componentDidMount] There's been an error retrieving data!");else _this2.setState({ data: data.creator });
 			});
 		}
 	}, {
 		key: 'render',
 		value: function render() {
-			var creatorData = data.details[this.props.params.creatorId];
-			if (creatorData) {
+			var data = this.state.data;
+			console.log(data);
+			if (data) {
 				return React.createElement(
 					'div',
 					{ className: 'character-page' },
@@ -84690,7 +84691,7 @@ var CreatorPage = function (_React$Component) {
 							React.createElement(
 								'div',
 								{ className: 'col-sm-4 thumbnail-wrapper' },
-								React.createElement('img', { src: creatorData.thumbnail })
+								React.createElement('img', { src: data.thumbnail })
 							),
 							React.createElement(
 								'div',
@@ -84698,19 +84699,15 @@ var CreatorPage = function (_React$Component) {
 								React.createElement(
 									'h2',
 									null,
-									creatorData.firstName,
-									creatorData.lastName,
+									data.first_name,
+									' ',
+									data.last_name,
 									' ',
 									React.createElement(
 										'small',
 										null,
-										creatorData.id
+										data.id
 									)
-								),
-								React.createElement(
-									'p',
-									null,
-									'This creator doesn\'t have a description, sorry!'
 								),
 								React.createElement(
 									'ul',
@@ -84719,19 +84716,19 @@ var CreatorPage = function (_React$Component) {
 										'li',
 										null,
 										'Comics: ',
-										creatorData.numberOfComics
+										data.number_of_comics
 									),
 									React.createElement(
 										'li',
 										null,
 										'Series: ',
-										creatorData.numberOfSeries
+										data.number_of_series
 									),
 									React.createElement(
 										'li',
 										null,
 										'Stories: ',
-										creatorData.numberOfStories
+										data.number_of_stories
 									)
 								)
 							)
@@ -84750,11 +84747,11 @@ var CreatorPage = function (_React$Component) {
 								React.createElement(
 									'div',
 									{ className: 'panel-body list-group' },
-									creatorData.comics.map(function (comic) {
+									data.comics.slice(0, 20).map(function (comic) {
 										return React.createElement(
 											Link,
 											{ to: '/comics/' + comic.id, className: 'list-group-item comic-link' },
-											comic.name
+											comic.title
 										);
 									})
 								)
