@@ -2,6 +2,7 @@
 
 var React = require('react');
 var NavBar = require('../partials/navbar.js');
+var Loader = require('../partials/loader.js');
 var marvel = require('../marvel.js');
 var Link = require('react-router').Link;
 
@@ -68,12 +69,7 @@ class ComicPage extends React.Component {
 			)
 		} else {
 			return (
-				<div className="comic-page">
-					<NavBar />
-					<div className="container">
-						<h2>No data yet, try again later!</h2>
-					</div>
-				</div>
+				<Loader timelimit={2000} />
 			)
 		}
 	}

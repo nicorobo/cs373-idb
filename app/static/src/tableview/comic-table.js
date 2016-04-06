@@ -4,6 +4,7 @@
 var React = require('react');
 var Table = require('./table.js');
 var NavBar = require('../partials/navbar.js');
+var Loader = require('../partials/loader.js');
 var marvel = require('../marvel.js');
 var headers = [
 	{key: "thumbnail", value: "Thumbnail"},
@@ -19,7 +20,7 @@ class ComicTable extends React.Component {
 	constructor() {
 		super();
 		this.navigateToDetail = this.navigateToDetail.bind(this);
-		this.state = {data: []};
+		this.state = {data: null};
 	}
 
 	navigateToDetail(id) {
@@ -35,20 +36,26 @@ class ComicTable extends React.Component {
 	}
 
 	render() {
-		return (
-			<div className="table-page">
-				<NavBar />
-				<div className="container">
-					<h1>{this.props.route.title}</h1>
-					<Table 
-						content={this.state.data} 
-						headers={headers} 
-						navigate={this.navigateToDetail}
-						subject="comics"
-					/>
+		if(this.state.data){
+			return (
+				<div className="table-page">
+					<NavBar />
+					<div className="container">
+						<h1>{this.props.route.title}</h1>
+						<Table 
+							content={this.state.data} 
+							headers={headers} 
+							navigate={this.navigateToDetail}
+							subject="comics"
+						/>
+					</div>
 				</div>
-			</div>
-		)
+			)
+		} else {
+			return (
+				<Loader timelimit={2000} />
+			)
+		}
 	}
 }
 
