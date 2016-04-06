@@ -84237,7 +84237,7 @@ ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
 // marvel.js
 
 var request = require('request');
-var API = 'http://sweague.me/';
+var API = 'http://sweague.me/api/';
 
 // Retrieve the character with the given ID
 function getCharacter(id, cb) {

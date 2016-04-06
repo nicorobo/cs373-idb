@@ -1,7 +1,7 @@
 // marvel.js
 
 const request = require('request');
-const API = 'http://sweague.me/';
+const API = 'http://sweague.me/api/';
 
 // Retrieve the character with the given ID
 function getCharacter(id, cb){
