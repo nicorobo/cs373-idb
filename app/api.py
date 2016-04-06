@@ -41,7 +41,7 @@ def add_comic(json_data):
     number_of_stories = json_data[u'stories'][u'available']
 
     comic_test = Comic.query.filter_by(id=id).first()
-    if not comic_test:
+    if not comic_test and id != 47352:
         comic = Comic(id=id, thumbnail=thumbnail, title=title, issue_num=issue_num, description=description,
         page_count=page_count, series=series, number_of_characters=number_of_characters, number_of_creators=number_of_creators,
         number_of_stories=number_of_stories)
@@ -64,10 +64,9 @@ def add_comic(json_data):
             if creator:
                 comic.creators.append(creator)
 
-        if comic.id != 47352:
-            db.session.add(comic)
-            logger.debug('Added %s', comic)
-            db.session.commit()
+        db.session.add(comic)
+        logger.debug('Added %s', comic)
+        db.session.commit()
 
 def add_creator(json_data):
     id = json_data[u'id']
