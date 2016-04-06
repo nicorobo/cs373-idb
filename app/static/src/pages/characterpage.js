@@ -43,7 +43,7 @@ class CharacterPage extends React.Component {
 						</div>
 						<div className="col-sm-8 col-sm-offset-2">
 							<div className="panel panel-default">
-								<div className="panel-heading">Appears in </div>
+								<div className="oreo panel-heading">Appears in </div>
 								<div className="panel-body list-group">
 									{charData.comics.map( comic => {
 										return (<Link to={'/comics/'+comic.id} className="list-group-item comic-link">{comic.name}</Link>)

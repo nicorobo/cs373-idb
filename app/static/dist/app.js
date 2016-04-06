@@ -84401,7 +84401,7 @@ var CharacterPage = function (_React$Component) {
 								{ className: 'panel panel-default' },
 								React.createElement(
 									'div',
-									{ className: 'panel-heading' },
+									{ className: 'oreo panel-heading' },
 									'Appears in '
 								),
 								React.createElement(
