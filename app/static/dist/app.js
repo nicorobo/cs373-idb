@@ -84447,36 +84447,36 @@ var Paginator = function (_React$Component) {
 		value: function availablePages(limit, current, last) {
 			var start, end;
 			var middle = Math.ceil(limit / 2);
-			console.log('limit: ' + limit + ' current: ' + current + ' last: ' + last + ' middle: ' + middle);
+			// console.log(`limit: ${limit} current: ${current} last: ${last} middle: ${middle}`);
 			var pages = [];
-			console.log(current <= middle);
+			// console.log(current <= middle);
 			if (last <= limit) {
 				// Show all pages, full limit not used
-				console.log('[availablePages] Under');
+				// console.log('[availablePages] Under');
 				start = 1;
 				end = last;
 			} else if (last - current <= middle) {
 				// Right limit
-				console.log('[availablePages] Right Limit');
+				// console.log('[availablePages] Right Limit');
 				start = last - limit + 1;
 				end = last;
 			} else if (current <= middle) {
 				// Left limit
-				console.log('[availablePages] Left Limit');
+				// console.log('[availablePages] Left Limit');
 				start = 1;
 				end = limit;
 			} else {
 				// Somewhere in the middle
-				console.log('[availablePages] Middle');
+				// console.log('[availablePages] Middle');
 				var startOffset = current - middle;
 				start = startOffset + 1;
 				end = startOffset + limit;
 			}
-			console.log('start: ' + start + ' end: ' + end);
+			// console.log(`start: ${start} end: ${end}`);
 			for (var i = start; i <= end; i++) {
 				pages.push(i);
 			}
-			console.log(pages);
+			// console.log(pages);
 			return pages;
 		}
 	}, {
@@ -84591,7 +84591,6 @@ var Paginator = function (_React$Component) {
 		value: function nextPage() {
 			var currentPage = this.state.page;
 			if (currentPage < this.props.lastPage) {
-				console.log('Next PAging!');
 				this.setState({ page: currentPage + 1 });
 				this.props.changePage(currentPage + 1);
 			}
@@ -84601,7 +84600,6 @@ var Paginator = function (_React$Component) {
 		value: function previousPage() {
 			var currentPage = this.state.page;
 			if (currentPage > 1) {
-				console.log('Previous PAging!');
 				this.setState({ page: currentPage - 1 });
 				this.props.changePage(currentPage - 1);
 			}
