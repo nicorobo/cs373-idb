@@ -43,7 +43,8 @@ def about():
 def characters():
     offset = int(request.args.get('offset'))
     limit = int(request.args.get('limit'))
-    return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.slice(offset, offset+limit)))})
+    if offset and limit:
+        return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.slice(offset, offset+limit)))})
     else:
         return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.all()))})
 
