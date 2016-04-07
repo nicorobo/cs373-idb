@@ -58,6 +58,12 @@ td, th, li {
 	font-weight: bolder;
 }
 
+.navbar-default .navbar-nav .active a:hover {
+	background-color: white;
+	color: red;
+	font-weight: bolder;
+}
+
 .navbar-default .navbar-nav li a:hover {
 	color: red;
 	font-size: 22px;
@@ -128,6 +134,10 @@ div.splash-description {
 #about h1 {
 	font-size: 4.2rem;
 	font-weight: bold;
+}
+
+.run-btn {
+	padding-top: 25px;
 }
 
 /******** DETAIL PAGE **********/
