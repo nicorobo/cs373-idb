@@ -26,7 +26,7 @@ function getComic(id, cb){
 
 //Retrieve comics
 function getComics(limit, offset, cb){
-	request(`${API}characters?limit=${limit}&offset=${offset}`, (error, response, body) => {
+	request(`${API}comics?limit=${limit}&offset=${offset}`, (error, response, body) => {
 		cb(error, JSON.parse(body));
 	})
 }
@@ -40,7 +40,7 @@ function getCreator(id, cb){
 
 //Retrieve creators
 function getCreators(limit, offset, cb){
-	request(`${API}characters?limit=${limit}&offset=${offset}`, (error, response, body) => {
+	request(`${API}creators?limit=${limit}&offset=${offset}`, (error, response, body) => {
 		console.log(error, response, body);
 		cb(error, JSON.parse(body));
 	})

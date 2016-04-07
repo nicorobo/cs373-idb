@@ -5,7 +5,9 @@ var React = require('react');
 var Table = require('./table.js');
 var NavBar = require('../partials/navbar.js');
 var Loader = require('../partials/loader.js');
+var Paginator = require('../partials/paginator.js');
 var marvel = require('../marvel.js');
+var LIMIT = 20;
 var headers = [
 	{key: "thumbnail", value: "Thumbnail"},
 	{key: "title", value: "Title"},
@@ -17,10 +19,11 @@ var headers = [
 
 class ComicTable extends React.Component {
 
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.navigateToDetail = this.navigateToDetail.bind(this);
-		this.state = {data: null};
+		var page = parseInt(props.location.query.page) || 1;
+		this.state = {data: null, page: page};
 	}
 
 	navigateToDetail(id) {
@@ -29,9 +32,14 @@ class ComicTable extends React.Component {
 	}
 
 	componentDidMount() {
-		marvel.getComics(20, 0, (err, data) => {
+		this.getData(this.state.page);
+	}
+
+	getData(page) {
+		var offset = (page-1)*LIMIT;
+		marvel.getComics(LIMIT, offset, (err, data) => {
 			if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");
-			else this.setState({data: data.comics.slice(0, 20)});
+			else this.setState({data: data.comics});
 		});
 	}
 
@@ -40,6 +48,13 @@ class ComicTable extends React.Component {
 			return (
 				<div className="table-page">
 					<NavBar />
+					<Paginator 
+						pagePath="/comics"
+						currentPage={this.state.page}
+						lastPage={10}
+						pageLimit={5}
+						changePage={this.getData.bind(this)} 
+					/>
 					<div className="container">
 						<h1>{this.props.route.title}</h1>
 						<Table 

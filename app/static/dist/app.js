@@ -83716,7 +83716,7 @@ function getComic(id, cb) {
 
 //Retrieve comics
 function getComics(limit, offset, cb) {
-	request(API + 'characters?limit=' + limit + '&offset=' + offset, function (error, response, body) {
+	request(API + 'comics?limit=' + limit + '&offset=' + offset, function (error, response, body) {
 		cb(error, JSON.parse(body));
 	});
 }
@@ -83730,7 +83730,7 @@ function getCreator(id, cb) {
 
 //Retrieve creators
 function getCreators(limit, offset, cb) {
-	request(API + 'characters?limit=' + limit + '&offset=' + offset, function (error, response, body) {
+	request(API + 'creators?limit=' + limit + '&offset=' + offset, function (error, response, body) {
 		console.log(error, response, body);
 		cb(error, JSON.parse(body));
 	});
@@ -84992,19 +84992,22 @@ var React = require('react');
 var Table = require('./table.js');
 var NavBar = require('../partials/navbar.js');
 var Loader = require('../partials/loader.js');
+var Paginator = require('../partials/paginator.js');
 var marvel = require('../marvel.js');
+var LIMIT = 20;
 var headers = [{ key: "thumbnail", value: "Thumbnail" }, { key: "title", value: "Title" }, { key: "id", value: "ID" }, { key: "issue_num", value: "Issue" }, { key: "page_count", value: "Pages" }, { key: "number_of_stories", value: "# of Stories" }];
 
 var ComicTable = function (_React$Component) {
 	_inherits(ComicTable, _React$Component);
 
-	function ComicTable() {
+	function ComicTable(props) {
 		_classCallCheck(this, ComicTable);
 
-		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ComicTable).call(this));
+		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(ComicTable).call(this, props));
 
 		_this.navigateToDetail = _this.navigateToDetail.bind(_this);
-		_this.state = { data: null };
+		var page = parseInt(props.location.query.page) || 1;
+		_this.state = { data: null, page: page };
 		return _this;
 	}
 
@@ -85017,10 +85020,16 @@ var ComicTable = function (_React$Component) {
 	}, {
 		key: 'componentDidMount',
 		value: function componentDidMount() {
+			this.getData(this.state.page);
+		}
+	}, {
+		key: 'getData',
+		value: function getData(page) {
 			var _this2 = this;
 
-			marvel.getComics(20, 0, function (err, data) {
-				if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");else _this2.setState({ data: data.comics.slice(0, 20) });
+			var offset = (page - 1) * LIMIT;
+			marvel.getComics(LIMIT, offset, function (err, data) {
+				if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");else _this2.setState({ data: data.comics });
 			});
 		}
 	}, {
@@ -85031,6 +85040,13 @@ var ComicTable = function (_React$Component) {
 					'div',
 					{ className: 'table-page' },
 					React.createElement(NavBar, null),
+					React.createElement(Paginator, {
+						pagePath: '/comics',
+						currentPage: this.state.page,
+						lastPage: 10,
+						pageLimit: 5,
+						changePage: this.getData.bind(this)
+					}),
 					React.createElement(
 						'div',
 						{ className: 'container' },
@@ -85058,7 +85074,7 @@ var ComicTable = function (_React$Component) {
 
 module.exports = ComicTable;
 
-},{"../marvel.js":499,"../partials/loader.js":503,"../partials/navbar.js":504,"./table.js":514,"react":417}],511:[function(require,module,exports){
+},{"../marvel.js":499,"../partials/loader.js":503,"../partials/navbar.js":504,"../partials/paginator.js":505,"./table.js":514,"react":417}],511:[function(require,module,exports){
 "use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
