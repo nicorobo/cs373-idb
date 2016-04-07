@@ -3,7 +3,7 @@ import logging
 import json
 import subprocess
 
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 from flask.ext.script import Manager
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.cors import CORS
@@ -41,7 +41,9 @@ def about():
 
 @app.route('/api/characters', methods=["GET"])
 def characters():
-    return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.all()))})
+    offset = request.args.get('offset')
+    limit = request.args.get('limit')
+    return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.slice(offset, offset+limit)))})
 
 @app.route('/api/character/<character_id>', methods=["GET"])
 def character(character_id):
@@ -49,7 +51,9 @@ def character(character_id):
 
 @app.route('/api/comics', methods=["GET"])
 def comics():
-    return jsonify({'comics': list(map(mapper.comic_to_dict, Comic.query.all()))})
+    offset = request.args.get('offset')
+    limit = request.args.get('limit')
+    return jsonify({'comics': list(map(mapper.comic_to_dict, Comic.query.slice(offset, offset+limit)))})
 
 @app.route('/api/comic/<comic_id>', methods=["GET"])
 def comic(comic_id):
@@ -57,7 +61,9 @@ def comic(comic_id):
 
 @app.route('/api/creators', methods=["GET"])
 def creators():
-    return jsonify({'creators': list(map(mapper.creator_to_dict, Creator.query.all()))})
+    offset = request.args.get('offset')
+    limit = request.args.get('limit')
+    return jsonify({'creators': list(map(mapper.creator_to_dict, Creator.query.slice(offset, offset+limit)))})
 
 @app.route('/api/creator/<creator_id>', methods=["GET"])
 def creator(creator_id):
