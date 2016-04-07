@@ -84210,6 +84210,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var React = require('react');
 var NavBar = require('./navbar.js');
+var timeid;
 
 var Loader = function (_React$Component) {
 	_inherits(Loader, _React$Component);
@@ -84229,9 +84230,14 @@ var Loader = function (_React$Component) {
 			var _this2 = this;
 
 			var timeout = this.props.timeout || 2000;
-			window.setTimeout(function () {
+			timeid = window.setTimeout(function () {
 				return _this2.setState({ giveup: true });
 			}, timeout);
+		}
+	}, {
+		key: 'componentWillUnmount',
+		value: function componentWillUnmount() {
+			window.clearTimeout(timeid);
 		}
 	}, {
 		key: 'render',
@@ -84573,6 +84579,7 @@ var Table = require('./table.js');
 var NavBar = require('../partials/navbar.js');
 var Loader = require('../partials/loader.js');
 var marvel = require('../marvel.js');
+var LIMIT = 20;
 var headers = [{ key: "thumbnail", value: "Thumbnail" }, { key: "name", value: "Name" }, { key: "id", value: "ID" }, { key: "number_of_comics", value: "# of Comics" }, { key: "number_of_stories", value: "# of Stories" }, { key: "number_of_series", value: "# of Series" }];
 
 var CharacterTable = function (_React$Component) {
@@ -84584,7 +84591,7 @@ var CharacterTable = function (_React$Component) {
 		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CharacterTable).call(this));
 
 		_this.navigateToDetail = _this.navigateToDetail.bind(_this);
-		_this.state = { data: null };
+		_this.state = { data: null, page: 1 };
 		return _this;
 	}
 
@@ -84597,10 +84604,17 @@ var CharacterTable = function (_React$Component) {
 	}, {
 		key: 'componentDidMount',
 		value: function componentDidMount() {
+			if (this.props.location.query.page) this.setState({ page: this.props.location.query.page });
+			this.getData(this.state.page);
+		}
+	}, {
+		key: 'getData',
+		value: function getData(page) {
 			var _this2 = this;
 
-			marvel.getCharacters(20, 0, function (err, data) {
-				if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");else _this2.setState({ data: data.characters.slice(0, 20) });
+			var offset = (page - 1) * LIMIT;
+			marvel.getCharacters(LIMIT, 0, function (err, data) {
+				if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");else _this2.setState({ data: data.characters.slice(offset, offset + LIMIT) });
 			});
 		}
 	}, {
