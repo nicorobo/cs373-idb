@@ -83730,7 +83730,6 @@ function getCreator(id, cb) {
 
 //Retrieve creators
 function getCreators(limit, offset, cb) {
-	console.log("Getting creators...");
 	request(API + 'characters?limit=' + limit + '&offset=' + offset, function (error, response, body) {
 		console.log(error, response, body);
 		cb(error, JSON.parse(body));
@@ -84438,6 +84437,12 @@ var Paginator = function (_React$Component) {
 	}
 
 	_createClass(Paginator, [{
+		key: 'changePage',
+		value: function changePage(page) {
+			this.setState({ page: page });
+			this.props.changePage(page);
+		}
+	}, {
 		key: 'availablePages',
 		value: function availablePages(limit, current, last) {
 			var start, end;
@@ -84502,7 +84507,7 @@ var Paginator = function (_React$Component) {
 						React.createElement(
 							'a',
 							{ href: '#', onClick: function onClick() {
-									return _this2.props.changePage(page);
+									return _this2.changePage(page);
 								} },
 							page
 						)
@@ -84528,15 +84533,21 @@ var Paginator = function (_React$Component) {
 		value: function getLinkButtons(pages, path) {
 			var _this3 = this;
 
+			var currentPage = this.state.page;
+			var hasNext = currentPage < this.props.pageLimit;
+			var nextClass = currentPage < this.props.lastPage ? '' : 'disabled';
+			var previousClass = currentPage > 1 ? '' : 'disabled';
 			return React.createElement(
 				'ul',
 				{ className: 'pagination' },
 				React.createElement(
 					'li',
-					null,
+					{ className: previousClass },
 					React.createElement(
-						'a',
-						{ href: '#', 'aria-label': 'Previous' },
+						Link,
+						{
+							to: { pathname: path, query: { page: currentPage - 1 } },
+							onClick: this.previousPage },
 						React.createElement(
 							'span',
 							{ 'aria-hidden': 'true' },
@@ -84545,13 +84556,14 @@ var Paginator = function (_React$Component) {
 					)
 				),
 				pages.map(function (page) {
+					var activeClass = page == currentPage ? 'active' : '';
 					return React.createElement(
 						'li',
-						null,
+						{ className: activeClass },
 						React.createElement(
 							Link,
 							{ to: { pathname: path, query: { page: page } }, onClick: function onClick() {
-									return _this3.props.changePage(page);
+									return _this3.changePage(page);
 								} },
 							page
 						)
@@ -84559,10 +84571,12 @@ var Paginator = function (_React$Component) {
 				}),
 				React.createElement(
 					'li',
-					null,
+					{ className: nextClass },
 					React.createElement(
-						'a',
-						{ href: '#', 'aria-label': 'Next' },
+						Link,
+						{
+							to: { pathname: path, query: { page: currentPage + 1 } },
+							onClick: this.nextPage },
 						React.createElement(
 							'span',
 							{ 'aria-hidden': 'true' },
@@ -84574,16 +84588,30 @@ var Paginator = function (_React$Component) {
 		}
 	}, {
 		key: 'nextPage',
-		value: function nextPage() {}
+		value: function nextPage() {
+			var currentPage = this.state.page;
+			if (currentPage < this.props.lastPage) {
+				console.log('Next PAging!');
+				this.setState({ page: currentPage + 1 });
+				this.props.changePage(currentPage + 1);
+			}
+		}
 	}, {
 		key: 'previousPage',
-		value: function previousPage() {}
+		value: function previousPage() {
+			var currentPage = this.state.page;
+			if (currentPage > 1) {
+				console.log('Previous PAging!');
+				this.setState({ page: currentPage - 1 });
+				this.props.changePage(currentPage - 1);
+			}
+		}
 	}, {
 		key: 'render',
 		value: function render() {
 			var p = this.props;
 			var pageButtons;
-			var pages = this.availablePages(p.pageLimit, p.currentPage, p.lastPage);
+			var pages = this.availablePages(p.pageLimit, this.state.page, p.lastPage);
 			if (p.pagePath) pageButtons = this.getLinkButtons(pages, p.pagePath);else pageButtons = this.getButtons(pages);
 			return React.createElement(
 				'nav',
@@ -84816,8 +84844,8 @@ var CharacterTable = function (_React$Component) {
 			var _this2 = this;
 
 			var offset = (page - 1) * LIMIT;
-			marvel.getCharacters(LIMIT, 0, function (err, data) {
-				if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");else _this2.setState({ data: data.characters.slice(offset, offset + LIMIT) });
+			marvel.getCharacters(LIMIT, offset, function (err, data) {
+				if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");else _this2.setState({ data: data.characters });
 			});
 		}
 	}, {

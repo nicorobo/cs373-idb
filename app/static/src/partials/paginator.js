@@ -4,9 +4,15 @@ var React = require('react');
 var Link = require('react-router').Link;
 
 class Paginator extends React.Component {
+
 	constructor(props) {
 		super(props);
 		this.state = {page: parseInt(props.currentPage)};
+	}
+
+	changePage(page) {
+		this.setState({page: page});
+		this.props.changePage(page);
 	}
 
 	availablePages(limit, current, last) {
@@ -50,7 +56,7 @@ class Paginator extends React.Component {
 					</a>
 				</li>
 				{pages.map(page => {
-					return <li><a href="#" onClick={()=> this.props.changePage(page)}>{page}</a></li>
+					return <li><a href="#" onClick={()=> this.changePage(page)}>{page}</a></li>
 				})}
 				<li>
 					<a href="#" aria-label="Next">
@@ -62,37 +68,56 @@ class Paginator extends React.Component {
 	}
 
 	getLinkButtons(pages, path) {
+		var currentPage = this.state.page;
+		var hasNext = currentPage < this.props.pageLimit;
+		var nextClass = currentPage < this.props.lastPage ? '' : 'disabled';
+		var previousClass = currentPage > 1 ? '' : 'disabled';
 		return (
 			<ul className="pagination">
-				<li>
-					<a href="#" aria-label="Previous">
+				<li className={previousClass}>
+					<Link 
+						to={{pathname: path, query:{page: currentPage-1}}} 
+						onClick={this.previousPage}>
 						<span aria-hidden="true">&laquo;</span>
-					</a>
+					</Link>
 				</li>
 				{pages.map(page => {
-					return <li><Link to={{pathname: path, query:{page: page}}} onClick={()=> this.props.changePage(page)}>{page}</Link></li>
+					var activeClass = page == currentPage ? 'active' : ''
+					return <li className={activeClass}><Link to={{pathname: path, query:{page: page}}} onClick={()=> this.changePage(page)}>{page}</Link></li>
 				})}
-				<li>
-					<a href="#" aria-label="Next">
+				<li className={nextClass}>
+					<Link 
+						to={{pathname: path, query:{page: currentPage+1}}} 
+						onClick={this.nextPage}>
 						<span aria-hidden="true">&raquo;</span>
-					</a>
+					</Link>
 				</li>
 			</ul>
 		)
 	}
 
 	nextPage() {
-
+		var currentPage = this.state.page;
+		if(currentPage < this.props.lastPage) {
+			console.log('Next PAging!');
+			this.setState({page: currentPage + 1});
+			this.props.changePage(currentPage + 1);
+		}
 	}
 
 	previousPage() {
-
+		var currentPage = this.state.page;
+		if(currentPage > 1) {
+			console.log('Previous PAging!');
+			this.setState({page: currentPage - 1});
+			this.props.changePage(currentPage - 1);
+		}
 	}
 
 	render() {
 		var p = this.props;
 		var pageButtons;
-		var pages = this.availablePages(p.pageLimit, p.currentPage, p.lastPage);
+		var pages = this.availablePages(p.pageLimit, this.state.page, p.lastPage);
 		if (p.pagePath) pageButtons = this.getLinkButtons(pages, p.pagePath);
 		else pageButtons = this.getButtons(pages);
 		return (

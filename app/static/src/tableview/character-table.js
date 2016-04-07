@@ -36,9 +36,9 @@ class CharacterTable extends React.Component {
 
 	getData(page) {
 		var offset = (page-1)*LIMIT;
-		marvel.getCharacters(LIMIT, 0, (err, data) => {
+		marvel.getCharacters(LIMIT, offset, (err, data) => {
 			if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");
-			else this.setState({data: data.characters.slice(offset, offset+LIMIT)});
+			else this.setState({data: data.characters});
 		});
 	}
 

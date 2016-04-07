@@ -260,3 +260,8 @@ div.splash-description {
 .load-page .fa {
 	font-size: 5em;
 }
+
+/******** Pagination **********/
+.pagination .disabled {
+	pointer-events: none;
+}
