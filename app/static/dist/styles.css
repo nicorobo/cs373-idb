@@ -34,17 +34,17 @@ td, th, li {
 .navbar-default .navbar-brand:hover {
 	color: red;
 	font-size: 22px;
-	-webkit-transition: .75s;
-    -moz-transition: .75s;
-    -o-transition: .75s;
-    transition: .75s;
+	-webkit-transition: .5s;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
 }
 
 .navbar-default .navbar-brand {
-	-webkit-transition: .75s;
-	-moz-transition: .75s;
-	-o-transition: .75s;
-	transition: .75s;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
 }
 
 .nav a {
@@ -67,14 +67,14 @@ td, th, li {
 .navbar-default .navbar-nav li a:hover {
 	color: red;
 	font-size: 22px;
-	transition: .75s;
+	transition: .5s;
 }
 
 .navbar-default .navbar-nav li a {
-	-webkit-transition: .75s;
-	-moz-transition: .75s;
-	-o-transition: .75s;
-	transition: .75s;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
 }
 
 .navbar-default {
@@ -96,10 +96,10 @@ td, th, li {
 	padding-top: 100px;
 	width: 600px;
 	max-width: 75%;
-	-webkit-transition: .75s;
-    -moz-transition: .75s;
-    -o-transition: .75s;
-    transition: .75s;
+	-webkit-transition: .5s;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
 	-webkit-keyframes: none;
 
 }
@@ -108,10 +108,10 @@ td, th, li {
 	width: 700px;
 	opacity: 1;
 	max-width: 75%;
-	-webkit-transition: .75s;
-    -moz-transition: .75s;
-    -o-transition: .75s;
-    transition: .75s;
+	-webkit-transition: .5s;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
 }
 
 div.splash-description {
@@ -156,8 +156,12 @@ div.splash-description {
 	padding-top: 40px;
 }
 
+.members {
+	padding-left: 15px;
+}
+
 .run-btn {
-	padding-top: 40px;
+	padding-top: 25px;
 }
 
 
