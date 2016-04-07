@@ -52,6 +52,12 @@ td, th, li {
 	letter-spacing: 1px;
 }
 
+.navbar-default .navbar-nav .active a {
+	background-color: white;
+	color: red;
+	font-weight: bolder;
+}
+
 .navbar-default .navbar-nav li a:hover {
 	color: red;
 	font-size: 22px;
