@@ -47,7 +47,13 @@ class CharacterTable extends React.Component {
 			return (
 				<div className="table-page">
 					<NavBar />
-					<Paginator page={this.state.page} changePage={this.getData.bind(this)} />
+					<Paginator 
+						pagePath="/characters"
+						currentPage={5}
+						lastPage={10}
+						pageLimit={5}
+						changePage={this.getData.bind(this)} 
+					/>
 					<div className="container">
 						<h1>{this.props.route.title}</h1>
 						<Table 
