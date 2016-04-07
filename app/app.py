@@ -1,12 +1,12 @@
 import os
 import logging
 import json
+import subprocess
 
 from flask import Flask, render_template, jsonify
 from flask.ext.script import Manager
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.cors import CORS
-
 import mapper
 
 logging.basicConfig(
@@ -64,6 +64,11 @@ def creators():
 @app.route('/api/creator/<creator_id>', methods=["GET"])
 def creator(creator_id):
     return jsonify({'creator': mapper.creator_detail_to_dict(Creator.query.filter_by(id=creator_id).first())})
+
+@app.route('/run-tests')
+def run_tests():
+    test_output = run_unit_tests()
+    return render_template('about.html', test_output=test_output)
 
 # Serves the initial website (the catch-all is to facilitate react-router routes)
 @app.route('/', defaults={'path': ''})
@@ -209,8 +214,10 @@ def test_all_data():
 @manager.command
 def run_unit_tests():
     logger.debug("run unit tests")
-    os.system('python3 tests.py')
-
+    b_output = subprocess.check_output(['python3', 'tests.py'], stderr=subprocess.STDOUT)
+    output = b_output.decode('ascii')
+    logger.debug(output)
+    return output
 
 if __name__ == '__main__':
     manager.run()

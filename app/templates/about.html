@@ -204,12 +204,9 @@
 				</table>
 			</div>
 		</div>
-
-		<div class = "row">
-			<h3>Tools</h3>
-		</div>
-		<div class = "row">
-			<div class = "col-xs-12">
+		<div class="row">
+			<div class="col-xs-6">
+				<h3>Tools</h3>
 				<ul>
 					<li>Version control through Git and GitHub</li>
 					<li>Collaboration through Slack</li>
@@ -221,7 +218,13 @@
 					<li>Database implemented using SQLAlchemy and MySQL</li>
 				</ul>
 			</div>
-		</div>
+			<div class="run-btn col-xs-6">
+				<form action="/run-tests" method="GET">
+					<button class="btn btn-primary" role="button">Run Unit Tests</button>
+				</form>
+				<br>
+				<code>{{test_output}}</code>
+			</div>
 
 		<br>
 		<br>
