@@ -214,7 +214,7 @@ def test_all_data():
 @manager.command
 def run_unit_tests():
     logger.debug("run unit tests")
-    b_output = subprocess.check_output(['python3', 'tests.py'], stderr=subprocess.STDOUT)
+    b_output = subprocess.check_output(['python', 'tests.py'], stderr=subprocess.STDOUT)
     output = b_output.decode('ascii')
     logger.debug(output)
     return output
