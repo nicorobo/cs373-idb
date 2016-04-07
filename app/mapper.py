@@ -1,9 +1,11 @@
+import re
+
 def character_to_dict(character):
     return {
         'id': character.id,
         'thumbnail': character.thumbnail,
         'name': character.name,
-        'description': character.description,
+        'description': re.sub('<[^>]*>', '', character.description),
         'number_of_comics': character.number_of_comics,
         'number_of_stories': character.number_of_stories,
         'number_of_series': character.number_of_series
@@ -14,7 +16,7 @@ def character_detail_to_dict(character):
         'id': character.id,
         'thumbnail': character.thumbnail,
         'name': character.name,
-        'description': character.description,
+        'description': re.sub('<[^>]*>', '', character.description),
         'number_of_comics': character.number_of_comics,
         'number_of_stories': character.number_of_stories,
         'number_of_series': character.number_of_series,
@@ -33,7 +35,7 @@ def comic_to_dict(comic):
         'thumbnail': comic.thumbnail,
         'title': comic.title,
         'issue_num': comic.issue_num,
-        'description': comic.description,
+        'description': re.sub('<[^>]*>', '', comic.description),
         'page_count': comic.page_count,
         'number_of_creators': comic.number_of_creators,
         'number_of_characters': comic.number_of_characters,
@@ -46,7 +48,7 @@ def comic_detail_to_dict(comic):
         'thumbnail': comic.thumbnail,
         'title': comic.title,
         'issue_num': comic.issue_num,
-        'description': comic.description,
+        'description': re.sub('<[^>]*>', '', comic.description),
         'page_count': comic.page_count,
         'number_of_creators': comic.number_of_creators,
         'number_of_characters': comic.number_of_characters,
