@@ -38,22 +38,22 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 
-
-	<div class = "container" id="about">
+	<div class="about">
+	<div class = "container-fluid" id="about">
 		<div class = "row">
 			<h1>Justice SWEague</h1>
 		</div>
 		<div class = "row">
-			<h3>Members</h3>
+			<h3>Team Members</h3>
 		</div>
 		<div class = "row">
 			<div class = "table">
-				<table class = "table table-striped">
+				<table class = "table">
 					<thead>
 						<tr>
-							<th class="col-xs-1">Name</th>
-							<th class="col-xs-2">Photo</th>
-							<th class="col-xs-4">Bio</th>
+							<th class="col-xs-1"></th>
+							<th class="col-xs-2"></th>
+							<th class="col-xs-4"></th>
 							<th class="col-xs-2">Major Responsibilities</th>
 							<th class="col-xs-1"># of Commits</th>
 							<th class="col-xs-1"># of Issues</th>
@@ -124,88 +124,68 @@
 				</table>
 			</div>
 		</div>
+		<hr>
 
 		<div class = "row">
-			<h3>Stats</h3>
-		</div>
-		<div class = "row">
-			<div class = "col-xs-5">
-				<h4>Total # of Commits</h4>
+			<div class="col-xs-12 col-sm-4 col-md-4">
+				<h3>Stats</h3>
+				<div class="row">
+					<div class = "col-xs-6">
+						<h4>Total # of Commits</h4>
+					</div>
+					<div class = "col-xs-6">
+						<h5>100</h5>
+					</div>
+				</div>
+				<div class="row">
+					<div class = "col-xs-6">
+						<h4>Total # of Issues</h4>
+					</div>
+					<div class = "col-xs-6">
+						<h5>18</h5>
+					</div>
+				</div>
+				<div class="row">
+					<div class = "col-xs-6">
+						<h4>Total # of Unit Tests</h4>
+					</div>
+					<div class = "col-xs-6">
+						<h5>9</h5>
+					</div>
+				</div>
 			</div>
-			<div class = "col-xs-7">
-				<h5>100</h5>
-			</div>
-		</div>
-		<div class = "row">
-			<div class = "col-xs-5">
-				<h4>Total # of Issues</h4>
-			</div>
-			<div class = "col-xs-7">
-				<h5>18</h5>
-			</div>
-		</div>
-		<div class = "row">
-			<div class = "col-xs-5">
-				<h4>Total # of Unit Tests</h4>
-			</div>
-			<div class = "col-xs-7">
-				<h5>9</h5>
+			<div class="col-xs-12 col-sm-8 col-md-8">
+				<div class = "row">
+					<div class = "table">
+						<table class = "table">
+							<thead>
+								<tr>
+									<th class="col-xs-3">Data Source</th>
+									<th class="col-xs-9">Scraping Process</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><a href="http://developer.marvel.com/">Marvel Developer Portal</a></td>
+									<td>
+										Our data was all scraped from http://gateway.marvel.com.
+										In order to use their API, we need an API public and private key pair. When we make a request to one of their endpoints, we must
+										send them our public key, a timestamp, and a hash of our public and private key + the timestamp. To facilitate this process, we
+										just hacked together a bash script to get the JSON response and manually extracted the relevant data. We included this script in
+										our GitHub repository.
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 
-		<div class = "row">
-			<h3>Links</h3>
-		</div>
-		<div class = "row">
-			<div class = "col-xs-5">
-				<h4><a href="http://docs.justicesweague.apiary.io/">Apiary API</a></h4>
-			</div>
-		</div>
-		<div class = "row">
-			<div class = "col-xs-5">
-				<h4><a href="https://github.com/nickroberts404/cs373-idb/issues">GitHub Issue Tracker</a></h4>
-			</div>
-		</div>
-		<div class = "row">
-			<div class = "col-xs-5">
-				<h4><a href="https://github.com/nickroberts404/cs373-idb">GitHub Repo</a></h4>
-			</div>
-		</div>
-		<div class = "row">
-			<div class = "col-xs-5">
-				<h4><a href="https://github.com/nickroberts404/cs373-idb/wiki">GitHub Wiki</a></h4>
-			</div>
-		</div>
+		<hr>
 
-		<div class = "row">
-			<h3>Data</h3>
-		</div>
-		<div class = "row">
-			<div class = "table">
-				<table class = "table table-striped">
-					<thead>
-						<tr>
-							<th class="col-xs-3">Source</th>
-							<th class="col-xs-9">Scraping Process</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td><a href="http://developer.marvel.com/">Marvel Developer Portal</a></td>
-							<td>
-								Our data was all scraped from http://gateway.marvel.com.
-								In order to use their API, we need an API public and private key pair. When we make a request to one of their endpoints, we must
-								send them our public key, a timestamp, and a hash of our public and private key + the timestamp. To facilitate this process, we
-								just hacked together a bash script to get the JSON response and manually extracted the relevant data. We included this script in
-								our GitHub repository.
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
 		<div class="row">
-			<div class="col-xs-6">
+			<div class="col-xs-12 col-sm-6 col-md-4">
 				<h3>Tools</h3>
 				<ul>
 					<li>Version control through Git and GitHub</li>
@@ -218,17 +198,24 @@
 					<li>Database implemented using SQLAlchemy and MySQL</li>
 				</ul>
 			</div>
-			<div class="run-btn col-xs-6">
+			<div class="links col-xs-12 col-sm-3 col-md-2">
+				<h4><a href="http://docs.justicesweague.apiary.io/">Apiary API</a></h4>
+				<h4><a href="https://github.com/nickroberts404/cs373-idb/issues">GitHub Issue Tracker</a></h4>
+				<h4><a href="https://github.com/nickroberts404/cs373-idb">GitHub Repo</a></h4>
+				<h4><a href="https://github.com/nickroberts404/cs373-idb/wiki">GitHub Wiki</a></h4>
+			</div>
+			<div class="run-btn col-xs-12 col-sm-3 col-md-6">
 				<form action="/run-tests" method="GET">
 					<button class="btn btn-primary" role="button">Run Unit Tests</button>
 				</form>
 				<br>
 				<code>{{test_output}}</code>
 			</div>
-
-		<br>
-		<br>
-		<br>
+			<br>
+			<br>
+			<br>
+		</div>
+	</div>
 	</div>
 
 </body>

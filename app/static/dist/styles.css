@@ -131,14 +131,35 @@ div.splash-description {
 
 /******** ABOUT **********/
 
+.about {
+	margin-right: 60px;
+	margin-left: 60px;
+	padding-bottom: 25px;
+}
+
+.about th {
+	background-color: white;
+	color: #337ab7
+}
+
 #about h1 {
-	font-size: 4.2rem;
+	font-size: 3.5rem;
 	font-weight: bold;
+	text-transform: none;
+}
+
+.img-thumbnail {
+	border: none;
+}
+
+.links {
+	padding-top: 40px;
 }
 
 .run-btn {
-	padding-top: 25px;
+	padding-top: 40px;
 }
+
 
 /******** DETAIL PAGE **********/
 
