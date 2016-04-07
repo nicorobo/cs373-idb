@@ -4,7 +4,7 @@ python:
  - "3.5"
 
 install:
- - pip install -r requirements.txt
+ - pip install -r app/requirements.txt
 
 script:
  - make test
