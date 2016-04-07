@@ -6,4 +6,4 @@ models.html: models.py
 
 # This will be implemented in phase II.
 test:
-	echo "Success."
+	python3 app/tests.py
