@@ -2,16 +2,20 @@
 
 var React = require('react');
 var NavBar = require('./navbar.js');
-
+var timeid;
 class Loader extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {giveup: false}
+		this.state = {giveup: false};
 	}
 
 	componentDidMount() {
 		var timeout = this.props.timeout || 2000;
-		window.setTimeout( ()=> this.setState({giveup: true}), timeout);
+		timeid = window.setTimeout( ()=> this.setState({giveup: true}), timeout);
+	}
+
+	componentWillUnmount() {
+		window.clearTimeout(timeid);
 	}
 
 	render() {
