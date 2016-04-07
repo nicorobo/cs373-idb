@@ -206,5 +206,11 @@ def test_all_data():
         logger.debug(character.name)
         logger.debug(character.comics)
 
+@manager.command
+def run_unit_tests():
+    logger.debug("run unit tests")
+    os.system('python3 tests.py')
+
+
 if __name__ == '__main__':
     manager.run()

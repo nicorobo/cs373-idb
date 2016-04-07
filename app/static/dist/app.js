@@ -84798,7 +84798,7 @@ var ComicTable = function (_React$Component) {
 					)
 				);
 			} else {
-				return React.createElement(Loader, { timeout: 10000 });
+				return React.createElement(Loader, { timeout: 8000 });
 			}
 		}
 	}]);
