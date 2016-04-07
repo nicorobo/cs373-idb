@@ -65,7 +65,7 @@ def creator(creator_id):
 
 @app.route('/run-tests')
 def run_tests():
-    b_output = subprocess.check_output(['python', 'tests.py'], stderr=subprocess.STDOUT)
+    b_output = subprocess.check_output(['python3', 'tests.py'], stderr=subprocess.STDOUT)
     test_output = b_output.decode('ascii')
     return render_template('about.html', test_output=test_output)
 
