@@ -206,3 +206,6 @@ div.splash-description {
 .load-page .container {
 	text-align: center;
 }
+.load-page .fa {
+	font-size: 5em;
+}
