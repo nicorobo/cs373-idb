@@ -1,4 +1,7 @@
 # cs373-idb
+
+[![Build Status](https://travis-ci.org/nickroberts404/cs373-idb.svg?branch=master)](https://travis-ci.org/nickroberts404/cs373-idb)
+
 A IMDB-esque catalog of Marvel information (created for CS373-Software Engineering).
 ## Pillars of Data
 
