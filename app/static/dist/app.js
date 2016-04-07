@@ -83702,7 +83702,7 @@ function getCharacter(id, cb) {
 
 //Retrieve characters
 function getCharacters(limit, offset, cb) {
-	request(API + 'characters', function (error, response, body) {
+	request(API + 'characters?limit=' + limit + '&offset=' + offset, function (error, response, body) {
 		cb(error, JSON.parse(body));
 	});
 }
@@ -83716,7 +83716,7 @@ function getComic(id, cb) {
 
 //Retrieve comics
 function getComics(limit, offset, cb) {
-	request(API + 'comics', function (error, response, body) {
+	request(API + 'characters?limit=' + limit + '&offset=' + offset, function (error, response, body) {
 		cb(error, JSON.parse(body));
 	});
 }
@@ -83731,7 +83731,7 @@ function getCreator(id, cb) {
 //Retrieve creators
 function getCreators(limit, offset, cb) {
 	console.log("Getting creators...");
-	request(API + 'creators', function (error, response, body) {
+	request(API + 'characters?limit=' + limit + '&offset=' + offset, function (error, response, body) {
 		console.log(error, response, body);
 		cb(error, JSON.parse(body));
 	});
