@@ -43,7 +43,10 @@ def about():
 def characters():
     offset = request.args.get('offset')
     limit = request.args.get('limit')
-    return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.slice(offset, offset+limit)))})
+    if offset and limit:
+        return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.slice(offset, offset+limit)))})
+    else:
+        return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.all()))})
 
 @app.route('/api/character/<character_id>', methods=["GET"])
 def character(character_id):
@@ -53,7 +56,10 @@ def character(character_id):
 def comics():
     offset = request.args.get('offset')
     limit = request.args.get('limit')
-    return jsonify({'comics': list(map(mapper.comic_to_dict, Comic.query.slice(offset, offset+limit)))})
+    if offset and limit:
+        return jsonify({'comics': list(map(mapper.comic_to_dict, Comic.query.slice(offset, offset+limit)))})
+    else:
+        return jsonify({'comics': list(map(mapper.comic_to_dict, Comic.query.all()))})
 
 @app.route('/api/comic/<comic_id>', methods=["GET"])
 def comic(comic_id):
@@ -63,7 +69,10 @@ def comic(comic_id):
 def creators():
     offset = request.args.get('offset')
     limit = request.args.get('limit')
-    return jsonify({'creators': list(map(mapper.creator_to_dict, Creator.query.slice(offset, offset+limit)))})
+    if offset and limit:
+        return jsonify({'creators': list(map(mapper.creator_to_dict, Creator.query.slice(offset, offset+limit)))})
+    else:
+        return jsonify({'creators': list(map(mapper.creator_to_dict, Creator.query.all()))})
 
 @app.route('/api/creator/<creator_id>', methods=["GET"])
 def creator(creator_id):
