@@ -6,6 +6,7 @@ import subprocess
 from flask import Flask, render_template, jsonify, request
 from flask.ext.script import Manager
 from flask.ext.sqlalchemy import SQLAlchemy
+from sqlalchemy import func
 from flask.ext.cors import CORS
 import mapper
 
@@ -43,12 +44,14 @@ def about():
 def characters():
     offset = request.args.get('offset')
     limit = request.args.get('limit')
+    count = db.session.query(func.count(Character.id))
+    count = count.scalar()
     if offset and limit:
         offset = int(offset)
         limit = int(limit)
-        return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.slice(offset, offset+limit)))})
+        return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.slice(offset, offset+limit))), 'count': count})
     else:
-        return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.all()))})
+        return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.all())), 'count': count})
 
 @app.route('/api/character/<character_id>', methods=["GET"])
 def character(character_id):
@@ -58,12 +61,14 @@ def character(character_id):
 def comics():
     offset = request.args.get('offset')
     limit = request.args.get('limit')
+    count = db.session.query(func.count(Comic.id))
+    count = count.scalar()
     if offset and limit:
         offset = int(offset)
         limit = int(limit)
-        return jsonify({'comics': list(map(mapper.comic_to_dict, Comic.query.slice(offset, offset+limit)))})
+        return jsonify({'comics': list(map(mapper.comic_to_dict, Comic.query.slice(offset, offset+limit))), 'count': count})
     else:
-        return jsonify({'comics': list(map(mapper.comic_to_dict, Comic.query.all()))})
+        return jsonify({'comics': list(map(mapper.comic_to_dict, Comic.query.all())), 'count': count})
 
 @app.route('/api/comic/<comic_id>', methods=["GET"])
 def comic(comic_id):
@@ -73,12 +78,14 @@ def comic(comic_id):
 def creators():
     offset = request.args.get('offset')
     limit = request.args.get('limit')
+    count = db.session.query(func.count(Creator.id))
+    count = count.scalar()
     if offset and limit:
         offset = int(offset)
         limit = int(limit)
-        return jsonify({'creators': list(map(mapper.creator_to_dict, Creator.query.slice(offset, offset+limit)))})
+        return jsonify({'creators': list(map(mapper.creator_to_dict, Creator.query.slice(offset, offset+limit))), 'count': count})
     else:
-        return jsonify({'creators': list(map(mapper.creator_to_dict, Creator.query.all()))})
+        return jsonify({'creators': list(map(mapper.creator_to_dict, Creator.query.all())), 'count': count})
 
 @app.route('/api/creator/<creator_id>', methods=["GET"])
 def creator(creator_id):
