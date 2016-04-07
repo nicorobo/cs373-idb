@@ -83685,7 +83685,7 @@ var App = function (_React$Component) {
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
 
-},{"./pages/characterpage.js":500,"./pages/comicpage.js":501,"./pages/creatorpage.js":502,"./splashpage.js":505,"./tableview/character-table.js":507,"./tableview/comic-table.js":509,"./tableview/creator-table.js":511,"./tableview/tablepage.js":515,"react":417,"react-dom":254,"react-router":282}],499:[function(require,module,exports){
+},{"./pages/characterpage.js":500,"./pages/comicpage.js":501,"./pages/creatorpage.js":502,"./splashpage.js":506,"./tableview/character-table.js":508,"./tableview/comic-table.js":510,"./tableview/creator-table.js":512,"./tableview/tablepage.js":516,"react":417,"react-dom":254,"react-router":282}],499:[function(require,module,exports){
 'use strict';
 
 // marvel.js
@@ -84420,6 +84420,133 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+// paginator.js
+
+var React = require('react');
+var Link = require('react-router').Link;
+
+var Paginator = function (_React$Component) {
+	_inherits(Paginator, _React$Component);
+
+	function Paginator() {
+		_classCallCheck(this, Paginator);
+
+		return _possibleConstructorReturn(this, Object.getPrototypeOf(Paginator).apply(this, arguments));
+	}
+
+	_createClass(Paginator, [{
+		key: 'render',
+		value: function render() {
+			var _this2 = this;
+
+			return React.createElement(
+				'nav',
+				null,
+				React.createElement(
+					'ul',
+					{ className: 'pagination' },
+					React.createElement(
+						'li',
+						null,
+						React.createElement(
+							'a',
+							{ href: '#', 'aria-label': 'Previous' },
+							React.createElement(
+								'span',
+								{ 'aria-hidden': 'true' },
+								'«'
+							)
+						)
+					),
+					React.createElement(
+						'li',
+						null,
+						React.createElement(
+							Link,
+							{ to: { pathname: "/characters", query: { page: 1 } }, onClick: function onClick() {
+									return _this2.props.changePage(1);
+								} },
+							'1'
+						)
+					),
+					React.createElement(
+						'li',
+						null,
+						React.createElement(
+							Link,
+							{ to: { pathname: "/characters", query: { page: 2 } }, onClick: function onClick() {
+									return _this2.props.changePage(2);
+								} },
+							'2'
+						)
+					),
+					React.createElement(
+						'li',
+						null,
+						React.createElement(
+							Link,
+							{ to: { pathname: "/characters", query: { page: 3 } }, onClick: function onClick() {
+									return _this2.props.changePage(3);
+								} },
+							'3'
+						)
+					),
+					React.createElement(
+						'li',
+						null,
+						React.createElement(
+							Link,
+							{ to: { pathname: "/characters", query: { page: 4 } }, onClick: function onClick() {
+									return _this2.props.changePage(4);
+								} },
+							'4'
+						)
+					),
+					React.createElement(
+						'li',
+						null,
+						React.createElement(
+							Link,
+							{ to: { pathname: "/characters", query: { page: 5 } }, onClick: function onClick() {
+									return _this2.props.changePage(5);
+								} },
+							'5'
+						)
+					),
+					React.createElement(
+						'li',
+						null,
+						React.createElement(
+							'a',
+							{ href: '#', 'aria-label': 'Next' },
+							React.createElement(
+								'span',
+								{ 'aria-hidden': 'true' },
+								'»'
+							)
+						)
+					)
+				)
+			);
+		}
+	}]);
+
+	return Paginator;
+}(React.Component);
+
+module.exports = Paginator;
+
+},{"react":417,"react-router":282}],506:[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 // splash.js
 
 var React = require('react');
@@ -84474,7 +84601,7 @@ var Splash = function (_React$Component) {
 
 module.exports = Splash;
 
-},{"./partials/navbar.js":504,"react":417}],506:[function(require,module,exports){
+},{"./partials/navbar.js":504,"react":417}],507:[function(require,module,exports){
 "use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -84561,7 +84688,7 @@ var CharacterRow = function (_React$Component) {
 
 module.exports = CharacterRow;
 
-},{"react":417}],507:[function(require,module,exports){
+},{"react":417}],508:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -84578,6 +84705,7 @@ var React = require('react');
 var Table = require('./table.js');
 var NavBar = require('../partials/navbar.js');
 var Loader = require('../partials/loader.js');
+var Paginator = require('../partials/paginator.js');
 var marvel = require('../marvel.js');
 var LIMIT = 20;
 var headers = [{ key: "thumbnail", value: "Thumbnail" }, { key: "name", value: "Name" }, { key: "id", value: "ID" }, { key: "number_of_comics", value: "# of Comics" }, { key: "number_of_stories", value: "# of Stories" }, { key: "number_of_series", value: "# of Series" }];
@@ -84585,13 +84713,14 @@ var headers = [{ key: "thumbnail", value: "Thumbnail" }, { key: "name", value: "
 var CharacterTable = function (_React$Component) {
 	_inherits(CharacterTable, _React$Component);
 
-	function CharacterTable() {
+	function CharacterTable(props) {
 		_classCallCheck(this, CharacterTable);
 
-		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CharacterTable).call(this));
+		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CharacterTable).call(this, props));
 
 		_this.navigateToDetail = _this.navigateToDetail.bind(_this);
-		_this.state = { data: null, page: 1 };
+		var page = props.location.query.page || 1;
+		_this.state = { data: null, page: page };
 		return _this;
 	}
 
@@ -84604,7 +84733,6 @@ var CharacterTable = function (_React$Component) {
 	}, {
 		key: 'componentDidMount',
 		value: function componentDidMount() {
-			if (this.props.location.query.page) this.setState({ page: this.props.location.query.page });
 			this.getData(this.state.page);
 		}
 	}, {
@@ -84625,6 +84753,7 @@ var CharacterTable = function (_React$Component) {
 					'div',
 					{ className: 'table-page' },
 					React.createElement(NavBar, null),
+					React.createElement(Paginator, { page: this.state.page, changePage: this.getData.bind(this) }),
 					React.createElement(
 						'div',
 						{ className: 'container' },
@@ -84652,7 +84781,7 @@ var CharacterTable = function (_React$Component) {
 
 module.exports = CharacterTable;
 
-},{"../marvel.js":499,"../partials/loader.js":503,"../partials/navbar.js":504,"./table.js":513,"react":417}],508:[function(require,module,exports){
+},{"../marvel.js":499,"../partials/loader.js":503,"../partials/navbar.js":504,"../partials/paginator.js":505,"./table.js":514,"react":417}],509:[function(require,module,exports){
 "use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -84739,7 +84868,7 @@ var ComicRow = function (_React$Component) {
 
 module.exports = ComicRow;
 
-},{"react":417}],509:[function(require,module,exports){
+},{"react":417}],510:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -84822,7 +84951,7 @@ var ComicTable = function (_React$Component) {
 
 module.exports = ComicTable;
 
-},{"../marvel.js":499,"../partials/loader.js":503,"../partials/navbar.js":504,"./table.js":513,"react":417}],510:[function(require,module,exports){
+},{"../marvel.js":499,"../partials/loader.js":503,"../partials/navbar.js":504,"./table.js":514,"react":417}],511:[function(require,module,exports){
 "use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -84916,7 +85045,7 @@ var CreatorRow = function (_React$Component) {
 
 module.exports = CreatorRow;
 
-},{"react":417}],511:[function(require,module,exports){
+},{"react":417}],512:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -84999,7 +85128,7 @@ var CreatorTable = function (_React$Component) {
 
 module.exports = CreatorTable;
 
-},{"../marvel.js":499,"../partials/loader.js":503,"../partials/navbar.js":504,"./table.js":513,"react":417}],512:[function(require,module,exports){
+},{"../marvel.js":499,"../partials/loader.js":503,"../partials/navbar.js":504,"./table.js":514,"react":417}],513:[function(require,module,exports){
 "use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -85056,7 +85185,7 @@ var HeaderItem = function (_React$Component) {
 
 module.exports = HeaderItem;
 
-},{"react":417}],513:[function(require,module,exports){
+},{"react":417}],514:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -85163,7 +85292,7 @@ function sortData(data, sortBy, ascending) {
 
 module.exports = Table;
 
-},{"./character-row.js":506,"./comic-row.js":508,"./creator-row.js":510,"./tableheader.js":514,"./tablerow.js":516,"react":417}],514:[function(require,module,exports){
+},{"./character-row.js":507,"./comic-row.js":509,"./creator-row.js":511,"./tableheader.js":515,"./tablerow.js":517,"react":417}],515:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -85212,7 +85341,7 @@ var TableHeader = function (_React$Component) {
 
 module.exports = TableHeader;
 
-},{"./headeritem.js":512,"react":417}],515:[function(require,module,exports){
+},{"./headeritem.js":513,"react":417}],516:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -85301,7 +85430,7 @@ function getSubject(path) {
 
 module.exports = TablePage;
 
-},{"../marvel.js":499,"../partials/navbar.js":504,"./table.js":513,"react":417}],516:[function(require,module,exports){
+},{"../marvel.js":499,"../partials/navbar.js":504,"./table.js":514,"react":417}],517:[function(require,module,exports){
 "use strict";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
