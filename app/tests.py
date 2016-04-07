@@ -12,7 +12,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 app.config['TESTING'] = True
 
 db = SQLAlchemy(app)
-from models import *
+from test_models import *
 
 class TestModels (TestCase) :
 

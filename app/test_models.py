@@ -1,7 +1,7 @@
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship, backref
 
-from app import db
+from tests import db
 
 comic_character = db.Table('comic_character',
     db.Column('comic_id', db.Integer, db.ForeignKey("comic.id"),
