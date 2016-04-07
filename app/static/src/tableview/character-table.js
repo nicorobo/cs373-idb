@@ -21,7 +21,7 @@ class CharacterTable extends React.Component {
 	constructor(props) {
 		super(props);
 		this.navigateToDetail = this.navigateToDetail.bind(this);
-		var page = props.location.query.page || 1;
+		var page = parseInt(props.location.query.page) || 1;
 		this.state = {data: null, page: page};
 	}
 
@@ -49,7 +49,7 @@ class CharacterTable extends React.Component {
 					<NavBar />
 					<Paginator 
 						pagePath="/characters"
-						currentPage={5}
+						currentPage={this.state.page}
 						lastPage={10}
 						pageLimit={5}
 						changePage={this.getData.bind(this)} 

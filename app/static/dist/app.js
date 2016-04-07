@@ -84433,11 +84433,48 @@ var Paginator = function (_React$Component) {
 
 		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Paginator).call(this, props));
 
-		_this.state = { page: props.currentPage };
+		_this.state = { page: parseInt(props.currentPage) };
 		return _this;
 	}
 
 	_createClass(Paginator, [{
+		key: 'availablePages',
+		value: function availablePages(limit, current, last) {
+			var start, end;
+			var middle = Math.ceil(limit / 2);
+			console.log('limit: ' + limit + ' current: ' + current + ' last: ' + last + ' middle: ' + middle);
+			var pages = [];
+			console.log(current <= middle);
+			if (last <= limit) {
+				// Show all pages, full limit not used
+				console.log('[availablePages] Under');
+				start = 1;
+				end = last;
+			} else if (last - current <= middle) {
+				// Right limit
+				console.log('[availablePages] Right Limit');
+				start = last - limit + 1;
+				end = last;
+			} else if (current <= middle) {
+				// Left limit
+				console.log('[availablePages] Left Limit');
+				start = 1;
+				end = limit;
+			} else {
+				// Somewhere in the middle
+				console.log('[availablePages] Middle');
+				var startOffset = current - middle;
+				start = startOffset + 1;
+				end = startOffset + limit;
+			}
+			console.log('start: ' + start + ' end: ' + end);
+			for (var i = start; i <= end; i++) {
+				pages.push(i);
+			}
+			console.log(pages);
+			return pages;
+		}
+	}, {
 		key: 'getButtons',
 		value: function getButtons(pages) {
 			var _this2 = this;
@@ -84485,41 +84522,6 @@ var Paginator = function (_React$Component) {
 					)
 				)
 			);
-		}
-	}, {
-		key: 'availablePages',
-		value: function availablePages(limit, current, last) {
-			var start, end;
-			var middle = Math.ceil(limit / 2);
-			var pages = [];
-			if (last <= limit) {
-				// Show all pages, full limit not used
-				console.log('[availablePages] Under');
-				start = 1;
-				end = last;
-			} else if (last - current <= middle) {
-				// Right limit
-				console.log('[availablePages] Right Limit');
-				start = last - limit + 1;
-				end = last;
-			} else if (last - current <= middle) {
-				// Left limit
-				console.log('[availablePages] Left Limit');
-				start = 1;
-				end = limit;
-			} else {
-				// Somewhere in the middle
-				console.log('[availablePages] Middle');
-				var startOffset = current - middle;
-				start = startOffset + 1;
-				end = startOffset + limit;
-			}
-			console.log('start: ' + start + ' end: ' + end);
-			for (var i = start; i <= end; i++) {
-				pages.push(i);
-			}
-			console.log(pages);
-			return pages;
 		}
 	}, {
 		key: 'getLinkButtons',
@@ -84792,7 +84794,7 @@ var CharacterTable = function (_React$Component) {
 		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CharacterTable).call(this, props));
 
 		_this.navigateToDetail = _this.navigateToDetail.bind(_this);
-		var page = props.location.query.page || 1;
+		var page = parseInt(props.location.query.page) || 1;
 		_this.state = { data: null, page: page };
 		return _this;
 	}
@@ -84828,7 +84830,7 @@ var CharacterTable = function (_React$Component) {
 					React.createElement(NavBar, null),
 					React.createElement(Paginator, {
 						pagePath: '/characters',
-						currentPage: 5,
+						currentPage: this.state.page,
 						lastPage: 10,
 						pageLimit: 5,
 						changePage: this.getData.bind(this)
