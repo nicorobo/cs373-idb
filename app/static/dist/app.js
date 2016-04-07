@@ -83877,7 +83877,7 @@ var CharacterPage = function (_React$Component) {
 					)
 				);
 			} else {
-				return React.createElement(Loader, { timelimit: 2000 });
+				return React.createElement(Loader, { timeout: 2000 });
 			}
 		}
 	}]);
@@ -84046,7 +84046,7 @@ var ComicPage = function (_React$Component) {
 					)
 				);
 			} else {
-				return React.createElement(Loader, { timelimit: 2000 });
+				return React.createElement(Loader, { timeout: 2000 });
 			}
 		}
 	}]);
@@ -84185,7 +84185,7 @@ var CreatorPage = function (_React$Component) {
 					)
 				);
 			} else {
-				return React.createElement(Loader, { timelimit: 2000 });
+				return React.createElement(Loader, { timeout: 2000 });
 			}
 		}
 	}]);
@@ -84214,30 +84214,65 @@ var NavBar = require('./navbar.js');
 var Loader = function (_React$Component) {
 	_inherits(Loader, _React$Component);
 
-	function Loader() {
+	function Loader(props) {
 		_classCallCheck(this, Loader);
 
-		return _possibleConstructorReturn(this, Object.getPrototypeOf(Loader).apply(this, arguments));
+		var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Loader).call(this, props));
+
+		_this.state = { giveup: false };
+		return _this;
 	}
 
 	_createClass(Loader, [{
+		key: 'componentDidMount',
+		value: function componentDidMount() {
+			var _this2 = this;
+
+			var timeout = this.props.timeout || 2000;
+			window.setTimeout(function () {
+				return _this2.setState({ giveup: true });
+			}, timeout);
+		}
+	}, {
 		key: 'render',
 		value: function render() {
 			console.log('This is the loader!');
-			return React.createElement(
-				'div',
-				{ className: 'comic-page' },
-				React.createElement(NavBar, null),
-				React.createElement(
+			if (this.state.giveup) {
+				return React.createElement(
 					'div',
-					{ className: 'container' },
+					{ className: 'load-page comic-page' },
+					React.createElement(NavBar, null),
 					React.createElement(
-						'h2',
-						null,
-						'No data yet, try again later!'
+						'div',
+						{ className: 'container' },
+						React.createElement(
+							'h2',
+							null,
+							'No data yet, try again later!'
+						)
 					)
-				)
-			);
+				);
+			} else {
+				return React.createElement(
+					'div',
+					{ className: 'load-page comic-page' },
+					React.createElement(NavBar, null),
+					React.createElement(
+						'div',
+						{ className: 'container' },
+						React.createElement(
+							'div',
+							{ className: 'loader' },
+							React.createElement(
+								'h2',
+								null,
+								'Loading...'
+							),
+							React.createElement('i', { className: 'fa fa-cog fa-spin' })
+						)
+					)
+				);
+			}
 		}
 	}]);
 
@@ -84593,7 +84628,7 @@ var CharacterTable = function (_React$Component) {
 					)
 				);
 			} else {
-				return React.createElement(Loader, { timelimit: 2000 });
+				return React.createElement(Loader, { timeout: 2000 });
 			}
 		}
 	}]);
@@ -84763,7 +84798,7 @@ var ComicTable = function (_React$Component) {
 					)
 				);
 			} else {
-				return React.createElement(Loader, { timelimit: 2000 });
+				return React.createElement(Loader, { timeout: 10000 });
 			}
 		}
 	}]);
@@ -84940,7 +84975,7 @@ var CreatorTable = function (_React$Component) {
 					)
 				);
 			} else {
-				return React.createElement(Loader, { timelimit: 2000 });
+				return React.createElement(Loader, { timeout: 2000 });
 			}
 		}
 	}]);

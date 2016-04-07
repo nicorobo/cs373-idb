@@ -54,7 +54,7 @@ class CreatorTable extends React.Component {
 			)
 		} else {
 			return (
-				<Loader timelimit={2000} />
+				<Loader timeout={2000} />
 			)
 		}
 	}

@@ -201,3 +201,8 @@ div.splash-description {
 	-o-transform: rotate(180deg) translate(-5px, 0);
 	transform: rotate(180deg) translate(-5px, 0);
 }
+
+/******** LOAD PAGE **********/
+.load-page .container {
+	text-align: center;
+}
