@@ -1,447 +1,1470 @@
-[33mfb00e1d[m [31m(nickroberts404)[m  Added simple center styling to pagination component [32m(5 minutes ago)[m 
+commit 0c11e991441094ddf24ac841bb397558c62af9b4
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Apr 7 21:40:53 2016 -0500
 
-[33m8d987cd[m [31m(nickroberts404)[m  Pagination should work for creators [32m(5 minutes ago)[m 
+    Updated about.html
 
-[33m3652b2a[m [31m(nickroberts404)[m  Pagination should work for comics [32m(5 minutes ago)[m 
+commit 9ad0b3b5a7d207b9109313585cb4134b15dc625d
+Author: nathanhotz <njhotz@gmail.com>
+Date:   Thu Apr 7 20:27:49 2016 -0500
 
-[33m2484a1f[m [31m(nickroberts404)[m  Commented out excessive loggin [32m(5 minutes ago)[m 
+    Updated git ignore to exclude .pyc files, and removed them from the repo.
 
-[33m6b07dde[m [31m(Benjamin Holder)[m  Updated makefile. [32m(8 minutes ago)[m 
+commit c036bfc4d1fb8a14579876e8e893be268ab6815f
+Merge: 65a4deb f548b6c
+Author: nathanhotz <njhotz@gmail.com>
+Date:   Thu Apr 7 20:19:47 2016 -0500
 
-[33m561cf06[m [31m(nickroberts404)[m  Pagination almost working, only on characters right now [32m(31 minutes ago)[m 
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
 
-[33m2405c75[m [31m(nickroberts404)[m  Added query params to GET request [32m(31 minutes ago)[m 
+commit f548b6c9503ed204b0a1e8333273b158e95092e2
+Author: SrsBusiness <dannychen579@utexas.edu>
+Date:   Thu Apr 7 20:19:31 2016 -0500
 
-[33m7bdcfbd[m [31m(leslierice)[m  add updated commits, issues [32m(56 minutes ago)[m 
+    Updated API. Hooray!
 
-[33mcb25e06[m [31m(leslierice)[m  styling [32m(67 minutes ago)[m 
+commit 65a4deb7c9af4dbdfad3f98bc2ff1b88a832ddef
+Author: nathanhotz <njhotz@gmail.com>
+Date:   Thu Apr 7 20:19:06 2016 -0500
 
-[33m9d7c9d8[m [31m(leslierice)[m  adding page count [32m(85 minutes ago)[m 
+    Updated about page statistics
 
-[33mce587a1[m [31m(leslierice)[m  updated models.html [32m(2 hours ago)[m 
+commit 542bc60e9370fde4e2ba61f7030520c02f1d16b2
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Apr 7 20:02:15 2016 -0500
 
-[33mb878c43[m [31m(leslierice)[m  actually sqlalchemy limit offset finally works [32m(2 hours ago)[m 
+    app.js should finally be ignored
 
-[33m6f5b493[m [31m(leslierice)[m  whoops [32m(2 hours ago)[m 
+commit dea3331a3acc4a0905886490db91c7fff862a337
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Apr 7 19:58:02 2016 -0500
 
-[33m3579041[m [31m(leslierice)[m  should fix sqlalchemy limit offset [32m(2 hours ago)[m 
+    For real this time.
 
-[33mb73f427[m [31m(leslierice)[m  fix regex if None, quickfix for sqlalchemy limit until figure it out [32m(2 hours ago)[m 
+commit 682d8fbca286430f97da8fed599e836ff6e032d9
+Merge: 4c2f143 80c09d2
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Apr 7 19:51:57 2016 -0500
 
-[33mc6d8c6a[m [31m(Danny Chen)[m  Merge branch 'master' of github.com:nickroberts404/cs373-idb [32m(2 hours ago)[m 
+    Merge branch 'master' into dev
 
-[33m4d0e437[m [31m(Danny Chen)[m  Added Travis Build status logo on README [32m(2 hours ago)[m 
+commit 4c2f1431a6577fc28821fb0a6580d46384b16314
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Apr 7 19:51:43 2016 -0500
 
-[33m75ce00f[m [31m(leslierice)[m  limit offset sqlalchemy - not sure if it works [32m(2 hours ago)[m 
+    Narrowed files reported on by coverage.
 
-[33m8201a47[m [31m(leslierice)[m  strip html tags in description [32m(2 hours ago)[m 
+commit 80c09d2a6e359227a693f9da522fcb2795091602
+Author: SrsBusiness <dannychen579@utexas.edu>
+Date:   Thu Apr 7 19:43:20 2016 -0500
 
-[33m408758d[m [31m(nickroberts404)[m  Last merge commit EVER... I hope. [32m(2 hours ago)[m 
+    Updated JSON schemas for /characters, /comics, and /creators
 
-[33med89b7f[m [31m(nickroberts404)[m  Fixed bug with paginator not detecting left limit [32m(2 hours ago)[m 
+commit 53dbec61fe1a6038f037ee3297ba29f9f251df68
+Merge: ecf3d61 a98671a
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Apr 7 19:38:04 2016 -0500
 
-[33m2758c62[m [31m(Danny Chen)[m  Fixed oboe in .travis.yml [32m(2 hours ago)[m 
+    Merge branch 'master' into dev
 
-[33m2ca2172[m [31m(Danny Chen)[m  Installs everything in requirements.txt on Travis [32m(2 hours ago)[m 
+commit ecf3d619855e9709a788596b82af6fb5dd84c98f
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Apr 7 19:37:46 2016 -0500
 
-[33m3182e30[m [31m(Danny Chen)[m  Makefile now runs tests [32m(2 hours ago)[m 
+    Added coverage3 to .travis.yml and makefile.
 
-[33mfa1c18e[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(3 hours ago)[m 
+commit a98671a6dc1f93eead73d48c8cc149d39a143836
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Apr 7 19:33:04 2016 -0500
 
-[33m6ea7ad5[m [31m(nickroberts404)[m  Still working on pagination, almost done [32m(3 hours ago)[m 
+    Compute max-pages from data, can now view all pages
 
-[33m8ac9eba[m [31m(leslierice)[m  updated models.html, closes #27 [32m(4 hours ago)[m 
+commit c83f3ffbd69b5f7120d930c745635531c6d0c677
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Apr 7 19:29:14 2016 -0500
 
-[33mdfc1531[m [31m(leslierice)[m  fixed unit tests bug closes #37 [32m(4 hours ago)[m 
+    moving models.html
 
-[33md8b404b[m [31m(Benjamin Holder)[m  Closes #26: updated description of how data was scraped. [32m(4 hours ago)[m 
+commit 0954eb8068cc54ea516e0ce46fd9d57c2f59c639
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Apr 7 19:22:55 2016 -0500
 
-[33m13d5445[m [31m(leslierice)[m  adding more unit tests, moving run unit tests to top of about page, clean up app.py [32m(9 hours ago)[m 
+    adding IDB2.log
 
-[33mb6a98fe[m [31m(leslierice)[m  cleaning up styling about page [32m(20 hours ago)[m 
+commit fb00e1d9dcbfb4082fb45dc523694b9fe48d5d74
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Apr 7 19:13:44 2016 -0500
 
-[33m391e83b[m [31m(Leslie Rice)[m  Merge pull request #35 from nickroberts404/unit-tests [32m(21 hours ago)[m 
+    Added simple center styling to pagination component
 
-[33m02e7a2b[m [31m(leslierice)[m  needed to change python3 to python [32m(21 hours ago)[m 
+commit 8d987cd0ddcf07ddcd51001c3012465a2c74c9f6
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Apr 7 19:02:39 2016 -0500
 
-[33m3b00a07[m [31m(leslierice)[m  fix merge conflict [32m(21 hours ago)[m 
+    Pagination should work for creators
 
-[33mad29673[m [31m(nickroberts404)[m  Fixed merge conflict [32m(22 hours ago)[m 
+commit 3652b2a3c90b6d98427f663df7905feb5442137b
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Apr 7 18:58:20 2016 -0500
 
-[33m9f35050[m [31m(nickroberts404)[m  Have pagination ugly but working on character page. Need to generalize and enhance paginator.js [32m(22 hours ago)[m 
+    Pagination should work for comics
 
-[33m30d32b0[m [31m(leslierice)[m  runs unit tests on about page when you click button [32m(22 hours ago)[m 
+commit 2484a1ff6c9f091e7b4ff5b2e51d31b1e118965f
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Apr 7 18:50:45 2016 -0500
 
-[33me070adf[m [31m(Danny Chen)[m  Added tests_models.py, which is just a clone of models.py [32m(22 hours ago)[m 
+    Commented out excessive loggin
 
-[33md92fb2c[m [31m(Danny Chen)[m  Hacked together test database + Leslie's test cases. [32m(22 hours ago)[m 
+commit 6b07dde7c18bf37f0b4437f4e415751ee8cbb34c
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Apr 7 19:10:50 2016 -0500
 
-[33m4a62c2c[m [31m(nickroberts404)[m  Fixed merge conflict [32m(23 hours ago)[m 
+    Updated makefile.
 
-[33m31d0bb6[m [31m(nickroberts404)[m  Began using limits/offsets and page queries on character-table [32m(23 hours ago)[m 
+commit 561cf06df22a58443481d6187c42101bf29bcdfb
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Apr 7 18:47:59 2016 -0500
 
-[33m40d801f[m [31m(nickroberts404)[m  Fixed issue with loader unmounting without clearing timeout [32m(23 hours ago)[m 
+    Pagination almost working, only on characters right now
 
-[33mccc6ed2[m [31m(leslierice)[m  fix about nav [32m(23 hours ago)[m 
+commit 2405c75abaea9b3f8701627904226cc306e3168f
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Apr 7 17:49:51 2016 -0500
 
-[33m85077f3[m [31m(leslierice)[m  updated unit tests [32m(23 hours ago)[m 
+    Added query params to GET request
 
-[33mf97553d[m [31m(nickroberts404)[m  Created empty paginator component [32m(23 hours ago)[m 
+commit 7bdcfbd8f002d67a2e8e0419e6ea889ef10a269b
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Apr 7 18:22:19 2016 -0500
 
-[33m43b9ac8[m [31m(nickroberts404)[m  Made cog a leeeetle bigger [32m(23 hours ago)[m 
+    add updated commits, issues
 
-[33md426fe0[m [31m(nickroberts404)[m  Fixed merge conflict [32m(24 hours ago)[m 
+commit cb25e064b28eb3d199ab567103b9bb88fa451731
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Apr 7 18:11:33 2016 -0500
 
-[33m86df5af[m [31m(nickroberts404)[m  Added spinning icon to loader.js and timeout logic [32m(24 hours ago)[m 
+    styling
 
-[33mac2cea9[m [31m(nathanhotz)[m  Updated about page to highlight About instead of Home. Still needs to be changed from a box to orange letters. [32m(24 hours ago)[m 
+commit 9d7c9d81cd5fb7f3dde9579bd871fac9009dd72b
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Apr 7 17:53:10 2016 -0500
 
-[33m2e01a12[m [31m(nickroberts404)[m  Added fontawesome external css [32m(24 hours ago)[m 
+    adding page count
 
-[33mab11f4f[m [31m(nickroberts404)[m  Added loader to avoid flash of 'no data' message [32m(24 hours ago)[m 
+commit ce587a160a51aaec799b154272a683089ccae434
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Apr 7 17:43:05 2016 -0500
 
-[33m8761e5f[m [31m(leslierice)[m  uncomment cors [32m(25 hours ago)[m 
+    updated models.html
 
-[33m55ce1fa[m [31m(leslierice)[m  unit test testing [32m(25 hours ago)[m 
+commit b878c430dbf302e5e7115482964118c35dfd5405
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Apr 7 17:41:40 2016 -0500
 
-[33m0bc7896[m [31m(nickroberts404)[m  Fixed typos in header keys (used for sorting) [32m(26 hours ago)[m 
+    actually sqlalchemy limit offset finally works
 
-[33m3d6f807[m [31m(nickroberts404)[m  Fixed last_name typo in creator-row [32m(26 hours ago)[m 
+commit 6f5b4932890a64a29c34a81e8d6079d7b326d825
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Apr 7 17:38:17 2016 -0500
 
-[33m46f108a[m [31m(nickroberts404)[m  Removed references to mock data from detail pages [32m(26 hours ago)[m 
+    whoops
 
-[33mebf2abd[m [31m(nickroberts404)[m  Creator detail page works with API [32m(26 hours ago)[m 
+commit 3579041b45ace4eea87f4dd130885565954f3f5e
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Apr 7 17:37:03 2016 -0500
 
-[33m69acb08[m [31m(nickroberts404)[m  Character detail page works with API [32m(26 hours ago)[m 
+    should fix sqlalchemy limit offset
 
-[33m5e6a495[m [31m(nickroberts404)[m  Comic detail page works with API [32m(26 hours ago)[m 
+commit b73f427f314103a92e96bbe306af6843f7734071
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Apr 7 17:29:39 2016 -0500
 
-[33ma5c4a7a[m [31m(nickroberts404)[m  Big commit I shouldve split into many. Working on using API, have tables working so far. [32m(26 hours ago)[m 
+    fix regex if None, quickfix for sqlalchemy limit until figure it out
 
-[33m25a980b[m [31m(nickroberts404)[m  fix API constant in marvel.js [32m(2 days ago)[m 
+commit c6d8c6a7841f3ff7a495cc018d26a0b9a0d6e229
+Merge: 4d0e437 75ce00f
+Author: Danny Chen <dannychen579@utexas.edu>
+Date:   Thu Apr 7 17:10:16 2016 -0500
 
-[33m5649338[m [31m(nickroberts404)[m  Just trying to get .gitignore to ignore the big app.js but it won't -__- [32m(2 days ago)[m 
+    Merge branch 'master' of github.com:nickroberts404/cs373-idb
 
-[33me4cb2e9[m [31m(nickroberts404)[m  Okay...this time the test should really be gone.. [32m(2 days ago)[m 
+commit 4d0e4375f15ecef28e9817931ba1c04a5069cf6f
+Author: Danny Chen <dannychen579@utexas.edu>
+Date:   Thu Apr 7 17:10:03 2016 -0500
 
-[33m8c2a0d5[m [31m(nickroberts404)[m  Fixed nesting link bug. This time aaactually deleted test [32m(2 days ago)[m 
+    Added Travis Build status logo on README
 
-[33mc2a305c[m [31m(nickroberts404)[m  Removed api endpoint used for testing cors [32m(2 days ago)[m 
+commit 75ce00fa6480381732c26cb522c6be93b81b98be
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Apr 7 17:09:11 2016 -0500
 
-[33m9ded779[m [31m(leslierice)[m  add description to splashpage closes #32 [32m(2 days ago)[m 
+    limit offset sqlalchemy - not sure if it works
 
-[33m7a7d0f5[m [31m(nickroberts404)[m  Added CORS to our Flask app [32m(2 days ago)[m 
+commit 8201a47246ea8d5b6397039e0f1f57ecdb280eda
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Apr 7 16:45:21 2016 -0500
 
-[33m32d8ad2[m [31m(leslierice)[m  buggy comic [32m(2 days ago)[m 
+    strip html tags in description
 
-[33m8c08c87[m [31m(nickroberts404)[m  Removed global transpile option from Babel [32m(2 days ago)[m 
+commit 408758d29914b03ed1fec1dd019272caaf6d7f4c
+Merge: ed89b7f 2758c62
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Apr 7 17:03:12 2016 -0500
 
-[33m5723309[m [31m(nickroberts404)[m  Exporting functions from marvel.js for external use [32m(2 days ago)[m 
+    Last merge commit EVER... I hope.
 
-[33m9a3a3bf[m [31m(nickroberts404)[m  Implemented API in detail pages [32m(2 days ago)[m 
+commit ed89b7f030bd29219c424ce292faa0bcddbc5e29
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Apr 7 17:03:09 2016 -0500
 
-[33mbba6357[m [31m(nickroberts404)[m  Requiring marvel.js in pages [32m(2 days ago)[m 
+    Fixed bug with paginator not detecting left limit
 
-[33m3581af3[m [31m(nickroberts404)[m  Added back mockdata code for tablepage, should remain until wrapper working [32m(2 days ago)[m 
+commit 2758c62bcf154df22fee17297f6b63bd71025dbc
+Author: Danny Chen <dannychen579@utexas.edu>
+Date:   Thu Apr 7 16:59:26 2016 -0500
 
-[33m1b4f255[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 days ago)[m 
+    Fixed oboe in .travis.yml
 
-[33m44f6dbc[m [31m(nickroberts404)[m  Began implementing API in tablepage [32m(2 days ago)[m 
+commit 2ca2172a67fd7de6c777ed25be9071304475e1a2
+Author: Danny Chen <dannychen579@utexas.edu>
+Date:   Thu Apr 7 16:57:43 2016 -0500
 
-[33mc1b9dd6[m [31m(nickroberts404)[m  Began clientside API wrapper [32m(2 days ago)[m 
+    Installs everything in requirements.txt on Travis
 
-[33m8783d1d[m [31m(leslierice)[m  found bug forgetting to add issue_num and num_creators [32m(2 days ago)[m 
+commit 3182e30bf6898cc9bf4672170b47264451676aaf
+Author: Danny Chen <dannychen579@utexas.edu>
+Date:   Thu Apr 7 16:49:48 2016 -0500
 
-[33me37bd00[m [31m(nickroberts404)[m  Fixed mockdata refernce in tablepage.js [32m(2 days ago)[m 
+    Makefile now runs tests
 
-[33m1ee3520[m [31m(nickroberts404)[m  Removed unused function in app.js [32m(2 days ago)[m 
+commit fa1c18e6ce55d026a7af673cfe04361f14857f9a
+Merge: 6ea7ad5 8ac9eba
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Apr 7 16:34:15 2016 -0500
 
-[33m36c469e[m [31m(nickroberts404)[m  Cleaned up ./src file structure [32m(2 days ago)[m 
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
 
-[33m361193c[m [31m(leslierice)[m  add individual queries [32m(2 days ago)[m 
+commit 6ea7ad563cc65ea964f1d1c6ee687e8a0890e9dd
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Apr 7 16:34:11 2016 -0500
 
-[33mf1fb112[m [31m(leslierice)[m  begin implementing api [32m(3 days ago)[m 
+    Still working on pagination, almost done
 
-[33mecd15b3[m [31m(leslierice)[m  adding update functions [32m(4 days ago)[m 
+commit 8ac9ebadaa606e974cae30ceb111cc8bb17c9b08
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Apr 7 15:26:54 2016 -0500
 
-[33m3adfe08[m [31m(Benjamin Holder)[m  Implemented get_all with filtering. [32m(5 days ago)[m 
+    updated models.html, closes #27
 
-[33m4830034[m [31m(Benjamin Holder)[m  Fixed marvelpy keyword arguments being passed to requests. [32m(5 days ago)[m 
+commit dfc1531bedde3cc3b13b691d7fd3186df6adc02e
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Apr 7 15:06:38 2016 -0500
 
-[33m7f6b234[m [31m(Benjamin Holder)[m  Changed function names, key file format. [32m(5 days ago)[m 
+    fixed unit tests bug closes #37
 
-[33m77fc5ef[m [31m(Benjamin Holder)[m  Added APIKeyError [32m(6 days ago)[m 
+commit d8b404b72f64ae07ffa8064cb4d70fa2eee4d845
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Apr 7 14:56:24 2016 -0500
 
-[33m531e3e1[m [31m(Benjamin Holder)[m  marvelpy iterator automatic retry implemented. [32m(6 days ago)[m 
+    Closes #26: updated description of how data was scraped.
 
-[33m0413b04[m [31m(Benjamin Holder)[m  Removed duplicate functions in marvelpy. [32m(6 days ago)[m 
+commit 13d5445ceb61d9b7dd1dbfe146df18a126fdfb9d
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Apr 7 09:56:39 2016 -0500
 
-[33md81304c[m [31m(leslierice)[m  description longer [32m(6 days ago)[m 
+    adding more unit tests, moving run unit tests to top of about page, clean up app.py
 
-[33mdfb17fb[m [31m(leslierice)[m  need to make description field longer [32m(6 days ago)[m 
+commit b6a98fed6ac4e6a6b84f417763fa2f85cad96a84
+Author: leslierice <leslierice@utexas.edu>
+Date:   Wed Apr 6 23:23:59 2016 -0500
 
-[33mc0d79d4[m [31m(leslierice)[m  method to add data from json files to database [32m(6 days ago)[m 
+    cleaning up styling about page
 
-[33m9203353[m [31m(leslierice)[m  updated models, working association table [32m(6 days ago)[m 
+commit 391e83b3a4ce431b36e49f14c9004d378658da7d
+Merge: ad29673 02e7a2b
+Author: Leslie Rice <leslierice@utexas.edu>
+Date:   Wed Apr 6 22:17:30 2016 -0500
 
-[33m419777c[m [31m(Benjamin Holder)[m  Added full JSON scrapes from Marvel's database and removed the small scrapes. [32m(7 days ago)[m 
+    Merge pull request #35 from nickroberts404/unit-tests
+    
+    Unit tests
 
-[33mef66551[m [31m(leslierice)[m  fixing splash img [32m(7 days ago)[m 
+commit 02e7a2b221e9d7207007b16cb5ca53f78aa60826
+Author: leslierice <leslierice@utexas.edu>
+Date:   Wed Apr 6 22:17:11 2016 -0500
 
-[33m1b3bced[m [31m(leslierice)[m  adding api.py to add things to database, still working on association business [32m(7 days ago)[m 
+    needed to change python3 to python
 
-[33m8e15690[m [31m(Benjamin Holder)[m  Merge branch 'master' into dev [32m(9 days ago)[m 
+commit 3b00a07735a6265ea1346262997a854c6648b5ff
+Merge: e070adf ad29673
+Author: leslierice <leslierice@utexas.edu>
+Date:   Wed Apr 6 22:12:07 2016 -0500
 
-[33m0f4ff6c[m [31m(Benjamin Holder)[m  Added JSON files scraped from Marvel. [32m(9 days ago)[m 
+    fix merge conflict
 
-[33m4d7793a[m [31m(Benjamin Holder)[m  Tweaked marvelpy. [32m(9 days ago)[m 
+commit ad2967306011cfef983879714e08ec7cd7999788
+Merge: 9f35050 30d32b0
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 21:27:11 2016 -0500
 
-[33m1332828[m [31m(Benjamin Holder)[m  Implemented iterator. [32m(9 days ago)[m 
+    Fixed merge conflict
 
-[33m01a857a[m [31m(leslierice)[m  moved models and tests back to app folder [32m(9 days ago)[m 
+commit 9f35050ff6130b5f6f0399ce44066de5ab76193d
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 21:25:34 2016 -0500
 
-[33m8f094e8[m [31m(leslierice)[m  changing models to work with db [32m(9 days ago)[m 
+    Have pagination ugly but working on character page. Need to generalize and enhance paginator.js
 
-[33m4631404[m [31m(leslierice)[m  adding create_db function and logging [32m(9 days ago)[m 
+commit 30d32b05ea74f585ae33f198da4cae92842d69e1
+Author: leslierice <leslierice@utexas.edu>
+Date:   Wed Apr 6 21:22:32 2016 -0500
 
-[33mf5eb920[m [31m(Benjamin Holder)[m  Added key validation assertions. [32m(9 days ago)[m 
+    runs unit tests on about page when you click button
 
-[33m59d47e8[m [31m(Benjamin Holder)[m  Added support for Session objects. [32m(9 days ago)[m 
+commit e070adf645dc1ee4924153fe56d651e97efb2eaf
+Author: Danny Chen <dannychen579@utexas.edu>
+Date:   Wed Apr 6 21:19:29 2016 -0500
 
-[33m5feaeb2[m [31m(nickroberts404)[m  Active nav link remains red when selected [32m(9 days ago)[m 
+    Added tests_models.py, which is just a clone of models.py
 
-[33m02630cd[m [31m(nickroberts404)[m  Fixed sorting / added style to sorted-by table header [32m(9 days ago)[m 
+commit d92fb2c0f7a81c9ea8ce7f124105dc126cb175f5
+Author: Danny Chen <dannychen579@utexas.edu>
+Date:   Wed Apr 6 21:14:54 2016 -0500
 
-[33m0c987d3[m [31m(leslierice)[m  update splash page [32m(10 days ago)[m 
+    Hacked together test database + Leslie's test cases.
 
-[33m8f6adb3[m [31m(Benjamin Holder)[m  Updated marvelpy to allow user submitted timestamp. [32m(10 days ago)[m 
+commit 4a62c2c1c6d3f48e49186369c72158a54e2861aa
+Merge: 31d0bb6 ccc6ed2
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 20:40:34 2016 -0500
 
-[33m6093044[m [31m(Benjamin Holder)[m  Created a Python library to access Marvel API. [32m(11 days ago)[m 
+    Fixed merge conflict
 
-[33m8b99edf[m [31m(nickroberts404)[m  Now using gulp for build and babel for transpiling [32m(13 days ago)[m 
+commit 31d0bb69adeaf03f9b886e9f17b054f447e46e19
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 20:39:16 2016 -0500
 
-[33meb2d0a2[m [31m(Nathan Hotz)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+    Began using limits/offsets and page queries on character-table
 
-[33m38748c8[m [31m(Nathan Hotz)[m  Added last bits to About page [32m(2 weeks ago)[m 
+commit 40d801f1d4d48ed4fd1747f5619f907450f11e96
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 20:38:14 2016 -0500
 
-[33mca34522[m [31m(Benjamin Holder)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+    Fixed issue with loader unmounting without clearing timeout
 
-[33mca4c4c1[m [31m(Benjamin Holder)[m  log and models [32m(2 weeks ago)[m 
+commit ccc6ed2dbe7c8dd25e14244f3d3537d83a8aa02e
+Author: leslierice <leslierice@utexas.edu>
+Date:   Wed Apr 6 20:20:57 2016 -0500
 
-[33m84307b3[m [31m(Nathan Hotz)[m  Finished About page [32m(2 weeks ago)[m 
+    fix about nav
 
-[33mff2cc44[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+commit 85077f36ed2261029c563a1d8e6c1933b0464eea
+Author: leslierice <leslierice@utexas.edu>
+Date:   Wed Apr 6 20:08:48 2016 -0500
 
-[33mac97079[m [31m(nickroberts404)[m  fixed max-width issue [32m(2 weeks ago)[m 
+    updated unit tests
 
-[33m70314c5[m [31m(leslierice)[m  fonts [32m(2 weeks ago)[m 
+commit f97553dc30111bd3f2904e03b19b9e98e280cd49
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 20:05:39 2016 -0500
 
-[33m713aaf0[m [31m(leslierice)[m  fonts [32m(2 weeks ago)[m 
+    Created empty paginator component
 
-[33m15e75e0[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+commit 43b9ac8746b34fe70d115a4657ca6cf266c48bb2
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 19:53:19 2016 -0500
 
-[33mb46b620[m [31m(nickroberts404)[m  Added error pages [32m(2 weeks ago)[m 
+    Made cog a leeeetle bigger
 
-[33mfc15788[m [31m(Benjamin Holder)[m  Added commits and issues. [32m(2 weeks ago)[m 
+commit d426fe0b9a47298eef11d64343fdc9c7130705c3
+Merge: 86df5af ac2cea9
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 19:41:58 2016 -0500
 
-[33m09ae833[m [31m(Danny Chen)[m  Updated responsibilities on about page. :beers: [32m(2 weeks ago)[m 
+    Fixed merge conflict
 
-[33mc2c9e6c[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+commit 86df5afabf792ec87b9d3a6e4ace427e97e6f0a6
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 19:39:34 2016 -0500
 
-[33m50b67ef[m [31m(nickroberts404)[m  Implemented Creator page [32m(2 weeks ago)[m 
+    Added spinning icon to loader.js and timeout logic
 
-[33m86a5e11[m [31m(Nathan Hotz)[m  Fixed mockdata.json to use the correct character thumbnails [32m(2 weeks ago)[m 
+commit ac2cea98f7beb6bc289d762e92ef6a8d6358588e
+Author: nathanhotz <njhotz@gmail.com>
+Date:   Wed Apr 6 19:25:27 2016 -0500
 
-[33m37a80f8[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+    Updated about page to highlight About instead of Home. Still needs to be changed from a box to orange letters.
 
-[33m7b96bcf[m [31m(nickroberts404)[m  Implemented comic page [32m(2 weeks ago)[m 
+commit 2e01a129f96640868a0cd3bd68cd59c1f211ff91
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 18:55:31 2016 -0500
 
-[33md6e4553[m [31m(Nathan Hotz)[m  Added mockdataCreators.json, a file to contain data about Creators. [32m(2 weeks ago)[m 
+    Added fontawesome external css
 
-[33m0393623[m [31m(leslierice)[m  cursor pointer for table sorting [32m(2 weeks ago)[m 
+commit ab11f4f6f5c7d7060ce2817da897ab0e82f095c8
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 18:49:45 2016 -0500
 
-[33mbc6155e[m [31m(leslierice)[m  fix overwritten css [32m(2 weeks ago)[m 
+    Added loader to avoid flash of 'no data' message
 
-[33mf3c9e75[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+commit 8761e5f45980c50c77f72854d737ccd347021d87
+Author: leslierice <leslierice@utexas.edu>
+Date:   Wed Apr 6 18:37:48 2016 -0500
 
-[33ma6cc32d[m [31m(nickroberts404)[m  Added comic data [32m(2 weeks ago)[m 
+    uncomment cors
 
-[33m65ce07c[m [31m(Benjamin Holder)[m  Added Ben's responsibilities. [32m(2 weeks ago)[m 
+commit 55ce1fa9b7bd8ce861695f6ee51e6ab6e7718dd1
+Author: leslierice <leslierice@utexas.edu>
+Date:   Wed Apr 6 18:19:45 2016 -0500
 
-[33m50d40c3[m [31m(leslierice)[m  resolving merge conflict [32m(2 weeks ago)[m 
+    unit test testing
 
-[33m4653a47[m [31m(leslierice)[m  updated css [32m(2 weeks ago)[m 
+commit 0bc789667b487de4f2e4354341f8ffcc91756a06
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 17:46:15 2016 -0500
 
-[33mc7779c3[m [31m(Nathan Hotz)[m  Added Ben's bio info [32m(2 weeks ago)[m 
+    Fixed typos in header keys (used for sorting)
 
-[33ma0136c7[m [31m(Nathan Hotz)[m  Added Danny's bio info [32m(2 weeks ago)[m 
+commit 3d6f807b92ab1ed764147b5eaa5c8fc80834e54e
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 17:40:01 2016 -0500
 
-[33m786fd89[m [31m(SrsBusiness)[m  Transferring API Description file from Apiary.io. Added additional attributes. :beers: [32m(2 weeks ago)[m 
+    Fixed last_name typo in creator-row
 
-[33mf7784f9[m [31m(leslierice)[m  adding more attributes to models [32m(2 weeks ago)[m 
+commit 46f108a7f81cb93065c9ad152b14b6489ee88b51
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 17:30:01 2016 -0500
 
-[33me2095f8[m [31m(Benjamin Holder)[m  Updated yUML. [32m(2 weeks ago)[m 
+    Removed references to mock data from detail pages
 
-[33mefbe5b4[m [31m(SrsBusiness)[m  Transferring API Description file from Apiary.io :beers: [32m(2 weeks ago)[m 
+commit ebf2abd706d5eb6cdc3ad438ed7495b52d1e75f6
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 17:29:14 2016 -0500
 
-[33mda7c710[m [31m(nickroberts404)[m  Updated mock data and templates meta [32m(2 weeks ago)[m 
+    Creator detail page works with API
 
-[33mf10f729[m [31m(nickroberts404)[m  Added meta for mobile viewing [32m(2 weeks ago)[m 
+commit 69acb084d60e9bd23f394afb502e05391f270500
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 17:22:27 2016 -0500
 
-[33m0edd0b8[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+    Character detail page works with API
 
-[33mc9a711a[m [31m(nickroberts404)[m  Added a bit of hover style for table row [32m(2 weeks ago)[m 
+commit 5e6a4957bf62348ccd768ebd8b177d3d6f907fcb
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 17:10:06 2016 -0500
 
-[33m5e4893e[m [31m(Benjamin Holder)[m  Updated makefile and .travis.yml. [32m(2 weeks ago)[m 
+    Comic detail page works with API
 
-[33m8e23c91[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+commit a5c4a7a18ae1509a97736098d71755208090b0a6
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Apr 6 17:01:36 2016 -0500
 
-[33m92ff307[m [31m(nickroberts404)[m  Created dynamic comic list in character view [32m(2 weeks ago)[m 
+    Big commit I shouldve split into many. Working on using API, have tables working so far.
 
-[33md36eb5f[m [31m(Nathan Hotz)[m  Added photos for everyone. [32m(2 weeks ago)[m 
+commit 25a980ba9690e76d025c7a03bbe4ff8618acf7e1
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Apr 5 23:23:24 2016 -0500
 
-[33mde1d78e[m [31m(leslierice)[m  updated unit tests to include adding [32m(2 weeks ago)[m 
+    fix API constant in marvel.js
 
-[33mfd7a6f9[m [31m(nickroberts404)[m  Formatted character data and working on character page. Have image, title, and description appearing [32m(2 weeks ago)[m 
+commit 5649338991c54019ecee61929cbecb9da1daed4e
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Apr 5 23:21:51 2016 -0500
 
-[33mfe41bd4[m [31m(Nathan Hotz)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+    Just trying to get .gitignore to ignore the big app.js but it won't -__-
 
-[33m8e06ad6[m [31m(Nathan Hotz)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+commit e4cb2e9c334886b77deaca60dee8ced6550ac935
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Apr 5 23:14:01 2016 -0500
 
-[33ma081e0f[m [31m(Nathan Hotz)[m  Re-introduced horizontal scrolling due to lack of row headers when columns are converted to row format. [32m(2 weeks ago)[m 
+    Okay...this time the test should really be gone..
 
-[33me925e83[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+commit 8c2a0d54f914c53e92a24220eea26e208c161b27
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Apr 5 23:10:34 2016 -0500
 
-[33m146dbab[m [31m(nickroberts404)[m  Added hack to table to display image, will fix later [32m(2 weeks ago)[m 
+    Fixed nesting link bug. This time aaactually deleted test
 
-[33m7873d71[m [31m(Benjamin Holder)[m  Merge branch 'dev' [32m(2 weeks ago)[m 
+commit c2a305c4f918f7c074fde868929fbd301b787b8c
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Apr 5 22:49:51 2016 -0500
 
-[33mc4509e8[m [31m(Benjamin Holder)[m  Updated yUML [32m(2 weeks ago)[m 
+    Removed api endpoint used for testing cors
 
-[33me152b82[m [31m(Nathan Hotz)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+commit 9ded77903b4886134a2e2936078bb5d2f9c40336
+Author: leslierice <leslierice@utexas.edu>
+Date:   Tue Apr 5 21:58:58 2016 -0500
 
-[33m6354d38[m [31m(Nathan Hotz)[m  Updated styles.css to reformat tables if screen is too small, to avoid horizontal scrolling. Fixes #17 [32m(2 weeks ago)[m 
+    add description to splashpage closes #32
 
-[33m212c8ae[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+commit 7a7d0f5ebcdb6208f6e872ec70242b8f4e7019f3
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Apr 5 21:49:07 2016 -0500
 
-[33m8c6efab[m [31m(nickroberts404)[m  Updated mock data [32m(2 weeks ago)[m 
+    Added CORS to our Flask app
 
-[33m68ee19b[m [31m(Nathan Hotz)[m  Reformatted about.html; fixes broken About link. Fixes #16 [32m(2 weeks ago)[m 
+commit 32d8ad258b590689fe18e63715153d60e315b53b
+Author: leslierice <leslierice@utexas.edu>
+Date:   Tue Apr 5 19:06:04 2016 -0500
 
-[33me0253e7[m [31m(leslierice)[m  splash image mobile [32m(2 weeks ago)[m 
+    buggy comic
 
-[33m6da8d4d[m [31m(nickroberts404)[m  Added closing tag for splash image [32m(2 weeks ago)[m 
+commit 8c08c8760e135d954206279e9c04f53e27a01a2d
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Apr 5 16:57:47 2016 -0500
 
-[33mbb5029e[m [31m(Benjamin Holder)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+    Removed global transpile option from Babel
 
-[33me8e3b6d[m [31m(Benjamin Holder)[m  Updated models.py to SQLAlchemy 1.1 form. [32m(2 weeks ago)[m 
+commit 5723309ff1da1544a14e69f912646018587a54bf
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Apr 5 16:55:42 2016 -0500
 
-[33mb1a63fe[m [31m(leslierice)[m  adding updated query unit tests [32m(2 weeks ago)[m 
+    Exporting functions from marvel.js for external use
 
-[33m9123a6b[m [31m(leslierice)[m  fix route home button from some pages [32m(2 weeks ago)[m 
+commit 9a3a3bf334db27c3166e0f47ab1a0d36cc6f2358
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Apr 5 16:53:46 2016 -0500
 
-[33mee0dd93[m [31m(leslierice)[m  add some CSS [32m(2 weeks ago)[m 
+    Implemented API in detail pages
 
-[33m686e8e1[m [31m(Danny Chen)[m  scraper.sh now prints the url it generates [32m(2 weeks ago)[m 
+commit bba6357d58faa98c2c5ab6db8da790e4535dce94
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Apr 5 16:27:16 2016 -0500
 
-[33md1c8773[m [31m(leslierice)[m  add sample splash page but feel free to change [32m(2 weeks ago)[m 
+    Requiring marvel.js in pages
 
-[33ma4e4920[m [31m(Danny Chen)[m  Params now optional for scrape.sh [32m(2 weeks ago)[m 
+commit 3581af3cfb08449a286c1db78ed2ebea5429f6b8
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Apr 5 16:25:32 2016 -0500
 
-[33m656a7a4[m [31m(Danny Chen)[m  Update script to handle additional parameters [32m(2 weeks ago)[m 
+    Added back mockdata code for tablepage, should remain until wrapper working
 
-[33m7a9de77[m [31m(Danny Chen)[m  Updated scraper. :coffee: [32m(2 weeks ago)[m 
+commit 1b4f255cd1306e3d330094d48f05dac632c6d1af
+Merge: 44f6dbc 8783d1d
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Apr 5 14:13:52 2016 -0500
 
-[33m9b74989[m [31m(Benjamin Holder)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
 
-[33m2f9e7ba[m [31m(Benjamin Holder)[m  Updated .gitignore. [32m(2 weeks ago)[m 
+commit 44f6dbc7d54ab63753fab63d4c3fe1fd3857dfe7
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Apr 5 14:07:49 2016 -0500
 
-[33m5733bb8[m [31m(leslierice)[m  fix nav links on about page [32m(2 weeks ago)[m 
+    Began implementing API in tablepage
 
-[33m3f2e0b0[m [31m(Benjamin Holder)[m  Merge branch 'dev' [32m(2 weeks ago)[m 
+commit c1b9dd6bf3c82157fbf4fc2a4df04f51bf7404c8
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Apr 5 13:52:08 2016 -0500
 
-[33m9faf0cd[m [31m(Benjamin Holder)[m  Moved tests.py to top level. [32m(2 weeks ago)[m 
+    Began clientside API wrapper
 
-[33m961c55f[m [31m(Benjamin Holder)[m  Updated tests.py import path. [32m(2 weeks ago)[m 
+commit 8783d1d3df1adeb8885765c9e40642eebc0002cb
+Author: leslierice <leslierice@utexas.edu>
+Date:   Tue Apr 5 13:50:00 2016 -0500
 
-[33m8aada8c[m [31m(leslierice)[m  include styles.css in about page [32m(2 weeks ago)[m 
+    found bug forgetting to add issue_num and num_creators
 
-[33md26ffda[m [31m(Benjamin Holder)[m  Moved models.py to top level. [32m(2 weeks ago)[m 
+commit e37bd008a63a4c0afc39273fafdf85895e9fc6c0
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Apr 5 13:37:55 2016 -0500
 
-[33mb629f72[m [31m(leslierice)[m  adding some changes to about page, filling in some data [32m(2 weeks ago)[m 
+    Fixed mockdata refernce in tablepage.js
 
-[33m91a5d30[m [31m(nickroberts404)[m  Working on table sorting, kinda funky right now [32m(2 weeks ago)[m 
+commit 1ee3520f09d19b800129fba40a72048ad5a588fe
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Apr 5 13:36:24 2016 -0500
 
-[33m61d991c[m [31m(nickroberts404)[m  Rows in model tables are linked to appropriate detail pages through id [32m(2 weeks ago)[m 
+    Removed unused function in app.js
 
-[33m14e3a3c[m [31m(nickroberts404)[m  Extracted mock data from tablepage.js [32m(2 weeks ago)[m 
+commit 36c469eecee564707e1ac379a632bb96be7fd7bd
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Apr 5 13:30:27 2016 -0500
 
-[33mbde87eb[m [31m(nickroberts404)[m  Setting up routes for detail pages [32m(2 weeks ago)[m 
+    Cleaned up ./src file structure
 
-[33m5fbbb9b[m [31m(nickroberts404)[m  Updated photo and bio in about page [32m(2 weeks ago)[m 
+commit 361193c8741de530b3fbd9c008c803598d904895
+Author: leslierice <leslierice@utexas.edu>
+Date:   Tue Apr 5 09:17:17 2016 -0500
 
-[33mfda4ca9[m [31m(leslierice)[m  adding bio photo [32m(2 weeks ago)[m 
+    add individual queries
 
-[33mcd57fbc[m [31m(Nathan Hotz)[m  Updated about.html; now contains filler for all content. [32m(2 weeks ago)[m 
+commit f1fb11254b0880d18ac31fede1f23f16e2896468
+Author: leslierice <leslierice@utexas.edu>
+Date:   Mon Apr 4 23:25:56 2016 -0500
 
-[33m442b211[m [31m(nickroberts404)[m  fixed conflict in app.py [32m(2 weeks ago)[m 
+    begin implementing api
 
-[33m91b7a8a[m [31m(nickroberts404)[m  experimenting with url params [32m(2 weeks ago)[m 
+commit ecd15b3cefa9c3076e15839662592a69965017a2
+Author: leslierice <leslierice@utexas.edu>
+Date:   Sun Apr 3 17:51:03 2016 -0500
 
-[33mb5fb546[m [31m(leslierice)[m  route about page [32m(2 weeks ago)[m 
+    adding update functions
 
-[33m2dc4a90[m [31m(Nathan Hotz)[m  Added about.html file with members table. [32m(2 weeks ago)[m 
+commit 3adfe0874007bc7fbfb0ae5e3e93955e6c46f6c7
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Sun Apr 3 03:45:50 2016 -0500
 
-[33mffb1847[m [31m(nickroberts404)[m  Added dummy splash page for routes link styling for active page [32m(2 weeks ago)[m 
+    Implemented get_all with filtering.
 
-[33m1eb6a16[m [31m(nickroberts404)[m  Model links in navbar are live [32m(2 weeks ago)[m 
+commit 4830034accb39004b2d8e7883ff7ec3874870953
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Sat Apr 2 19:11:26 2016 -0500
 
-[33m537d8a7[m [31m(nickroberts404)[m  Added mock routes and implemented a catch-all in our flask app to facilitate react routes [32m(2 weeks ago)[m 
+    Fixed marvelpy keyword arguments being passed to requests.
 
-[33mf0355a5[m [31m(Benjamin Holder)[m  Merge branch 'dev' [32m(2 weeks ago)[m 
+commit 7f6b2349aa9a9e331607df1db16ae07f556efb1a
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Sat Apr 2 13:10:25 2016 -0500
 
-[33m5854d68[m [31m(Benjamin Holder)[m  Added base .travis.yml. [32m(2 weeks ago)[m 
+    Changed function names, key file format.
 
-[33mdddda26[m [31m(Danny Chen)[m  Added basic script to scrape Marvel's API. :beers: [32m(2 weeks ago)[m 
+commit 77fc5ef69ab00849abd487696c8e97ec13b18760
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Sat Apr 2 02:47:31 2016 -0500
 
-[33mc580821[m [31m(nickroberts404)[m  Implemented react-router [32m(2 weeks ago)[m 
+    Added APIKeyError
 
-[33mf14e16e[m [31m(leslierice)[m  adding skeleton tests.py [32m(2 weeks ago)[m 
+commit 531e3e18475082a1decbe1ef289d3112c363ca73
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Sat Apr 2 01:35:05 2016 -0500
 
-[33m62c607c[m [31m(Benjamin Holder)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+    marvelpy iterator automatic retry implemented.
 
-[33me941a13[m [31m(Benjamin Holder)[m  Added base makefile. [32m(2 weeks ago)[m 
+commit 0413b04a565d3347e36c430169aa96dcc119d36e
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Fri Apr 1 21:04:08 2016 -0500
 
-[33m619b058[m [31m(nickroberts404)[m  Began building table pages [32m(2 weeks ago)[m 
+    Removed duplicate functions in marvelpy.
 
-[33m0da13ea[m [31m(nickroberts404)[m  Began working on table pages [32m(2 weeks ago)[m 
+commit d81304c4b4ca8840cc3e9e5a5b7f6ba2883d2604
+Author: leslierice <leslierice@utexas.edu>
+Date:   Fri Apr 1 18:23:24 2016 -0500
 
-[33m1280821[m [31m(leslierice)[m  create many to many relationships [32m(2 weeks ago)[m 
+    description longer
 
-[33m30873a6[m [31m(leslierice)[m  adding initial models.py and modified docker.yml [32m(2 weeks ago)[m 
+commit dfb17fbb0acabf463273067756acdbc5c61ed9ec
+Author: leslierice <leslierice@utexas.edu>
+Date:   Fri Apr 1 17:33:17 2016 -0500
 
-[33m6f583a8[m [31m(Nick Roberts)[m  Transferring API Description file from Apiary.io [32m(2 weeks ago)[m 
+    need to make description field longer
 
-[33med57ec2[m [31m(Benjamin Holder)[m  Added UML.pdf [32m(2 weeks ago)[m 
+commit c0d79d46f83a17549243064ba58276083f069193
+Author: leslierice <leslierice@utexas.edu>
+Date:   Fri Apr 1 17:03:31 2016 -0500
 
-[33m9d683e0[m [31m(Benjamin Holder)[m  Added yUML source file. [32m(2 weeks ago)[m 
+    method to add data from json files to database
 
-[33m02129f1[m [31m(nickroberts404)[m  Created static directory and began fleshing out build system for client side js [32m(2 weeks ago)[m 
+commit 92033532c2b3626631a911fa8232e963b540dc27
+Author: leslierice <leslierice@utexas.edu>
+Date:   Fri Apr 1 16:16:22 2016 -0500
 
-[33m340c3d2[m [31m(nickroberts404)[m  Added placeholder endpoints to flask app [32m(2 weeks ago)[m 
+    updated models, working association table
 
-[33m0dd58ef[m [31m(leslierice)[m  moving client folder [32m(2 weeks ago)[m 
+commit 419777c263ad1a4de76bde576666d4ac5fe424f7
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Mar 31 17:55:43 2016 -0500
 
-[33mc16b95d[m [31m(leslierice)[m  docker [32m(2 weeks ago)[m 
+    Added full JSON scrapes from Marvel's database and removed the small scrapes.
 
-[33mb4b2a75[m [31m(nickroberts404)[m  Created nav bar [32m(2 weeks ago)[m 
+commit ef66551296e168743d63d69f484914c160b0866a
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 31 15:42:16 2016 -0500
 
-[33ma8ccf41[m [31m(nickroberts404)[m  Updated readme [32m(2 weeks ago)[m 
+    fixing splash img
 
-[33m734d0dc[m [31m(nickroberts404)[m  Updated readme [32m(2 weeks ago)[m 
+commit 1b3bced925e3ea1546dc8e0db088fc54a8e9bfe6
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 31 15:38:35 2016 -0500
 
-[33m4a3bbd2[m [31m(nickroberts404)[m  Updated readme [32m(2 weeks ago)[m 
+    adding api.py to add things to database, still working on association business
 
-[33mf40ef2a[m [31m(nickroberts404)[m  Initialized client [32m(2 weeks ago)[m 
+commit 8e15690a921cfd6df75eaf48cf5f9de2b604ed9f
+Merge: 0f4ff6c 01a857a
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Tue Mar 29 23:23:33 2016 -0500
 
-[33m55cd3e7[m [31m(Nick Roberts)[m  Initial commit [32m(2 weeks ago)[m 
+    Merge branch 'master' into dev
+
+commit 0f4ff6c6fb6540da7441ec13d0fd035080099e46
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Tue Mar 29 23:23:08 2016 -0500
+
+    Added JSON files scraped from Marvel.
+
+commit 4d7793ab258de8376cddb78cef2ae514f98db86a
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Tue Mar 29 23:21:08 2016 -0500
+
+    Tweaked marvelpy.
+
+commit 133282857305ca7b64296e892e74e5173f5fcf17
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Tue Mar 29 22:25:46 2016 -0500
+
+    Implemented iterator.
+
+commit 01a857a743f58c19d1bce98c67650cdc0d748159
+Author: leslierice <leslierice@utexas.edu>
+Date:   Tue Mar 29 15:05:57 2016 -0500
+
+    moved models and tests back to app folder
+
+commit 8f094e8be8fb933478528584d5f08331420441ae
+Author: leslierice <leslierice@utexas.edu>
+Date:   Tue Mar 29 15:04:00 2016 -0500
+
+    changing models to work with db
+
+commit 46314040eb4247eee1259cc4e619402827bbdd7d
+Author: leslierice <leslierice@utexas.edu>
+Date:   Tue Mar 29 15:00:53 2016 -0500
+
+    adding create_db function and logging
+
+commit f5eb920c0ca62dbe0c40b71e98125a324cb7b420
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Tue Mar 29 14:19:37 2016 -0500
+
+    Added key validation assertions.
+
+commit 59d47e8a9bf4cf2daacaf7ded89b9df992982aa5
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Tue Mar 29 14:03:28 2016 -0500
+
+    Added support for Session objects.
+
+commit 5feaeb2addec479392018d45937f5e704c0b5388
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Mar 29 10:41:53 2016 -0500
+
+    Active nav link remains red when selected
+
+commit 02630cd11daa567026d32c8884ee390df4c85d2c
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Mar 29 10:39:35 2016 -0500
+
+    Fixed sorting / added style to sorted-by table header
+
+commit 0c987d37480d4055089481bb85a05d9b7a415106
+Author: leslierice <leslierice@utexas.edu>
+Date:   Mon Mar 28 13:00:12 2016 -0500
+
+    update splash page
+
+commit 8f6adb3d6c5a5e235311a4d2f163c11e1cfdedd8
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Mon Mar 28 12:44:00 2016 -0500
+
+    Updated marvelpy to allow user submitted timestamp.
+
+commit 6093044d923a5d85608e781c47458263f2d5c462
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Mon Mar 28 02:02:32 2016 -0500
+
+    Created a Python library to access Marvel API.
+
+commit 8b99edf18f67f5fcb447fdb470d7aacdecc2a469
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Fri Mar 25 11:14:32 2016 -0500
+
+    Now using gulp for build and babel for transpiling
+
+commit eb2d0a23bea64ad10565c7a704d8d4e9d9f74a16
+Merge: 38748c8 ca34522
+Author: Nathan Hotz <house@cs.utexas.edu>
+Date:   Thu Mar 24 21:52:17 2016 -0500
+
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
+
+commit 38748c83cb6818e7b50889b22170c21bb2e8fc84
+Author: Nathan Hotz <house@cs.utexas.edu>
+Date:   Thu Mar 24 21:52:05 2016 -0500
+
+    Added last bits to About page
+
+commit ca34522b0516291c83bd86b4c934b592edbf1520
+Merge: ca4c4c1 84307b3
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Mar 24 21:49:06 2016 -0500
+
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
+
+commit ca4c4c1e65e8cf04427676bf0643069b550e87b4
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Mar 24 21:49:03 2016 -0500
+
+    log and models
+
+commit 84307b30731c07c5ddf0778a32e859b5139af289
+Author: Nathan Hotz <house@cs.utexas.edu>
+Date:   Thu Mar 24 21:48:39 2016 -0500
+
+    Finished About page
+
+commit ff2cc44c007b61483cce6e0d9e3af77af036a81a
+Merge: ac97079 70314c5
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 21:45:47 2016 -0500
+
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
+
+commit ac97079618a5748838bfbaa9eef2484639f29784
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 21:45:39 2016 -0500
+
+    fixed max-width issue
+
+commit 70314c5fcb7200d91025b416363dd5a16c1b221a
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 24 21:42:19 2016 -0500
+
+    fonts
+
+commit 713aaf0fddb4ce4bc8687a5fd7bb5c17620f2a72
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 24 21:40:45 2016 -0500
+
+    fonts
+
+commit 15e75e030c40a2cae703294fab92d40f8434f4a6
+Merge: b46b620 fc15788
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 21:42:00 2016 -0500
+
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
+
+commit b46b62026f39cf6837e59f66a1b287f81ff1059e
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 21:41:54 2016 -0500
+
+    Added error pages
+
+commit fc1578872eaa176340866d213dd564d20543948d
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Mar 24 21:41:32 2016 -0500
+
+    Added commits and issues.
+
+commit 09ae833d3d572548885def0c52da5733c8d3c10f
+Author: Danny Chen <dannychen579@utexas.edu>
+Date:   Thu Mar 24 21:38:44 2016 -0500
+
+    Updated responsibilities on about page. :beers:
+
+commit c2c9e6c8bbcd30f833ff20fba21961806293f77a
+Merge: 50b67ef 86a5e11
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 21:30:16 2016 -0500
+
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
+
+commit 50b67efbf764af1738d82c450cc205a7aac7ee29
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 21:30:11 2016 -0500
+
+    Implemented Creator page
+
+commit 86a5e115b04df8254d22250fc5c247a5bef22a57
+Author: Nathan Hotz <house@cs.utexas.edu>
+Date:   Thu Mar 24 21:26:22 2016 -0500
+
+    Fixed mockdata.json to use the correct character thumbnails
+
+commit 37a80f82b126b6ec50e0e8889b8e9ad1f75e039c
+Merge: 7b96bcf d6e4553
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 21:14:02 2016 -0500
+
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
+
+commit 7b96bcfca40ac3344b074a201bb7a6edb9a77a42
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 21:13:58 2016 -0500
+
+    Implemented comic page
+
+commit d6e45536fe314b28ba2ac603cff786a47171563f
+Author: Nathan Hotz <house@cs.utexas.edu>
+Date:   Thu Mar 24 21:10:15 2016 -0500
+
+    Added mockdataCreators.json, a file to contain data about Creators.
+
+commit 0393623ffaf99bff0f11e12be1cb8ed770d8f6d7
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 24 21:02:02 2016 -0500
+
+    cursor pointer for table sorting
+
+commit bc6155e7bcd58a6001c77cd6a231fbafb018fabd
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 24 20:53:19 2016 -0500
+
+    fix overwritten css
+
+commit f3c9e75383996d14ec62f69897a5a99755413af0
+Merge: a6cc32d 65ce07c
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 20:52:47 2016 -0500
+
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
+
+commit a6cc32d183d42683580b2a2d9585f99e46089b76
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 20:52:42 2016 -0500
+
+    Added comic data
+
+commit 65ce07c42c801c4932d8e3c1228b1a4b0809e2e6
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Mar 24 20:47:13 2016 -0500
+
+    Added Ben's responsibilities.
+
+commit 50d40c39b0a0d4e35af7bc693ba119daaeeab71f
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 24 20:40:22 2016 -0500
+
+    resolving merge conflict
+
+commit 4653a472a85bebdb01c2ac341943bfc582c101cb
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 24 20:29:10 2016 -0500
+
+    updated css
+
+commit c7779c3e86dfd55108fbb1f7e1c570b8832e7c02
+Author: Nathan Hotz <house@cs.utexas.edu>
+Date:   Thu Mar 24 20:38:00 2016 -0500
+
+    Added Ben's bio info
+
+commit a0136c7dea21e7f4749ea5db4c792b40b2349794
+Author: Nathan Hotz <house@cs.utexas.edu>
+Date:   Thu Mar 24 20:33:25 2016 -0500
+
+    Added Danny's bio info
+
+commit 786fd89147e45e43b4d2e6d6eab40a4e74e20f02
+Author: SrsBusiness <dannychen579@utexas.edu>
+Date:   Thu Mar 24 20:22:12 2016 -0500
+
+    Transferring API Description file from Apiary.io. Added additional attributes. :beers:
+
+commit f7784f9b933d0e392f948621bf526796153e3745
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 24 20:02:56 2016 -0500
+
+    adding more attributes to models
+
+commit e2095f81f604a55e36d1765420a1cce0aa6e410d
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Mar 24 20:00:49 2016 -0500
+
+    Updated yUML.
+
+commit efbe5b4dd7c57bb76e987826e39826663bf4172f
+Author: SrsBusiness <dannychen579@utexas.edu>
+Date:   Thu Mar 24 19:49:17 2016 -0500
+
+    Transferring API Description file from Apiary.io :beers:
+
+commit da7c71060429f83c31d2de8f9f6f18f84b0542dc
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 19:44:54 2016 -0500
+
+    Updated mock data and templates meta
+
+commit f10f729122f3e45a69f93fc1e68804f59e7e8107
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 19:42:50 2016 -0500
+
+    Added meta for mobile viewing
+
+commit 0edd0b8a53b3f16025b4e244db2824c59dd4822c
+Merge: c9a711a 5e4893e
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 19:20:39 2016 -0500
+
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
+
+commit c9a711ac3ac532e91bed231f5a8495c3d4fbb2b7
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 19:20:35 2016 -0500
+
+    Added a bit of hover style for table row
+
+commit 5e4893efe5e8da68578946a52280166900822936
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Mar 24 19:15:47 2016 -0500
+
+    Updated makefile and .travis.yml.
+
+commit 8e23c918b46d0b6f0c491232822ff067840dd761
+Merge: 92ff307 d36eb5f
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 19:10:44 2016 -0500
+
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
+
+commit 92ff3071deca7a225f194d62da0ed4dc2ecbd9de
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 19:10:39 2016 -0500
+
+    Created dynamic comic list in character view
+
+commit d36eb5ffe6c604a4b0fab07825082dce9c7c9c9c
+Author: Nathan Hotz <house@cs.utexas.edu>
+Date:   Thu Mar 24 19:05:36 2016 -0500
+
+    Added photos for everyone.
+
+commit de1d78ec6056c31693b620c9dceea93df8d4b1f8
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 24 19:04:28 2016 -0500
+
+    updated unit tests to include adding
+
+commit fd7a6f94b0e507babd9e320bf6c8f3a8644ba9e1
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 18:43:39 2016 -0500
+
+    Formatted character data and working on character page. Have image, title, and description appearing
+
+commit fe41bd4b5f9c5ceaa8ee5a2fad4339295fb23451
+Merge: 8e06ad6 e925e83
+Author: Nathan Hotz <house@cs.utexas.edu>
+Date:   Thu Mar 24 18:22:40 2016 -0500
+
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
+
+commit 8e06ad66ca459ab111ba9e852bdbd75ad84e5995
+Merge: a081e0f 7873d71
+Author: Nathan Hotz <house@cs.utexas.edu>
+Date:   Thu Mar 24 18:22:00 2016 -0500
+
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
+
+commit a081e0f727c48a6127dc5a39c13446fb76edae60
+Author: Nathan Hotz <house@cs.utexas.edu>
+Date:   Thu Mar 24 18:21:49 2016 -0500
+
+    Re-introduced horizontal scrolling due to lack of row headers when columns are converted to row format.
+
+commit e925e833745d4b5514281fbc325d30da00391c89
+Merge: 146dbab 7873d71
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 18:21:44 2016 -0500
+
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
+
+commit 146dbab553cb43b4d470e3a6a5dad73183969034
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 18:21:26 2016 -0500
+
+    Added hack to table to display image, will fix later
+
+commit 7873d71d76609393f62711656ed7d7f7b9a949bc
+Merge: e152b82 c4509e8
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Mar 24 18:19:23 2016 -0500
+
+    Merge branch 'dev'
+
+commit c4509e835dbf50902daac3e01fb03cfc66c15ff0
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Mar 24 18:19:09 2016 -0500
+
+    Updated yUML
+
+commit e152b820c85ff9283a55082ce7a1157a43e17c02
+Merge: 6354d38 212c8ae
+Author: Nathan Hotz <house@cs.utexas.edu>
+Date:   Thu Mar 24 18:16:58 2016 -0500
+
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
+
+commit 6354d38a37964a6ca2ad91e675088f2f4c2d5441
+Author: Nathan Hotz <house@cs.utexas.edu>
+Date:   Thu Mar 24 18:16:37 2016 -0500
+
+    Updated styles.css to reformat tables if screen is too small, to avoid horizontal scrolling. Fixes #17
+
+commit 212c8ae0deafb62b3e235ea098edd14ada927234
+Merge: 8c6efab 68ee19b
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 18:07:45 2016 -0500
+
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
+
+commit 8c6efabcff2c08ae4a3f2c8f10e7b18449f4572c
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 18:07:39 2016 -0500
+
+    Updated mock data
+
+commit 68ee19b811778b3d2a5637515b65edb27898aed1
+Author: Nathan Hotz <house@cs.utexas.edu>
+Date:   Thu Mar 24 18:07:28 2016 -0500
+
+    Reformatted about.html; fixes broken About link. Fixes #16
+
+commit e0253e7977bbee45bbd81e05f546bb15a985d3c7
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 24 17:52:35 2016 -0500
+
+    splash image mobile
+
+commit 6da8d4d9a5c666be5983aa3b806ba5b4fd0f4d3a
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 17:37:40 2016 -0500
+
+    Added closing tag for splash image
+
+commit bb5029ea753e7efc9d8e07de1cf15ae0124e66e7
+Merge: e8e3b6d b1a63fe
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Mar 24 17:31:03 2016 -0500
+
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
+
+commit e8e3b6db8f31e5c5bdf215dad11c6cfbc46c406c
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Mar 24 17:30:21 2016 -0500
+
+    Updated models.py to SQLAlchemy 1.1 form.
+
+commit b1a63fe19582e5fa37c2f98cd04ecbc151872a81
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 24 17:05:57 2016 -0500
+
+    adding updated query unit tests
+
+commit 9123a6b32f9fad297b798657bc9ebef83a822288
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 24 16:35:23 2016 -0500
+
+    fix route home button from some pages
+
+commit ee0dd9338ce525f8c10b8afe189227d33b18fea3
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 24 16:27:00 2016 -0500
+
+    add some CSS
+
+commit 686e8e1049a14f7a6c3824b37fc8efe348b86dd8
+Author: Danny Chen <dannychen579@utexas.edu>
+Date:   Thu Mar 24 16:01:42 2016 -0500
+
+    scraper.sh now prints the url it generates
+
+commit d1c87739853ad2d3b15fe39881f257b797b58b54
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 24 15:44:22 2016 -0500
+
+    add sample splash page but feel free to change
+
+commit a4e4920a9cec754f6cb9621cc80a724bb959acec
+Author: Danny Chen <dannychen579@utexas.edu>
+Date:   Thu Mar 24 15:39:08 2016 -0500
+
+    Params now optional for scrape.sh
+
+commit 656a7a45ef4d991038f139b7cbc3e9d9965d43ed
+Author: Danny Chen <dannychen579@utexas.edu>
+Date:   Thu Mar 24 15:36:43 2016 -0500
+
+    Update script to handle additional parameters
+
+commit 7a9de771ecd3ef2c90608ee8e67cea4a0afd2277
+Author: Danny Chen <dannychen579@utexas.edu>
+Date:   Thu Mar 24 15:18:54 2016 -0500
+
+    Updated scraper. :coffee:
+
+commit 9b749890d906fbbbf1777a14509af3ebc10d2abc
+Merge: 2f9e7ba 5733bb8
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Mar 24 15:04:35 2016 -0500
+
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
+
+commit 2f9e7ba23d9ee72f99df73624907aa6f8827b499
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Mar 24 15:04:33 2016 -0500
+
+    Updated .gitignore.
+
+commit 5733bb89fbba6ddf19e1fbba3e92bfea1175a593
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 24 15:03:43 2016 -0500
+
+    fix nav links on about page
+
+commit 3f2e0b0ba3d236c903b5b7e0236a6507c09dbe49
+Merge: 8aada8c 9faf0cd
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Mar 24 15:02:24 2016 -0500
+
+    Merge branch 'dev'
+
+commit 9faf0cda39d1d4eb584caee1e4a38d49da632956
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Mar 24 15:02:07 2016 -0500
+
+    Moved tests.py to top level.
+
+commit 961c55f299f05f684acec368d223767351711c1a
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Mar 24 15:01:37 2016 -0500
+
+    Updated tests.py import path.
+
+commit 8aada8c546fcd37a14686ab9501f9dc343fa2d25
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 24 15:00:48 2016 -0500
+
+    include styles.css in about page
+
+commit d26ffdaa1ac9f4d1c1d5f374d0553bd242e38476
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Thu Mar 24 14:57:20 2016 -0500
+
+    Moved models.py to top level.
+
+commit b629f7267857539a97fc7acd55c82af647aa84ba
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 24 14:35:37 2016 -0500
+
+    adding some changes to about page, filling in some data
+
+commit 91a5d3013882c1c5a1e93607a30388fa7767191b
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 14:31:48 2016 -0500
+
+    Working on table sorting, kinda funky right now
+
+commit 61d991c2798a052499a86f4d0011bbf05eb2c073
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 13:27:48 2016 -0500
+
+    Rows in model tables are linked to appropriate detail pages through id
+
+commit 14e3a3cd7f3a199878a58cfbba879398ad7263af
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 13:13:56 2016 -0500
+
+    Extracted mock data from tablepage.js
+
+commit bde87eb45806a6f49e7124b1cd4eb4a7a51bcf73
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 12:56:42 2016 -0500
+
+    Setting up routes for detail pages
+
+commit 5fbbb9ba7f971b432e7a4cafb9d3b19b78717244
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Thu Mar 24 12:40:26 2016 -0500
+
+    Updated photo and bio in about page
+
+commit fda4ca96b8b05e17fb36c736a77fb8a17b214c1a
+Author: leslierice <leslierice@utexas.edu>
+Date:   Thu Mar 24 00:22:26 2016 -0500
+
+    adding bio photo
+
+commit cd57fbcf3b2f70b8503f2604674d6c6bd4cef6ce
+Author: Nathan Hotz <house@cs.utexas.edu>
+Date:   Wed Mar 23 23:14:57 2016 -0500
+
+    Updated about.html; now contains filler for all content.
+
+commit 442b211d19a19b1e494cd23dca1a309f04572819
+Merge: 91b7a8a b5fb546
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Mar 23 22:39:10 2016 -0500
+
+    fixed conflict in app.py
+
+commit 91b7a8a09dd369ae9687448b6c64ec7fdabe14ef
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Mar 23 22:36:38 2016 -0500
+
+    experimenting with url params
+
+commit b5fb546373cd390a27810fe354eda0a3d7a15403
+Author: leslierice <leslierice@utexas.edu>
+Date:   Wed Mar 23 22:33:06 2016 -0500
+
+    route about page
+
+commit 2dc4a90fb944d1f0b9d8fbd2423f7fe57a2e5032
+Author: Nathan Hotz <house@cs.utexas.edu>
+Date:   Wed Mar 23 22:22:43 2016 -0500
+
+    Added about.html file with members table.
+
+commit ffb1847f67abbd4b1fd6fd06d2ec9ae085e0fc69
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Mar 23 22:14:28 2016 -0500
+
+    Added dummy splash page for routes link styling for active page
+
+commit 1eb6a16f4f678c5dbb76d56ed5ee6776ee2c2405
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Mar 23 21:38:00 2016 -0500
+
+    Model links in navbar are live
+
+commit 537d8a7af44fb9d862b7b874eaf2b2b5a761e33d
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Mar 23 21:29:38 2016 -0500
+
+    Added mock routes and implemented a catch-all in our flask app to facilitate react routes
+
+commit f0355a50b47a5287f26302a97da78327f7549733
+Merge: dddda26 5854d68
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Wed Mar 23 21:02:39 2016 -0500
+
+    Merge branch 'dev'
+
+commit 5854d68962e6598c174bdda0bfdd83c3ddb2d5be
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Wed Mar 23 21:02:26 2016 -0500
+
+    Added base .travis.yml.
+
+commit dddda260e835e5b898b48a4de4605e4716d23f4c
+Author: Danny Chen <dannychen579@utexas.edu>
+Date:   Wed Mar 23 20:59:37 2016 -0500
+
+    Added basic script to scrape Marvel's API. :beers:
+
+commit c5808214345f2a94dff9d972723f4ba6888446f5
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Mar 23 20:36:26 2016 -0500
+
+    Implemented react-router
+
+commit f14e16e20378b2eaadefee04a59768c902e8cc39
+Author: leslierice <leslierice@utexas.edu>
+Date:   Wed Mar 23 20:34:00 2016 -0500
+
+    adding skeleton tests.py
+
+commit 62c607c41ca9689145e99dfdbc194f67b00dd465
+Merge: e941a13 619b058
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Wed Mar 23 20:29:12 2016 -0500
+
+    Merge branch 'master' of https://github.com/nickroberts404/cs373-idb
+
+commit e941a1369aea7edb2d696e847e67f4de56717f4e
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Wed Mar 23 20:29:07 2016 -0500
+
+    Added base makefile.
+
+commit 619b058389e5f32ad00251f8e2e76b58d84333bd
+Merge: 0da13ea 1280821
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Mar 23 20:04:20 2016 -0500
+
+    Began building table pages
+
+commit 0da13ea82c4ed6774b841abea074e4a56f8d1829
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Wed Mar 23 20:03:21 2016 -0500
+
+    Began working on table pages
+
+commit 12808212acdb605e596ab0f85d862e97e11e69ea
+Author: leslierice <leslierice@utexas.edu>
+Date:   Wed Mar 23 19:55:29 2016 -0500
+
+    create many to many relationships
+
+commit 30873a6267d4d2a58a351032b0860d31c4524fda
+Author: leslierice <leslierice@utexas.edu>
+Date:   Wed Mar 23 19:00:43 2016 -0500
+
+    adding initial models.py and modified docker.yml
+
+commit 6f583a86112e60b80a81672b38af1eb7683ff4ae
+Author: Nick Roberts <nickroberts404@gmail.com>
+Date:   Wed Mar 23 19:11:27 2016 -0500
+
+    Transferring API Description file from Apiary.io
+
+commit ed57ec265d80f662c641da1180d1a2f317b1f4e1
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Wed Mar 23 18:50:57 2016 -0500
+
+    Added UML.pdf
+
+commit 9d683e061c6bdcf28bd47a21db62005e39a1fa2c
+Author: Benjamin Holder <benjamin.holder@utexas.edu>
+Date:   Tue Mar 22 20:34:25 2016 -0500
+
+    Added yUML source file.
+
+commit 02129f1f66dba1f0577ab1ac524e2088901188cf
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Mar 22 19:27:04 2016 -0500
+
+    Created static directory and began fleshing out build system for client side js
+
+commit 340c3d29e51242340b07bd4c6d4ee8a937e64ee7
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Mar 22 18:51:58 2016 -0500
+
+    Added placeholder endpoints to flask app
+
+commit 0dd58efc53dee4ad29e90bb838877a3a1822c33a
+Author: leslierice <leslierice@utexas.edu>
+Date:   Tue Mar 22 18:28:05 2016 -0500
+
+    moving client folder
+
+commit c16b95d481b93fc540715abf58f99cdf07d2d0a7
+Author: leslierice <leslierice@utexas.edu>
+Date:   Tue Mar 22 18:26:00 2016 -0500
+
+    docker
+
+commit b4b2a75b4f063152779577b498f037bbad2ba7e7
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Mar 22 18:23:11 2016 -0500
+
+    Created nav bar
+
+commit a8ccf41c5efc17911e8bdf6c79fc83961aae6f4f
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Mar 22 17:58:56 2016 -0500
+
+    Updated readme
+
+commit 734d0dceec3895657d71c81d436b51b2e4023ea3
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Mar 22 17:57:22 2016 -0500
+
+    Updated readme
+
+commit 4a3bbd2564ffef5787a864e379a234e567eb8c80
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Mar 22 17:56:07 2016 -0500
+
+    Updated readme
+
+commit f40ef2a12d1fc28dfff81031db17406eacbf08d9
+Author: nickroberts404 <nickroberts404@gmail.com>
+Date:   Tue Mar 22 10:19:39 2016 -0500
+
+    Initialized client
+
+commit 55cd3e7807356fb852ab3300d2e2a9bc239a13ed
+Author: Nick Roberts <nickroberts404@gmail.com>
+Date:   Mon Mar 21 14:00:52 2016 -0500
+
+    Initial commit
