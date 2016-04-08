@@ -1,9 +1,11 @@
-IDB1.log:
-	git log > IDB1.log
+IDB2.log:
+	git log > IDB2.log
 
-models.html: models.py
-	pydoc3 -w models
+log:
+	git log > IDB2.log
 
-# This will be implemented in phase II.
+models.html: app/models.py
+	cd app; pydoc3 -w models; mv models.html ../models.html
+
 test:
 	python3 app/tests.py
