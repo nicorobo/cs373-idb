@@ -23,7 +23,7 @@ class ComicTable extends React.Component {
 		super(props);
 		this.navigateToDetail = this.navigateToDetail.bind(this);
 		var page = parseInt(props.location.query.page) || 1;
-		this.state = {data: null, page: page};
+		this.state = {data: null, page: page, lastPage: null};
 	}
 
 	navigateToDetail(id) {
@@ -39,7 +39,7 @@ class ComicTable extends React.Component {
 		var offset = (page-1)*LIMIT;
 		marvel.getComics(LIMIT, offset, (err, data) => {
 			if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");
-			else this.setState({data: data.comics});
+			else this.setState({data: data.comics, lastPage: Math.ceil(data.count/LIMIT)});
 		});
 	}
 
@@ -51,7 +51,7 @@ class ComicTable extends React.Component {
 					<Paginator 
 						pagePath="/comics"
 						currentPage={this.state.page}
-						lastPage={10}
+						lastPage={this.state.lastPage}
 						pageLimit={5}
 						changePage={this.getData.bind(this)} 
 					/>
