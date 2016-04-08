@@ -24,7 +24,7 @@ class CreatorTable extends React.Component {
 		super(props);
 		this.navigateToDetail = this.navigateToDetail.bind(this);
 		var page = parseInt(props.location.query.page) || 1;
-		this.state = {data: null, page: page};
+		this.state = {data: null, page: page, lastPage: null};
 	}
 
 	navigateToDetail(id) {
@@ -40,7 +40,7 @@ class CreatorTable extends React.Component {
 		var offset = (page-1)*LIMIT;
 		marvel.getCreators(LIMIT, offset, (err, data) => {
 			if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");
-			else this.setState({data: data.creators});
+			else this.setState({data: data.creators, lastPage: Math.ceil(data.count/LIMIT)});
 		});
 	}
 
@@ -52,7 +52,7 @@ class CreatorTable extends React.Component {
 					<Paginator 
 						pagePath="/creators"
 						currentPage={this.state.page}
-						lastPage={10}
+						lastPage={this.state.lastPage}
 						pageLimit={5}
 						changePage={this.getData.bind(this)} 
 					/>

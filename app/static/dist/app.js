@@ -84820,7 +84820,7 @@ var CharacterTable = function (_React$Component) {
 
 		_this.navigateToDetail = _this.navigateToDetail.bind(_this);
 		var page = parseInt(props.location.query.page) || 1;
-		_this.state = { data: null, page: page };
+		_this.state = { data: null, page: page, lastPage: null };
 		return _this;
 	}
 
@@ -84842,7 +84842,7 @@ var CharacterTable = function (_React$Component) {
 
 			var offset = (page - 1) * LIMIT;
 			marvel.getCharacters(LIMIT, offset, function (err, data) {
-				if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");else _this2.setState({ data: data.characters });
+				if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");else _this2.setState({ data: data.characters, lastPage: Math.ceil(data.count / LIMIT) });
 			});
 		}
 	}, {
@@ -84856,7 +84856,7 @@ var CharacterTable = function (_React$Component) {
 					React.createElement(Paginator, {
 						pagePath: '/characters',
 						currentPage: this.state.page,
-						lastPage: 10,
+						lastPage: this.state.lastPage,
 						pageLimit: 5,
 						changePage: this.getData.bind(this)
 					}),
@@ -85006,7 +85006,7 @@ var ComicTable = function (_React$Component) {
 
 		_this.navigateToDetail = _this.navigateToDetail.bind(_this);
 		var page = parseInt(props.location.query.page) || 1;
-		_this.state = { data: null, page: page };
+		_this.state = { data: null, page: page, lastPage: null };
 		return _this;
 	}
 
@@ -85028,7 +85028,7 @@ var ComicTable = function (_React$Component) {
 
 			var offset = (page - 1) * LIMIT;
 			marvel.getComics(LIMIT, offset, function (err, data) {
-				if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");else _this2.setState({ data: data.comics });
+				if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");else _this2.setState({ data: data.comics, lastPage: Math.ceil(data.count / LIMIT) });
 			});
 		}
 	}, {
@@ -85042,7 +85042,7 @@ var ComicTable = function (_React$Component) {
 					React.createElement(Paginator, {
 						pagePath: '/comics',
 						currentPage: this.state.page,
-						lastPage: 10,
+						lastPage: this.state.lastPage,
 						pageLimit: 5,
 						changePage: this.getData.bind(this)
 					}),
@@ -85199,7 +85199,7 @@ var CreatorTable = function (_React$Component) {
 
 		_this.navigateToDetail = _this.navigateToDetail.bind(_this);
 		var page = parseInt(props.location.query.page) || 1;
-		_this.state = { data: null, page: page };
+		_this.state = { data: null, page: page, lastPage: null };
 		return _this;
 	}
 
@@ -85221,7 +85221,7 @@ var CreatorTable = function (_React$Component) {
 
 			var offset = (page - 1) * LIMIT;
 			marvel.getCreators(LIMIT, offset, function (err, data) {
-				if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");else _this2.setState({ data: data.creators });
+				if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");else _this2.setState({ data: data.creators, lastPage: Math.ceil(data.count / LIMIT) });
 			});
 		}
 	}, {
@@ -85235,7 +85235,7 @@ var CreatorTable = function (_React$Component) {
 					React.createElement(Paginator, {
 						pagePath: '/creators',
 						currentPage: this.state.page,
-						lastPage: 10,
+						lastPage: this.state.lastPage,
 						pageLimit: 5,
 						changePage: this.getData.bind(this)
 					}),
