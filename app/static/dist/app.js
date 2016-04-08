@@ -84612,7 +84612,7 @@ var Paginator = function (_React$Component) {
 			if (p.pagePath) pageButtons = this.getLinkButtons(pages, p.pagePath);else pageButtons = this.getButtons(pages);
 			return React.createElement(
 				'nav',
-				null,
+				{ className: 'paginator' },
 				pageButtons
 			);
 		}

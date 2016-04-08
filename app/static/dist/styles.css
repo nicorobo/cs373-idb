@@ -265,3 +265,10 @@ div.splash-description {
 .pagination .disabled {
 	pointer-events: none;
 }
+.paginator {
+	text-align: center;
+}
+.pagination {
+	padding-left: 0;
+	margin: 0 0;
+}

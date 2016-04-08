@@ -119,7 +119,7 @@ class Paginator extends React.Component {
 		if (p.pagePath) pageButtons = this.getLinkButtons(pages, p.pagePath);
 		else pageButtons = this.getButtons(pages);
 		return (
-			<nav>
+			<nav className="paginator">
 				{pageButtons}
 			</nav>
 		)
