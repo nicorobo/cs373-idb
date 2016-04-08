@@ -1,9 +1,9 @@
 FORMAT: 1A
-HOST: http://api.swegue.me/
+HOST: http://sweague.me/api
 
-# Swegue API
+# Sweague API
 
-Swegue is a simple API allowing consumers to view information on Marvel Comics.
+Sweague is a simple API allowing consumers to view information on Marvel Comics.
 Our source can be found here: https://github.com/nickroberts404/cs373-idb
 
 ## Comics Collection [/comics]
@@ -15,15 +15,68 @@ Our source can be found here: https://github.com/nickroberts404/cs373-idb
     + Schema
         
             {
-                "type": "object",
-                "required": true,
-                "additionalProperties": false,
-                "properties": {
-                    "comics": {
-                        "type": "array",
-                        "required": true,                            "description": "List of all Comics"
+              "definitions": {
+                "comic": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "number"
+                    },
+                    "issue_num": {
+                      "type": "number"
+                    },
+                    "number_of_characters": {
+                      "type": "number"
+                    },
+                    "number_of_creators": {
+                      "type": "number"
+                    },
+                    "number_of_stories": {
+                      "type": "number"
+                    },
+                    "page_count": {
+                      "type": "number"
+                    },
+                    "thumbnail": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
                     }
+                  },
+                  "required": [
+                    "description",
+                    "id",
+                    "issue_num",
+                    "number_of_characters",
+                    "number_of_creators",
+                    "number_of_stories",
+                    "page_count",
+                    "thumbnail",
+                    "title"
+                  ]
                 }
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "comics": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/comic"
+                  }
+                },
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "comics",
+                "count"
+              ]
             }
     
 ## Characters Collection [/characters]
@@ -35,15 +88,60 @@ Our source can be found here: https://github.com/nickroberts404/cs373-idb
     + Schema
         
             {
-                "type": "object",
-                "required": true,
-                "additionalProperties": false,
-                "properties": {
-                    "characters": {
-                        "type": "array",
-                        "required": true,                            "description": "List of all Comics"
+              "definitions": {
+                "character": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "number"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "number_of_comics": {
+                      "type": "number"
+                    },
+                    "number_of_series": {
+                      "type": "number"
+                    },
+                    "number_of_stories": {
+                      "type": "number"
+                    },
+                    "thumbnail": {
+                      "type": "string"
                     }
+                  },
+                  "required": [
+                    "description",
+                    "id",
+                    "name",
+                    "number_of_comics",
+                    "number_of_series",
+                    "number_of_stories",
+                    "thumbnail"
+                  ]
                 }
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "characters": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/character"
+                  }
+                },
+                "count": {
+                    "type": "number"
+                }
+              },
+              "required": [
+                "characters",
+                "count"
+              ]
             }
 
 ## Creators Collection [/creators]
@@ -55,15 +153,60 @@ Our source can be found here: https://github.com/nickroberts404/cs373-idb
     + Schema
         
             {
-                "type": "object",
-                "required": true,
-                "additionalProperties": false,
-                "properties": {
-                    "creators": {
-                        "type": "array",
-                        "required": true,                            "description": "List of all Comics"
+              "definitions": {
+                "creator": {
+                  "type": "object",
+                  "properties": {
+                    "first_name": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "number"
+                    },
+                    "last_name": {
+                      "type": "string"
+                    },
+                    "number_of_comics": {
+                      "type": "number"
+                    },
+                    "number_of_series": {
+                      "type": "number"
+                    },
+                    "number_of_stories": {
+                      "type": "number"
+                    },
+                    "thumbnail": {
+                      "type": "string"
                     }
+                  },
+                  "required": [
+                    "first_name",
+                    "id",
+                    "last_name",
+                    "number_of_comics",
+                    "number_of_series",
+                    "number_of_stories",
+                    "thumbnail"
+                  ]
                 }
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "creators": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/creator"
+                  }
+                },
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "creators",
+                "count"
+              ]
             }
 
 ## Query Comics [/comics/{comic_id}]
