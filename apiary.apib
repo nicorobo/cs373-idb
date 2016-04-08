@@ -1,9 +1,9 @@
 FORMAT: 1A
-HOST: http://api.swegue.me/
+HOST: http://sweague.me/api
 
-# Swegue API
+# Sweague API
 
-Swegue is a simple API allowing consumers to view information on Marvel Comics.
+Sweague is a simple API allowing consumers to view information on Marvel Comics.
 Our source can be found here: https://github.com/nickroberts404/cs373-idb
 
 ## Comics Collection [/comics]
@@ -15,15 +15,68 @@ Our source can be found here: https://github.com/nickroberts404/cs373-idb
     + Schema
         
             {
-                "type": "object",
-                "required": true,
-                "additionalProperties": false,
-                "properties": {
-                    "comics": {
-                        "type": "array",
-                        "required": true,                            "description": "List of all Comics"
+              "definitions": {
+                "comic": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "number"
+                    },
+                    "issue_num": {
+                      "type": "number"
+                    },
+                    "number_of_characters": {
+                      "type": "number"
+                    },
+                    "number_of_creators": {
+                      "type": "number"
+                    },
+                    "number_of_stories": {
+                      "type": "number"
+                    },
+                    "page_count": {
+                      "type": "number"
+                    },
+                    "thumbnail": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
                     }
+                  },
+                  "required": [
+                    "description",
+                    "id",
+                    "issue_num",
+                    "number_of_characters",
+                    "number_of_creators",
+                    "number_of_stories",
+                    "page_count",
+                    "thumbnail",
+                    "title"
+                  ]
                 }
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "comics": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/comic"
+                  }
+                },
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "comics",
+                "count"
+              ]
             }
     
 ## Characters Collection [/characters]
@@ -35,15 +88,60 @@ Our source can be found here: https://github.com/nickroberts404/cs373-idb
     + Schema
         
             {
-                "type": "object",
-                "required": true,
-                "additionalProperties": false,
-                "properties": {
-                    "characters": {
-                        "type": "array",
-                        "required": true,                            "description": "List of all Comics"
+              "definitions": {
+                "character": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "number"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "number_of_comics": {
+                      "type": "number"
+                    },
+                    "number_of_series": {
+                      "type": "number"
+                    },
+                    "number_of_stories": {
+                      "type": "number"
+                    },
+                    "thumbnail": {
+                      "type": "string"
                     }
+                  },
+                  "required": [
+                    "description",
+                    "id",
+                    "name",
+                    "number_of_comics",
+                    "number_of_series",
+                    "number_of_stories",
+                    "thumbnail"
+                  ]
                 }
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "characters": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/character"
+                  }
+                },
+                "count": {
+                    "type": "number"
+                }
+              },
+              "required": [
+                "characters",
+                "count"
+              ]
             }
 
 ## Creators Collection [/creators]
@@ -55,18 +153,63 @@ Our source can be found here: https://github.com/nickroberts404/cs373-idb
     + Schema
         
             {
-                "type": "object",
-                "required": true,
-                "additionalProperties": false,
-                "properties": {
-                    "creators": {
-                        "type": "array",
-                        "required": true,                            "description": "List of all Comics"
+              "definitions": {
+                "creator": {
+                  "type": "object",
+                  "properties": {
+                    "first_name": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "number"
+                    },
+                    "last_name": {
+                      "type": "string"
+                    },
+                    "number_of_comics": {
+                      "type": "number"
+                    },
+                    "number_of_series": {
+                      "type": "number"
+                    },
+                    "number_of_stories": {
+                      "type": "number"
+                    },
+                    "thumbnail": {
+                      "type": "string"
                     }
+                  },
+                  "required": [
+                    "first_name",
+                    "id",
+                    "last_name",
+                    "number_of_comics",
+                    "number_of_series",
+                    "number_of_stories",
+                    "thumbnail"
+                  ]
                 }
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "creators": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/creator"
+                  }
+                },
+                "count": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "creators",
+                "count"
+              ]
             }
 
-## Query Comics [/comics/{comic_id}]
+## Query Comics [/comic/{comic_id}]
 
 + Parameters
     + comic_id (number) - Integer identifier of the comic
@@ -79,74 +222,109 @@ Our source can be found here: https://github.com/nickroberts404/cs373-idb
     + Schema
         
             {
-                "type": "object",
-                "required": true,
-                "additionalProperties": false,
-                "properties": {
-                    "thumbnail": {
-                        "type": "string",
-                        "required": true,
-                        "description": "URL of a thumbnail image for this comic"
+              "definitions": {
+                "creator": {
+                  "type": "object",
+                  "properties": {
+                    "first_name": {
+                      "type": "string"
                     },
                     "id": {
-                        "type": "number",
-                        "required": true,
-                        "description": "Comic id"
+                      "type": "number"
                     },
-                    "title": {
-                        "type": "string",
-                        "required": true,
-                        "description": "Comic Title"
-                    },
-                    "issue_number": {
-                        "type": "number",
-                        "required": true,
-                        "description": "Issue Number"
-                    },
-                    "description": {
-                        "type": "string",
-                        "required": true,
-                        "description": "Description of the Comic"
-                    },
-                    "page_count": {
-                        "type": "number",
-                        "required": true,
-                        "description": "Comic Page Count"
-                    },
-                    "series": {
-                        "type": "string",
-                        "required": true,
-                        "description": "Series name"
-                    },
-                    "number_of_creators": {
-                        "type": "number",
-                        "required": true,
-                        "description": "Number of creators"
-                    },
-                    "number_of_characters": {
-                        "type": "number",
-                        "required": true,
-                        "description": "Number of characters"
-                    },
-                    "number_of_stories": {
-                        "type": "number",
-                        "required": true,
-                        "description": "Number of stories"
-                    },
-                    "characters": {
-                        "type": "array",
-                        "required": true,
-                        "description": "List of characters in the comic"
-                    },
-                    "creators": {
-                        "type": "array",
-                        "required": true,
-                        "description": "List of creators of the comic"
+                    "last_name": {
+                      "type": "string"
                     }
+                  },
+                  "required": [
+                    "first_name",
+                    "id",
+                    "last_name"
+                  ]
+                },
+                "character": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name"
+                  ]
                 }
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "comic": {
+                  "type": "object",
+                  "properties": {
+                      "characters": {
+                          "type": "array",
+                          "items": {
+                              "$ref": "#/definitions/character"
+                          }
+                      },
+                      "creators": {
+                          "type": "array",
+                          "items": {
+                              "$ref": "#/definitions/creator"
+                          }
+                      },
+                      "description": {
+                          "type": "string"
+                      },
+                      "id": {
+                          "type": "number"
+                      },
+                      "issue_num": {
+                          "type": "number"
+                      },
+                      "number_of_characters": {
+                          "type": "number"
+                      },
+                      "number_of_creators": {
+                          "type": "number"
+                      },
+                      "number_of_stories": {
+                          "type": "number"
+                      },
+                      "page_count": {
+                          "type": "number"
+                      },
+                      "thumbnail": {
+                          "type": "string"
+                      },
+                      "title": {
+                          "type": "string"
+                      }
+                  },
+                  "required": [
+                      "characters",
+                      "creators",
+                      "description",
+                      "id",
+                      "issue_num",
+                      "number_of_characters",
+                      "number_of_creators",
+                      "number_of_stories",
+                      "page_count",
+                      "thumbnail",
+                      "title"
+                  ]
+                }
+              },
+              "required": [
+                "comic"
+              ]
             }
         
-## Query Characters [/characters/{character_id}]
+## Query Characters [/character/{character_id}]
 
 + Parameters
     + character_id (number) - Integer identifier of the character
@@ -158,56 +336,77 @@ Our source can be found here: https://github.com/nickroberts404/cs373-idb
     + Schema
     
             {
-                "type": "object",
-                "required": true,
-                "additionalProperties": false,
-                "properties": {
-                    "thumbnail": {
-                        "type": "string",
-                        "required": true,
-                        "description": "URL of a thumbnail image for this character"
-                    },
+              "definitions": {
+                "comic": {
+                  "type": "object",
+                  "properties": {
                     "id": {
-                        "type": "number",
-                        "required": true,
-                        "description": "Character id"
+                      "type": "number"
                     },
-                    "name": {
-                        "type": "string",
-                        "required": true,
-                        "description": "Character name"
-                    },
-                    "description": {
-                        "type": "string",
-                        "required": true,
-                        "description": "Description of the Character"
-                    },
-                    "number_of_comics": {
-                        "type": "number",
-                        "required": true,
-                        "description": "Number of comics this character has appeared in"
-                    },
-                    "number_of_stories": {
-                        "type": "number",
-                        "required": true,
-                        "description": "Number of stories this character has appeared in"
-                    },
-                    "number_of_series": {
-                        "type": "number",
-                        "required": true,
-                        "description": "Number of series this character has appeared in"
-                    },
-                    "comics": {
-                        "type": "array",
-                        "required": true,
-                        "description": "List of comics this character has appeared in"
+                    "title": {
+                      "type": "string"
                     }
+                  },
+                  "required": [
+                    "id",
+                    "title"
+                  ]
                 }
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "character": {
+                  "type": "object",
+                  "properties": {
+                      "comics": {
+                          "type": "array",
+                          "items": {
+                              "$ref": "#/definitions/comic"
+                          }
+                      },
+                      "description": {
+                          "type": "string"
+                      },
+                      "id": {
+                          "type": "number"
+                      },
+                      "name": {
+                          "type": "string"
+                      },
+                      "number_of_comics": {
+                          "type": "number"
+                      },
+                      "number_of_series": {
+                          "type": "number"
+                      },
+                      "number_of_stories": {
+                          "type": "number"
+                      },
+                      "thumbnail": {
+                          "type": "string"
+                      }
+                  },
+                  "required": [
+                      "comics",
+                      "description",
+                      "id",
+                      "name",
+                      "number_of_comics",
+                      "number_of_series",
+                      "number_of_stories",
+                      "thumbnail"
+                  ]
+                }
+              },
+              "required": [
+                "character"
+              ]
             }
     
             
         
-## Query Creators [/creators/{creator_id}]
+## Query Creators [/creator/{creator_id}]
 
 + Parameters
     + creator_id (number) - Integer identifier of the creator
@@ -219,49 +418,70 @@ Our source can be found here: https://github.com/nickroberts404/cs373-idb
     + Schema
     
             {
-                "type": "object",
-                "required": true,
-                "additionalProperties": false,
-                "properties": {
-                    "thumbnail": {
-                        "type": "string",
-                        "required": true,
-                        "description": "URL of a thumbnail image for this creator"
-                    },
+              "definitions": {
+                "comic": {
+                  "type": "object",
+                  "properties": {
                     "id": {
-                        "type": "number",
-                        "required": true,
-                        "description": "Character id"
+                      "type": "number"
                     },
-                    "first_name": {
-                        "type": "string",
-                        "required": true,
-                        "description": "Creator's first name"
-                    },
-                    "last_name": {
-                        "type": "string",
-                        "required": true,
-                        "description": "Creator's last name"
-                    },
-                    "number_of_comics": {
-                        "type": "number",
-                        "required": true,
-                        "description": "Number of comics this creator has created"
-                    },
-                    "number_of_stories": {
-                        "type": "number",
-                        "required": true,
-                        "description": "Number of stories this creator has created"
-                    },
-                    "number_of_series": {
-                        "type": "number",
-                        "required": true,
-                        "description": "Number of series this creator has created"
-                    },
-                    "comics": {
-                        "type": "array",
-                        "required": true,
-                        "description": "List of comics this creator has appeared created"
+                    "title": {
+                      "type": "string"
                     }
+                  },
+                  "required": [
+                    "id",
+                    "title"
+                  ]
                 }
+              },
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "creator": {
+                  "type": "object",
+                  "properties": {
+                      "comics": {
+                          "type": "array",
+                          "items": {
+                              "$ref": "#/definitions/comic"
+                          }
+                      },
+                      "first_name": {
+                          "type": "string"
+                      },
+                      "id": {
+                          "type": "number"
+                      },
+                      "last_name": {
+                          "type": "string"
+                      },
+                      "number_of_comics": {
+                          "type": "number"
+                      },
+                      "number_of_series": {
+                          "type": "number"
+                      },
+                      "number_of_stories": {
+                          "type": "number"
+                      },
+                      "thumbnail": {
+                          "type": "string"
+                      }
+                  },
+                  "required": [
+                      "comics",
+                      "first_name",
+                      "id",
+                      "last_name",
+                      "number_of_comics",
+                      "number_of_series",
+                      "number_of_stories",
+                      "thumbnail"
+                  ]
+                }
+              },
+              "required": [
+                "creator"
+              ]
             }
