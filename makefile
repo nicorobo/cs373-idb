@@ -8,4 +8,5 @@ models.html: app/models.py
 	cd app; pydoc3 -w models; mv models.html ../models.html
 
 test:
-	python3 app/tests.py
+	coverage run app/tests.py
+	coverage report
