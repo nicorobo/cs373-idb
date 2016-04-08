@@ -9,4 +9,4 @@ models.html: app/models.py
 
 test:
 	coverage run app/tests.py
-	coverage report
+	coverage report --include app/test_models.py app/tests.py
