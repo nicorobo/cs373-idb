@@ -26,6 +26,7 @@ class NavBar extends React.Component {
 							<li><Link to="/characters" activeClassName="active">Characters</Link></li>
 							<li><Link to="/comics" activeClassName="active">Comics</Link></li>
 							<li><Link to="/creators" activeClassName="active">Creators</Link></li>
+							<li><Link to="/legends" activeClassName="active">Legends</Link></li>
 						</ul>
 					</div>
 				</div>
