@@ -91,6 +91,10 @@ def creators():
 def creator(creator_id):
     return jsonify({'creator': mapper.creator_detail_to_dict(Creator.query.filter_by(id=creator_id).first())})
 
+@app.route('/api/search/<search_term>', methods=["GET"])
+def search(search_term):
+    return jsonify({'results': 10000})
+
 @app.route('/run-tests')
 def run_tests():
     b_output = subprocess.check_output(['python3', 'tests.py'], stderr=subprocess.STDOUT)

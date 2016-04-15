@@ -1,7 +1,7 @@
 // marvel.js
 
 const request = require('request');
-const API = 'http://sweague.me/api/';
+const API = 'http://localhost:5000/api/';
 
 // Retrieve the character with the given ID
 function getCharacter(id, cb){
@@ -45,11 +45,19 @@ function getCreators(limit, offset, cb){
 	})
 }
 
+//Search
+function search(term, cb){
+	request(API+'search/'+term, (error, response, body) => {
+		cb(error, JSON.parse(body));
+	})
+}
+
 module.exports = {
 	getCharacter: getCharacter,
 	getCharacters: getCharacters,
 	getComic: getComic,
 	getComics: getComics,
 	getCreator: getCreator,
-	getCreators: getCreators
+	getCreators: getCreators,
+	search: search
 }

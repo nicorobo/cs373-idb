@@ -82,6 +82,21 @@ td, th, li {
 	background-color: white;
 }
 
+.searchForm {
+	padding-top: 12px;
+	display: inline-block;
+}
+
+.searchButton {
+	padding-left: 5px;
+	padding-right: 25px;
+}
+
+.searchButton:hover {
+	transition: none;
+	text-decoration: none;
+}
+
 /******** SPLASH **********/
 
 

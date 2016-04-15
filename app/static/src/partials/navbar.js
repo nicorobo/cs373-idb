@@ -2,6 +2,7 @@
 
 var React = require('react');
 var Link = require('react-router').Link;
+var SearchBar = require('./searchbar.js');
 
 class NavBar extends React.Component {
 	render() {
@@ -23,6 +24,7 @@ class NavBar extends React.Component {
 							<li><a href="/about">About</a></li>
 						</ul>
 						<ul className="nav navbar-nav navbar-right">
+							<li><SearchBar /></li>
 							<li><Link to="/characters" activeClassName="active">Characters</Link></li>
 							<li><Link to="/comics" activeClassName="active">Comics</Link></li>
 							<li><Link to="/creators" activeClassName="active">Creators</Link></li>

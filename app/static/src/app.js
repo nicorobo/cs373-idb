@@ -12,6 +12,7 @@ var CreatorTable = require('./tableview/creator-table.js');
 var CharacterPage = require('./pages/characterpage.js');
 var ComicPage = require('./pages/comicpage.js');
 var CreatorPage = require('./pages/creatorpage.js');
+var SearchResults = require('./pages/searchresults.js');
 
 var Router = router.Router;
 var Route = router.Route;
@@ -29,6 +30,7 @@ class App extends React.Component {
 					<Route path="/characters/:charId" component={CharacterPage} />
 					<Route path="/comics/:comicId" component={ComicPage} />
 					<Route path="/creators/:creatorId" component={CreatorPage} />
+					<Route path="/search/:searchTerm" component={SearchResults} />
 				</Router>
 			</div>
 		)
