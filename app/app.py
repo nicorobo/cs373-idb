@@ -6,7 +6,7 @@ import subprocess
 from flask import Flask, render_template, jsonify, request
 from flask.ext.script import Manager
 from flask.ext.sqlalchemy import SQLAlchemy
-from sqlalchemy import func
+from sqlalchemy import func, or_
 from flask.ext.cors import CORS
 import mapper
 
@@ -91,11 +91,12 @@ def creators():
 def creator(creator_id):
     return jsonify({'creator': mapper.creator_detail_to_dict(Creator.query.filter_by(id=creator_id).first())})
 
+#TODO refactor search API request
 @app.route('/api/search/<search_term>', methods=["GET"])
 def search(search_term):
-    return jsonify({'comics': list(map(mapper.comic_to_dict, Comic.query.first())),
-                    'creators': list(map(mapper.creator_to_dict, Creator.query.first())),
-                    'characters': list(map(mapper.character_to_dict, Character.query.first()))})
+    return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.filter(Character.name.contains(search_term)).all())),
+                    'comics': list(map(mapper.comic_to_dict, Comic.query.filter(Comic.title.contains(search_term)).all())),
+                    'creators': list(map(mapper.creator_to_dict, Creator.query.filter(or_(Creator.first_name.contains(search_term), Creator.last_name.contains(search_term))).all()))})
 
 @app.route('/run-tests')
 def run_tests():
