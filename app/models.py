@@ -1,6 +1,5 @@
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship, backref
-
 from app import db
 
 comic_character = db.Table('comic_character',
@@ -19,7 +18,6 @@ comic_creator = db.Table('comic_creator',
 
 class Character(db.Model):
     __tablename__ = 'character'
-    __searchable__ = ['name', 'description']
 
     id = db.Column(db.Integer, primary_key=True)
     thumbnail = db.Column(db.String(256))
@@ -39,7 +37,6 @@ class Character(db.Model):
 
 class Comic(db.Model):
     __tablename__ = 'comic'
-    __searchable__ = ['title', 'description', 'series']
 
     id = db.Column(db.Integer, primary_key=True)
     thumbnail = db.Column(db.String(256))
@@ -62,7 +59,6 @@ class Comic(db.Model):
 
 class Creator(db.Model):
     __tablename__ = 'creator'
-    __searchable__ = ['first_name', 'last_name']
 
     id = db.Column(db.Integer, primary_key=True)
     thumbnail = db.Column(db.String(256))

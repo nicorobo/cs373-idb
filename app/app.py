@@ -6,7 +6,6 @@ import subprocess
 from flask import Flask, render_template, jsonify, request
 from flask.ext.script import Manager
 from flask.ext.sqlalchemy import SQLAlchemy
-import flask.ext.whooshalchemy
 from sqlalchemy import func
 from flask.ext.cors import CORS
 import mapper
@@ -33,8 +32,6 @@ CORS(app)
 
 manager = Manager(app)
 db = SQLAlchemy(app)
-
-app.config['WHOOSH_BASE'] = db
 
 from api import *
 from models import *
@@ -96,7 +93,9 @@ def creator(creator_id):
 
 @app.route('/api/search/<search_term>', methods=["GET"])
 def search(search_term):
-    return jsonify({'results': 10000})
+    return jsonify({'comics': list(map(mapper.comic_to_dict, Comic.query.first())),
+                    'creators': list(map(mapper.creator_to_dict, Creator.query.first())),
+                    'characters': list(map(mapper.character_to_dict, Character.query.first()))})
 
 @app.route('/run-tests')
 def run_tests():
