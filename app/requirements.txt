@@ -5,3 +5,4 @@ PyMySQL~=0.6
 gunicorn~=19.3
 flask-cors~=2.1.2
 Flask-Testing~=0.4.2
+Flask-WhooshAlchemy~=0.56

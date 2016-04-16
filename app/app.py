@@ -6,6 +6,7 @@ import subprocess
 from flask import Flask, render_template, jsonify, request
 from flask.ext.script import Manager
 from flask.ext.sqlalchemy import SQLAlchemy
+import flask.ext.whooshalchemy
 from sqlalchemy import func
 from flask.ext.cors import CORS
 import mapper
@@ -32,6 +33,8 @@ CORS(app)
 
 manager = Manager(app)
 db = SQLAlchemy(app)
+
+app.config['WHOOSH_BASE'] = db
 
 from api import *
 from models import *
