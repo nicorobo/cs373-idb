@@ -91,7 +91,7 @@ def creators():
 def creator(creator_id):
     return jsonify({'creator': mapper.creator_detail_to_dict(Creator.query.filter_by(id=creator_id).first())})
 
-#TODO refactor search API request
+#TODO refactor search API request to handle "or"
 @app.route('/api/search/<search_term>', methods=["GET"])
 def search(search_term):
     return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.filter(Character.name.contains(search_term)).all())),

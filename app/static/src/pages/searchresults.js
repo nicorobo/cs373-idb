@@ -3,6 +3,7 @@
 var React = require('react');
 var NavBar = require('../partials/navbar.js');
 var Loader = require('../partials/loader.js');
+var Text = require('../partials/text.js');
 var marvel = require('../marvel.js');
 var Link = require('react-router').Link;
 
@@ -27,22 +28,29 @@ class SearchResults extends React.Component {
 				<div className="search-results">
 					<NavBar />
 					<div className="container">
-						<h3>Search Results</h3>
+						<h3>Search Results for “{this.props.params.searchTerm}”</h3>
+						<hr />
+						<h4>Comics</h4>
 						<div className="panel-body list-group">
 							{data.comics.slice(0, 20).map( comic => {
-								return (<Link to={'/comics/'+comic.id} className="list-group-item comic-link">{comic.title}</Link>)
+								return (<Link to={'/comics/'+comic.id} className="list-group-item comic-link"><Text name={comic.title} query={this.props.params.searchTerm} /></Link>)
 							})}
 						</div>
+						<hr />
+						<h4>Characters</h4>
 						<div className="panel-body list-group">
 							{data.characters.slice(0, 20).map( character => {
-								return (<Link to={'/characters/'+character.id} className="list-group-item character-link">{character.name}</Link>)
+								return (<Link to={'/characters/'+character.id} className="list-group-item character-link"><Text name={character.name} query={this.props.params.searchTerm} /></Link>)
 							})}
 						</div>
+						<hr />
+						<h4>Creators</h4>
 						<div className="panel-body list-group">
 							{data.creators.slice(0, 20).map( creator => {
-								return (<Link to={'/creators/'+creator.id} className="list-group-item creator-link">{creator.first_name}</Link>)
+								return (<Link to={'/creators/'+creator.id} className="list-group-item creator-link"><Text name={creator.first_name} query={this.props.params.searchTerm} /></Link>)
 							})}
 						</div>
+						<hr />
 					</div>
 				</div>
 			)
