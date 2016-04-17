@@ -10,14 +10,14 @@ class CreatorPage extends React.Component {
 
 	constructor() {
 		super();
-		this.state = {data: null};
+		this.state = {data: null, loading: true};
 	}
 
 	componentDidMount() {
 		marvel.getCreator(this.props.params.creatorId, (err, data) => {
-			console.log(data);
-			if (err) console.err("[CreatorPage:componentDidMount] There's been an error retrieving data!");
+			if (err) console.error("[CreatorPage:componentDidMount] There's been an error retrieving data!");
 			else this.setState({data: data.creator});
+			this.setState({loading: false});
 		})
 	}
 
@@ -57,7 +57,7 @@ class CreatorPage extends React.Component {
 			)
 		} else {
 			return (
-				<Loader timeout={2000} />
+				<Loader loading={this.state.loading} />
 			)
 		}
 	}

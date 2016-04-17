@@ -23,7 +23,7 @@ class ComicTable extends React.Component {
 		super(props);
 		this.navigateToDetail = this.navigateToDetail.bind(this);
 		var page = parseInt(props.location.query.page) || 1;
-		this.state = {data: null, page: page, lastPage: null};
+		this.state = {data: null, page: page, lastPage: null, loading: true};
 	}
 
 	navigateToDetail(id) {
@@ -38,8 +38,9 @@ class ComicTable extends React.Component {
 	getData(page) {
 		var offset = (page-1)*LIMIT;
 		marvel.getComics(LIMIT, offset, (err, data) => {
-			if (err) console.err("[TablePage:componentDidMount] There's been an error retrieving data!");
+			if (err) console.error("[TablePage:componentDidMount] There's been an error retrieving data!");
 			else this.setState({data: data.comics, lastPage: Math.ceil(data.count/LIMIT)});
+			this.setState({loading: false});
 		});
 	}
 
@@ -68,7 +69,7 @@ class ComicTable extends React.Component {
 			)
 		} else {
 			return (
-				<Loader timeout={8000} />
+				<Loader loading={this.state.loading} />
 			)
 		}
 	}

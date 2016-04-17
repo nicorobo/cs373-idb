@@ -10,13 +10,14 @@ class CharacterPage extends React.Component {
 
 	constructor() {
 		super();
-		this.state = {data: null};
+		this.state = {data: null, loading: true};
 	}
 
 	componentDidMount() {
 		marvel.getCharacter(this.props.params.charId, (err, data) => {
-			if (err) console.err("[CharacterPage:componentDidMount] There's been an error retrieving data!");
+			if (err) console.error("[CharacterPage:componentDidMount] There's been an error retrieving data!");
 			else this.setState({data: data.character});
+			this.setState({loading: false});
 		})
 	}
 
@@ -58,7 +59,7 @@ class CharacterPage extends React.Component {
 			)
 		} else {
 			return (
-				<Loader timeout={2000} />
+				<Loader loading={this.state.loading} />
 			)
 		}
 	}
