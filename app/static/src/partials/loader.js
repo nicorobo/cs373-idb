@@ -4,23 +4,8 @@ var React = require('react');
 var NavBar = require('./navbar.js');
 var timeid;
 class Loader extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {giveup: false};
-	}
-
-	componentDidMount() {
-		var timeout = this.props.timeout || 2000;
-		timeid = window.setTimeout( ()=> this.setState({giveup: true}), timeout);
-	}
-
-	componentWillUnmount() {
-		window.clearTimeout(timeid);
-	}
-
 	render() {
-		console.log('This is the loader!');
-		if (this.state.giveup) {
+		if (!this.props.loading) {
 			return (
 				<div className="load-page comic-page">
 					<NavBar />

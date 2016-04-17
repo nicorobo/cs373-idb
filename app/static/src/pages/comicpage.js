@@ -10,13 +10,14 @@ class ComicPage extends React.Component {
 
 	constructor() {
 		super();
-		this.state = {data: null};
+		this.state = {data: null, loading: true};
 	}
 
 	componentDidMount() {
 		marvel.getComic(this.props.params.comicId, (err, data) => {
-			if (err) console.err("[ComicPage:componentDidMount] There's been an error retrieving data!");
+			if (err) console.error("[ComicPage:componentDidMount] There's been an error retrieving data!");
 			else this.setState({data: data.comic});
+			this.setState({loading: false});
 		})
 	}
 
@@ -69,7 +70,7 @@ class ComicPage extends React.Component {
 			)
 		} else {
 			return (
-				<Loader timeout={2000} />
+				<Loader loading={this.state.loading} />
 			)
 		}
 	}
