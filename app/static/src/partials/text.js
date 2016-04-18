@@ -9,10 +9,10 @@ class Text extends React.Component {
 
     render() {
         var query = this.props.query;
-        var regex = new RegExp("(" + query + ")", "gi");
+        var split_query = query.replace(/ /g, "|")
+        var regex = new RegExp("(" + split_query + ")", "gi");
         var name = this.props.name;
         var parts = name.split(regex);
-
         var results = []
 
         for (var i=0; i<parts.length; i++){
