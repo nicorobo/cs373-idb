@@ -15,7 +15,16 @@ class SearchResults extends React.Component {
 	}
 
 	componentDidMount() {
-		marvel.search(this.props.params.searchTerm, (err, data) => {
+		this.setSearchData(this.props.params.searchTerm);
+	}
+
+	componentWillReceiveProps(props) {
+		this.setState({data: null, loading: true});
+		this.setSearchData(props.params.searchTerm);
+	}
+
+	setSearchData(searchTerm) {
+		marvel.search(searchTerm, (err, data) => {
 			if (err) console.error("[ComicPage:componentDidMount] There's been an error retrieving data!");
 			else this.setState({data: data});
 			this.setState({loading: false});
