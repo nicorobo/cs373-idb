@@ -91,12 +91,30 @@ def creators():
 def creator(creator_id):
     return jsonify({'creator': mapper.creator_detail_to_dict(Creator.query.filter_by(id=creator_id).first())})
 
-#TODO refactor search API request to handle "or"
 @app.route('/api/search/<search_term>', methods=["GET"])
 def search(search_term):
-    return jsonify({'characters': list(map(mapper.character_to_dict, Character.query.filter(Character.name.contains(search_term)).all())),
-                    'comics': list(map(mapper.comic_to_dict, Comic.query.filter(Comic.title.contains(search_term)).all())),
-                    'creators': list(map(mapper.creator_to_dict, Creator.query.filter(or_(Creator.first_name.contains(search_term), Creator.last_name.contains(search_term))).all()))})
+    search_terms = search_term.split(" ")
+    ch_a = list(map(mapper.character_to_dict, Character.query.filter(Character.name.contains(search_term)).all()))
+    ch_o = list(map(mapper.character_to_dict, Character.query.filter(or_(*[Character.name.contains(term) for term in search_terms])).all()))
+    for i in ch_o:
+        if i in ch_a:
+            ch_o.remove(i)
+    co_a = list(map(mapper.comic_to_dict, Comic.query.filter(Comic.title.contains(search_term)).all()))
+    co_o = list(map(mapper.comic_to_dict, Comic.query.filter(or_(*[Comic.title.contains(term) for term in search_terms])).all()))
+    for i in co_o:
+        if i in co_a:
+            co_o.remove(i)
+    cr_a = list(map(mapper.creator_to_dict, Creator.query.filter(Creator.first_name.contains(search_term)).all()))
+    cr_o = list(map(mapper.creator_to_dict, Creator.query.filter(or_(*[Creator.first_name.contains(term) for term in search_terms])).all()))
+    for i in cr_o:
+        if i in cr_a:
+            cr_o.remove(i)
+    return jsonify({'characters_and': ch_a,
+                    'characters_or': ch_o,
+                    'comics_and': co_a,
+                    'comics_or': co_o,
+                    'creators_and': cr_a,
+                    'creators_or': cr_o})
 
 @app.route('/run-tests')
 def run_tests():
