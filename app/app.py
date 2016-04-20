@@ -6,7 +6,7 @@ import subprocess
 from flask import Flask, render_template, jsonify, request
 from flask.ext.script import Manager
 from flask.ext.sqlalchemy import SQLAlchemy
-from sqlalchemy import func, or_
+from sqlalchemy import func, or_, and_
 from flask.ext.cors import CORS
 import mapper
 
@@ -95,20 +95,20 @@ def creator(creator_id):
 def search(search_term):
     search_terms = search_term.split(" ")
     ch_a = list(map(mapper.character_to_dict, Character.query.filter(Character.name.contains(search_term)).all()))
-    ch_o = list(map(mapper.character_to_dict, Character.query.filter(or_(*[Character.name.contains(term) for term in search_terms])).all()))
-    for i in ch_o:
-        if i in ch_a:
-            ch_o.remove(i)
     co_a = list(map(mapper.comic_to_dict, Comic.query.filter(Comic.title.contains(search_term)).all()))
-    co_o = list(map(mapper.comic_to_dict, Comic.query.filter(or_(*[Comic.title.contains(term) for term in search_terms])).all()))
-    for i in co_o:
-        if i in co_a:
-            co_o.remove(i)
-    cr_a = list(map(mapper.creator_to_dict, Creator.query.filter(Creator.first_name.contains(search_term)).all()))
-    cr_o = list(map(mapper.creator_to_dict, Creator.query.filter(or_(*[Creator.first_name.contains(term) for term in search_terms])).all()))
-    for i in cr_o:
-        if i in cr_a:
-            cr_o.remove(i)
+    cr_a = list(map(mapper.creator_to_dict, Creator.query.filter(or_(or_(Creator.first_name.contains(search_term), Creator.last_name.contains(search_term)), (Creator.first_name+" "+Creator.last_name).contains(search_term))).all()))
+    if len(search_terms) > 1:
+        ch_o = list(map(mapper.character_to_dict, Character.query.filter(and_(or_(*[Character.name.contains(term) for term in search_terms]),
+                        Character.name.contains(search_term)==False)).all()))
+        co_o = list(map(mapper.comic_to_dict, Comic.query.filter(and_(or_(*[Comic.title.contains(term) for term in search_terms]),
+                        Comic.title.contains(search_term)==False)).all()))
+        cr_o = list(map(mapper.creator_to_dict, Creator.query.filter(and_(or_(or_(*[Creator.first_name.contains(term) for term in search_terms]),
+                        or_(*[Creator.last_name.contains(term) for term in search_terms]))), and_(Creator.first_name.contains(search_term)==False,
+                        Creator.last_name.contains(search_term)==False, (Creator.first_name+" "+Creator.last_name).contains(search_term)==False)).all()))
+    else:
+        ch_o = []
+        co_o = []
+        cr_o = []
     return jsonify({'characters_and': ch_a,
                     'characters_or': ch_o,
                     'comics_and': co_a,
