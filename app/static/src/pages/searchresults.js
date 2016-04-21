@@ -43,42 +43,84 @@ class SearchResults extends React.Component {
 						<h4>Comics (AND results)</h4>
 						<div className="panel-body list-group">
 							{data.comics_and.slice(0, 20).map( comic => {
-								return (<Link to={'/comics/'+comic.id} className="list-group-item comic-link"><Text name={comic.title} query={this.props.params.searchTerm} /></Link>)
+								return (<Link to={'/comics/'+comic.id} className="list-group-item comic-link">
+										<Text name={String(comic.id)} query={this.props.params.searchTerm} />
+										<Text name={comic.title} query={this.props.params.searchTerm} />
+										<Text name={comic.description} query={this.props.params.searchTerm} />
+										<Text name={String(comic.page_count)} query={this.props.params.searchTerm} />
+										<Text name={String(comic.number_of_creators)} query={this.props.params.searchTerm} />
+										<Text name={String(comic.number_of_characters)} query={this.props.params.searchTerm} />
+										<Text name={String(comic.number_of_stories)} query={this.props.params.searchTerm} />
+										</Link>)
 							})}
 						</div>
 						<hr />
 						<h4>Characters (AND results)</h4>
 						<div className="panel-body list-group">
 							{data.characters_and.slice(0, 20).map( character => {
-								return (<Link to={'/characters/'+character.id} className="list-group-item character-link"><Text name={character.name} query={this.props.params.searchTerm} /></Link>)
+								return (<Link to={'/characters/'+character.id} className="list-group-item character-link">
+										<Text name={String(character.id)} query={this.props.params.searchTerm} />
+										<Text name={character.name} query={this.props.params.searchTerm} />
+										<Text name={character.description} query={this.props.params.searchTerm} />
+										<Text name={String(character.number_of_comics)} query={this.props.params.searchTerm} />
+										<Text name={String(character.number_of_stories)} query={this.props.params.searchTerm} />
+										<Text name={String(character.number_of_series)} query={this.props.params.searchTerm} />
+										</Link>)
 							})}
 						</div>
 						<hr />
 						<h4>Creators (AND results)</h4>
 						<div className="panel-body list-group">
 							{data.creators_and.slice(0, 20).map( creator => {
-								return (<Link to={'/creators/'+creator.id} className="list-group-item creator-link"><Text name={creator.first_name+" "+creator.last_name} query={this.props.params.searchTerm} /></Link>)
+								return (<Link to={'/creators/'+creator.id} className="list-group-item creator-link">
+								<Text name={String(creator.id)} query={this.props.params.searchTerm} />
+								<Text name={creator.first_name+" "+creator.last_name} query={this.props.params.searchTerm} />
+								<Text name={String(creator.number_of_comics)} query={this.props.params.searchTerm} />
+								<Text name={String(creator.number_of_stories)} query={this.props.params.searchTerm} />
+								<Text name={String(creator.number_of_series)} query={this.props.params.searchTerm} />
+								</Link>)
 							})}
 						</div>
 						<hr />
 						<h4>Comics (OR results)</h4>
 						<div className="panel-body list-group">
 							{data.comics_or.slice(0, 20).map( comic => {
-								return (<Link to={'/comics/'+comic.id} className="list-group-item comic-link"><Text name={comic.title} query={this.props.params.searchTerm} /></Link>)
+								return (<Link to={'/comics/'+comic.id} className="list-group-item comic-link">
+								<Text name={String(comic.id)} query={this.props.params.searchTerm} />
+								<Text name={comic.title} query={this.props.params.searchTerm} />
+								<Text name={comic.description} query={this.props.params.searchTerm} />
+								<Text name={String(comic.page_count)} query={this.props.params.searchTerm} />
+								<Text name={String(comic.number_of_creators)} query={this.props.params.searchTerm} />
+								<Text name={String(comic.number_of_characters)} query={this.props.params.searchTerm} />
+								<Text name={String(comic.number_of_stories)} query={this.props.params.searchTerm} />
+								</Link>)
 							})}
 						</div>
 						<hr />
 						<h4>Characters (OR results)</h4>
 						<div className="panel-body list-group">
 							{data.characters_or.slice(0, 20).map( character => {
-								return (<Link to={'/characters/'+character.id} className="list-group-item character-link"><Text name={character.name} query={this.props.params.searchTerm} /></Link>)
+								return (<Link to={'/characters/'+character.id} className="list-group-item character-link">
+								<Text name={String(character.id)} query={this.props.params.searchTerm} />
+								<Text name={character.name} query={this.props.params.searchTerm} />
+								<Text name={character.description} query={this.props.params.searchTerm} />
+								<Text name={String(character.number_of_comics)} query={this.props.params.searchTerm} />
+								<Text name={String(character.number_of_stories)} query={this.props.params.searchTerm} />
+								<Text name={String(character.number_of_series)} query={this.props.params.searchTerm} />
+								</Link>)
 							})}
 						</div>
 						<hr />
 						<h4>Creators (OR results)</h4>
 						<div className="panel-body list-group">
 							{data.creators_or.slice(0, 20).map( creator => {
-								return (<Link to={'/creators/'+creator.id} className="list-group-item creator-link"><Text name={creator.first_name+" "+creator.last_name} query={this.props.params.searchTerm} /></Link>)
+								return (<Link to={'/creators/'+creator.id} className="list-group-item creator-link">
+								<Text name={String(creator.id)} query={this.props.params.searchTerm} />
+								<Text name={creator.first_name+" "+creator.last_name} query={this.props.params.searchTerm} />
+								<Text name={String(creator.number_of_comics)} query={this.props.params.searchTerm} />
+								<Text name={String(creator.number_of_stories)} query={this.props.params.searchTerm} />
+								<Text name={String(creator.number_of_series)} query={this.props.params.searchTerm} />
+								</Link>)
 							})}
 						</div>
 					</div>

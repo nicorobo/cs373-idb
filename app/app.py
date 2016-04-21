@@ -94,17 +94,47 @@ def creator(creator_id):
 @app.route('/api/search/<search_term>', methods=["GET"])
 def search(search_term):
     search_terms = search_term.split(" ")
-    ch_a = list(map(mapper.character_to_dict, Character.query.filter(Character.name.contains(search_term)).all()))
-    co_a = list(map(mapper.comic_to_dict, Comic.query.filter(Comic.title.contains(search_term)).all()))
-    cr_a = list(map(mapper.creator_to_dict, Creator.query.filter(or_(or_(Creator.first_name.contains(search_term), Creator.last_name.contains(search_term)), (Creator.first_name+" "+Creator.last_name).contains(search_term))).all()))
+    ch_a = list(map(mapper.character_to_dict, Character.query.filter(
+                    or_(Character.name.contains(search_term), Character.id.contains(search_term), Character.description.contains(search_term),
+                        Character.number_of_comics.contains(search_term), Character.number_of_series.contains(search_term),
+                        Character.number_of_stories.contains(search_term)
+                    )).all()))
+    co_a = list(map(mapper.comic_to_dict, Comic.query.filter(
+                    or_(Comic.title.contains(search_term), Comic.id.contains(search_term), Comic.issue_num.contains(search_term),
+                        Comic.description.contains(search_term), Comic.page_count.contains(search_term), Comic.series.contains(search_term),
+                        Comic.number_of_creators.contains(search_term), Comic.number_of_characters.contains(search_term), Comic.number_of_stories.contains(search_term)
+                    )).all()))
+    cr_a = list(map(mapper.creator_to_dict, Creator.query.filter(
+                    or_(Creator.first_name.contains(search_term), Creator.last_name.contains(search_term), (Creator.first_name+" "+Creator.last_name).contains(search_term),
+                        Creator.number_of_comics.contains(search_term), Creator.number_of_stories.contains(search_term),
+                        Creator.number_of_series.contains(search_term)
+                    )).all()))
     if len(search_terms) > 1:
-        ch_o = list(map(mapper.character_to_dict, Character.query.filter(and_(or_(*[Character.name.contains(term) for term in search_terms]),
-                        Character.name.contains(search_term)==False)).all()))
-        co_o = list(map(mapper.comic_to_dict, Comic.query.filter(and_(or_(*[Comic.title.contains(term) for term in search_terms]),
-                        Comic.title.contains(search_term)==False)).all()))
-        cr_o = list(map(mapper.creator_to_dict, Creator.query.filter(and_(or_(or_(*[Creator.first_name.contains(term) for term in search_terms]),
-                        or_(*[Creator.last_name.contains(term) for term in search_terms]))), and_(Creator.first_name.contains(search_term)==False,
-                        Creator.last_name.contains(search_term)==False, (Creator.first_name+" "+Creator.last_name).contains(search_term)==False)).all()))
+        ch_o = list(map(mapper.character_to_dict, Character.query.filter(and_(or_(*[or_(
+                        Character.name.contains(term), Character.id.contains(term), Character.description.contains(term),
+                        Character.number_of_comics.contains(term), Character.number_of_series.contains(term),
+                        Character.number_of_stories.contains(term)) for term in search_terms])),
+                        and_(Character.name.contains(search_term)==False, Character.id.contains(search_term)==False, Character.description.contains(search_term)==False,
+                        Character.number_of_comics.contains(search_term)==False, Character.number_of_series.contains(search_term)==False,
+                        Character.number_of_stories.contains(search_term)==False)
+                    ).all()))
+        co_o = list(map(mapper.comic_to_dict, Comic.query.filter(and_(or_(*[or_(
+                        Comic.title.contains(term), Comic.id.contains(term), Comic.issue_num.contains(term),
+                        Comic.description.contains(term), Comic.page_count.contains(term), Comic.series.contains(term),
+                        Comic.number_of_creators.contains(term), Comic.number_of_characters.contains(term), Comic.number_of_stories.contains(term)) for term in search_terms])),
+                        and_(Comic.title.contains(search_term)==False, Comic.id.contains(search_term)==False, Comic.issue_num.contains(search_term)==False,
+                            Comic.description.contains(search_term)==False, Comic.page_count.contains(search_term)==False, Comic.series.contains(search_term)==False,
+                            Comic.number_of_creators.contains(search_term)==False, Comic.number_of_characters.contains(search_term)==False, Comic.number_of_stories.contains(search_term)==False)
+                    ).all()))
+        cr_o = list(map(mapper.creator_to_dict, Creator.query.filter(and_(or_(*[or_(
+                        Creator.first_name.contains(term), Creator.last_name.contains(term), (Creator.first_name+" "+Creator.last_name).contains(term),
+                        Creator.number_of_comics.contains(term), Creator.number_of_stories.contains(term),
+                        Creator.number_of_series.contains(term)) for term in search_terms])),
+                        and_(Creator.first_name.contains(search_term)==False, Creator.last_name.contains(search_term)==False,
+                            (Creator.first_name+" "+Creator.last_name).contains(search_term)==False,
+                            Creator.number_of_comics.contains(search_term)==False, Creator.number_of_stories.contains(search_term)==False,
+                            Creator.number_of_series.contains(search_term)==False)
+                    ).all()))
     else:
         ch_o = []
         co_o = []

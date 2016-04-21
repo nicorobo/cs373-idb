@@ -12,6 +12,9 @@ class Text extends React.Component {
         var split_query = query.replace(/ /g, "|")
         var regex = new RegExp("(" + split_query + ")", "gi");
         var name = this.props.name;
+        if (name == null) {
+            return <div></div>
+        }
         var parts = name.split(regex);
         var results = []
 
