@@ -293,3 +293,13 @@ div.splash-description {
 	text-align: center;
 }
 
+/******** SEARCH RESULTS **********/
+.attr {
+	color: #337ab7;
+	font-family: "Marvel";
+}
+
+.result {
+	font-weight: bolder;
+	background-color: #FFFFD5;
+}

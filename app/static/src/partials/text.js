@@ -9,6 +9,7 @@ class Text extends React.Component {
 
     render() {
         var query = this.props.query;
+        query = query.replace(/\)/g, '').replace(/\(/g,'');
         var split_query = query.replace(/ /g, "|")
         var regex = new RegExp("(" + split_query + ")", "gi");
         var name = this.props.name;
@@ -19,20 +20,21 @@ class Text extends React.Component {
         var results = []
 
         for (var i=0; i<parts.length; i++){
-            if (parts[i].search(regex)===0){
-                results.push(<span><strong>{parts[i]}</strong></span>);
+            if (parts[i] != undefined && parts[i].search(regex)===0){
+                results.push(<span className="result">{parts[i]}</span>);
             } else {
                 results.push(parts[i])
             }
         }
 
-        return <div>{results}</div>;
+        return <div><p><span className="attr">{this.props.attr}</span>: {results}</p></div>;
     }
 }
 
 Text.propTypes = {
 	name: React.PropTypes.string,
-	query: React.PropTypes.string
+	query: React.PropTypes.string,
+    attr: React.PropTypes.string
 }
 
 module.exports = Text;
