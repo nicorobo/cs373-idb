@@ -105,7 +105,7 @@ def search(search_term):
                         Comic.number_of_creators.contains(search_term), Comic.number_of_characters.contains(search_term), Comic.number_of_stories.contains(search_term)
                     )).all()))
     cr_a = list(map(mapper.creator_to_dict, Creator.query.filter(
-                    or_(Creator.first_name.contains(search_term), Creator.last_name.contains(search_term), (Creator.first_name+" "+Creator.last_name).contains(search_term),
+                    or_(Creator.id.contains(search_term), Creator.first_name.contains(search_term), Creator.last_name.contains(search_term), (Creator.first_name+" "+Creator.last_name).contains(search_term),
                         Creator.number_of_comics.contains(search_term), Creator.number_of_stories.contains(search_term),
                         Creator.number_of_series.contains(search_term)
                     )).all()))
@@ -127,10 +127,10 @@ def search(search_term):
                             Comic.number_of_creators.contains(search_term)==False, Comic.number_of_characters.contains(search_term)==False, Comic.number_of_stories.contains(search_term)==False)
                     ).all()))
         cr_o = list(map(mapper.creator_to_dict, Creator.query.filter(and_(or_(*[or_(
-                        Creator.first_name.contains(term), Creator.last_name.contains(term), (Creator.first_name+" "+Creator.last_name).contains(term),
+                        Creator.first_name.contains(term), Creator.last_name.contains(term), Creator.id.contains(term),
                         Creator.number_of_comics.contains(term), Creator.number_of_stories.contains(term),
                         Creator.number_of_series.contains(term)) for term in search_terms])),
-                        and_(Creator.first_name.contains(search_term)==False, Creator.last_name.contains(search_term)==False,
+                        and_(Creator.id.contains(search_term)==False, Creator.first_name.contains(search_term)==False, Creator.last_name.contains(search_term)==False,
                             (Creator.first_name+" "+Creator.last_name).contains(search_term)==False,
                             Creator.number_of_comics.contains(search_term)==False, Creator.number_of_stories.contains(search_term)==False,
                             Creator.number_of_series.contains(search_term)==False)

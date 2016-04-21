@@ -2,7 +2,7 @@
 
 from flask.ext.testing import TestCase
 from unittest import main
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, and_, or_
 from flask.ext.sqlalchemy import SQLAlchemy
 from flask import Flask
 
@@ -108,6 +108,29 @@ class TestModels (TestCase) :
         db.session.add(creator)
         comic = Comic.query.filter_by(id=6).first()
         self.assertEqual(len(comic.creators), 1)
+
+    def test_search_1 (self) :
+        comic = Comic(id=7, title='Dummy Comic7', issue_num=4)
+        db.session.add(comic)
+        comic2 = Comic(id=8, title='Great Title', issue_num=4)
+        db.session.add(comic2)
+        search_term = 'Dummy Comic'
+        comics = Comic.query.filter(or_(Comic.title.contains(search_term), Comic.id.contains(search_term), Comic.issue_num.contains(search_term))).all()
+        self.assertEqual(len(comics), 1)
+
+    def test_search_2 (self) :
+        creator = Creator(id=7, first_name='Dummy', last_name='Creator6')
+        db.session.add(creator)
+        creator2 = Creator(id=8, first_name='Test', last_name='Search')
+        db.session.add(creator2)
+        search_term = 'Test This'
+        search_terms = search_term.split(' ')
+        creators = Creator.query.filter(and_(or_(*[or_(
+                        Creator.first_name.contains(term), Creator.last_name.contains(term), Creator.id.contains(term)) for term in search_terms])),
+                        and_(Creator.first_name.contains(search_term)==False, Creator.last_name.contains(search_term)==False,
+                            (Creator.first_name+" "+Creator.last_name).contains(search_term)==False, Creator.id.contains(search_term)==False)
+                    ).all()
+        self.assertEqual(len(creators), 1)
 
 if __name__ == "__main__" :
     main()
