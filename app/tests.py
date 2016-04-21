@@ -132,5 +132,34 @@ class TestModels (TestCase) :
                     ).all()
         self.assertEqual(len(creators), 1)
 
+    def test_number_search_1 (self) :
+        comic = Comic(id=9, title='Dummy Comic8', issue_num=8, description='8')
+        db.session.add(comic)
+        search_term = '9'
+        comics = Comic.query.filter(or_(Comic.title.contains(search_term), Comic.id.contains(search_term), Comic.description.contains(search_term), Comic.issue_num.contains(search_term))).all()
+        self.assertEqual(len(comics), 1)
+
+    def test_number_search_2 (self) :
+        comic = Comic(id=8, title='Dummy Comic9', issue_num=8, description='8')
+        db.session.add(comic)
+        search_term = '9'
+        comics = Comic.query.filter(or_(Comic.title.contains(search_term), Comic.id.contains(search_term), Comic.description.contains(search_term), Comic.issue_num.contains(search_term))).all()
+        self.assertEqual(len(comics), 1)
+
+    def test_number_search_3 (self) :
+        comic = Comic(id=8, title='Dummy Comic8', issue_num=9, description='8')
+        db.session.add(comic)
+        search_term = '9'
+        comics = Comic.query.filter(or_(Comic.title.contains(search_term), Comic.id.contains(search_term), Comic.description.contains(search_term), Comic.issue_num.contains(search_term))).all()
+        self.assertEqual(len(comics), 1)
+
+    def test_number_search_4 (self) :
+        comic = Comic(id=8, title='Dummy Comic8', issue_num=8, description='9')
+        db.session.add(comic)
+        search_term = '9'
+        comics = Comic.query.filter(or_(Comic.title.contains(search_term), Comic.id.contains(search_term), Comic.description.contains(search_term), Comic.issue_num.contains(search_term))).all()
+        self.assertEqual(len(comics), 1)
+
+
 if __name__ == "__main__" :
     main()
