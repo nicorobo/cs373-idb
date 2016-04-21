@@ -1,0 +1,527 @@
+[33m7ae65eb[m [31m(nathanhotz)[m  Updated about page to match current statistics [32m(2 minutes ago)[m 
+
+[33m3ee5adb[m [31m(nathanhotz)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(8 minutes ago)[m 
+
+[33m3a5fa20[m [31m(nathanhotz)[m  Added tests for number searches [32m(8 minutes ago)[m 
+
+[33m93d84a6[m [31m(leslierice)[m  re ran pydoc closes #54 [32m(10 minutes ago)[m 
+
+[33m4d4c821[m [31m(leslierice)[m  updated about page with stats [32m(23 minutes ago)[m 
+
+[33ma9dcde0[m [31m(leslierice)[m  forgot creator id in search, adding tests for search [32m(42 minutes ago)[m 
+
+[33md63b35e[m [31m(SrsBusiness)[m  Added documentation for search endpoint [32m(4 hours ago)[m 
+
+[33mae6f6ef[m [31m(leslierice)[m  add styling and attribute names on search results page, closes #61 [32m(6 hours ago)[m 
+
+[33m1e8b4b6[m [31m(leslierice)[m  search for attributes, need to clean up search results page [32m(19 hours ago)[m 
+
+[33m588b042[m [31m(nathanhotz)[m  Added link to dummy presentation through Speaker Deck [32m(20 hours ago)[m 
+
+[33m4c1e1d5[m [31m(leslierice)[m  display and search first&last name creator, faster query, closes #59 [32m(2 days ago)[m 
+
+[33m8094778[m [31m(leslierice)[m  apply bold to each word in search for or results, closes #58 [32m(3 days ago)[m 
+
+[33m11b98fa[m [31m(nickroberts404)[m  Add willReceiveProps method to search component, updating data. closes #57 [32m(3 days ago)[m 
+
+[33me5308b3[m [31m(nickroberts404)[m  Implemented Danny's solution to allow enter for search. Close #60 [32m(3 days ago)[m 
+
+[33m05274e6[m [31m(leslierice)[m  adding or search [32m(4 days ago)[m 
+
+[33m6bdb3b9[m [31m(leslierice)[m  Merge branch 'search' of https://github.com/nickroberts404/cs373-idb into search [32m(4 days ago)[m 
+
+[33mf8c7e45[m [31m(leslierice)[m  adding bold to search query [32m(4 days ago)[m 
+
+[33m231aaef[m [31m(nickroberts404)[m  Added the actual notfound.js file [32m(5 days ago)[m 
+
+[33m13e2e9f[m [31m(nickroberts404)[m  Added 404 (not-found) page. Not very charming right now [32m(5 days ago)[m 
+
+[33mf95538d[m [31m(nickroberts404)[m  Loader now reflects real errors and loading. Closes #38 [32m(5 days ago)[m 
+
+[33m93340f9[m [31m(leslierice)[m  implement basic searching [32m(5 days ago)[m 
+
+[33md990278[m [31m(leslierice)[m  didnt work for mysql [32m(5 days ago)[m 
+
+[33m9448b28[m [31m(leslierice)[m  adding flask-whooshalchemy [32m(5 days ago)[m 
+
+[33mb547f02[m [31m(leslierice)[m  start implementation of search bar [32m(6 days ago)[m 
+
+[33m97535e6[m [31m(Benjamin Holder)[m  Added log [32m(2 weeks ago)[m 
+
+[33m0c11e99[m [31m(Benjamin Holder)[m  Updated about.html [32m(2 weeks ago)[m 
+
+[33m9ad0b3b[m [31m(nathanhotz)[m  Updated git ignore to exclude .pyc files, and removed them from the repo. [32m(2 weeks ago)[m 
+
+[33mc036bfc[m [31m(nathanhotz)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+
+[33mf548b6c[m [31m(SrsBusiness)[m  Updated API. Hooray! [32m(2 weeks ago)[m 
+
+[33m65a4deb[m [31m(nathanhotz)[m  Updated about page statistics [32m(2 weeks ago)[m 
+
+[33m542bc60[m [31m(nickroberts404)[m  app.js should finally be ignored [32m(2 weeks ago)[m 
+
+[33mdea3331[m [31m(Benjamin Holder)[m  For real this time. [32m(2 weeks ago)[m 
+
+[33m682d8fb[m [31m(Benjamin Holder)[m  Merge branch 'master' into dev [32m(2 weeks ago)[m 
+
+[33m4c2f143[m [31m(Benjamin Holder)[m  Narrowed files reported on by coverage. [32m(2 weeks ago)[m 
+
+[33m80c09d2[m [31m(SrsBusiness)[m  Updated JSON schemas for /characters, /comics, and /creators [32m(2 weeks ago)[m 
+
+[33m53dbec6[m [31m(Benjamin Holder)[m  Merge branch 'master' into dev [32m(2 weeks ago)[m 
+
+[33mecf3d61[m [31m(Benjamin Holder)[m  Added coverage3 to .travis.yml and makefile. [32m(2 weeks ago)[m 
+
+[33ma98671a[m [31m(nickroberts404)[m  Compute max-pages from data, can now view all pages [32m(2 weeks ago)[m 
+
+[33mc83f3ff[m [31m(leslierice)[m  moving models.html [32m(2 weeks ago)[m 
+
+[33m0954eb8[m [31m(leslierice)[m  adding IDB2.log [32m(2 weeks ago)[m 
+
+[33mfb00e1d[m [31m(nickroberts404)[m  Added simple center styling to pagination component [32m(2 weeks ago)[m 
+
+[33m8d987cd[m [31m(nickroberts404)[m  Pagination should work for creators [32m(2 weeks ago)[m 
+
+[33m3652b2a[m [31m(nickroberts404)[m  Pagination should work for comics [32m(2 weeks ago)[m 
+
+[33m2484a1f[m [31m(nickroberts404)[m  Commented out excessive loggin [32m(2 weeks ago)[m 
+
+[33m6b07dde[m [31m(Benjamin Holder)[m  Updated makefile. [32m(2 weeks ago)[m 
+
+[33m561cf06[m [31m(nickroberts404)[m  Pagination almost working, only on characters right now [32m(2 weeks ago)[m 
+
+[33m2405c75[m [31m(nickroberts404)[m  Added query params to GET request [32m(2 weeks ago)[m 
+
+[33m7bdcfbd[m [31m(leslierice)[m  add updated commits, issues [32m(2 weeks ago)[m 
+
+[33mcb25e06[m [31m(leslierice)[m  styling [32m(2 weeks ago)[m 
+
+[33m9d7c9d8[m [31m(leslierice)[m  adding page count [32m(2 weeks ago)[m 
+
+[33mce587a1[m [31m(leslierice)[m  updated models.html [32m(2 weeks ago)[m 
+
+[33mb878c43[m [31m(leslierice)[m  actually sqlalchemy limit offset finally works [32m(2 weeks ago)[m 
+
+[33m6f5b493[m [31m(leslierice)[m  whoops [32m(2 weeks ago)[m 
+
+[33m3579041[m [31m(leslierice)[m  should fix sqlalchemy limit offset [32m(2 weeks ago)[m 
+
+[33mb73f427[m [31m(leslierice)[m  fix regex if None, quickfix for sqlalchemy limit until figure it out [32m(2 weeks ago)[m 
+
+[33mc6d8c6a[m [31m(Danny Chen)[m  Merge branch 'master' of github.com:nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+
+[33m4d0e437[m [31m(Danny Chen)[m  Added Travis Build status logo on README [32m(2 weeks ago)[m 
+
+[33m75ce00f[m [31m(leslierice)[m  limit offset sqlalchemy - not sure if it works [32m(2 weeks ago)[m 
+
+[33m8201a47[m [31m(leslierice)[m  strip html tags in description [32m(2 weeks ago)[m 
+
+[33m408758d[m [31m(nickroberts404)[m  Last merge commit EVER... I hope. [32m(2 weeks ago)[m 
+
+[33med89b7f[m [31m(nickroberts404)[m  Fixed bug with paginator not detecting left limit [32m(2 weeks ago)[m 
+
+[33m2758c62[m [31m(Danny Chen)[m  Fixed oboe in .travis.yml [32m(2 weeks ago)[m 
+
+[33m2ca2172[m [31m(Danny Chen)[m  Installs everything in requirements.txt on Travis [32m(2 weeks ago)[m 
+
+[33m3182e30[m [31m(Danny Chen)[m  Makefile now runs tests [32m(2 weeks ago)[m 
+
+[33mfa1c18e[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+
+[33m6ea7ad5[m [31m(nickroberts404)[m  Still working on pagination, almost done [32m(2 weeks ago)[m 
+
+[33m8ac9eba[m [31m(leslierice)[m  updated models.html, closes #27 [32m(2 weeks ago)[m 
+
+[33mdfc1531[m [31m(leslierice)[m  fixed unit tests bug closes #37 [32m(2 weeks ago)[m 
+
+[33md8b404b[m [31m(Benjamin Holder)[m  Closes #26: updated description of how data was scraped. [32m(2 weeks ago)[m 
+
+[33m13d5445[m [31m(leslierice)[m  adding more unit tests, moving run unit tests to top of about page, clean up app.py [32m(2 weeks ago)[m 
+
+[33mb6a98fe[m [31m(leslierice)[m  cleaning up styling about page [32m(2 weeks ago)[m 
+
+[33m391e83b[m [31m(Leslie Rice)[m  Merge pull request #35 from nickroberts404/unit-tests [32m(2 weeks ago)[m 
+
+[33m02e7a2b[m [31m(leslierice)[m  needed to change python3 to python [32m(2 weeks ago)[m 
+
+[33m3b00a07[m [31m(leslierice)[m  fix merge conflict [32m(2 weeks ago)[m 
+
+[33mad29673[m [31m(nickroberts404)[m  Fixed merge conflict [32m(2 weeks ago)[m 
+
+[33m9f35050[m [31m(nickroberts404)[m  Have pagination ugly but working on character page. Need to generalize and enhance paginator.js [32m(2 weeks ago)[m 
+
+[33m30d32b0[m [31m(leslierice)[m  runs unit tests on about page when you click button [32m(2 weeks ago)[m 
+
+[33me070adf[m [31m(Danny Chen)[m  Added tests_models.py, which is just a clone of models.py [32m(2 weeks ago)[m 
+
+[33md92fb2c[m [31m(Danny Chen)[m  Hacked together test database + Leslie's test cases. [32m(2 weeks ago)[m 
+
+[33m4a62c2c[m [31m(nickroberts404)[m  Fixed merge conflict [32m(2 weeks ago)[m 
+
+[33m31d0bb6[m [31m(nickroberts404)[m  Began using limits/offsets and page queries on character-table [32m(2 weeks ago)[m 
+
+[33m40d801f[m [31m(nickroberts404)[m  Fixed issue with loader unmounting without clearing timeout [32m(2 weeks ago)[m 
+
+[33mccc6ed2[m [31m(leslierice)[m  fix about nav [32m(2 weeks ago)[m 
+
+[33m85077f3[m [31m(leslierice)[m  updated unit tests [32m(2 weeks ago)[m 
+
+[33mf97553d[m [31m(nickroberts404)[m  Created empty paginator component [32m(2 weeks ago)[m 
+
+[33m43b9ac8[m [31m(nickroberts404)[m  Made cog a leeeetle bigger [32m(2 weeks ago)[m 
+
+[33md426fe0[m [31m(nickroberts404)[m  Fixed merge conflict [32m(2 weeks ago)[m 
+
+[33m86df5af[m [31m(nickroberts404)[m  Added spinning icon to loader.js and timeout logic [32m(2 weeks ago)[m 
+
+[33mac2cea9[m [31m(nathanhotz)[m  Updated about page to highlight About instead of Home. Still needs to be changed from a box to orange letters. [32m(2 weeks ago)[m 
+
+[33m2e01a12[m [31m(nickroberts404)[m  Added fontawesome external css [32m(2 weeks ago)[m 
+
+[33mab11f4f[m [31m(nickroberts404)[m  Added loader to avoid flash of 'no data' message [32m(2 weeks ago)[m 
+
+[33m8761e5f[m [31m(leslierice)[m  uncomment cors [32m(2 weeks ago)[m 
+
+[33m55ce1fa[m [31m(leslierice)[m  unit test testing [32m(2 weeks ago)[m 
+
+[33m0bc7896[m [31m(nickroberts404)[m  Fixed typos in header keys (used for sorting) [32m(2 weeks ago)[m 
+
+[33m3d6f807[m [31m(nickroberts404)[m  Fixed last_name typo in creator-row [32m(2 weeks ago)[m 
+
+[33m46f108a[m [31m(nickroberts404)[m  Removed references to mock data from detail pages [32m(2 weeks ago)[m 
+
+[33mebf2abd[m [31m(nickroberts404)[m  Creator detail page works with API [32m(2 weeks ago)[m 
+
+[33m69acb08[m [31m(nickroberts404)[m  Character detail page works with API [32m(2 weeks ago)[m 
+
+[33m5e6a495[m [31m(nickroberts404)[m  Comic detail page works with API [32m(2 weeks ago)[m 
+
+[33ma5c4a7a[m [31m(nickroberts404)[m  Big commit I shouldve split into many. Working on using API, have tables working so far. [32m(2 weeks ago)[m 
+
+[33m25a980b[m [31m(nickroberts404)[m  fix API constant in marvel.js [32m(2 weeks ago)[m 
+
+[33m5649338[m [31m(nickroberts404)[m  Just trying to get .gitignore to ignore the big app.js but it won't -__- [32m(2 weeks ago)[m 
+
+[33me4cb2e9[m [31m(nickroberts404)[m  Okay...this time the test should really be gone.. [32m(2 weeks ago)[m 
+
+[33m8c2a0d5[m [31m(nickroberts404)[m  Fixed nesting link bug. This time aaactually deleted test [32m(2 weeks ago)[m 
+
+[33mc2a305c[m [31m(nickroberts404)[m  Removed api endpoint used for testing cors [32m(2 weeks ago)[m 
+
+[33m9ded779[m [31m(leslierice)[m  add description to splashpage closes #32 [32m(2 weeks ago)[m 
+
+[33m7a7d0f5[m [31m(nickroberts404)[m  Added CORS to our Flask app [32m(2 weeks ago)[m 
+
+[33m32d8ad2[m [31m(leslierice)[m  buggy comic [32m(2 weeks ago)[m 
+
+[33m8c08c87[m [31m(nickroberts404)[m  Removed global transpile option from Babel [32m(2 weeks ago)[m 
+
+[33m5723309[m [31m(nickroberts404)[m  Exporting functions from marvel.js for external use [32m(2 weeks ago)[m 
+
+[33m9a3a3bf[m [31m(nickroberts404)[m  Implemented API in detail pages [32m(2 weeks ago)[m 
+
+[33mbba6357[m [31m(nickroberts404)[m  Requiring marvel.js in pages [32m(2 weeks ago)[m 
+
+[33m3581af3[m [31m(nickroberts404)[m  Added back mockdata code for tablepage, should remain until wrapper working [32m(2 weeks ago)[m 
+
+[33m1b4f255[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(2 weeks ago)[m 
+
+[33m44f6dbc[m [31m(nickroberts404)[m  Began implementing API in tablepage [32m(2 weeks ago)[m 
+
+[33mc1b9dd6[m [31m(nickroberts404)[m  Began clientside API wrapper [32m(2 weeks ago)[m 
+
+[33m8783d1d[m [31m(leslierice)[m  found bug forgetting to add issue_num and num_creators [32m(2 weeks ago)[m 
+
+[33me37bd00[m [31m(nickroberts404)[m  Fixed mockdata refernce in tablepage.js [32m(2 weeks ago)[m 
+
+[33m1ee3520[m [31m(nickroberts404)[m  Removed unused function in app.js [32m(2 weeks ago)[m 
+
+[33m36c469e[m [31m(nickroberts404)[m  Cleaned up ./src file structure [32m(2 weeks ago)[m 
+
+[33m361193c[m [31m(leslierice)[m  add individual queries [32m(2 weeks ago)[m 
+
+[33mf1fb112[m [31m(leslierice)[m  begin implementing api [32m(2 weeks ago)[m 
+
+[33mecd15b3[m [31m(leslierice)[m  adding update functions [32m(3 weeks ago)[m 
+
+[33m3adfe08[m [31m(Benjamin Holder)[m  Implemented get_all with filtering. [32m(3 weeks ago)[m 
+
+[33m4830034[m [31m(Benjamin Holder)[m  Fixed marvelpy keyword arguments being passed to requests. [32m(3 weeks ago)[m 
+
+[33m7f6b234[m [31m(Benjamin Holder)[m  Changed function names, key file format. [32m(3 weeks ago)[m 
+
+[33m77fc5ef[m [31m(Benjamin Holder)[m  Added APIKeyError [32m(3 weeks ago)[m 
+
+[33m531e3e1[m [31m(Benjamin Holder)[m  marvelpy iterator automatic retry implemented. [32m(3 weeks ago)[m 
+
+[33m0413b04[m [31m(Benjamin Holder)[m  Removed duplicate functions in marvelpy. [32m(3 weeks ago)[m 
+
+[33md81304c[m [31m(leslierice)[m  description longer [32m(3 weeks ago)[m 
+
+[33mdfb17fb[m [31m(leslierice)[m  need to make description field longer [32m(3 weeks ago)[m 
+
+[33mc0d79d4[m [31m(leslierice)[m  method to add data from json files to database [32m(3 weeks ago)[m 
+
+[33m9203353[m [31m(leslierice)[m  updated models, working association table [32m(3 weeks ago)[m 
+
+[33m419777c[m [31m(Benjamin Holder)[m  Added full JSON scrapes from Marvel's database and removed the small scrapes. [32m(3 weeks ago)[m 
+
+[33mef66551[m [31m(leslierice)[m  fixing splash img [32m(3 weeks ago)[m 
+
+[33m1b3bced[m [31m(leslierice)[m  adding api.py to add things to database, still working on association business [32m(3 weeks ago)[m 
+
+[33m8e15690[m [31m(Benjamin Holder)[m  Merge branch 'master' into dev [32m(3 weeks ago)[m 
+
+[33m0f4ff6c[m [31m(Benjamin Holder)[m  Added JSON files scraped from Marvel. [32m(3 weeks ago)[m 
+
+[33m4d7793a[m [31m(Benjamin Holder)[m  Tweaked marvelpy. [32m(3 weeks ago)[m 
+
+[33m1332828[m [31m(Benjamin Holder)[m  Implemented iterator. [32m(3 weeks ago)[m 
+
+[33m01a857a[m [31m(leslierice)[m  moved models and tests back to app folder [32m(3 weeks ago)[m 
+
+[33m8f094e8[m [31m(leslierice)[m  changing models to work with db [32m(3 weeks ago)[m 
+
+[33m4631404[m [31m(leslierice)[m  adding create_db function and logging [32m(3 weeks ago)[m 
+
+[33mf5eb920[m [31m(Benjamin Holder)[m  Added key validation assertions. [32m(3 weeks ago)[m 
+
+[33m59d47e8[m [31m(Benjamin Holder)[m  Added support for Session objects. [32m(3 weeks ago)[m 
+
+[33m5feaeb2[m [31m(nickroberts404)[m  Active nav link remains red when selected [32m(3 weeks ago)[m 
+
+[33m02630cd[m [31m(nickroberts404)[m  Fixed sorting / added style to sorted-by table header [32m(3 weeks ago)[m 
+
+[33m0c987d3[m [31m(leslierice)[m  update splash page [32m(3 weeks ago)[m 
+
+[33m8f6adb3[m [31m(Benjamin Holder)[m  Updated marvelpy to allow user submitted timestamp. [32m(3 weeks ago)[m 
+
+[33m6093044[m [31m(Benjamin Holder)[m  Created a Python library to access Marvel API. [32m(4 weeks ago)[m 
+
+[33m8b99edf[m [31m(nickroberts404)[m  Now using gulp for build and babel for transpiling [32m(4 weeks ago)[m 
+
+[33meb2d0a2[m [31m(Nathan Hotz)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(4 weeks ago)[m 
+
+[33m38748c8[m [31m(Nathan Hotz)[m  Added last bits to About page [32m(4 weeks ago)[m 
+
+[33mca34522[m [31m(Benjamin Holder)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(4 weeks ago)[m 
+
+[33mca4c4c1[m [31m(Benjamin Holder)[m  log and models [32m(4 weeks ago)[m 
+
+[33m84307b3[m [31m(Nathan Hotz)[m  Finished About page [32m(4 weeks ago)[m 
+
+[33mff2cc44[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(4 weeks ago)[m 
+
+[33mac97079[m [31m(nickroberts404)[m  fixed max-width issue [32m(4 weeks ago)[m 
+
+[33m70314c5[m [31m(leslierice)[m  fonts [32m(4 weeks ago)[m 
+
+[33m713aaf0[m [31m(leslierice)[m  fonts [32m(4 weeks ago)[m 
+
+[33m15e75e0[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(4 weeks ago)[m 
+
+[33mb46b620[m [31m(nickroberts404)[m  Added error pages [32m(4 weeks ago)[m 
+
+[33mfc15788[m [31m(Benjamin Holder)[m  Added commits and issues. [32m(4 weeks ago)[m 
+
+[33m09ae833[m [31m(Danny Chen)[m  Updated responsibilities on about page. :beers: [32m(4 weeks ago)[m 
+
+[33mc2c9e6c[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(4 weeks ago)[m 
+
+[33m50b67ef[m [31m(nickroberts404)[m  Implemented Creator page [32m(4 weeks ago)[m 
+
+[33m86a5e11[m [31m(Nathan Hotz)[m  Fixed mockdata.json to use the correct character thumbnails [32m(4 weeks ago)[m 
+
+[33m37a80f8[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(4 weeks ago)[m 
+
+[33m7b96bcf[m [31m(nickroberts404)[m  Implemented comic page [32m(4 weeks ago)[m 
+
+[33md6e4553[m [31m(Nathan Hotz)[m  Added mockdataCreators.json, a file to contain data about Creators. [32m(4 weeks ago)[m 
+
+[33m0393623[m [31m(leslierice)[m  cursor pointer for table sorting [32m(4 weeks ago)[m 
+
+[33mbc6155e[m [31m(leslierice)[m  fix overwritten css [32m(4 weeks ago)[m 
+
+[33mf3c9e75[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(4 weeks ago)[m 
+
+[33ma6cc32d[m [31m(nickroberts404)[m  Added comic data [32m(4 weeks ago)[m 
+
+[33m65ce07c[m [31m(Benjamin Holder)[m  Added Ben's responsibilities. [32m(4 weeks ago)[m 
+
+[33m50d40c3[m [31m(leslierice)[m  resolving merge conflict [32m(4 weeks ago)[m 
+
+[33m4653a47[m [31m(leslierice)[m  updated css [32m(4 weeks ago)[m 
+
+[33mc7779c3[m [31m(Nathan Hotz)[m  Added Ben's bio info [32m(4 weeks ago)[m 
+
+[33ma0136c7[m [31m(Nathan Hotz)[m  Added Danny's bio info [32m(4 weeks ago)[m 
+
+[33m786fd89[m [31m(SrsBusiness)[m  Transferring API Description file from Apiary.io. Added additional attributes. :beers: [32m(4 weeks ago)[m 
+
+[33mf7784f9[m [31m(leslierice)[m  adding more attributes to models [32m(4 weeks ago)[m 
+
+[33me2095f8[m [31m(Benjamin Holder)[m  Updated yUML. [32m(4 weeks ago)[m 
+
+[33mefbe5b4[m [31m(SrsBusiness)[m  Transferring API Description file from Apiary.io :beers: [32m(4 weeks ago)[m 
+
+[33mda7c710[m [31m(nickroberts404)[m  Updated mock data and templates meta [32m(4 weeks ago)[m 
+
+[33mf10f729[m [31m(nickroberts404)[m  Added meta for mobile viewing [32m(4 weeks ago)[m 
+
+[33m0edd0b8[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(4 weeks ago)[m 
+
+[33mc9a711a[m [31m(nickroberts404)[m  Added a bit of hover style for table row [32m(4 weeks ago)[m 
+
+[33m5e4893e[m [31m(Benjamin Holder)[m  Updated makefile and .travis.yml. [32m(4 weeks ago)[m 
+
+[33m8e23c91[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(4 weeks ago)[m 
+
+[33m92ff307[m [31m(nickroberts404)[m  Created dynamic comic list in character view [32m(4 weeks ago)[m 
+
+[33md36eb5f[m [31m(Nathan Hotz)[m  Added photos for everyone. [32m(4 weeks ago)[m 
+
+[33mde1d78e[m [31m(leslierice)[m  updated unit tests to include adding [32m(4 weeks ago)[m 
+
+[33mfd7a6f9[m [31m(nickroberts404)[m  Formatted character data and working on character page. Have image, title, and description appearing [32m(4 weeks ago)[m 
+
+[33mfe41bd4[m [31m(Nathan Hotz)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(4 weeks ago)[m 
+
+[33m8e06ad6[m [31m(Nathan Hotz)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(4 weeks ago)[m 
+
+[33ma081e0f[m [31m(Nathan Hotz)[m  Re-introduced horizontal scrolling due to lack of row headers when columns are converted to row format. [32m(4 weeks ago)[m 
+
+[33me925e83[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(4 weeks ago)[m 
+
+[33m146dbab[m [31m(nickroberts404)[m  Added hack to table to display image, will fix later [32m(4 weeks ago)[m 
+
+[33m7873d71[m [31m(Benjamin Holder)[m  Merge branch 'dev' [32m(4 weeks ago)[m 
+
+[33mc4509e8[m [31m(Benjamin Holder)[m  Updated yUML [32m(4 weeks ago)[m 
+
+[33me152b82[m [31m(Nathan Hotz)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(4 weeks ago)[m 
+
+[33m6354d38[m [31m(Nathan Hotz)[m  Updated styles.css to reformat tables if screen is too small, to avoid horizontal scrolling. Fixes #17 [32m(4 weeks ago)[m 
+
+[33m212c8ae[m [31m(nickroberts404)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(4 weeks ago)[m 
+
+[33m8c6efab[m [31m(nickroberts404)[m  Updated mock data [32m(4 weeks ago)[m 
+
+[33m68ee19b[m [31m(Nathan Hotz)[m  Reformatted about.html; fixes broken About link. Fixes #16 [32m(4 weeks ago)[m 
+
+[33me0253e7[m [31m(leslierice)[m  splash image mobile [32m(4 weeks ago)[m 
+
+[33m6da8d4d[m [31m(nickroberts404)[m  Added closing tag for splash image [32m(4 weeks ago)[m 
+
+[33mbb5029e[m [31m(Benjamin Holder)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(4 weeks ago)[m 
+
+[33me8e3b6d[m [31m(Benjamin Holder)[m  Updated models.py to SQLAlchemy 1.1 form. [32m(4 weeks ago)[m 
+
+[33mb1a63fe[m [31m(leslierice)[m  adding updated query unit tests [32m(4 weeks ago)[m 
+
+[33m9123a6b[m [31m(leslierice)[m  fix route home button from some pages [32m(4 weeks ago)[m 
+
+[33mee0dd93[m [31m(leslierice)[m  add some CSS [32m(4 weeks ago)[m 
+
+[33m686e8e1[m [31m(Danny Chen)[m  scraper.sh now prints the url it generates [32m(4 weeks ago)[m 
+
+[33md1c8773[m [31m(leslierice)[m  add sample splash page but feel free to change [32m(4 weeks ago)[m 
+
+[33ma4e4920[m [31m(Danny Chen)[m  Params now optional for scrape.sh [32m(4 weeks ago)[m 
+
+[33m656a7a4[m [31m(Danny Chen)[m  Update script to handle additional parameters [32m(4 weeks ago)[m 
+
+[33m7a9de77[m [31m(Danny Chen)[m  Updated scraper. :coffee: [32m(4 weeks ago)[m 
+
+[33m9b74989[m [31m(Benjamin Holder)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(4 weeks ago)[m 
+
+[33m2f9e7ba[m [31m(Benjamin Holder)[m  Updated .gitignore. [32m(4 weeks ago)[m 
+
+[33m5733bb8[m [31m(leslierice)[m  fix nav links on about page [32m(4 weeks ago)[m 
+
+[33m3f2e0b0[m [31m(Benjamin Holder)[m  Merge branch 'dev' [32m(4 weeks ago)[m 
+
+[33m9faf0cd[m [31m(Benjamin Holder)[m  Moved tests.py to top level. [32m(4 weeks ago)[m 
+
+[33m961c55f[m [31m(Benjamin Holder)[m  Updated tests.py import path. [32m(4 weeks ago)[m 
+
+[33m8aada8c[m [31m(leslierice)[m  include styles.css in about page [32m(4 weeks ago)[m 
+
+[33md26ffda[m [31m(Benjamin Holder)[m  Moved models.py to top level. [32m(4 weeks ago)[m 
+
+[33mb629f72[m [31m(leslierice)[m  adding some changes to about page, filling in some data [32m(4 weeks ago)[m 
+
+[33m91a5d30[m [31m(nickroberts404)[m  Working on table sorting, kinda funky right now [32m(4 weeks ago)[m 
+
+[33m61d991c[m [31m(nickroberts404)[m  Rows in model tables are linked to appropriate detail pages through id [32m(4 weeks ago)[m 
+
+[33m14e3a3c[m [31m(nickroberts404)[m  Extracted mock data from tablepage.js [32m(4 weeks ago)[m 
+
+[33mbde87eb[m [31m(nickroberts404)[m  Setting up routes for detail pages [32m(4 weeks ago)[m 
+
+[33m5fbbb9b[m [31m(nickroberts404)[m  Updated photo and bio in about page [32m(4 weeks ago)[m 
+
+[33mfda4ca9[m [31m(leslierice)[m  adding bio photo [32m(4 weeks ago)[m 
+
+[33mcd57fbc[m [31m(Nathan Hotz)[m  Updated about.html; now contains filler for all content. [32m(4 weeks ago)[m 
+
+[33m442b211[m [31m(nickroberts404)[m  fixed conflict in app.py [32m(4 weeks ago)[m 
+
+[33m91b7a8a[m [31m(nickroberts404)[m  experimenting with url params [32m(4 weeks ago)[m 
+
+[33mb5fb546[m [31m(leslierice)[m  route about page [32m(4 weeks ago)[m 
+
+[33m2dc4a90[m [31m(Nathan Hotz)[m  Added about.html file with members table. [32m(4 weeks ago)[m 
+
+[33mffb1847[m [31m(nickroberts404)[m  Added dummy splash page for routes link styling for active page [32m(4 weeks ago)[m 
+
+[33m1eb6a16[m [31m(nickroberts404)[m  Model links in navbar are live [32m(4 weeks ago)[m 
+
+[33m537d8a7[m [31m(nickroberts404)[m  Added mock routes and implemented a catch-all in our flask app to facilitate react routes [32m(4 weeks ago)[m 
+
+[33mf0355a5[m [31m(Benjamin Holder)[m  Merge branch 'dev' [32m(4 weeks ago)[m 
+
+[33m5854d68[m [31m(Benjamin Holder)[m  Added base .travis.yml. [32m(4 weeks ago)[m 
+
+[33mdddda26[m [31m(Danny Chen)[m  Added basic script to scrape Marvel's API. :beers: [32m(4 weeks ago)[m 
+
+[33mc580821[m [31m(nickroberts404)[m  Implemented react-router [32m(4 weeks ago)[m 
+
+[33mf14e16e[m [31m(leslierice)[m  adding skeleton tests.py [32m(4 weeks ago)[m 
+
+[33m62c607c[m [31m(Benjamin Holder)[m  Merge branch 'master' of https://github.com/nickroberts404/cs373-idb [32m(4 weeks ago)[m 
+
+[33me941a13[m [31m(Benjamin Holder)[m  Added base makefile. [32m(4 weeks ago)[m 
+
+[33m619b058[m [31m(nickroberts404)[m  Began building table pages [32m(4 weeks ago)[m 
+
+[33m0da13ea[m [31m(nickroberts404)[m  Began working on table pages [32m(4 weeks ago)[m 
+
+[33m1280821[m [31m(leslierice)[m  create many to many relationships [32m(4 weeks ago)[m 
+
+[33m30873a6[m [31m(leslierice)[m  adding initial models.py and modified docker.yml [32m(4 weeks ago)[m 
+
+[33m6f583a8[m [31m(Nick Roberts)[m  Transferring API Description file from Apiary.io [32m(4 weeks ago)[m 
+
+[33med57ec2[m [31m(Benjamin Holder)[m  Added UML.pdf [32m(4 weeks ago)[m 
+
+[33m9d683e0[m [31m(Benjamin Holder)[m  Added yUML source file. [32m(4 weeks ago)[m 
+
+[33m02129f1[m [31m(nickroberts404)[m  Created static directory and began fleshing out build system for client side js [32m(4 weeks ago)[m 
+
+[33m340c3d2[m [31m(nickroberts404)[m  Added placeholder endpoints to flask app [32m(4 weeks ago)[m 
+
+[33m0dd58ef[m [31m(leslierice)[m  moving client folder [32m(4 weeks ago)[m 
+
+[33mc16b95d[m [31m(leslierice)[m  docker [32m(4 weeks ago)[m 
+
+[33mb4b2a75[m [31m(nickroberts404)[m  Created nav bar [32m(4 weeks ago)[m 
+
+[33ma8ccf41[m [31m(nickroberts404)[m  Updated readme [32m(4 weeks ago)[m 
+
+[33m734d0dc[m [31m(nickroberts404)[m  Updated readme [32m(4 weeks ago)[m 
+
+[33m4a3bbd2[m [31m(nickroberts404)[m  Updated readme [32m(4 weeks ago)[m 
+
+[33mf40ef2a[m [31m(nickroberts404)[m  Initialized client [32m(4 weeks ago)[m 
+
+[33m55cd3e7[m [31m(Nick Roberts)[m  Initial commit [32m(4 weeks ago)[m 

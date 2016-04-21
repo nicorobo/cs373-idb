@@ -1,6 +1,9 @@
 IDB2.log:
 	git log > IDB2.log
 
+IDB3.log:
+	git log > IDB3.log
+
 log:
 	git log > IDB2.log
 
