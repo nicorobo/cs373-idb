@@ -485,3 +485,181 @@ Our source can be found here: https://github.com/nickroberts404/cs373-idb
                 "creator"
               ]
             }
+            
+## Search [/search/{search_terms}]
+
++ Parameters
+
+    + search_terms (string) - search terms delimited by spaces
+    
+### Search [GET]
+
++ Response 200 (application/json)
+    
+    + Schema
+    
+            {
+                "definitions": {
+                    "character": {
+                        "type": "object",
+                        "properties": {
+                            "description": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "number"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "number_of_comics": {
+                                "type": "number"
+                            },
+                            "number_of_series": {
+                                "type": "number"
+                            },
+                            "number_of_stories": {
+                                "type": "number"
+                            },
+                            "thumbnail": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "description",
+                            "id",
+                            "name",
+                            "number_of_comics",
+                            "number_of_series",
+                            "number_of_stories",
+                            "thumbnail"
+                        ]
+                    },
+                    "comic": {
+                        "type": "object",
+                        "properties": {
+                            "description": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "number"
+                            },
+                            "issue_num": {
+                                "type": "number"
+                            },
+                            "number_of_characters": {
+                                "type": "number"
+                            },
+                            "number_of_creators": {
+                                "type": "number"
+                            },
+                            "number_of_stories": {
+                                "type": "number"
+                            },
+                            "page_count": {
+                                "type": "number"
+                            },
+                            "thumbnail": {
+                                "type": "string"
+                            },
+                            "title": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "description",
+                            "id",
+                            "issue_num",
+                            "number_of_characters",
+                            "number_of_creators",
+                            "number_of_stories",
+                            "page_count",
+                            "thumbnail",
+                            "title"
+                        ]
+                    },
+                    "creator": {
+                        "type": "object",
+                        "properties": {
+                            "first_name": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "number"
+                            },
+                            "last_name": {
+                                "type": "string"
+                            },
+                            "number_of_comics": {
+                                "type": "number"
+                            },
+                            "number_of_series": {
+                                "type": "number"
+                            },
+                            "number_of_stories": {
+                                "type": "number"
+                            },
+                            "thumbnail": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "first_name",
+                            "id",
+                            "last_name",
+                            "number_of_comics",
+                            "number_of_series",
+                            "number_of_stories",
+                            "thumbnail"
+                        ]
+                    }
+                },
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                    "characters_and": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/character"
+                        }
+                    },
+                    "characters_or": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/character"
+                        }
+                    },
+                    "comics_and": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/comic"
+                        }
+                    },
+                    "comics_or": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/comic"
+                        }
+                    },
+                    "creators_and": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/creator"
+                        }
+                    },
+                    "creators_or": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/creator"
+                        }
+                    }
+                },
+                "required": [
+                    "chracters_and",
+                    "characters_or",
+                    "comics_and",
+                    "comics_or",
+                    "creators_and",
+                    "creators_or"
+                ] 
+            }
