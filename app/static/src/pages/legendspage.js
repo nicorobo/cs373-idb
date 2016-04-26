@@ -3,6 +3,7 @@
 var React = require('react');
 var NavBar = require('../partials/navbar.js');
 var legends = require('../legends.js');
+var d3 = require('d3');
 var data;
 
 class LegendsPage extends React.Component {
@@ -13,10 +14,10 @@ class LegendsPage extends React.Component {
 	}
 
 	componentDidMount() {
-		legends.getChampion(1, (err, data) => {
-			if (err) console.err("[LegendsPage:componentDidMount] There's been an error retrieving data!");
-			else this.setState({data: data});
-		})
+		// legends.getChampion(1, (err, data) => {
+		// 	if (err) console.err("[LegendsPage:componentDidMount] There's been an error retrieving data!");
+		// 	else this.setState({data: data});
+		// })
 	}
 
 	render() {

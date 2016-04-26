@@ -12,6 +12,7 @@
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-router": "^2.0.1",
+    "d3": "^3.5.16",
     "request": "^2.70.0"
   },
   "devDependencies": {
