@@ -16,8 +16,20 @@ gulp.task('scripts', ()=> {
 		.pipe(gulp.dest('./dist'))
 });
 
+gulp.task('legend-script', ()=> {
+	return browserify('./src/legend/main.js')
+		.on('error', handle_error)
+		.transform(babel, {presets: ["es2015"]}) 
+		.bundle()
+		.on('error', handle_error)
+		.pipe(source('app-legend.js'))
+		.on('error', handle_error)
+		.pipe(gulp.dest('./dist'))
+});
+
 gulp.task('watch', ()=> {
 	gulp.watch('./src/**/*.js', ['scripts']);
+	gulp.watch('./src/legend/**/*.js', ['legend-script']);
 })
 
 function handle_error(err){
@@ -25,4 +37,4 @@ function handle_error(err){
 	this.emit('end');
 }
 
-gulp.task('default', ['scripts', 'watch']);
+gulp.task('default', ['scripts', 'legend-script', 'watch']);

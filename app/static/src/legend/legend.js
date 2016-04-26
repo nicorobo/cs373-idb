@@ -13,7 +13,6 @@ function getChampions(cb){
 // Retrieve the champion with the given ID
 function getChampion(id, cb){
 	request(API+'champion/'+id, (error, response, body) => {
-		mode: 'no-cors';
 		cb(error, JSON.parse(body));
 	})
 }
