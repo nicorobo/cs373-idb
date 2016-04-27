@@ -6,7 +6,11 @@ HOST: http://sweague.me/api
 Sweague is a simple API allowing consumers to view information on Marvel Comics.
 Our source can be found here: https://github.com/nickroberts404/cs373-idb
 
-## Comics Collection [/comics]
+## Comics Collection [/comics{?offset}{?limit}]
+
++ Parameters
+    + offset (number) - Integer offset
+    + limit (number) - Integer limit
 
 ### List All Comics [GET]
 
@@ -79,7 +83,11 @@ Our source can be found here: https://github.com/nickroberts404/cs373-idb
               ]
             }
     
-## Characters Collection [/characters]
+## Characters Collection [/characters{?offset}{?limit}]
+
++ Parameters
+    + offset (number) - Integer offset
+    + limit (number) - Integer limit
 
 ### List All Characters [GET]
 
@@ -144,7 +152,11 @@ Our source can be found here: https://github.com/nickroberts404/cs373-idb
               ]
             }
 
-## Creators Collection [/creators]
+## Creators Collection [/creators{?offset}{?limit}]
+
++ Parameters
+    + offset (number) - Integer offset
+    + limit (number) - Integer limit
 
 ### List All Creators [GET]
 
