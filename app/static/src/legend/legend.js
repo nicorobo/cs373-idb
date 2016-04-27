@@ -18,15 +18,15 @@ function getChampion(id, cb){
 }
 
 //Retrieve players
-function getPlayers(cb){
-	request(`${API}players`, (error, response, body) => {
+function getSummoners(cb){
+	request(`${API}summoners`, (error, response, body) => {
 		cb(error, JSON.parse(body));
 	})
 }
 
 // Retrieve the player with the given ID
-function getPlayer(id, cb){
-	request(API+'player/'+id, (error, response, body) => {
+function getSummoner(id, cb){
+	request(API+'summoner/'+id, (error, response, body) => {
 		cb(error, JSON.parse(body));
 	})
 }
@@ -48,8 +48,8 @@ function getTeam(id, cb){
 module.exports = {
 	getChampion: getChampion,
 	getChampions: getChampions,
-	getPlayer: getPlayer,
-	getPlayers: getPlayers,
+	getSummoner: getSummoner,
+	getSummoners: getSummoners,
 	getTeam: getTeam,
 	getTeams: getTeams
 }
