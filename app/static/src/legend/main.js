@@ -15,9 +15,9 @@ legend.getSummoners(plotData);
 
 function plotData(err, data) {
 	data = data.summoners;
-	var xExtent = d3.extent(data, function(d){ return d.total_games });
-	var yExtent = d3.extent(data, function(d){ return d.win_percentage });
-	var radiusExtent = d3.extent(data, function(d){ return d.lp });
+	var xExtent = d3.extent(data, d => d.total_games);
+	var yExtent = d3.extent(data, d => d.win_percentage);
+	var radiusExtent = d3.extent(data, d => d.lp);
 	var xScale = d3.scale.linear().domain(xExtent).range([0, width]);
 	var yScale = d3.scale.linear().domain(yExtent).range([0, height]);
 	var radiusScale = d3.scale.linear().domain(radiusExtent).range([2, 10]);
@@ -26,7 +26,9 @@ function plotData(err, data) {
 		.enter()
 		.append('circle')
 		.attr('class', 'point')
-		.attr('r', function(d){ return radiusScale(d.lp)})
-		.attr('cx', function(d){ return xScale(d.total_games) })
-		.attr('cy', function(d){ return yScale(d.win_percentage) })
+		.attr('r', d => radiusScale(d.lp))
+		.attr('cx', d => xScale(d.total_games))
+		.attr('cy', d => yScale(d.win_percentage))
+		.on('mouseover', d => console.log('Mousing over', d))
+		.on('mouseleave', d=> console.log('Mouse leaving', d))
 }

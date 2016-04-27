@@ -28,7 +28,7 @@ gulp.task('legend-script', ()=> {
 });
 
 gulp.task('watch', ()=> {
-	gulp.watch('./src/**/*.js', ['scripts']);
+	gulp.watch('./src/!(legend)/**/*.js', ['scripts']);
 	gulp.watch('./src/legend/**/*.js', ['legend-script']);
 })
 

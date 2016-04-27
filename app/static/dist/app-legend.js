@@ -69461,6 +69461,10 @@ function plotData(err, data) {
 		return xScale(d.total_games);
 	}).attr('cy', function (d) {
 		return yScale(d.win_percentage);
+	}).on('mouseover', function (d) {
+		return console.log('Mousing over', d);
+	}).on('mouseleave', function (d) {
+		return console.log('Mouse leaving', d);
 	});
 }
 
