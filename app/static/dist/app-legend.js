@@ -69657,12 +69657,18 @@ function plotData(err, data) {
 	var yExtent = d3.extent(data, function (d) {
 		return d.win_percentage;
 	});
+	console.log(xExtent);
 	var radiusExtent = d3.extent(data, function (d) {
 		return d.lp;
 	});
 	var xScale = d3.scale.linear().domain(xExtent).range([0, width]);
-	var yScale = d3.scale.linear().domain(yExtent).range([0, height]);
+	var yScale = d3.scale.linear().domain(yExtent).range([height, 0]);
 	var radiusScale = d3.scale.linear().domain(radiusExtent).range([2, 10]);
+
+	var xAxis = d3.svg.axis().scale(xScale).ticks(5).orient('bottom');
+	var yAxis = d3.svg.axis().scale(yScale).ticks(5).orient('left');
+
+	// Render points
 	g.selectAll('.point').data(data).enter().append('circle').attr('class', 'point').attr('id', function (d) {
 		return 'point-' + d.id;
 	}).attr('r', function (d) {
@@ -69678,6 +69684,14 @@ function plotData(err, data) {
 		d3.selectAll('.point').classed('point-dim', false);
 		d3.select('#point-' + d.id).classed('point-spotlight', false);
 	});
+
+	// Render axis
+	svg.append('g').attr('id', 'x-axis').call(xAxis);
+	svg.append('g').attr('id', 'y-axis').call(yAxis);
+	d3.select('#x-axis').attr('transform', 'translate(' + 50 + ',' + 450 + ')');
+	// .selectAll('text').attr('x', '50')
+	d3.select('#y-axis').attr('transform', 'translate(' + 50 + ',' + 50 + ')');
+	// .selectAll('text').attr('x', '50')
 }
 
 },{"./legend.js":286,"d3":71,"store":259}]},{},[287]);

@@ -3,7 +3,7 @@
 }
 
 svg {
-	border: 1px solid #eee;
+	/*border: 1px solid #eee;*/
 }
 
 .point {
@@ -17,3 +17,16 @@ svg {
 .point-dim {
 	opacity: 0.2;
 }
+
+g.tick line {
+	shape-rendering: crispEdges;
+	stroke: #aaa;
+}
+g.tick text {
+	font-family: 'Arial';
+	fill: #aaa;
+}
+path.domain {
+	fill: none;
+	stroke: #aaa;
+} 

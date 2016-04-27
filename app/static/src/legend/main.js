@@ -31,10 +31,16 @@ function plotData(err, data) {
 	data = data.summoners || data;
 	var xExtent = d3.extent(data, d => d.total_games);
 	var yExtent = d3.extent(data, d => d.win_percentage);
+	console.log(xExtent);
 	var radiusExtent = d3.extent(data, d => d.lp);
 	var xScale = d3.scale.linear().domain(xExtent).range([0, width]);
-	var yScale = d3.scale.linear().domain(yExtent).range([0, height]);
+	var yScale = d3.scale.linear().domain(yExtent).range([height, 0]);
 	var radiusScale = d3.scale.linear().domain(radiusExtent).range([2, 10]);
+
+	var xAxis = d3.svg.axis().scale(xScale).ticks(5).orient('bottom');
+	var yAxis = d3.svg.axis().scale(yScale).ticks(5).orient('left');
+
+	// Render points
 	g.selectAll('.point')
 		.data(data)
 		.enter()
@@ -52,4 +58,15 @@ function plotData(err, data) {
 			d3.selectAll('.point').classed('point-dim', false);
 			d3.select('#point-'+d.id).classed('point-spotlight', false);
 		})
+
+	// Render axis
+	svg.append('g').attr('id', 'x-axis').call(xAxis);
+	svg.append('g').attr('id', 'y-axis').call(yAxis);
+	d3.select('#x-axis')
+		.attr('transform', 'translate(' + 50 + ',' + 450 + ')')
+		// .selectAll('text').attr('x', '50')
+	d3.select('#y-axis')
+		.attr('transform', 'translate(' + 50 + ',' + 50 + ')')
+		// .selectAll('text').attr('x', '50')
+
 }
