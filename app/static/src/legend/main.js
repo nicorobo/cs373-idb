@@ -1,5 +1,7 @@
 var legend = require('./legend.js');
 var d3 = require('d3');
+var store = require('store');
+
 
 // Setup our visualization
 var margin = {top: 50, right: 50, bottom: 50, left: 50};
@@ -11,10 +13,22 @@ var svg = d3.select('.legends-page').append('svg')
 var g = svg.append('g')
 	.attr('transform', 'translate('+margin.left+','+margin.top+')');
 
-legend.getSummoners(plotData);
+// Cacheing data so it doesn't take so long to load
+if(!store.enabled) {
+	legend.getSummoners(plotData);
+} else {
+	if(store.get('legendData')) {
+		plotData(null, store.get('legendData'));
+	} else {
+		legend.getSummoners((err, data) => {
+			store.set('legendData', data);
+			plotData(err, data);
+		})
+	}
+}
 
 function plotData(err, data) {
-	data = data.summoners;
+	data = data.summoners || data;
 	var xExtent = d3.extent(data, d => d.total_games);
 	var yExtent = d3.extent(data, d => d.win_percentage);
 	var radiusExtent = d3.extent(data, d => d.lp);
@@ -26,9 +40,16 @@ function plotData(err, data) {
 		.enter()
 		.append('circle')
 		.attr('class', 'point')
+		.attr('id', d => 'point-'+d.id)
 		.attr('r', d => radiusScale(d.lp))
 		.attr('cx', d => xScale(d.total_games))
 		.attr('cy', d => yScale(d.win_percentage))
-		.on('mouseover', d => console.log('Mousing over', d))
-		.on('mouseleave', d=> console.log('Mouse leaving', d))
+		.on('mouseover', d => {
+			d3.selectAll('.point').classed('point-dim', true);
+			d3.select('#point-'+d.id).classed('point-dim', false).classed('point-spotlight', true);
+		})
+		.on('mouseleave', d => {
+			d3.selectAll('.point').classed('point-dim', false);
+			d3.select('#point-'+d.id).classed('point-spotlight', false);
+		})
 }
