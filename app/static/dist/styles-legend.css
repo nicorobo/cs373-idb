@@ -5,3 +5,8 @@
 svg {
 	border: 1px solid #eee;
 }
+
+.point {
+	fill: steelblue;
+	opacity: 0.5;
+}

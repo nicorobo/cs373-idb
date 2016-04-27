@@ -69449,15 +69449,19 @@ function plotData(err, data) {
 	var yExtent = d3.extent(data, function (d) {
 		return d.win_percentage;
 	});
+	var radiusExtent = d3.extent(data, function (d) {
+		return d.lp;
+	});
 	var xScale = d3.scale.linear().domain(xExtent).range([0, width]);
 	var yScale = d3.scale.linear().domain(yExtent).range([0, height]);
-	console.log("Setup scales!");
-	g.selectAll('.points').data(data).enter().append('circle').attr('class', 'points').attr('r', 3).style('fill', 'steelblue').attr('cx', function (d) {
-		console.log(d);return xScale(d.total_games);
+	var radiusScale = d3.scale.linear().domain(radiusExtent).range([2, 10]);
+	g.selectAll('.point').data(data).enter().append('circle').attr('class', 'point').attr('r', function (d) {
+		return radiusScale(d.lp);
+	}).attr('cx', function (d) {
+		return xScale(d.total_games);
 	}).attr('cy', function (d) {
 		return yScale(d.win_percentage);
 	});
-	console.log("Setup dots!");
 }
 
 },{"./legend.js":285,"d3":71}]},{},[286]);
