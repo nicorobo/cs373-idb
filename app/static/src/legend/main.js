@@ -68,6 +68,9 @@ function plotData(err, data) {
 			d3.selectAll('.point').classed('point-dim', false);
 			d3.select('#point-'+d.id).classed('point-spotlight', false);
 		})
+		.on('click', d => {
+			window.open('http://www.dudecarry.me/summoner/'+d.id, '_blank');
+		})
 
 	// Render axis
 	svg.append('g').attr('id', 'x-axis').call(xAxis);

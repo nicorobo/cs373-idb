@@ -69686,6 +69686,8 @@ function plotData(err, data) {
 		resetInfoValues();
 		d3.selectAll('.point').classed('point-dim', false);
 		d3.select('#point-' + d.id).classed('point-spotlight', false);
+	}).on('click', function (d) {
+		window.open('http://www.dudecarry.me/summoner/' + d.id, '_blank');
 	});
 
 	// Render axis
