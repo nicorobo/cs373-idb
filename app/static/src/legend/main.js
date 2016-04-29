@@ -79,7 +79,7 @@ function plotData(err, data) {
 		.attr('transform', 'translate(' + 50 + ',' + 50 + ')')
 
 	// Render Info Box
-	renderInfoBox(svg, 300, 100, 20);
+	renderInfoBox(svg, 300, 75, 20);
 
 	function renderInfoBox(svg, x, y, spread) {
 		var info = svg.append('g')
