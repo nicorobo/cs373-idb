@@ -69654,19 +69654,17 @@ function plotData(err, data) {
 	var xExtent = d3.extent(data, function (d) {
 		return d.total_games;
 	});
-	var yExtent = d3.extent(data, function (d) {
-		return d.win_percentage;
-	});
-	console.log(xExtent);
 	var radiusExtent = d3.extent(data, function (d) {
 		return d.lp;
 	});
 	var xScale = d3.scale.linear().domain(xExtent).range([0, width]);
-	var yScale = d3.scale.linear().domain(yExtent).range([height, 0]);
-	var radiusScale = d3.scale.linear().domain(radiusExtent).range([2, 10]);
+	var yScale = d3.scale.linear().domain([0, 1]).range([height, 0]);
+	var radiusScale = d3.scale.linear().domain(radiusExtent).range([3, 10]);
 
 	var xAxis = d3.svg.axis().scale(xScale).ticks(5).orient('bottom');
-	var yAxis = d3.svg.axis().scale(yScale).ticks(5).orient('left');
+	var yAxis = d3.svg.axis().scale(yScale).ticks(10).tickFormat(function (d) {
+		return d * 100 + '%';
+	}).orient('left');
 
 	// Render points
 	g.selectAll('.point').data(data).enter().append('circle').attr('class', 'point').attr('id', function (d) {
@@ -69678,6 +69676,7 @@ function plotData(err, data) {
 	}).attr('cy', function (d) {
 		return yScale(d.win_percentage);
 	}).on('mouseover', function (d) {
+		console.log(d);
 		d3.selectAll('.point').classed('point-dim', true);
 		d3.select('#point-' + d.id).classed('point-dim', false).classed('point-spotlight', true);
 	}).on('mouseleave', function (d) {
@@ -69692,6 +69691,29 @@ function plotData(err, data) {
 	// .selectAll('text').attr('x', '50')
 	d3.select('#y-axis').attr('transform', 'translate(' + 50 + ',' + 50 + ')');
 	// .selectAll('text').attr('x', '50')
+
+	renderInfoBox(svg, 300, 100, 20);
+
+	function renderInfoBox(svg, x, y, spread) {
+		var info = svg.append('g').attr('transform', 'translate(' + x + ',' + y + ')');
+		var textIds = ['summoner-name', 'summoner-lp', 'summoner-played', 'summoner-percent'];
+		for (var i in textIds) {
+			console.log('AHH');
+			renderText(info, 0, i * spread, textIds[i], 'summoner-attr');
+		}
+		resetInfoBox();
+	}
+
+	function renderText(svg, x, y, id, className) {
+		svg.append('text').attr('class', className).attr('id', id).attr('x', x).attr('y', y);
+	}
+
+	function resetInfoBox() {
+		d3.select('#summoner-name').text('Name: ');
+		d3.select('#summoner-lp').text('League Points: ');
+		d3.select('#summoner-played').text('Games Played: ');
+		d3.select('#summoner-percent').text('Win Percentage: ');
+	}
 }
 
 },{"./legend.js":286,"d3":71,"store":259}]},{},[287]);

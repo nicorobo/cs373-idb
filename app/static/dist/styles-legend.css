@@ -23,10 +23,18 @@ g.tick line {
 	stroke: #aaa;
 }
 g.tick text {
-	font-family: 'Arial';
+	font-family: 'Lato';
+	font-weight: lighter;
 	fill: #aaa;
 }
 path.domain {
 	fill: none;
 	stroke: #aaa;
-} 
+}
+
+.summoner-attr {
+	font-family: 'Lato';
+	letter-spacing: 0.1em;
+	font-size: 0.8em;
+	fill: #aaa;
+}
