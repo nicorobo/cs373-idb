@@ -69629,7 +69629,7 @@ var d3 = require('d3');
 var store = require('store');
 
 // Setup our visualization
-var margin = { top: 50, right: 50, bottom: 50, left: 50 };
+var margin = { top: 50, right: 50, bottom: 60, left: 60 };
 var height = 500 - margin.top - margin.bottom;
 var width = 500 - margin.left - margin.right;
 var svg = d3.select('.legends-page').append('svg').attr('height', height + margin.top + margin.bottom).attr('width', width + margin.left + margin.right);
@@ -69694,8 +69694,11 @@ function plotData(err, data) {
 	svg.append('g').attr('id', 'x-axis').call(xAxis);
 	svg.append('g').attr('id', 'y-axis').call(yAxis);
 
-	d3.select('#x-axis').attr('transform', 'translate(' + 50 + ',' + 450 + ')');
-	d3.select('#y-axis').attr('transform', 'translate(' + 50 + ',' + 50 + ')');
+	svg.append('g').attr('transform', 'translate(' + 15 + ',' + 250 + ')').append('text').attr('class', 'axis-label').text('% Of Wins').attr('transform', 'rotate(-90)');
+	svg.append('g').attr('transform', 'translate(' + 250 + ',' + 475 + ')').append('text').attr('class', 'axis-label').text('Total Games Played');
+
+	d3.select('#x-axis').attr('transform', 'translate(' + 60 + ',' + 440 + ')');
+	d3.select('#y-axis').attr('transform', 'translate(' + 60 + ',' + 50 + ')');
 
 	// Render Info Box
 	renderInfoBox(svg, 300, 75, 20);

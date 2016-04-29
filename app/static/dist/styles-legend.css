@@ -8,7 +8,7 @@ svg {
 
 .point {
 	fill: steelblue;
-	opacity: 0.5;
+	opacity: 0.4;
 	cursor: pointer;
 	transition: 0.1s all;
 }
@@ -32,6 +32,14 @@ g.tick text {
 path.domain {
 	fill: none;
 	stroke: #aaa;
+}
+.axis-label {
+	font-family: 'Lato';
+	letter-spacing: 0.1em;
+	/*font-size: 0.8em;*/
+	fill: steelblue;
+	/*font-weight: lighter;*/
+	text-anchor: middle;
 }
 .summoner-info {
 	font-family: 'Lato';
