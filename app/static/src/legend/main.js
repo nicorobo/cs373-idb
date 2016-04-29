@@ -56,11 +56,15 @@ function plotData(err, data) {
 		.attr('cx', d => xScale(d.total_games))
 		.attr('cy', d => yScale(d.win_percentage))
 		.on('mouseover', d => {
-			console.log(d);
+			d3.select('#summoner-name-val').text(d.name);
+			d3.select('#summoner-lp-val').text(d.lp);
+			d3.select('#summoner-played-val').text(d.total_games);
+			d3.select('#summoner-percent-val').text((d.win_percentage*100).toFixed(2) + '%');
 			d3.selectAll('.point').classed('point-dim', true);
 			d3.select('#point-'+d.id).classed('point-dim', false).classed('point-spotlight', true);
 		})
 		.on('mouseleave', d => {
+			resetInfoValues();
 			d3.selectAll('.point').classed('point-dim', false);
 			d3.select('#point-'+d.id).classed('point-spotlight', false);
 		})
@@ -68,24 +72,25 @@ function plotData(err, data) {
 	// Render axis
 	svg.append('g').attr('id', 'x-axis').call(xAxis);
 	svg.append('g').attr('id', 'y-axis').call(yAxis);
+
 	d3.select('#x-axis')
 		.attr('transform', 'translate(' + 50 + ',' + 450 + ')')
-		// .selectAll('text').attr('x', '50')
 	d3.select('#y-axis')
 		.attr('transform', 'translate(' + 50 + ',' + 50 + ')')
-		// .selectAll('text').attr('x', '50')
 
+	// Render Info Box
 	renderInfoBox(svg, 300, 100, 20);
 
 	function renderInfoBox(svg, x, y, spread) {
 		var info = svg.append('g')
 			.attr('transform', 'translate('+x+','+y+')');
 		var textIds = ['summoner-name','summoner-lp','summoner-played','summoner-percent']
+		var xValues = [38, 80, 80, 90];
 		for(var i in textIds) {
-			console.log('AHH');
-			renderText(info, 0, (i*spread), textIds[i], 'summoner-attr');
+			renderText(info, 0, (i*spread), textIds[i], 'summoner-info summoner-label');
+			renderText(info, xValues[i], (i*spread), textIds[i]+'-val', 'summoner-info summoner-value');
 		}
-		resetInfoBox();
+		setInfoBox();
 	}
 
 	function renderText(svg, x, y, id, className) {
@@ -96,13 +101,18 @@ function plotData(err, data) {
 			.attr('y', y)
 	}
 
-	function resetInfoBox() {
+	function setInfoBox() {
 		d3.select('#summoner-name').text('Name: ');
 		d3.select('#summoner-lp').text('League Points: ');
 		d3.select('#summoner-played').text('Games Played: ');
 		d3.select('#summoner-percent').text('Win Percentage: ');
 	}
 
-
+	function resetInfoValues() {
+		d3.select('#summoner-name-val').text('');
+		d3.select('#summoner-lp-val').text('');
+		d3.select('#summoner-played-val').text('');
+		d3.select('#summoner-percent-val').text('');
+	}
 
 }

@@ -31,10 +31,17 @@ path.domain {
 	fill: none;
 	stroke: #aaa;
 }
-
-.summoner-attr {
+.summoner-info {
 	font-family: 'Lato';
-	letter-spacing: 0.1em;
+	letter-spacing: 0.05em;
 	font-size: 0.8em;
-	fill: #aaa;
+}
+.summoner-label {
+	font-weight: lighter;
+	fill: #999;
+}
+.summoner-value {
+	fill: steelblue;
+	opacity: 0.9;
+
 }
