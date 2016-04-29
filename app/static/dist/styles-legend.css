@@ -1,6 +1,16 @@
 .legends-page {
 	text-align: center;
 }
+.legends-page h2 {
+	color: #666;
+	font-family: 'Lato';
+}
+.legends-page p {
+	color: steelblue;
+	font-family: 'Lato';
+	font-weight: lighter;
+	margin-bottom: -15px;
+}
 
 svg {
 	/*border: 1px solid #eee;*/
