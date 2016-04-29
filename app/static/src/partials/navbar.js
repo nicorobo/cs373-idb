@@ -28,6 +28,7 @@ class NavBar extends React.Component {
 							<li><Link to="/characters" activeClassName="active">Characters</Link></li>
 							<li><Link to="/comics" activeClassName="active">Comics</Link></li>
 							<li><Link to="/creators" activeClassName="active">Creators</Link></li>
+							<li><a href="/legends">Legends</a></li>
 						</ul>
 					</div>
 				</div>

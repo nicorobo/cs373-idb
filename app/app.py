@@ -40,6 +40,10 @@ from models import *
 def about():
     return render_template('about.html')
 
+@app.route('/legends')
+def legends():
+    return render_template('legends.html')
+
 @app.route('/api/characters', methods=["GET"])
 def characters():
     offset = request.args.get('offset')

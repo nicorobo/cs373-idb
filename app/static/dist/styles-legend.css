@@ -1,0 +1,67 @@
+.legends-page {
+	text-align: center;
+}
+.legends-page h2 {
+	color: #666;
+	font-family: 'Lato';
+}
+.legends-page p {
+	color: steelblue;
+	font-family: 'Lato';
+	font-weight: lighter;
+	margin-bottom: -15px;
+}
+
+svg {
+	/*border: 1px solid #eee;*/
+}
+
+.point {
+	fill: steelblue;
+	opacity: 0.4;
+	cursor: pointer;
+	transition: 0.1s all;
+}
+.point-spotlight {
+	opacity: 0.7;
+	transition: none;
+}
+.point-dim {
+	opacity: 0.2;
+}
+
+g.tick line {
+	shape-rendering: crispEdges;
+	stroke: #aaa;
+}
+g.tick text {
+	font-family: 'Lato';
+	font-weight: lighter;
+	fill: #aaa;
+}
+path.domain {
+	fill: none;
+	stroke: #aaa;
+}
+.axis-label {
+	font-family: 'Lato';
+	letter-spacing: 0.1em;
+	/*font-size: 0.8em;*/
+	fill: steelblue;
+	/*font-weight: lighter;*/
+	text-anchor: middle;
+}
+.summoner-info {
+	font-family: 'Lato';
+	letter-spacing: 0.05em;
+	font-size: 0.8em;
+}
+.summoner-label {
+	font-weight: lighter;
+	fill: #999;
+}
+.summoner-value {
+	fill: steelblue;
+	opacity: 0.9;
+
+}

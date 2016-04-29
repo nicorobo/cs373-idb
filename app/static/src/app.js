@@ -14,6 +14,7 @@ var ComicPage = require('./pages/comicpage.js');
 var CreatorPage = require('./pages/creatorpage.js');
 var SearchResults = require('./pages/searchresults.js');
 var NotFound = require('./pages/notfound.js');
+// var LegendsPage = require('./pages/legendspage.js');
 
 var Router = router.Router;
 var Route = router.Route;
